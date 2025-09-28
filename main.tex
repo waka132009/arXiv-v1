@@ -1,0 +1,380 @@
+% %% main.tex - AASTeX701 two-column final pass
+\documentclass[twocolumn]{aastex701}
+
+% ----- Packages (minimal) -----
+\usepackage{amsmath, amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\graphicspath{{figs/}}
+\usepackage[section]{placeins}
+\usepackage{needspace}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+% ----- Float tuning (tighter) -----
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{3}
+\setcounter{dbltopnumber}{1}
+
+\renewcommand{\topfraction}{0.90}
+\renewcommand{\bottomfraction}{0.90}
+\renewcommand{\textfraction}{0.10}
+\renewcommand{\floatpagefraction}{0.99}
+\renewcommand{\dbltopfraction}{0.88}
+\renewcommand{\dblfloatpagefraction}{0.92}
+
+\setlength{\floatsep}{4pt plus 1pt minus 1pt}
+\setlength{\textfloatsep}{6pt plus 1pt minus 1pt}
+\setlength{\intextsep}{4pt plus 1pt minus 1pt}
+\setlength{\abovecaptionskip}{2pt}
+\setlength{\belowcaptionskip}{1pt}
+
+\raggedbottom
+
+% ----- Macros -----
+\newcommand{\ath}{a_{\rm th}}
+\newcommand{\rg}{r_g}
+\newcommand{\LEdd}{L_{\rm Edd}}
+\newcommand{\Ltot}{L_{\rm tot}}
+\newcommand{\FeKa}{\mathrm{Fe\,K}\alpha}
+\newcommand{\epscoup}{\epsilon_{\rm coup}}
+\newcommand{\aeq}{a_{\rm eq}}
+
+% ---- Figure callout ----
+\newcommand{\figcallout}[2]{%
+  \noindent\begingroup\small\itshape
+  \textbf{Figure~\ref{#1}} — #2\par
+  \endgroup\vspace{2pt}%
+}
+
+% ----- PDF bookmark-safe strings -----
+\PassOptionsToPackage{unicode}{hyperref}
+\pdfstringdefDisableCommands{%
+  \def\ath{a_th}\def\rg{r_g}\def\LEdd{L_Edd}\def\Ltot{L_tot}\def\FeKa{Fe K\string\alpha}%
+  \def\epscoup{epsilon_coup}\def\aeq{a_eq}\def\mathrm#1{#1}%
+}
+
+% ----- Metadata -----
+\shorttitle{Self-Sustained Penrose Excitation}
+\shortauthors{Wakabayashi}
+
+\begin{document}
+
+\title{Self-Sustained Penrose Excitation of Accretion Disks:\\
+A Spin-Regulated Mechanism for Super-Eddington Quasar Luminosities}
+
+\author[0000-0008-1891-4579]{Jun Wakabayashi}
+\affiliation{Independent Researcher, Japan}
+\email{waka132009@gmail.com}
+\correspondingauthor{Jun Wakabayashi}
+
+\begin{abstract}
+Quasars often display luminosities exceeding the Eddington limit of their central SMBHs by factors of several to ten. We propose a self-sustained Penrose excitation mechanism that couples near-horizon equatorial structures to the ergoregion as the spin parameter $a_\ast$ approaches unity, injecting power into the disk while extracting angular momentum. Even modest effective coupling ($\epscoup\sim0.01$--$0.1$) yields $2$--$3\times \LEdd$ on average, with occasional $5$--$10\times$ episodes when the effective dissipation radius $R_{\rm eff}$ is sufficiently large to remain transparent. We adopt a phenomenological framework and do not fix the microphysics; results depend on a small set of effective parameters. Unless noted, all plotted luminosities are \textit{isotropic-equivalent}. Crucially, the proposed excitation is confined to the ergoregion and the equatorial disk—i.e., it is a horizon-exterior mechanism and thus, in principle, empirically testable.
+We explicitly identify the ISCO–ergoregion interface as a \emph{leaky} equatorial return path where plasmoid-dominated reconnection acts as a magnetically assisted Penrose trigger, venting power as a narrow equatorial quasi-beam that heats the inner disk and self-regulates spin.
+To our knowledge, this is the first framework that \emph{unifies} super-Eddington luminosity with the near-extremal spin ceiling via an \emph{equatorial, magnetically assisted Penrose split} at the ISCO–ergoregion interface, venting power as a narrow quasi-beam that reheats the inner disk and self-regulates spin.
+\end{abstract}
+
+\keywords{Quasars --- Accretion, accretion disks --- Black hole physics --- Relativistic processes}
+
+\paragraph{Context.}
+Recent reviews have noted persistent tensions between thin–disk expectations and observations—e.g., systematically large continuum sizes and wavelength-dependent lags exceeding simple reprocessing models \citep[e.g.,]{REV1,REV2}.
+These tensions motivate considering \emph{additional inner-disk heating} beyond local viscous dissipation.
+Near $a_*\!\to\!1$, our \emph{equatorial, magnetically assisted Penrose-like split} provides a \emph{testable route} to such reheating (Sec.~\ref{sec:mech-sketch}), with observational hooks and falsification criteria (Sec.~\ref{sec:obs-hooks}).
+
+\section{Introduction}\label{sec:intro}
+Quasars are among the most luminous persistent sources in the Universe. While thin-disk models reproduce many spectral features, two puzzles persist: (1) frequent super-Eddington luminosities by factors of several to ten; (2) spins saturating near, but not exceeding, the Kerr limit. These suggest an additional energy channel. We posit self-sustained Penrose excitation: near-extremal spins allow horizon-scale structures to couple to the ergoregion, repeatedly energizing the disk via equatorial beams and extracting angular momentum to enforce the spin ceiling.
+By ``self-sustained'' we mean a feedback loop in which spin-energy extraction elevates the disk luminosity while simultaneously extracting angular momentum; the latter throttles further spin-up from accretion, keeping the system near the activation threshold. In short: extraction $\rightarrow$ disk reheating ($L_{\rm self}$ up) $+$ spin-down ($a_\ast$ kept near $\ath$) $\rightarrow$ continued activation.
+Prior approaches typically addressed either super-Eddington luminosity (e.g., slim disks) or spin regulation (e.g., BZ/MAD), but not both within a single causal channel. Here we instead place the energy split at the ISCO–ergoregion interface and route the gain branch into an equatorial, radiation-dominated feedback loop that both boosts $L$ and extracts $J$, thus tying the two puzzles together.
+\FloatBarrier
+
+\paragraph{Scope and modeling stance.}
+We present a phenomenological framework: the microphysics of beam formation, transport, and equatorial deposition is intentionally kept agnostic, while the \emph{observable consequences} of such coupling are made explicit and falsifiable. This stance allows clean confrontation with data now and provides a clear interface to future GRMHD/plasma studies that could instantiate the coupling agent.
+
+\paragraph{Boundary conditions are not fixed near $a_*\!\to\!1$.}
+Much of the literature treats the inner disk, magnetosphere, and ergoregion with effectively fixed cross-component boundary conditions. We instead emphasize that near-extremal spin the boundaries themselves evolve: frame dragging enlarges and reshapes the ergoregion, the ISCO approaches it, and the equatorial return path becomes thin and resistive. In this coupled regime an equatorial current sheet is generically required by the global field topology; shear and flux loading drive plasmoid-dominated reconnection; and the resulting split redistributes $(E,L)$ so that a negative-energy branch is absorbed by the hole while a gain branch vents as a narrow equatorial quasi-beam, part of which returns to heat the inner disk.
+
+\section{Related Work}\label{sec:related}
+The Penrose process enables, in principle, energy extraction from negative-energy trajectories in the ergosphere, yet is often deemed astrophysically inefficient. The Blandford--Znajek mechanism extracts rotational energy electromagnetically to power polar jets; it explains radio-loud AGN but not radiative dominance in radio-quiet quasars. Slim disks and photon-trapping allow modest super-Eddington flows but do not address the spin ceiling. Quantum-gravity structures focus on singularity resolution rather than quasar phenomenology. By contrast, this work integrates a self-sustained, equatorial disk reheating channel with explicit transparency control (low compactness) and spin self-regulation.
+\FloatBarrier
+
+\section{Theoretical Framework}\label{sec:theory}
+
+\noindent All elements invoked below act outside the event horizon; the coupling operates in the ergoregion and deposits energy in the equatorial flow, avoiding assumptions about interior or singularity-scale physics.
+
+\subsection{Kerr Energy Reservoir}\label{sec:kerr}
+For a Kerr black hole of mass $M$ and spin $a_\ast$, the extractable rotational energy is
+\begin{equation}
+E_{\rm rot}(a_\ast)=\Bigg[1-\sqrt{\tfrac{1}{2}\Big(1+\sqrt{1-a_\ast^2}\Big)}\Bigg]\,Mc^2,
+\label{eq:Erot}
+\end{equation}
+reaching $\sim0.29\,Mc^2$ as $a_\ast\to1$.
+\FloatBarrier
+
+\subsection{Spin-Triggered Coupling}\label{sec:coupling}
+We posit a threshold spin $\ath$ above which an ergoregion-coupled agent activates. The effective coupling follows
+\begin{equation}
+\epscoup(a_\ast)=
+\begin{cases}
+0, & a_\ast\le \ath,\\[3pt]
+\epsilon_{\max}\Big(\dfrac{a_\ast-\ath}{1-\ath}\Big)^{n}, & a_\ast>\ath,
+\end{cases}
+\label{eq:eps}
+\end{equation}
+Unless noted, we adopt the following fiducials for figures and estimates: $M=10^9M_\odot$, $\eta_{\rm acc}=0.1$, $\epsilon_{\max}=0.1$, $n=2$, $R_0=10^2$, and $\alpha=50$; the illustrative threshold is $\ath\simeq0.97$.
+
+\paragraph{Phenomenological parameters and physical ranges.}
+The cap $\epsilon_{\max}$ limits equatorial deposition efficiency by energy-budget and pair-compactness constraints; $n$ controls activation sharpness above $\ath$ as an effective criticality index of the coupling geometry. $(R_0,\alpha)$ regulate the dissipation footprint to maintain transparency, trading compactness against reprocessing. We restrict these to physically plausible ranges and view them as interfaces for future GRMHD/plasma calibration, not curve-fitting knobs.
+\paragraph{Sensitivity and saturation.}
+The activation $\epsilon_{\rm coup}(a_*)$ is intentionally steep: $(a_{\rm th},n)$ set the narrowness of the “spin ceiling”. In practice $\epsilon_{\rm coup}$ and the leakage fraction depend nonlinearly on flux loading and $\dot M$, with possible saturation arbitrarily close to the extremal limit. We therefore treat $(a_{\rm th},n,\epsilon_{\max},\alpha)$ as calibration parameters to be fixed by future GRMHD-in-ergoregion testbeds.
+
+% === Figures tied to 3.2 (param space + onset) ===
+\Needspace{20\baselineskip}
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=.92\linewidth]{fig10a_Reff100.pdf}\\[-1pt]
+  \includegraphics[width=.92\linewidth]{fig10b_Reff1000.pdf}\vspace{-2pt}
+  \caption{Parameter space implied by Eq.~\eqref{eq:eps} and the compactness constraint Eq.~\eqref{eq:ell}. \textbf{(a)} $R_{\rm eff}=100\,\rg$, \textbf{(b)} $R_{\rm eff}=1000\,\rg$. Color encodes peak $\Ltot/\LEdd$; black contour shows $\ell=30$. Line styles/markers are chosen to be colorblind-friendly in the source figures. Fiducials: $M=10^9M_\odot$, $\eta_{\rm acc}=0.1$, $\epsilon_{\max}=0.1$, $n=2$, $R_0=10^2$, $\alpha=50$.\\
+  \emph{Interpretation note:} color encodes the \emph{peak} $L_{\rm tot}/L_{\rm Edd}$ (dimensionless); the black contour marks $\ell{=}30$ (pair-compactness threshold). Viable solutions lie \emph{outside} the contour; bright but compact regions are disfavored.}
+  \label{fig:fig1}
+\end{figure}
+
+\begin{figure}[!b]
+  \centering
+  \includegraphics[width=.92\linewidth]{Fig_Onset.pdf}\vspace{-2pt}
+  \caption{Spin-triggered onset governed by Eq.~\eqref{eq:eps}: peak $\Ltot/\LEdd$ (dimensionless) versus $a_\ast$ (dimensionless); dashed vertical line at $\ath=0.97$.}
+  \label{fig:onset}
+\end{figure}
+\FloatBarrier
+
+\paragraph{Power partition.}
+We allow the extracted rotational power to partition between a polar BZ jet and an equatorial feedback channel:
+\[
+P_{\rm ext}=P_{\rm jet}+P_{\rm eq},\qquad f_{\rm BZ}+f_{\rm eq}=1.
+\]
+Near $a_*\!\to\!1$, $f_{\rm eq}$ can become substantial (radio-quiet, radiation-dominated states), while $f_{\rm BZ}$ dominates in radio-loud systems; hybrid states are possible in transient MAD-like regimes.
+
+\subsection{Mechanism sketch: a leaky equatorial return path}\label{sec:mech-sketch}
+\paragraph{Projectile sufficiency.}
+Reconnection ejecta (plasmoids) in the ergoregion carry specific energy $e$ and angular momentum $l$. A Penrose split requires a branch with $e-\Omega_H l<0$ (horizon condition). Tension-driven redistribution during ejection changes $l$ by $\Delta l\!\sim\!\mathcal{O}(r_{\rm g}v_\phi)$ and reconnection outflows can reach $v\!\sim\!0.1$–$0.5c$ in high-$S$ sheets; hence tens-of-percent shifts in $l$ suffice to place a fraction on the negative-energy branch, with the complement forming the gain branch (quasi-beam).
+Near-extremal spin brings the ISCO into close contact with the ergoregion and enforces an equatorial return current sheet at their interface. Shear and flux loading thin the sheet until it becomes tearing-unstable; reconnection then ejects plasmoids as a chain of narrow, equator-following pulses. These ejecta provide the “projectile” required by a Penrose-like energy split: within the ergoregion, a fraction of the flow is placed on negative-energy-at-horizon trajectories while the counterpart gains energy and escapes. The extraction condition is simply
+\begin{equation}
+E - \Omega_H L \;<\; 0,
+\end{equation}
+so the black hole’s rotational energy pays for the escaping branch. The centrifugal barrier and toroidal tension form an equatorial nozzle, so a growing fraction of the circuit power vents as a collimated equatorial quasi-beam while the DC return still closes globally. A modest back-flow coupling ($\epsilon_{\rm coup}\!\sim\!10^{-2}$–$10^{-1}$) suffices to heat the inner disk and regenerate magnetic flux, closing a self-sustained loop. The active zone and leakage fraction increase monotonically with spin (and also depend nonlinearly on flux loading and accretion rate), with possible saturation arbitrarily close to the extremal limit.
+\begin{figure*}
+  \centering
+  \includegraphics[width=0.9\textwidth]{fig_equatorial_trigger_schematic.pdf}
+  \caption{Schematic near $a_*\!\to\!1$: an equatorial return current sheet at the ISCO–ergoregion interface becomes plasmoid-dominated; a Penrose-like split sends a negative-energy branch into the hole and a gain branch into a narrow equatorial quasi-beam, part of which returns to heat the inner disk (self-sustained loop).}
+  \label{fig:equatorial_trigger}
+\end{figure*}
+
+\subsection{Self-Sustained Penrose Excitation}\label{sec:penrose}
+The mean extraction power is $\langle P_{\rm ext}\rangle=E_{\rm rot}/\tau$, and with duty cycle $d$ the instantaneous power during active phases is $P_{\rm ext}\sim\langle P_{\rm ext}\rangle/d$. Here $\tau$ denotes the effective extraction e-folding timescale of the rotational-energy reservoir, i.e., $\langle P_{\rm ext}\rangle=E_{\rm rot}/\tau$ using Eq.~\eqref{eq:Erot}.
+\FloatBarrier
+
+\subsection{Disk Dissipation and Scale}\label{sec:diss}
+A fraction $\epscoup(a_\ast)$ of $P_{\rm ext}$ is deposited into the disk:
+\begin{equation}
+L_{\rm self}=\epscoup\,P_{\rm ext},
+\label{eq:Lself}
+\end{equation}
+and the dissipation spreads over an effective radius
+\paragraph{Self-transparency (physical note).}
+The scaling $R_{\rm eff}\!\approx\!R_0[1+\alpha(\epsilon_{\rm coup}/\epsilon_{\max})]\,r_{\rm g}$ phenomenologically captures geometric spreading, multi-zone deposition, and increased scattering mean free paths as the equatorial quasi-beam heats and rarefies the inner disk corona. Our results require $R_{\rm eff}\!\sim\!10^2$–$10^3\,r_{\rm g}$ during bright episodes to keep the pair compactness low (cf. Sec.~\ref{sec:transp}).
+\begin{equation}
+R_{\rm eff}\approx R_0\Big[1+\alpha\Big(\frac{\epscoup}{\epsilon_{\max}}\Big)\Big]\,\rg,
+\label{eq:Reff}
+\end{equation}
+with $\rg=GM/c^2$, fiducial $R_0\sim10^2$ and $\alpha\sim50$.
+\FloatBarrier
+
+\subsection{Transparency (Compactness Constraint)}\label{sec:transp}
+Transparency requires pair compactness
+\begin{equation}
+\ell=\frac{L_{\rm self}\sigma_T}{4\pi R_{\rm eff}\,m_ec^3}\lesssim30,
+\label{eq:ell}
+\end{equation}
+which couples Eqs.~\eqref{eq:Lself} and \eqref{eq:Reff} and motivates $R_{\rm eff}\sim10^2$--$10^3\,\rg$ during bright episodes.  
+\textit{We adopt $\ell\!\lesssim\!30$ as a conservative transparency threshold following classic compactness arguments; the precise value depends on geometry and spectrum and can be re-tuned in data applications. See, e.g., \citep{1984MNRAS.209..175S,LightmanZdziarski1987}.}
+\FloatBarrier
+
+\subsection{Spin and Mass Evolution}\label{sec:evol}
+The horizon angular frequency is
+\begin{equation}
+\Omega_H=\frac{a_\ast c^3}{2GM\big(1+\sqrt{1-a_\ast^2}\big)},
+\label{eq:OmegaH}
+\end{equation}
+where $r_H=\rg\big(1+\sqrt{1-a_\ast^2}\big)$ and $\rg=GM/c^2$.
+Evolution obeys
+\begin{align}
+\frac{dM}{dt}&=\frac{dM_{\rm acc}}{dt}-\frac{P_{\rm ext}}{c^2},\label{eq:dM}\\
+\frac{dJ}{dt}&=\frac{dJ_{\rm acc}}{dt}-\frac{P_{\rm ext}}{\Omega_H},\label{eq:dJ}\\
+\frac{da_\ast}{dt}&=\frac{c}{GM^2}\frac{dJ}{dt}-2a_\ast\frac{1}{M}\frac{dM}{dt}.\label{eq:da}
+\end{align}
+
+% === Figures tied to 3.6 (torque balance + spin track) ===
+\Needspace{20\baselineskip}
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=.95\linewidth]{Fig3a.pdf}\\[4pt]
+  \includegraphics[width=.95\linewidth]{Fig3b.pdf}
+  \caption{Torque balance and equilibrium spin from Eqs.~\eqref{eq:dM}--\eqref{eq:da} with $\Omega_H$ in Eq.~\eqref{eq:OmegaH}. \textbf{(a)} ${\rm d}a/{\rm d}t$ (dimensionless per unit time; units per model) versus $a$ (dimensionless); the horizontal line marks $\dot a=0$. \textbf{(b)} Equilibrium spin $\aeq$ (dimensionless) versus $\epscoup$ (dimensionless); the shaded band shows a plausible range.}
+  \label{fig:fig3}
+\end{figure}
+
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=\columnwidth,height=0.36\textheight,keepaspectratio]{fig2a_spin_evolution.pdf}
+  \caption{Representative time track of $a_\ast$ (dimensionless) solved from Eqs.~\eqref{eq:dM}--\eqref{eq:da}.}
+  \label{fig:spin-evo}
+\end{figure}
+
+\subsection{Net Luminosity}\label{sec:lum}
+\begin{equation}
+\Ltot=L_{\rm acc}+L_{\rm self},\qquad
+L_{\rm acc}\approx \eta_{\rm acc}\,\Big(\frac{dM_{\rm acc}}{dt}\Big)c^2,
+\label{eq:Ltot}
+\end{equation}
+which links the dynamical solution (Eqs.~\eqref{eq:dM}--\eqref{eq:da}) to observables.
+
+\paragraph{Energetic sanity check (one-line).}
+With $M_{\rm BH}=10^9\,M_\odot$ [$Mc^2\simeq1.8\times10^{63}$ erg] and $E_{\rm rot}\!\sim\!0.1\,Mc^2$, a reservoir e-fold $\tau=10^7$ yr, $\epscoup=0.05$, and duty $d=0.2$ yield 
+$L_{\rm self}\!\sim\!(E_{\rm rot}/\tau)\,(\epscoup/d)\!\approx\!1.4\times10^{47}\,{\rm erg\,s^{-1}}\!\sim\!1.1\,\LEdd$,
+and $2$–$3\,\LEdd$ when combined with concurrent accretion, while $da_\ast/dt<0$ prevents overspin.
+
+% === Figures tied to 3.7 (timescale + L mapping) ===
+\Needspace{18\baselineskip}
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=.95\linewidth]{Fig4a.pdf}\\[4pt]
+  \includegraphics[width=.95\linewidth]{Fig4b.pdf}
+  \caption{Using Eqs.~\eqref{eq:Erot}, \eqref{eq:eps}, and \eqref{eq:Ltot}. \textbf{(a)} Equilibration time $\tau_{\rm eq}$ (units as labeled in the figure) versus $\epscoup$ (dimensionless). \textbf{(b)} $L/\LEdd$ (dimensionless) versus $\aeq$ (dimensionless); points labeled by $\epscoup$.}
+  \label{fig:fig4}
+\end{figure}
+\FloatBarrier
+
+\section{Results}\label{sec:results}
+The figures embedded in Sec.~\ref{sec:theory} visualize each theoretical ingredient immediately after the defining equations to avoid misalignment between formulae and diagnostics. Here we summarize cross-implications and observational hooks.
+
+\subsection{Observational Hooks}\label{sec:obs}
+\Needspace{12\baselineskip}
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=.95\linewidth]{Fig5a.pdf}\\[4pt]
+  \includegraphics[width=.95\linewidth]{Fig5b.pdf}
+  \caption{Empirical hooks implied by Eqs.~\eqref{eq:eps}--\eqref{eq:Ltot}. \textbf{(a)} Fe K$\alpha$ lag (in $r_g/c$) versus $\aeq$ (dimensionless). \textbf{(b)} Observable fraction (hard X/MeV or polarization; dimensionless) versus $\aeq$.}
+  \label{fig:fig5}
+\end{figure}
+\begin{table}[t]
+\centering
+\caption{Mechanism contrast (schematic).}
+\begin{tabular}{lccc}
+\hline
+ & $L/L_{\rm Edd}>1$ & spin ceiling & channel \\
+\hline
+Slim disk & yes (advective) & no & radiation (disk) \\
+BZ/MAD    & indirect & yes ($a_{\rm eq}\!\sim\!0.5$–$0.7$) & polar Poynting (jet) \\
+\textbf{This work} & \textbf{yes (equatorial)} & \textbf{yes ($a_{\rm eq}\!\approx\!a_{\rm th}$)} & \textbf{equatorial Penrose-like} \\
+\hline
+\end{tabular}
+\end{table}
+\FloatBarrier
+
+\section{Discussion}\label{sec:discussion}
+These bounds align with Fig.~\ref{fig:fig1} and are sufficient to reach $L/\LEdd\sim2$--$3$ with rarer $5$--$10\times$ excursions. Slim disks allow modest super-Eddington flows but no spin ceiling. BZ/MAD explain jet power yet not the radiative dominance of radio-quiet quasars. This framework ties hyperluminous output and the spin ceiling via near-extremal, equatorial coupling.
+
+\medskip
+\noindent\textit{Relation to Blandford--Znajek jets.}
+BZ is polar/Poynting-dominated; our mechanism is equatorial/radiative. Hybrid states and an anti-correlated see-saw are expected; counterexamples (simultaneously strong jets and high radiative output) can occur in transitional MAD-like regimes.
+
+\paragraph{Power partition between polar and equatorial channels.}
+We model the spin-extraction power as a partition between a polar Blandford--Znajek (BZ) channel and an equatorial feedback channel,
+\[
+P_{\rm ext} = P_{\rm jet}+P_{\rm eq},\quad
+P_{\rm jet}=f_{\rm BZ}\,P_{\rm ext},\quad
+P_{\rm eq}=f_{\rm eq}\,P_{\rm ext},\quad
+f_{\rm BZ}+f_{\rm eq}=1,\; 0\le f_{\rm BZ},f_{\rm eq}\le1.
+\]
+This partition predicts an anti-correlation between radio-jet dominance and equatorial reheating diagnostics within the high-$a_*$, high-$\lambda$ subset, with hybrid states possible in transient MAD phases.
+Our claim is modest: in the high-spin, high-Eddington subset, $f_{\rm eq}$ is statistically non-zero and sometimes dominant; in others, $f_{\rm BZ}$ may prevail. Outside this subset we make no claim.
+
+\subsection*{Validation roadmap: observations and simulations}
+\noindent\textbf{Observational fronts.}
+(i) \textit{Polarization vs.\ spin}: search for a step-like rise of optical/UV polarization fractions and azimuthal rotations across $a_\ast\simeq \ath$. (ii) \textit{Lag broadening}: Fe\,K$\alpha$ and BLR reverberation lags should broaden in high $L/\LEdd$ episodes at near-threshold spins. (iii) \textit{Spectral compactness}: hard X/MeV excesses consistent with low pair-compactness at $R_{\rm eff}\!\sim\!10^{2}$–$10^{3}\,r_g$. (iv) \textit{See-saw with BZ}: anti-correlation between radio-jet dominance and equatorial reheating diagnostics, with transitional hybrid states.
+
+\noindent\textbf{Simulation fronts.}
+(i) GRMHD-in-ergoregion testbeds to calibrate the effective coupling law $\epscoup(a_\ast)$ and its slope $n$; (ii) radiative transfer with pair kinetics to refine the $\ell$ threshold; (iii) semi-analytic population modeling to predict the duty distribution $d$ vs.\ spin. These can be plugged into the present framework without altering its falsifiable structure.
+
+\paragraph{What would falsify this framework (kill shots).}
+We explicitly delineate outcome patterns under which the equatorial channel is unnecessary. In the high-spin, high-$\lambda$ subset (e.g., $a_*\gtrsim0.8$, $\lambda\!\equiv\!L_{\rm bol}/L_{\rm Edd}\gtrsim0.3$), any of the following, if established \emph{as a population trend}, would falsify our claim:
+\begin{enumerate}
+\item Systematic absence of the EUV/soft-X/MeV excess (no ``shoulder'') \emph{and} systematically weak high-ionization lines (He\,II, N\,V, C\,IV) relative to the parent population.
+\item Reverberation lags from X$\rightarrow$UV showing no energy dependence (no inward reheating signature).
+\item $L_{\rm bol}$ not anti-correlated (even weakly) with $a_*$ within the bright subset (no self-regulated spin-down imprint).
+\item Optical/X-ray polarization failing to favor equatorial angles or degrees when near-threshold spins are inferred.
+\end{enumerate}
+If \emph{two or more} items above hold simultaneously for the same high-spin, high-$\lambda$ subset, we would consider $f_{\rm eq}\!\to\!0$ supported and this mechanism unnecessary.
+
+\section{Conclusion}\label{sec:conclusion}
+Self-sustained Penrose excitation near extremal Kerr SMBHs can inject rotational energy into the accretion disk, yielding sustained $2$--$3\times$ Eddington with rarer $5$--$10\times$ episodes while enforcing a spin ceiling.
+\FloatBarrier
+
+% ---------------- Appendix ----------------
+\clearpage
+\appendix
+
+\section{Candidate Gallery}\label{app:candidates}
+Representative objects; values are indicative.
+
+\begin{deluxetable*}{lcccc}
+\tabletypesize{\scriptsize}
+\tablecaption{Illustrative luminous quasar candidates\label{tab:cands}}
+\tablehead{
+  \colhead{Name} & \colhead{$z$} &
+  \colhead{$M_{\rm BH}/M_\odot$} & \colhead{$L/L_{\rm Edd}$} &
+  \colhead{Notes}
+}
+\startdata
+TON 618        & 2.219 & $\sim6.6\times10^{10}$ & $\sim3$     & \parbox[t]{0.30\textwidth}{Extremely massive; radio-loud; literature refs.\tablenotemark{a}}\\
+J2157-3602     & 4.75  & $\sim3.4\times10^{9}$  & $\gtrsim10$ & \parbox[t]{0.30\textwidth}{Hyper-luminous; super-Eddington episode indications.\tablenotemark{b}}\\
+J0100+2802     & 6.30  & $\sim1.2\times10^{10}$ & $\sim2$     & \parbox[t]{0.30\textwidth}{$z>6$ luminous quasar.\tablenotemark{c}}\\
+J0439+1634     & 6.51  & $\sim7\times10^{9}$    & $\sim2{-}3$ & \parbox[t]{0.30\textwidth}{Possible lensing history.\tablenotemark{d}}\\
+\enddata
+\tablecomments{Values are order-of-magnitude illustrations; object-level sourcing is beyond scope.}
+\tablenotetext{a}{Virial-factor dominated systematics; radio-loud bias possible.}
+\tablenotetext{b}{Line-width/bolometric corrections carry $\gtrsim0.3$ dex systematics.}
+\tablenotetext{c}{High-$z$ mass methods differ (reflection vs.\ continuum).}
+\tablenotetext{d}{Historical lensing debate; values assume de-lensing consensus.}
+\end{deluxetable*}
+
+\paragraph{Cautionary note.}
+Claims here are modular and falsifiable. Alternative mechanisms may dominate in other classes.
+
+\section*{Author contributions}
+Conceptualization, modeling, analysis, visualization, and writing: J.~Wakabayashi.
+
+\section*{Competing interests}
+The author declares no competing interests.
+
+\section*{Data and code availability}
+All figures can be regenerated from scripts in the accompanying repository; data sources and acquisition steps are documented in a README.\\
+An archived OSF snapshot with \texttt{CHECKSUMS.txt} will be provided: \textbf{OSF DOI: \texttt{10.XXXX/osf.io/XXXXX}} (replace with final DOI).
+
+\section*{Communication and media}
+Media note: The paper and its reproducibility package are the sole authoritative sources.
+
+\begin{acknowledgments}
+This work stands on decades of insight into black–hole accretion, spin, and energy extraction. I am indebted to the community that built the modern framework of quasar physics—from classical Penrose energy extraction and disk theory to spin–jet coupling and polarimetry—and to teams who made public data and tools available.
+\\[2pt]
+\textit{Use of large language models.} Large language model assistants (Google Gemini and OpenAI ChatGPT) were used for drafting support (editing for clarity, formatting suggestions, and figure placement/LaTeX troubleshooting). No novel data, equations, or results were produced by these tools. No confidential or unpublished data were provided to them. All analysis, derivations, and conclusions are by the author, who takes full responsibility for the content; the models are not authors.
+\\[2pt]
+I also thank colleagues and readers who provided critical comments on early drafts. Any remaining errors are mine.
+\end{acknowledgments}
+
+\software{\texttt{latexmk}, \texttt{AASTeX701}}
+
+\nocite{*}
+\bibliographystyle{aasjournalv7}
+\bibliography{main}
+
+\end{document}
