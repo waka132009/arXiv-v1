@@ -9,7 +9,8 @@
 \usepackage[section]{placeins}
 \usepackage{needspace}
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
-
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 % ----- Float tuning (tighter) -----
 \setcounter{topnumber}{2}
 \setcounter{bottomnumber}{2}
@@ -261,28 +262,32 @@ and $2$–$3\,\LEdd$ when combined with concurrent accretion, while $da_\ast/dt<
 The figures embedded in Sec.~\ref{sec:theory} visualize each theoretical ingredient immediately after the defining equations to avoid misalignment between formulae and diagnostics. Here we summarize cross-implications and observational hooks.
 
 \subsection{Observational Hooks}\label{sec:obs}
-\Needspace{12\baselineskip}
+\Needspace{12\baselineskip} % 問題が出たらこの行は削除してOK
+
 \begin{figure}[!t]
   \centering
   \includegraphics[width=.95\linewidth]{Fig5a.pdf}\\[4pt]
   \includegraphics[width=.95\linewidth]{Fig5b.pdf}
-  \caption{Empirical hooks implied by Eqs.~\eqref{eq:eps}--\eqref{eq:Ltot}. \textbf{(a)} Fe K$\alpha$ lag (in $r_g/c$) versus $\aeq$ (dimensionless). \textbf{(b)} Observable fraction (hard X/MeV or polarization; dimensionless) versus $\aeq$.}
+  \caption{Empirical hooks implied by Eqs.~\eqref{eq:eps}--\eqref{eq:Ltot}. 
+  \textbf{(a)} Fe K$\alpha$ lag (in $r_g/c$) versus $\aeq$ (dimensionless). 
+  \textbf{(b)} Observable fraction (hard X/MeV or polarization; dimensionless) versus $\aeq$.}
   \label{fig:fig5}
 \end{figure}
-\begin{table}[t]
-\centering
-\caption{Mechanism contrast (schematic).}
-\begin{tabular}{lccc}
-\hline
- & $L/L_{\rm Edd}>1$ & spin ceiling & channel \\
-\hline
-Slim disk & yes (advective) & no & radiation (disk) \\
-BZ/MAD    & indirect & yes ($a_{\rm eq}\!\sim\!0.5$–$0.7$) & polar Poynting (jet) \\
-\textbf{This work} & \textbf{yes (equatorial)} & \textbf{yes ($a_{\rm eq}\!\approx\!a_{\rm th}$)} & \textbf{equatorial Penrose-like} \\
-\hline
-\end{tabular}
-\end{table}
-\FloatBarrier
+
+% --- Table 1: deluxetable* を単独で ---
+\begin{deluxetable*}{lccc}
+\tablecaption{Mechanism contrast (schematic).\label{tab:mech-contrast}}
+\tabletypesize{\footnotesize}
+\tablewidth{\textwidth}
+\tablehead{
+  \colhead{} & \colhead{$L/L_{\rm Edd}>1$} & \colhead{spin ceiling} & \colhead{channel}
+}
+\startdata
+Slim disk        & yes (advective)                  & no                                & radiation (disk) \\
+BZ/MAD           & indirect                         & yes ($a_{\rm eq}\sim0.5$--$0.7$)  & polar Poynting (jet) \\
+\textbf{This work} & \textbf{yes (equatorial)}         & \textbf{yes ($a_{\rm eq}\approx a_{\rm th}$)} & \textbf{equatorial Penrose-like} \\
+\enddata
+\end{deluxetable*}
 
 \section{Discussion}\label{sec:discussion}
 These bounds align with Fig.~\ref{fig:fig1} and are sufficient to reach $L/\LEdd\sim2$--$3$ with rarer $5$--$10\times$ excursions. Slim disks allow modest super-Eddington flows but no spin ceiling. BZ/MAD explain jet power yet not the radiative dominance of radio-quiet quasars. This framework ties hyperluminous output and the spin ceiling via near-extremal, equatorial coupling.
