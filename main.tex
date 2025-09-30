@@ -9,8 +9,8 @@
 \usepackage[section]{placeins}
 \usepackage{needspace}
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
-\usepackage{array}
-\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+%\usepackage{array}
+%\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 % ----- Float tuning (tighter) -----
 \setcounter{topnumber}{2}
 \setcounter{bottomnumber}{2}
@@ -63,16 +63,27 @@
 
 \title{Self-Sustained Penrose Excitation of Accretion Disks:\\
 A Spin-Regulated Mechanism for Super-Eddington Quasar Luminosities}
-
-\author[0000-0008-1891-4579]{Jun Wakabayashi}
-\affiliation{Independent Researcher, Japan}
-\email{waka132009@gmail.com}
 \correspondingauthor{Jun Wakabayashi}
 
+\author[0009-0008-1891-4579]{Jun Wakabayashi}
+\affiliation{Independent Researcher, Japan}
+\email{waka132009@gmail.com}
+
 \begin{abstract}
-Quasars often display luminosities exceeding the Eddington limit of their central SMBHs by factors of several to ten. We propose a self-sustained Penrose excitation mechanism that couples near-horizon equatorial structures to the ergoregion as the spin parameter $a_\ast$ approaches unity, injecting power into the disk while extracting angular momentum. Even modest effective coupling ($\epscoup\sim0.01$--$0.1$) yields $2$--$3\times \LEdd$ on average, with occasional $5$--$10\times$ episodes when the effective dissipation radius $R_{\rm eff}$ is sufficiently large to remain transparent. We adopt a phenomenological framework and do not fix the microphysics; results depend on a small set of effective parameters. Unless noted, all plotted luminosities are \textit{isotropic-equivalent}. Crucially, the proposed excitation is confined to the ergoregion and the equatorial disk—i.e., it is a horizon-exterior mechanism and thus, in principle, empirically testable.
-We explicitly identify the ISCO–ergoregion interface as a \emph{leaky} equatorial return path where plasmoid-dominated reconnection acts as a magnetically assisted Penrose trigger, venting power as a narrow equatorial quasi-beam that heats the inner disk and self-regulates spin.
-To our knowledge, this is the first framework that \emph{unifies} super-Eddington luminosity with the near-extremal spin ceiling via an \emph{equatorial, magnetically assisted Penrose split} at the ISCO–ergoregion interface, venting power as a narrow quasi-beam that reheats the inner disk and self-regulates spin.
+Quasars often radiate at several to ten times the Eddington limit of their central SMBHs.
+We propose a self-sustained, equatorial Penrose-like excitation that operates at the
+ISCO–ergoregion interface just outside the horizon as the spin approaches unity ($a_*\!\to\!1$).
+In this picture the equatorial return layer becomes plasmoid-dominated; a magnetically assisted
+Penrose split ($E-\Omega_H L<0$ for one branch) sends a negative-energy branch into the hole and a
+gain branch outward as a narrow equatorial quasi-beam, which reheats the inner disk and extracts
+angular momentum, thereby self-regulating the spin ceiling.
+Even modest effective coupling ($\epsilon_{\rm coup}\!\sim\!10^{-2}$–$10^{-1}$) yields on average
+$2$–$3\times\LEdd$, with occasional $5$–$10\times$ episodes when the dissipation footprint is extended
+and transparent ($R_{\rm eff}\!\sim\!10^{2}$–$10^{3}\,r_g$). We adopt a phenomenological framework and
+do not fix the microphysics; the results depend on a small set of effective parameters (plotted
+luminosities are \textit{isotropic-equivalent} unless noted). Crucially, the mechanism is confined to
+the ergoregion and equatorial disk—i.e., it is horizon-exterior and therefore empirically testable;
+we provide observational hooks and explicit falsification criteria.
 \end{abstract}
 
 \keywords{Quasars --- Accretion, accretion disks --- Black hole physics --- Relativistic processes}
@@ -82,7 +93,7 @@ To our knowledge, this is the first framework that \emph{unifies} super-Eddingto
 Quasars are among the most luminous persistent sources in the Universe. While thin-disk models reproduce many spectral features, two puzzles persist: (1) frequent super-Eddington luminosities by factors of several to ten; (2) spins saturating near, but not exceeding, the Kerr limit. These suggest an additional energy channel. We posit self-sustained Penrose excitation: near-extremal spins allow horizon-scale structures to couple to the ergoregion, repeatedly energizing the disk via equatorial beams and extracting angular momentum to enforce the spin ceiling.
 By ``self-sustained'' we mean a feedback loop in which spin-energy extraction elevates the disk luminosity while simultaneously extracting angular momentum; the latter throttles further spin-up from accretion, keeping the system near the activation threshold. In short: extraction $\rightarrow$ disk reheating ($L_{\rm self}$ up) $+$ spin-down ($a_\ast$ kept near $\ath$) $\rightarrow$ continued activation.
 Prior approaches typically addressed either super-Eddington luminosity (e.g., slim disks) or spin regulation (e.g., BZ/MAD), but not both within a single causal channel. Here we instead place the energy split at the ISCO–ergoregion interface and route the gain branch into an equatorial, radiation-dominated feedback loop that both boosts $L$ and extracts $J$, thus tying the two puzzles together.
-\noindent\textit{Context—}
+
 Recent reviews have noted persistent tensions between thin–disk expectations and observations—
 e.g., systematically large continuum-emitting sizes from microlensing and reverberation, and
 wavelength-dependent lags exceeding simple reprocessing models \citep[e.g.,][]{Cackett2021RevMap,Sun2020AGNsize}.
@@ -126,6 +137,14 @@ We posit a threshold spin $\ath$ above which an ergoregion-coupled agent activat
 \label{eq:eps}
 \end{equation}
 Unless noted, we adopt the following fiducials for figures and estimates: $M=10^9M_\odot$, $\eta_{\rm acc}=0.1$, $\epsilon_{\max}=0.1$, $n=2$, $R_0=10^2$, and $\alpha=50$; the illustrative threshold is $\ath\simeq0.97$.
+\noindent\emph{Micro-bridge.}
+While we keep microphysics agnostic, the fiducial range
+$\epsilon_{\rm coup}\sim10^{-2}$–$10^{-1}$ is broadly consistent with
+energy-release fractions seen in near-horizon, plasmoid-dominated
+reconnection in recent GRMHD studies. For the present framework we only
+assume that $\epsilon_{\rm coup}$ rises sharply above $a_{\rm th}$ and
+saturates below $\epsilon_{\max}$; detailed calibration is left for
+future simulations.
 
 \paragraph{Phenomenological parameters and physical ranges.}
 The cap $\epsilon_{\max}$ limits equatorial deposition efficiency by energy-budget and pair-compactness constraints; $n$ controls activation sharpness above $\ath$ as an effective criticality index of the coupling geometry. $(R_0,\alpha)$ regulate the dissipation footprint to maintain transparency, trading compactness against reprocessing. We restrict these to physically plausible ranges and view them as interfaces for future GRMHD/plasma calibration, not curve-fitting knobs.
@@ -172,6 +191,17 @@ so the black hole’s rotational energy pays for the escaping branch. The centri
   \caption{Schematic near $a_*\!\to\!1$: an equatorial return current sheet at the ISCO–ergoregion interface becomes plasmoid-dominated; a Penrose-like split sends a negative-energy branch into the hole and a gain branch into a narrow equatorial quasi-beam, part of which returns to heat the inner disk (self-sustained loop).}
   \label{fig:equatorial_trigger}
 \end{figure*}
+\paragraph{Why an equatorial, quasi-collimated branch?}
+Near $a_*\!\to\!1$ the combination of (i) the equatorial centrifugal barrier,
+(ii) strong toroidal fields generated by shear (hoop stress), and
+(iii) pressure deficits carved by intermittent reconnection outflows
+forms an ``equatorial nozzle''. The gain branch therefore propagates as a
+narrow, radiation-supported quasi-beam rather than escaping along the poles.
+Because the transport remains largely collisionless/Poynting-dominated until
+it reprocesses in the inner disk, and because the dissipation footprint is
+extended ($R_{\rm eff}\!\sim\!10^{2}$–$10^{3}\,r_g$), the pair compactness
+along the beam stays low, consistent with the transparency requirement of Eq.~(6).
+\FloatBarrier
 
 \subsection{Self-Sustained Penrose Excitation}\label{sec:penrose}
 The mean extraction power is $\langle P_{\rm ext}\rangle=E_{\rm rot}/\tau$, and with duty cycle $d$ the instantaneous power during active phases is $P_{\rm ext}\sim\langle P_{\rm ext}\rangle/d$. Here $\tau$ denotes the effective extraction e-folding timescale of the rotational-energy reservoir, i.e., $\langle P_{\rm ext}\rangle=E_{\rm rot}/\tau$ using Eq.~\eqref{eq:Erot}.
@@ -275,7 +305,7 @@ The figures embedded in Sec.~\ref{sec:theory} visualize each theoretical ingredi
 \end{figure}
 
 % --- Table 1: deluxetable* を単独で ---
-\begin{deluxetable*}{lccc}
+\begin{deluxetable}{lccc}
 \tablecaption{Mechanism contrast (schematic).\label{tab:mech-contrast}}
 \tabletypesize{\footnotesize}
 \tablewidth{\textwidth}
@@ -287,7 +317,7 @@ Slim disk        & yes (advective)                  & no                        
 BZ/MAD           & indirect                         & yes ($a_{\rm eq}\sim0.5$--$0.7$)  & polar Poynting (jet) \\
 \textbf{This work} & \textbf{yes (equatorial)}         & \textbf{yes ($a_{\rm eq}\approx a_{\rm th}$)} & \textbf{equatorial Penrose-like} \\
 \enddata
-\end{deluxetable*}
+\end{deluxetable}
 
 \section{Discussion}\label{sec:discussion}
 These bounds align with Fig.~\ref{fig:fig1} and are sufficient to reach $L/\LEdd\sim2$--$3$ with rarer $5$--$10\times$ excursions. Slim disks allow modest super-Eddington flows but no spin ceiling. BZ/MAD explain jet power yet not the radiative dominance of radio-quiet quasars. This framework ties hyperluminous output and the spin ceiling via near-extremal, equatorial coupling.
@@ -298,12 +328,14 @@ BZ is polar/Poynting-dominated; our mechanism is equatorial/radiative. Hybrid st
 
 \paragraph{Power partition between polar and equatorial channels.}
 We model the spin-extraction power as a partition between a polar Blandford--Znajek (BZ) channel and an equatorial feedback channel,
-\[
-P_{\rm ext} = P_{\rm jet}+P_{\rm eq},\quad
-P_{\rm jet}=f_{\rm BZ}\,P_{\rm ext},\quad
-P_{\rm eq}=f_{\rm eq}\,P_{\rm ext},\quad
-f_{\rm BZ}+f_{\rm eq}=1,\; 0\le f_{\rm BZ},f_{\rm eq}\le1.
-\]
+% amsmath は AASTeX で既定読み込み。無ければ \usepackage{amsmath}
+\begin{align}
+P_{\rm tot} &= P_{\rm BZ} + P_{\rm eq}, \\
+P_{\rm BZ}  &= f_{\rm BZ}\,P_{\rm ext}, \qquad
+P_{\rm eq} = f_{\rm eq}\,P_{\rm ext}, \\
+f_{\rm BZ} + f_{\rm eq} &= 1.
+\end{align}
+
 This partition predicts an anti-correlation between radio-jet dominance and equatorial reheating diagnostics within the high-$a_*$, high-$\lambda$ subset, with hybrid states possible in transient MAD phases.
 Our claim is modest: in the high-spin, high-Eddington subset, $f_{\rm eq}$ is statistically non-zero and sometimes dominant; in others, $f_{\rm BZ}$ may prevail. Outside this subset we make no claim.
 
