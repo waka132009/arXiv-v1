@@ -1,0 +1,4 @@
+- Calibrate \(\epsilon_{\rm coup}(a_*)\) and slope \(n\) from GRMHD-in-ergoregion tests.
+- RT + pair kinetics to refine compactness threshold \(\ell\).
+- Duty cycle \(d\) vs spin and feeding state.
+- Power partition \(f_{\rm BZ}\)–\(f_{\rm eq}\) across \((a_*,\lambda)\).
