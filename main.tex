@@ -17,6 +17,14 @@
 \setcounter{totalnumber}{3}
 \setcounter{dbltopnumber}{1}
 
+% 混雑ページだけ局所的にフロート数を絞る環境
+\newenvironment{CrowdedFloats}{%
+  \begingroup
+  \setcounter{topnumber}{1}%
+  \setcounter{totalnumber}{2}%
+}{\endgroup}
+% ===== end =====
+
 \renewcommand{\topfraction}{0.90}
 \renewcommand{\bottomfraction}{0.90}
 \renewcommand{\textfraction}{0.10}
@@ -101,7 +109,7 @@ These tensions motivate considering \emph{additional inner-disk heating} beyond 
 Near $a_*\!\to\!1$, an \emph{equatorial, magnetically assisted Penrose-like split} provides a \emph{testable route}
 to such reheating (Sec.~\ref{sec:mech-sketch}), with observational hooks and falsification criteria
 (Sec.~\ref{sec:obs}).
-\FloatBarrier
+
 
 \paragraph{Scope and modeling stance.}
 We present a phenomenological framework: the microphysics of beam formation, transport, and equatorial deposition is intentionally kept agnostic, while the \emph{observable consequences} of such coupling are made explicit and falsifiable. This stance allows clean confrontation with data now and provides a clear interface to future GRMHD/plasma studies that could instantiate the coupling agent.
@@ -111,7 +119,7 @@ Much of the literature treats the inner disk, magnetosphere, and ergoregion with
 
 \section{Related Work}\label{sec:related}
 The Penrose process enables, in principle, energy extraction from negative-energy trajectories in the ergosphere, yet is often deemed astrophysically inefficient. The Blandford--Znajek mechanism extracts rotational energy electromagnetically to power polar jets; it explains radio-loud AGN but not radiative dominance in radio-quiet quasars. Slim disks and photon-trapping allow modest super-Eddington flows but do not address the spin ceiling. Quantum-gravity structures focus on singularity resolution rather than quasar phenomenology. By contrast, this work integrates a self-sustained, equatorial disk reheating channel with explicit transparency control (low compactness) and spin self-regulation.
-\FloatBarrier
+
 
 \section{Theoretical Framework}\label{sec:theory}
 
@@ -124,7 +132,7 @@ E_{\rm rot}(a_\ast)=\Bigg[1-\sqrt{\tfrac{1}{2}\Big(1+\sqrt{1-a_\ast^2}\Big)}\Big
 \label{eq:Erot}
 \end{equation}
 reaching $\sim0.29\,Mc^2$ as $a_\ast\to1$.
-\FloatBarrier
+
 
 \subsection{Spin-Triggered Coupling}\label{sec:coupling}
 We posit a threshold spin $\ath$ above which an ergoregion-coupled agent activates. The effective coupling follows
@@ -152,15 +160,8 @@ The cap $\epsilon_{\max}$ limits equatorial deposition efficiency by energy-budg
 The activation $\epsilon_{\rm coup}(a_*)$ is intentionally steep: $(a_{\rm th},n)$ set the narrowness of the “spin ceiling”. In practice $\epsilon_{\rm coup}$ and the leakage fraction depend nonlinearly on flux loading and $\dot M$, with possible saturation arbitrarily close to the extremal limit. We therefore treat $(a_{\rm th},n,\epsilon_{\max},\alpha)$ as calibration parameters to be fixed by future GRMHD-in-ergoregion testbeds.
 
 % === Figures tied to 3.2 (param space + onset) ===
-\Needspace{20\baselineskip}
-\begin{figure}[!t]
-  \centering
-  \includegraphics[width=.92\linewidth]{fig10a_Reff100.pdf}\\[-1pt]
-  \includegraphics[width=.92\linewidth]{fig10b_Reff1000.pdf}\vspace{-2pt}
-  \caption{Parameter space implied by Eq.~\eqref{eq:eps} and the compactness constraint Eq.~\eqref{eq:ell}. \textbf{(a)} $R_{\rm eff}=100\,\rg$, \textbf{(b)} $R_{\rm eff}=1000\,\rg$. Color encodes peak $\Ltot/\LEdd$; black contour shows $\ell=30$. Line styles/markers are chosen to be colorblind-friendly in the source figures. Fiducials: $M=10^9M_\odot$, $\eta_{\rm acc}=0.1$, $\epsilon_{\max}=0.1$, $n=2$, $R_0=10^2$, $\alpha=50$.\\
-  \emph{Interpretation note:} color encodes the \emph{peak} $L_{\rm tot}/L_{\rm Edd}$ (dimensionless); the black contour marks $\ell{=}30$ (pair-compactness threshold). Viable solutions lie \emph{outside} the contour; bright but compact regions are disfavored.}
-  \label{fig:fig1}
-\end{figure}
+
+
 
 \begin{figure}[!b]
   \centering
@@ -168,7 +169,7 @@ The activation $\epsilon_{\rm coup}(a_*)$ is intentionally steep: $(a_{\rm th},n
   \caption{Spin-triggered onset governed by Eq.~\eqref{eq:eps}: peak $\Ltot/\LEdd$ (dimensionless) versus $a_\ast$ (dimensionless); dashed vertical line at $\ath=0.97$.}
   \label{fig:onset}
 \end{figure}
-\FloatBarrier
+
 
 \paragraph{Power partition.}
 We allow the extracted rotational power to partition between a polar BZ jet and an equatorial feedback channel:
@@ -185,7 +186,7 @@ Near-extremal spin brings the ISCO into close contact with the ergoregion and en
 E - \Omega_H L \;<\; 0,
 \end{equation}
 so the black hole’s rotational energy pays for the escaping branch. The centrifugal barrier and toroidal tension form an equatorial nozzle, so a growing fraction of the circuit power vents as a collimated equatorial quasi-beam while the DC return still closes globally. A modest back-flow coupling ($\epsilon_{\rm coup}\!\sim\!10^{-2}$–$10^{-1}$) suffices to heat the inner disk and regenerate magnetic flux, closing a self-sustained loop. The active zone and leakage fraction increase monotonically with spin (and also depend nonlinearly on flux loading and accretion rate), with possible saturation arbitrarily close to the extremal limit.
-\begin{figure*}
+\begin{figure*}[t]
   \centering
   \includegraphics[width=\textwidth]{fig_equatorial_trigger_schematic.pdf}
   \caption{Schematic near $a_*\!\to\!1$: an equatorial return current sheet at the ISCO–ergoregion interface becomes plasmoid-dominated; a Penrose-like split sends a negative-energy branch into the hole and a gain branch into a narrow equatorial quasi-beam, part of which returns to heat the inner disk (self-sustained loop).}
@@ -201,11 +202,10 @@ Because the transport remains largely collisionless/Poynting-dominated until
 it reprocesses in the inner disk, and because the dissipation footprint is
 extended ($R_{\rm eff}\!\sim\!10^{2}$–$10^{3}\,r_g$), the pair compactness
 along the beam stays low, consistent with the transparency requirement of Eq.~(6).
-\FloatBarrier
+
 
 \subsection{Self-Sustained Penrose Excitation}\label{sec:penrose}
 The mean extraction power is $\langle P_{\rm ext}\rangle=E_{\rm rot}/\tau$, and with duty cycle $d$ the instantaneous power during active phases is $P_{\rm ext}\sim\langle P_{\rm ext}\rangle/d$. Here $\tau$ denotes the effective extraction e-folding timescale of the rotational-energy reservoir, i.e., $\langle P_{\rm ext}\rangle=E_{\rm rot}/\tau$ using Eq.~\eqref{eq:Erot}.
-\FloatBarrier
 
 \subsection{Disk Dissipation and Scale}\label{sec:diss}
 A fraction $\epscoup(a_\ast)$ of $P_{\rm ext}$ is deposited into the disk:
@@ -221,7 +221,7 @@ R_{\rm eff}\approx R_0\Big[1+\alpha\Big(\frac{\epscoup}{\epsilon_{\max}}\Big)\Bi
 \label{eq:Reff}
 \end{equation}
 with $\rg=GM/c^2$, fiducial $R_0\sim10^2$ and $\alpha\sim50$.
-\FloatBarrier
+
 
 \subsection{Transparency (Compactness Constraint)}\label{sec:transp}
 Transparency requires pair compactness
@@ -231,7 +231,7 @@ Transparency requires pair compactness
 \end{equation}
 which couples Eqs.~\eqref{eq:Lself} and \eqref{eq:Reff} and motivates $R_{\rm eff}\sim10^2$--$10^3\,\rg$ during bright episodes.  
 \textit{We adopt $\ell\!\lesssim\!30$ as a conservative transparency threshold following classic compactness arguments; the precise value depends on geometry and spectrum and can be re-tuned in data applications. See, e.g., \citep{1984MNRAS.209..175S,LightmanZdziarski1987}.}
-\FloatBarrier
+
 
 \subsection{Spin and Mass Evolution}\label{sec:evol}
 The horizon angular frequency is
@@ -286,7 +286,7 @@ and $2$–$3\,\LEdd$ when combined with concurrent accretion, while $da_\ast/dt<
   \caption{Using Eqs.~\eqref{eq:Erot}, \eqref{eq:eps}, and \eqref{eq:Ltot}. \textbf{(a)} Equilibration time $\tau_{\rm eq}$ (units as labeled in the figure) versus $\epscoup$ (dimensionless). \textbf{(b)} $L/\LEdd$ (dimensionless) versus $\aeq$ (dimensionless); points labeled by $\epscoup$.}
   \label{fig:fig4}
 \end{figure}
-\FloatBarrier
+
 
 \section{Results}\label{sec:results}
 The figures embedded in Sec.~\ref{sec:theory} visualize each theoretical ingredient immediately after the defining equations to avoid misalignment between formulae and diagnostics. Here we summarize cross-implications and observational hooks.
@@ -319,6 +319,14 @@ BZ/MAD           & indirect                         & yes ($a_{\rm eq}\sim0.5$--
 \enddata
 \end{deluxetable}
 
+\begin{figure}[!t]
+  \centering
+  \includegraphics[width=.92\linewidth]{fig10a_Reff100.pdf}\\[-1pt]
+  \includegraphics[width=.92\linewidth]{fig10b_Reff1000.pdf}\vspace{-2pt}
+  \caption{Parameter space implied by Eq.~\eqref{eq:eps} and the compactness constraint Eq.~\eqref{eq:ell}. \textbf{(a)} $R_{\rm eff}=100\,\rg$, \textbf{(b)} $R_{\rm eff}=1000\,\rg$. Color encodes peak $\Ltot/\LEdd$; black contour shows $\ell=30$. Line styles/markers are chosen to be colorblind-friendly in the source figures. Fiducials: $M=10^9M_\odot$, $\eta_{\rm acc}=0.1$, $\epsilon_{\max}=0.1$, $n=2$, $R_0=10^2$, $\alpha=50$.\\
+  \emph{Interpretation note:} color encodes the \emph{peak} $L_{\rm tot}/L_{\rm Edd}$ (dimensionless); the black contour marks $\ell{=}30$ (pair-compactness threshold). Viable solutions lie \emph{outside} the contour; bright but compact regions are disfavored.}
+  \label{fig:fig1}
+\end{figure}
 \section{Discussion}\label{sec:discussion}
 These bounds align with Fig.~\ref{fig:fig1} and are sufficient to reach $L/\LEdd\sim2$--$3$ with rarer $5$--$10\times$ excursions. Slim disks allow modest super-Eddington flows but no spin ceiling. BZ/MAD explain jet power yet not the radiative dominance of radio-quiet quasars. This framework ties hyperluminous output and the spin ceiling via near-extremal, equatorial coupling.
 
@@ -358,7 +366,6 @@ If \emph{two or more} items above hold simultaneously for the same high-spin, hi
 
 \section{Conclusion}\label{sec:conclusion}
 Self-sustained Penrose excitation near extremal Kerr SMBHs can inject rotational energy into the accretion disk, yielding sustained $2$--$3\times$ Eddington with rarer $5$--$10\times$ episodes while enforcing a spin ceiling.
-\FloatBarrier
 
 % ---------------- Appendix ----------------
 \clearpage
