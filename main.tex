@@ -8,13 +8,22 @@
 \graphicspath{{figs/}}
 \usepackage[section]{placeins}
 \usepackage{needspace}
+\usepackage{dblfloatfix}
+\usepackage{balance}
+\usepackage{flafter} % 図が参照より前に出ない保険
+
+\makeatletter
+\def\fps@figure{!htbp}
+\def\fps@table{!htbp}
+\makeatother
+
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
 %\usepackage{array}
 %\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 % ----- Float tuning (tighter) -----
-\setcounter{topnumber}{2}
-\setcounter{bottomnumber}{2}
-\setcounter{totalnumber}{3}
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{3}
+\setcounter{totalnumber}{6}
 \setcounter{dbltopnumber}{1}
 
 % 混雑ページだけ局所的にフロート数を絞る環境
@@ -25,12 +34,12 @@
 }{\endgroup}
 % ===== end =====
 
-\renewcommand{\topfraction}{0.90}
-\renewcommand{\bottomfraction}{0.90}
-\renewcommand{\textfraction}{0.10}
-\renewcommand{\floatpagefraction}{0.99}
+\renewcommand{\topfraction}{0.97}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.70}
 \renewcommand{\dbltopfraction}{0.88}
-\renewcommand{\dblfloatpagefraction}{0.92}
+\renewcommand{\dblfloatpagefraction}{0.70}
 
 \setlength{\floatsep}{4pt plus 1pt minus 1pt}
 \setlength{\textfloatsep}{6pt plus 1pt minus 1pt}
@@ -120,13 +129,13 @@ Much of the literature treats the inner disk, magnetosphere, and ergoregion with
 \section{Related Work}\label{sec:related}
 The Penrose process enables, in principle, energy extraction from negative-energy trajectories in the ergosphere, yet is often deemed astrophysically inefficient. The Blandford--Znajek mechanism extracts rotational energy electromagnetically to power polar jets; it explains radio-loud AGN but not radiative dominance in radio-quiet quasars. Slim disks and photon-trapping allow modest super-Eddington flows but do not address the spin ceiling. Quantum-gravity structures focus on singularity resolution rather than quasar phenomenology. By contrast, this work integrates a self-sustained, equatorial disk reheating channel with explicit transparency control (low compactness) and spin self-regulation.
 
-
 \section{Theoretical Framework}\label{sec:theory}
 
 \noindent All elements invoked below act outside the event horizon; the coupling operates in the ergoregion and deposits energy in the equatorial flow, avoiding assumptions about interior or singularity-scale physics.
 
 \subsection{Kerr Energy Reservoir}\label{sec:kerr}
 For a Kerr black hole of mass $M$ and spin $a_\ast$, the extractable rotational energy is
+\Needspace{12\baselineskip}
 \begin{equation}
 E_{\rm rot}(a_\ast)=\Bigg[1-\sqrt{\tfrac{1}{2}\Big(1+\sqrt{1-a_\ast^2}\Big)}\Bigg]\,Mc^2,
 \label{eq:Erot}
@@ -136,6 +145,7 @@ reaching $\sim0.29\,Mc^2$ as $a_\ast\to1$.
 
 \subsection{Spin-Triggered Coupling}\label{sec:coupling}
 We posit a threshold spin $\ath$ above which an ergoregion-coupled agent activates. The effective coupling follows
+\Needspace{7\baselineskip}
 \begin{equation}
 \epscoup(a_\ast)=
 \begin{cases}
@@ -144,6 +154,7 @@ We posit a threshold spin $\ath$ above which an ergoregion-coupled agent activat
 \end{cases}
 \label{eq:eps}
 \end{equation}
+where $\epsilon_{\max}$ is the saturation cap and $n$ controls activation sharpness.
 Unless noted, we adopt the following fiducials for figures and estimates: $M=10^9M_\odot$, $\eta_{\rm acc}=0.1$, $\epsilon_{\max}=0.1$, $n=2$, $R_0=10^2$, and $\alpha=50$; the illustrative threshold is $\ath\simeq0.97$.
 \noindent\emph{Micro-bridge.}
 While we keep microphysics agnostic, the fiducial range
@@ -162,10 +173,10 @@ The activation $\epsilon_{\rm coup}(a_*)$ is intentionally steep: $(a_{\rm th},n
 % === Figures tied to 3.2 (param space + onset) ===
 
 
-
-\begin{figure}[!b]
+%\FloatBarrier
+\begin{figure}[!htbp]
   \centering
-  \includegraphics[width=.92\linewidth]{Fig_Onset.pdf}\vspace{-2pt}
+  \includegraphics[width=.92\linewidth]{Fig_Onset.pdf}
   \caption{Spin-triggered onset governed by Eq.~\eqref{eq:eps}: peak $\Ltot/\LEdd$ (dimensionless) versus $a_\ast$ (dimensionless); dashed vertical line at $\ath=0.97$.}
   \label{fig:onset}
 \end{figure}
@@ -177,7 +188,7 @@ We allow the extracted rotational power to partition between a polar BZ jet and 
 P_{\rm ext}=P_{\rm jet}+P_{\rm eq},\qquad f_{\rm BZ}+f_{\rm eq}=1.
 \]
 Near $a_*\!\to\!1$, $f_{\rm eq}$ can become substantial (radio-quiet, radiation-dominated states), while $f_{\rm BZ}$ dominates in radio-loud systems; hybrid states are possible in transient MAD-like regimes.
-
+%\FloatBarrier
 \subsection{Mechanism sketch: a leaky equatorial return path}\label{sec:mech-sketch}
 \paragraph{Projectile sufficiency.}
 Reconnection ejecta (plasmoids) in the ergoregion carry specific energy $e$ and angular momentum $l$. A Penrose split requires a branch with $e-\Omega_H l<0$ (horizon condition). Tension-driven redistribution during ejection changes $l$ by $\Delta l\!\sim\!\mathcal{O}(r_{\rm g}v_\phi)$ and reconnection outflows can reach $v\!\sim\!0.1$–$0.5c$ in high-$S$ sheets; hence tens-of-percent shifts in $l$ suffice to place a fraction on the negative-energy branch, with the complement forming the gain branch (quasi-beam).
@@ -186,6 +197,7 @@ Near-extremal spin brings the ISCO into close contact with the ergoregion and en
 E - \Omega_H L \;<\; 0,
 \end{equation}
 so the black hole’s rotational energy pays for the escaping branch. The centrifugal barrier and toroidal tension form an equatorial nozzle, so a growing fraction of the circuit power vents as a collimated equatorial quasi-beam while the DC return still closes globally. A modest back-flow coupling ($\epsilon_{\rm coup}\!\sim\!10^{-2}$–$10^{-1}$) suffices to heat the inner disk and regenerate magnetic flux, closing a self-sustained loop. The active zone and leakage fraction increase monotonically with spin (and also depend nonlinearly on flux loading and accretion rate), with possible saturation arbitrarily close to the extremal limit.
+%\FloatBarrier
 \begin{figure*}[t]
   \centering
   \includegraphics[width=\textwidth]{fig_equatorial_trigger_schematic.pdf}
@@ -203,10 +215,10 @@ it reprocesses in the inner disk, and because the dissipation footprint is
 extended ($R_{\rm eff}\!\sim\!10^{2}$–$10^{3}\,r_g$), the pair compactness
 along the beam stays low, consistent with the transparency requirement of Eq.~(6).
 
-
+%\FloatBarrier
 \subsection{Self-Sustained Penrose Excitation}\label{sec:penrose}
 The mean extraction power is $\langle P_{\rm ext}\rangle=E_{\rm rot}/\tau$, and with duty cycle $d$ the instantaneous power during active phases is $P_{\rm ext}\sim\langle P_{\rm ext}\rangle/d$. Here $\tau$ denotes the effective extraction e-folding timescale of the rotational-energy reservoir, i.e., $\langle P_{\rm ext}\rangle=E_{\rm rot}/\tau$ using Eq.~\eqref{eq:Erot}.
-
+%\FloatBarrier
 \subsection{Disk Dissipation and Scale}\label{sec:diss}
 A fraction $\epscoup(a_\ast)$ of $P_{\rm ext}$ is deposited into the disk:
 \begin{equation}
@@ -222,7 +234,7 @@ R_{\rm eff}\approx R_0\Big[1+\alpha\Big(\frac{\epscoup}{\epsilon_{\max}}\Big)\Bi
 \end{equation}
 with $\rg=GM/c^2$, fiducial $R_0\sim10^2$ and $\alpha\sim50$.
 
-
+%\FloatBarrier
 \subsection{Transparency (Compactness Constraint)}\label{sec:transp}
 Transparency requires pair compactness
 \begin{equation}
@@ -232,7 +244,7 @@ Transparency requires pair compactness
 which couples Eqs.~\eqref{eq:Lself} and \eqref{eq:Reff} and motivates $R_{\rm eff}\sim10^2$--$10^3\,\rg$ during bright episodes.  
 \textit{We adopt $\ell\!\lesssim\!30$ as a conservative transparency threshold following classic compactness arguments; the precise value depends on geometry and spectrum and can be re-tuned in data applications. See, e.g., \citep{1984MNRAS.209..175S,LightmanZdziarski1987}.}
 
-
+%\FloatBarrier
 \subsection{Spin and Mass Evolution}\label{sec:evol}
 The horizon angular frequency is
 \begin{equation}
@@ -248,8 +260,9 @@ Evolution obeys
 \end{align}
 
 % === Figures tied to 3.6 (torque balance + spin track) ===
-\Needspace{20\baselineskip}
-\begin{figure}[!t]
+\begin{CrowdedFloats}
+\begin{figure}[!htbp]
+  \vspace*{2pt}
   \centering
   \includegraphics[width=.95\linewidth]{Fig3a.pdf}\\[4pt]
   \includegraphics[width=.95\linewidth]{Fig3b.pdf}
@@ -257,13 +270,14 @@ Evolution obeys
   \label{fig:fig3}
 \end{figure}
 
-\begin{figure}[!t]
+\begin{figure}[!htbp]
   \centering
   \includegraphics[width=\columnwidth,height=0.36\textheight,keepaspectratio]{fig2a_spin_evolution.pdf}
   \caption{Representative time track of $a_\ast$ (dimensionless) solved from Eqs.~\eqref{eq:dM}--\eqref{eq:da}.}
   \label{fig:spin-evo}
 \end{figure}
-
+\end{CrowdedFloats}
+%\FloatBarrier
 \subsection{Net Luminosity}\label{sec:lum}
 \begin{equation}
 \Ltot=L_{\rm acc}+L_{\rm self},\qquad
@@ -278,8 +292,9 @@ $L_{\rm self}\!\sim\!(E_{\rm rot}/\tau)\,(\epscoup/d)\!\approx\!1.4\times10^{47}
 and $2$–$3\,\LEdd$ when combined with concurrent accretion, while $da_\ast/dt<0$ prevents overspin.
 
 % === Figures tied to 3.7 (timescale + L mapping) ===
-\Needspace{18\baselineskip}
-\begin{figure}[!t]
+%\Needspace{18\baselineskip}$
+\begin{figure}[!htbp]
+  \vspace*{2pt}
   \centering
   \includegraphics[width=.95\linewidth]{Fig4a.pdf}\\[4pt]
   \includegraphics[width=.95\linewidth]{Fig4b.pdf}
@@ -287,14 +302,13 @@ and $2$–$3\,\LEdd$ when combined with concurrent accretion, while $da_\ast/dt<
   \label{fig:fig4}
 \end{figure}
 
-
 \section{Results}\label{sec:results}
 The figures embedded in Sec.~\ref{sec:theory} visualize each theoretical ingredient immediately after the defining equations to avoid misalignment between formulae and diagnostics. Here we summarize cross-implications and observational hooks.
-
+%\FloatBarrier
 \subsection{Observational Hooks}\label{sec:obs}
-\Needspace{12\baselineskip} % 問題が出たらこの行は削除してOK
 
-\begin{figure}[!t]
+\begin{figure}[!htbp]
+  \vspace*{2pt}
   \centering
   \includegraphics[width=.95\linewidth]{Fig5a.pdf}\\[4pt]
   \includegraphics[width=.95\linewidth]{Fig5b.pdf}
@@ -308,7 +322,8 @@ The figures embedded in Sec.~\ref{sec:theory} visualize each theoretical ingredi
 \begin{deluxetable}{lccc}
 \tablecaption{Mechanism contrast (schematic).\label{tab:mech-contrast}}
 \tabletypesize{\footnotesize}
-\tablewidth{\textwidth}
+\tablewidth{0pt}
+%\tablewidth{\textwidth}
 \tablehead{
   \colhead{} & \colhead{$L/L_{\rm Edd}>1$} & \colhead{spin ceiling} & \colhead{channel}
 }
@@ -319,14 +334,15 @@ BZ/MAD           & indirect                         & yes ($a_{\rm eq}\sim0.5$--
 \enddata
 \end{deluxetable}
 
-\begin{figure}[!t]
+\begin{figure}[tbp]
   \centering
-  \includegraphics[width=.92\linewidth]{fig10a_Reff100.pdf}\\[-1pt]
-  \includegraphics[width=.92\linewidth]{fig10b_Reff1000.pdf}\vspace{-2pt}
+  \includegraphics[width=.92\linewidth]{fig10a_Reff100.pdf}
+  \includegraphics[width=.92\linewidth]{fig10b_Reff1000.pdf}
   \caption{Parameter space implied by Eq.~\eqref{eq:eps} and the compactness constraint Eq.~\eqref{eq:ell}. \textbf{(a)} $R_{\rm eff}=100\,\rg$, \textbf{(b)} $R_{\rm eff}=1000\,\rg$. Color encodes peak $\Ltot/\LEdd$; black contour shows $\ell=30$. Line styles/markers are chosen to be colorblind-friendly in the source figures. Fiducials: $M=10^9M_\odot$, $\eta_{\rm acc}=0.1$, $\epsilon_{\max}=0.1$, $n=2$, $R_0=10^2$, $\alpha=50$.\\
   \emph{Interpretation note:} color encodes the \emph{peak} $L_{\rm tot}/L_{\rm Edd}$ (dimensionless); the black contour marks $\ell{=}30$ (pair-compactness threshold). Viable solutions lie \emph{outside} the contour; bright but compact regions are disfavored.}
   \label{fig:fig1}
 \end{figure}
+%\FloatBarrier
 \section{Discussion}\label{sec:discussion}
 These bounds align with Fig.~\ref{fig:fig1} and are sufficient to reach $L/\LEdd\sim2$--$3$ with rarer $5$--$10\times$ excursions. Slim disks allow modest super-Eddington flows but no spin ceiling. BZ/MAD explain jet power yet not the radiative dominance of radio-quiet quasars. This framework ties hyperluminous output and the spin ceiling via near-extremal, equatorial coupling.
 
@@ -369,6 +385,7 @@ Self-sustained Penrose excitation near extremal Kerr SMBHs can inject rotational
 
 % ---------------- Appendix ----------------
 \clearpage
+\FloatBarrier
 \appendix
 
 \section{Candidate Gallery}\label{app:candidates}
@@ -422,6 +439,7 @@ I also thank colleagues and readers who provided critical comments on early draf
 \software{\texttt{latexmk}, \texttt{AASTeX701}}
 
 \nocite{*}
+%\balance
 \bibliographystyle{aasjournalv7}
 \bibliography{main}
 
