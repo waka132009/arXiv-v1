@@ -12,6 +12,11 @@
 \usepackage{balance}
 \usepackage{flafter} % 図が参照より前に出ない保険
 
+% 二段図の許容量を増やす（団子解消に効く）
+\setcounter{dbltopnumber}{2}
+\renewcommand{\topfraction}{.85}
+\renewcommand{\floatpagefraction}{.7}
+
 \makeatletter
 \def\fps@figure{!htbp}
 \def\fps@table{!htbp}
@@ -198,7 +203,7 @@ E - \Omega_H L \;<\; 0,
 \end{equation}
 so the black hole’s rotational energy pays for the escaping branch. The centrifugal barrier and toroidal tension form an equatorial nozzle, so a growing fraction of the circuit power vents as a collimated equatorial quasi-beam while the DC return still closes globally. A modest back-flow coupling ($\epsilon_{\rm coup}\!\sim\!10^{-2}$–$10^{-1}$) suffices to heat the inner disk and regenerate magnetic flux, closing a self-sustained loop. The active zone and leakage fraction increase monotonically with spin (and also depend nonlinearly on flux loading and accretion rate), with possible saturation arbitrarily close to the extremal limit.
 %\FloatBarrier
-\begin{figure*}[t]
+\begin{figure*}[t!]
   \centering
   \includegraphics[width=\textwidth]{fig_equatorial_trigger_schematic.pdf}
   \caption{Schematic near $a_*\!\to\!1$: an equatorial return current sheet at the ISCO–ergoregion interface becomes plasmoid-dominated; a Penrose-like split sends a negative-energy branch into the hole and a gain branch into a narrow equatorial quasi-beam, part of which returns to heat the inner disk (self-sustained loop).}
