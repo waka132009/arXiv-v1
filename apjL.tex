@@ -1,0 +1,124 @@
+## ApJL（V1）.tex スケルトン（AASTeX701, two-column）
+
+```tex
+% ------------------------------
+% ApJL V1 — Minimal Letter (≤3500 words, ≤5 figures/tables)
+% ------------------------------
+\documentclass[twocolumn]{aastex701}
+
+% Packages (minimal)
+\usepackage{amsmath, amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\graphicspath{{figs/}}
+\usepackage[section]{placeins}
+\usepackage{dblfloatfix}
+\usepackage{flafter}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+% Float tuning
+\makeatletter
+  \def\fps@figure{!htbp}
+  \def\fps@table{!htbp}
+\makeatother
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{3}
+\setcounter{totalnumber}{6}
+\setcounter{dbltopnumber}{1}
+\renewcommand{\topfraction}{0.97}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.70}
+\renewcommand{\dbltopfraction}{0.88}
+\renewcommand{\dblfloatpagefraction}{0.70}
+
+% Macros (examples)
+\newcommand{\LEdd}{L_{\rm Edd}}
+\newcommand{\ath}{a_{\rm th}}
+\newcommand{\epsc}{\epsilon_{\rm coup}}
+\newcommand{\rg}{r_{\rm g}}
+
+\shorttitle{Equatorial Penrose-like Coupling}
+\shortauthors{Wakabayashi}
+
+\begin{document}
+
+\title{Self-Sustained Penrose Excitation of Accretion Disks:\\ A Spin-Regulated Mechanism for Super-Eddington Quasar Luminosities}
+
+\author[0000-0008-1891-4579]{Jun Wakabayashi}
+\affiliation{Independent Researcher, Japan}
+
+% ---- Abstract (≤ 250 words) ----
+\begin{abstract}
+Quasars often radiate at several to ten times the Eddington limit of their central SMBHs.
+We propose a self-sustained, equatorial Penrose-like excitation that operates at the
+ISCO–ergoregion interface just outside the horizon as the spin approaches unity ($a_*\!\to\!1$).
+Even modest effective coupling ($\epsilon_{\rm coup}\!\sim\!10^{-2}$–$10^{-1}$) yields on average
+$2$–$3\times\LEdd$, with occasional $5$–$10\times$ episodes when the dissipation footprint is extended
+and transparent ($R_{\rm eff}\!\sim\!10^{2}$–$10^{3}\,r_g$). We adopt a phenomenological framework and
+do not fix the microphysics; the results depend on a small set of effective parameters (plotted
+luminosities are \textit{isotropic-equivalent} unless noted). Crucially, the mechanism is confined to
+the ergoregion and equatorial disk—i.e., it is horizon-exterior and therefore empirically testable;
+we provide observational hooks and explicit falsification criteria.
+\end{abstract}
+% 1) Problem & gap
+% 2) New channel (equatorial Penrose-like, ISCO–ergoregion interface)
+% 3) Threshold law eps_coup(a*) and transparency guard l \lesssim 30
+% 4) Minimal luminosity model L/LEdd = lambda0 + G * eps_coup(a*)
+% 5) Falsifiable hooks (lags / polarization / MeV shoulder) & null criteria
+% Keep \le 250 words.
+\end{abstract}
+
+\keywords{accretion, accretion disks — black hole physics — quasars: general}
+
+% ---- 1. Introduction (4–6 paragraphs max) ----
+\section{Introduction}
+% Ultra-luminous quasars, spin ceiling, limits of viscous accretion (thin/slim)
+% Motivate equatorial, self-sustained Penrose-like coupling
+
+% ---- 2. Minimal Framework ----
+\section{Minimal Framework}
+We posit a near-equatorial coupling at the ISCO–ergoregion interface. The activation of the coupling efficiency follows a threshold law
+\begin{equation}
+\epsc(a_*) = \eps_{\max} \left( \frac{a_* - \ath}{1 - \ath} \right)^{n},\quad a_* > \ath,
+\end{equation}
+leading to a minimal luminosity model
+\begin{equation}
+\frac{L}{\LEdd} = \lambda_0 + G\,\epsc(a_*).\label{eq:Lmodel}
+\end{equation}
+A compactness guard limits observability,
+\begin{equation}
+\ell \simeq \frac{1836}{R_{\rm eff}/\rg}\,\frac{L}{\LEdd} \lesssim 30.
+\end{equation}
+
+% ---- 3. Observational Hooks & Null Criteria ----
+\section{Observational Hooks and Null Criteria}
+% Bulleted, concise
+% - Energy-dependent Fe K\alpha / UV lags broadening
+% - Polarization angle/degree vs spin (equatorial dominance)
+% - Soft MeV shoulder
+% Null: (i) persistent absence of the shoulder; (ii) no energy dependence in X->UV lags; (iii) no anti-correlation between L_bol and a*; (iv) isotropic/polar-dominated polarization in high-spin, high-\lambda samples
+
+% ---- 4. Separation from Polar BZ Power ----
+\section{Separation from Polar Power}
+External power splits as $P_{\rm ext}=P_{\rm BZ}+P_{\rm eq}$; the equatorial fraction rises as $a_*\to1$ while respecting the transparency bound.
+
+% ---- 5. Conclusions ----
+\section{Conclusions}
+% One-paragraph summary + immediate tests + link to OSF/GitHub for details
+
+% ---- Figures (≤5 total) ----
+% Fig1: Schematic (equatorial quasi-beam & power split)
+% Fig2: Threshold activation eps_coup(a*) with sensitivity to a_th, n
+% Fig3: L/LEdd vs a* with \ell=30 cap line (several R_eff)
+% Fig4: Observational hooks panel (conceptual)
+
+\acknowledgments
+% Acknowledge informal feedback, tools, etc.
+
+\software{AASTeX701, Python 3.12, Matplotlib}
+
+\dataavailability{Supplementary materials at OSF DOI and project GitHub repository.}
+
+\end{document}
+```
