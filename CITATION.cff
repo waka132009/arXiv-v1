@@ -1,3 +1,17 @@
 cff-version: 1.2.0
-title: Penrose Handoff Transfer Kit
-date-released: 2025-09-21
+title: Self-Sustained Penrose Excitation of Accretion Disks
+authors:
+  - family-names: Wakabayashi
+    given-names: Jun
+date-released: 2025-10-04
+doi: 10.17605/OSF.IO/62GZV
+license: CC-BY-4.0
+preferred-citation:
+  type: misc
+  authors:
+    - family-names: Wakabayashi
+      given-names: Jun
+  title: Self-Sustained Penrose Excitation of Accretion Disks (OSF Registration V1)
+  year: 2025
+  doi: 10.17605/OSF.IO/62GZV
+  url: https://doi.org/10.17605/OSF.IO/62GZV

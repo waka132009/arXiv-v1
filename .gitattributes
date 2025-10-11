@@ -1,2 +1,67 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# 既定はLF
+* text eol=lf
+
+# --- テキスト系（LF固定） ---
+*.tex   text eol=lf
+*.sty   text eol=lf
+*.cls   text eol=lf
+*.bib   text eol=lf
+*.md    text eol=lf
+*.txt   text eol=lf
+*.csv   text eol=lf
+*.tsv   text eol=lf
+*.json  text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.xml   text eol=lf
+*.html  text eol=lf
+*.css   text eol=lf
+*.js    text eol=lf
+*.ts    text eol=lf
+*.py    text eol=lf
+*.ipynb text eol=lf
+*.sh    text eol=lf
+*.ps1   text eol=lf
+*.R     text eol=lf
+*.cpp   text eol=lf
+*.c     text eol=lf
+*.h     text eol=lf
+*.hpp   text eol=lf
+*.go    text eol=lf
+*.rs    text eol=lf
+*.lua   text eol=lf
+*.pl    text eol=lf
+*.m     text eol=lf
+
+# --- Windowsバッチ（必要ならCRLFに固定） ---
+# CMD/一部ツールはCRLFが無難 → バッチ配布があるなら有効化
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# --- バイナリ ---
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.svg  text eol=lf
+*.ico  binary
+*.ttf  binary
+*.otf  binary
+*.zip  binary
+*.7z   binary
+*.gz   binary
+*.bz2  binary
+*.xz   binary
+*.tar  binary
+
+# --- TeX生成物は一応バイナリ or 無視（.gitignore側でも可）---
+*.aux   -text
+*.bbl   -text
+*.blg   -text
+*.log   -text
+*.out   -text
+*.toc   -text
+*.lof   -text
+*.lot   -text
+
