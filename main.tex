@@ -147,7 +147,6 @@ E_{\rm rot}(a_\ast)=\Bigg[1-\sqrt{\tfrac{1}{2}\Big(1+\sqrt{1-a_\ast^2}\Big)}\Big
 \end{equation}
 reaching $\sim0.29\,Mc^2$ as $a_\ast\to1$.
 
-
 \subsection{Spin-Triggered Coupling}\label{sec:coupling}
 We posit a threshold spin $\ath$ above which an ergoregion-coupled agent activates. The effective coupling follows
 \Needspace{7\baselineskip}
@@ -160,6 +159,18 @@ We posit a threshold spin $\ath$ above which an ergoregion-coupled agent activat
 \label{eq:eps}
 \end{equation}
 where $\epsilon_{\max}$ is the saturation cap and $n$ controls activation sharpness.
+% === Figures tied to 3.2 (param space + onset) ===
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=.92\linewidth]{Fig_Onset.pdf}
+  \caption{Spin-triggered onset governed by Eq.~\eqref{eq:eps}: peak $\Ltot/\LEdd$ (dimensionless) versus $a_\ast$ (dimensionless); dashed vertical line at $\ath=0.97$.}
+  \label{fig:onset}
+\end{figure}
+% --- Takeaway first (3行以内) ---
+\noindent\textit{Activation threshold.}
+The equatorial coupling turns on steeply once the spin exceeds a threshold \(a_{\rm th}\).
+In our fiducial calibration, the rise is rapid near \(a_\ast \simeq 0.97\), setting the lever for both luminosity boost and spin regulation (cf.\ Eqs.~\eqref{eq:eps}--\eqref{eq:Ltot}).
+\FloatBarrier
 Unless noted, we adopt the following fiducials for figures and estimates: $M=10^9M_\odot$, $\eta_{\rm acc}=0.1$, $\epsilon_{\max}=0.1$, $n=2$, $R_0=10^2$, and $\alpha=50$; the illustrative threshold is $\ath\simeq0.97$.
 \noindent\emph{Micro-bridge.}
 While we keep microphysics agnostic, the fiducial range
@@ -174,17 +185,6 @@ future simulations.
 The cap $\epsilon_{\max}$ limits equatorial deposition efficiency by energy-budget and pair-compactness constraints; $n$ controls activation sharpness above $\ath$ as an effective criticality index of the coupling geometry. $(R_0,\alpha)$ regulate the dissipation footprint to maintain transparency, trading compactness against reprocessing. We restrict these to physically plausible ranges and view them as interfaces for future GRMHD/plasma calibration, not curve-fitting knobs.
 \paragraph{Sensitivity and saturation.}
 The activation $\epsilon_{\rm coup}(a_*)$ is intentionally steep: $(a_{\rm th},n)$ set the narrowness of the “spin ceiling”. In practice $\epsilon_{\rm coup}$ and the leakage fraction depend nonlinearly on flux loading and $\dot M$, with possible saturation arbitrarily close to the extremal limit. We therefore treat $(a_{\rm th},n,\epsilon_{\max},\alpha)$ as calibration parameters to be fixed by future GRMHD-in-ergoregion testbeds.
-
-% === Figures tied to 3.2 (param space + onset) ===
-
-
-%\FloatBarrier
-\begin{figure}[!htbp]
-  \centering
-  \includegraphics[width=.92\linewidth]{Fig_Onset.pdf}
-  \caption{Spin-triggered onset governed by Eq.~\eqref{eq:eps}: peak $\Ltot/\LEdd$ (dimensionless) versus $a_\ast$ (dimensionless); dashed vertical line at $\ath=0.97$.}
-  \label{fig:onset}
-\end{figure}
 
 
 \paragraph{Power partition.}
@@ -309,10 +309,29 @@ and $2$–$3\,\LEdd$ when combined with concurrent accretion, while $da_\ast/dt<
 
 \section{Results}\label{sec:results}
 The figures embedded in Sec.~\ref{sec:theory} visualize each theoretical ingredient immediately after the defining equations to avoid misalignment between formulae and diagnostics. Here we summarize cross-implications and observational hooks.
-%\FloatBarrier
-\subsection{Observational Hooks}\label{sec:obs}
 
-\begin{figure}[!htbp]
+\subsection{Observational Hooks}\label{sec:obs}
+\suppressfloats[t]
+\noindent\textit{Why this matters.} What to look for and how to falsify, in plain terms.
+
+% --- Table 1: その場に出す（非フロート化） ---
+\startlongtable
+\begin{deluxetable}{lccc}
+\tablecaption{Mechanism contrast (schematic).\label{tab:mech-contrast}}
+\tabletypesize{\footnotesize}
+\tablewidth{0pt}
+\tablehead{
+  \colhead{} & \colhead{$L/L_{\rm Edd}>1$} & \colhead{spin ceiling} & \colhead{channel}
+}
+\startdata
+Slim disk        & yes (advective)                  & no                                & radiation (disk) \\
+BZ/MAD           & indirect                         & yes ($a_{\rm eq}\sim0.5$--$0.7$)  & polar Poynting (jet) \\
+\textbf{This work} & \textbf{yes (equatorial)}         & \textbf{yes ($a_{\rm eq}\approx a_{\rm th}$)} & \textbf{equatorial Penrose-like} \\
+\enddata
+\end{deluxetable}
+
+% --- 図はトップ優先で近くに出す ---
+\begin{figure}[t!]
   \vspace*{2pt}
   \centering
   \includegraphics[width=.95\linewidth]{Fig5a.pdf}\\[4pt]
@@ -323,21 +342,7 @@ The figures embedded in Sec.~\ref{sec:theory} visualize each theoretical ingredi
   \label{fig:fig5}
 \end{figure}
 
-% --- Table 1: deluxetable* を単独で ---
-\begin{deluxetable}{lccc}
-\tablecaption{Mechanism contrast (schematic).\label{tab:mech-contrast}}
-\tabletypesize{\footnotesize}
-\tablewidth{0pt}
-%\tablewidth{\textwidth}
-\tablehead{
-  \colhead{} & \colhead{$L/L_{\rm Edd}>1$} & \colhead{spin ceiling} & \colhead{channel}
-}
-\startdata
-Slim disk        & yes (advective)                  & no                                & radiation (disk) \\
-BZ/MAD           & indirect                         & yes ($a_{\rm eq}\sim0.5$--$0.7$)  & polar Poynting (jet) \\
-\textbf{This work} & \textbf{yes (equatorial)}         & \textbf{yes ($a_{\rm eq}\approx a_{\rm th}$)} & \textbf{equatorial Penrose-like} \\
-\enddata
-\end{deluxetable}
+\FloatBarrier
 
 \begin{figure}[tbp]
   \centering
@@ -460,8 +465,6 @@ We highlight three testable signatures expected to co-occur at high spin and hig
 \item \textbf{Equator-aligned polarization}: PA parallel to the disk and degree rising with spin/$\lambda$.
 \end{itemize}
 \textbf{Falsify} if $\ge2$ of the above are absent in a high-spin, high-$\lambda$ sample after excluding heavy absorption/extreme inclination and $\ell\!\gtrsim\!30$ cases.
-
-
 
 \section{Position in Context (Concise)}
 We briefly situate the proposed equatorial Penrose-like coupling relative to BZ/MAD jets, reconnection-driven coronal heating, and reverberation/polarimetry constraints; an expanded survey is provided in the OSF Appendix.
