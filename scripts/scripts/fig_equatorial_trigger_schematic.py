@@ -154,7 +154,7 @@ def build_figure(n_plasmoids: int = 7,
         handles = [
             Line2D([0], [0], lw=sheet_width, color=COL["sheet"], alpha=0.18,
                    label="equatorial return current sheet"),  # 帯の見た目に合わせる
-            Line2D([0], [0], lw=2.0, color=COL["sheet"], label="_nolegend_"),  # 枠線は凡例に出さない
+#            Line2D([0], [0], lw=2.0, color=COL["sheet"], label="_nolegend_"),  # 枠線は凡例に出さない
             Line2D([0], [0], lw=1.2, color=COL["erg"], ls=(0, (6, 4)),
                    label="ergosurface (schematic)"),
             Line2D([0], [0], lw=1.2, color=COL["isco"],
