@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \graphicspath{{figs/}}
 \usepackage[section]{placeins}
+\usepackage{placeins}
 \usepackage{needspace}
 \usepackage{dblfloatfix}
 \usepackage{balance}
@@ -412,16 +413,26 @@ If \emph{two or more} items above hold simultaneously for the same high-spin, hi
 \section{Conclusion}\label{sec:conclusion}
 Self-sustained Penrose excitation near extremal Kerr SMBHs can inject rotational energy into the accretion disk, yielding sustained $2$--$3\times$ Eddington with rarer $5$--$10\times$ episodes while enforcing a spin ceiling.
 
+% ---- 両段フロートの上部占有を少し緩めて、下に本文が入る余白を作る ----
+\makeatletter
+\setcounter{dbltopnumber}{2}
+\renewcommand{\dbltopfraction}{.95}
+\renewcommand{\dblfloatpagefraction}{.80}
+\renewcommand{\textfraction}{.05}
+\makeatother
 % ---------------- Appendix ----------------
 \clearpage
-\FloatBarrier
+%\FloatBarrier
 \appendix
 
-\section{Candidate Gallery}\label{app:candidates}
-Representative objects; values are indicative.
-
-\begin{deluxetable*}{lcccc}
-\tabletypesize{\scriptsize}
+% 表の密度と横幅を調整（このブロック内だけ有効）
+\floattable
+\begingroup
+\setlength{\tabcolsep}{5.0pt}   % 列間ちょい詰め（既定6pt）
+\def\arraystretch{1.08}         % 行間ほんの少しだけ（読みやすさは維持）
+\begin{deluxetable*}{lcccc}[t]
+\tablewidth{0pt}
+\tabletypesize{\small}
 \tablecaption{Illustrative luminous quasar candidates\label{tab:cands}}
 \tablehead{
   \colhead{Name} & \colhead{$z$} &
@@ -440,6 +451,11 @@ J0439+1634     & 6.51  & $\sim7\times10^{9}$    & $\sim2{-}3$ & \parbox[t]{0.30\
 \tablenotetext{c}{High-$z$ mass methods differ (reflection vs.\ continuum).}
 \tablenotetext{d}{Historical lensing debate; values assume de-lensing consensus.}
 \end{deluxetable*}
+\endgroup
+\section{Candidate Gallery}\label{app:candidates}
+Representative objects; values are indicative.
+%\clearpage
+
 
 \paragraph{Cautionary note.}
 Claims here are modular and falsifiable. Alternative mechanisms may dominate in other classes.
