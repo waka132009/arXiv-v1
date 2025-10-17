@@ -413,51 +413,35 @@ If \emph{two or more} items above hold simultaneously for the same high-spin, hi
 \section{Conclusion}\label{sec:conclusion}
 Self-sustained Penrose excitation near extremal Kerr SMBHs can inject rotational energy into the accretion disk, yielding sustained $2$--$3\times$ Eddington with rarer $5$--$10\times$ episodes while enforcing a spin ceiling.
 
-% ---- 両段フロートの上部占有を少し緩めて、下に本文が入る余白を作る ----
-\makeatletter
-\setcounter{dbltopnumber}{2}
-\renewcommand{\dbltopfraction}{.95}
-\renewcommand{\dblfloatpagefraction}{.80}
-\renewcommand{\textfraction}{.05}
-\makeatother
 % ---------------- Appendix ----------------
 \clearpage
-%\FloatBarrier
 \appendix
 
-% 表の密度と横幅を調整（このブロック内だけ有効）
 \floattable
-\begingroup
-\setlength{\tabcolsep}{5.0pt}   % 列間ちょい詰め（既定6pt）
-\def\arraystretch{1.08}         % 行間ほんの少しだけ（読みやすさは維持）
-\begin{deluxetable*}{lcccc}[t]
+\begin{deluxetable*}{lcccc}[p]   % [t]で上部固定。収まらなければ[p]に
 \tablewidth{0pt}
-\tabletypesize{\small}
-\tablecaption{Illustrative luminous quasar candidates\label{tab:cands}}
+\tabletypesize{\normalsize}           % 大きく見せたい：\normalsize / 収めたい：\scriptsize
+\tablecaption{\textbf{Candidate Gallery} — Representative objects; values are indicative.\label{tab:cands}}
 \tablehead{
   \colhead{Name} & \colhead{$z$} &
   \colhead{$M_{\rm BH}/M_\odot$} & \colhead{$L/L_{\rm Edd}$} &
   \colhead{Notes}
 }
 \startdata
-TON 618        & 2.219 & $\sim6.6\times10^{10}$ & $\sim3$     & \parbox[t]{0.30\textwidth}{Extremely massive; radio-loud; literature refs.\tablenotemark{a}}\\
-J2157-3602     & 4.75  & $\sim3.4\times10^{9}$  & $\gtrsim10$ & \parbox[t]{0.30\textwidth}{Hyper-luminous; super-Eddington episode indications.\tablenotemark{b}}\\
-J0100+2802     & 6.30  & $\sim1.2\times10^{10}$ & $\sim2$     & \parbox[t]{0.30\textwidth}{$z>6$ luminous quasar.\tablenotemark{c}}\\
-J0439+1634     & 6.51  & $\sim7\times10^{9}$    & $\sim2{-}3$ & \parbox[t]{0.30\textwidth}{Possible lensing history.\tablenotemark{d}}\\
+TON 618        & 2.219 & $\sim6.6\times10^{10}$ & $\sim3$     & \parbox[t]{0.36\textwidth}{Extremely massive; radio-loud; literature refs.\tablenotemark{a}}\\
+J2157-3602     & 4.75  & $\sim3.4\times10^{9}$  & $\gtrsim10$ & \parbox[t]{0.36\textwidth}{Hyper-luminous; super-Eddington episode indications.\tablenotemark{b}}\\
+J0100+2802     & 6.30  & $\sim1.2\times10^{10}$ & $\sim2$     & \parbox[t]{0.36\textwidth}{$z>6$ luminous quasar.\tablenotemark{c}}\\
+J0439+1634     & 6.51  & $\sim7\times10^{9}$    & $\sim2{-}3$ & \parbox[t]{0.36\textwidth}{Possible lensing history.\tablenotemark{d}}\\
 \enddata
-\tablecomments{Values are order-of-magnitude illustrations; object-level sourcing is beyond scope.}
+\tablecomments{Values are illustrative; per-object sourcing is out of scope.}
 \tablenotetext{a}{Virial-factor dominated systematics; radio-loud bias possible.}
-\tablenotetext{b}{Line-width/bolometric corrections carry $\gtrsim0.3$ dex systematics.}
+\tablenotetext{b}{Bolometric/line-width systematics $\gtrsim 0.3$ dex.}
 \tablenotetext{c}{High-$z$ mass methods differ (reflection vs.\ continuum).}
 \tablenotetext{d}{Historical lensing debate; values assume de-lensing consensus.}
 \end{deluxetable*}
-\endgroup
-\section{Candidate Gallery}\label{app:candidates}
-Representative objects; values are indicative.
-%\clearpage
 
-
-\paragraph{Cautionary note.}
+\FloatBarrier
+\section*{Cautionary note.}
 Claims here are modular and falsifiable. Alternative mechanisms may dominate in other classes.
 
 \section*{Author contributions}
