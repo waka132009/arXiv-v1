@@ -350,11 +350,12 @@ We highlight three testable signatures expected to co-occur at high spin and hig
   \label{fig:fig5}
 \end{figure}
 
-\FloatBarrier
+%\FloatBarrier
 \noindent\textit{At a glance.} How power repartitions at high $\lambda$ across mechanisms.
-% --- Table 1: その場に出す（非フロート化） ---
-\startlongtable
-\begin{deluxetable}{lccc}
+
+\floattable
+\begin{deluxetable*}{lccc}[t] % ← ★付き＋[t]で上部固定（専用ページなら [p]）
+\tablenum{1}
 \tablecaption{\textbf{Bottom line:} the equatorial channel sustains $L/L_{\rm Edd}\!>\!1$ \emph{and} imposes a spin ceiling $a_{\rm eq}\!\approx\!a_{\rm th}$, complementary to slim-disk (no ceiling) and BZ/MAD (polar power, $a_{\rm eq}\!\sim\!0.5$–$0.7$).\label{tab:mech-contrast}}
 \tabletypesize{\footnotesize}
 \tablewidth{0pt}
@@ -362,16 +363,16 @@ We highlight three testable signatures expected to co-occur at high spin and hig
   \colhead{} & \colhead{$L/L_{\rm Edd}>1$} & \colhead{spin ceiling} & \colhead{channel}
 }
 \startdata
-Slim disk        & yes (advective)                  & no                                & radiation (disk) \\
-BZ/MAD           & indirect                         & yes ($a_{\rm eq}\sim0.5$--$0.7$)  & polar Poynting (jet) \\
+Slim disk        & yes (advective)                  & no                               & radiation (disk) \\
+BZ/MAD           & indirect                         & yes ($a_{\rm eq}\sim0.5$--$0.7$) & polar Poynting (jet) \\
 \textbf{This work} & \textbf{yes (equatorial)}         & \textbf{yes ($a_{\rm eq}\approx a_{\rm th}$)} & \textbf{equatorial Penrose-like} \\
 \enddata
-\end{deluxetable}
-
+\end{deluxetable*}
 % （必要なら直前に一度だけ） 
 \FloatBarrier
+\suppressfloats[b]
 
-\begin{figure*}[t!]
+\begin{figure*}[p!]
   \centering
   \plottwo{fig10a_Reff100.pdf}{fig10b_Reff1000.pdf}
   \caption{\textbf{Parameter space implied by Eq.~\eqref{eq:eps} and the compactness constraint Eq.~\eqref{eq:ell}.}
