@@ -372,31 +372,39 @@ BZ/MAD           & indirect                         & yes ($a_{\rm eq}\sim0.5$--
 \FloatBarrier
 \suppressfloats[b]
 
-% --- Parameter-space split (single-column figures) ---
+% --- Parameter-space (panel a) : make it slightly shorter to allow text insertion ---
 \begin{figure}[t!]
   \centering
-  \includegraphics[width=0.98\columnwidth]{fig10a_Reff100.pdf}
+  \includegraphics[width=0.95\columnwidth,trim=0 6 0 4,clip]{fig10a_Reff100.pdf}
   \vspace{-2pt}
-  \caption{\textbf{Viable region lies \emph{outside} the $\ell{=}30$ contour (a).}
-  $R_{\rm eff}=100\,r_g$. Color encodes peak $L_{\rm tot}/L_{\rm Edd}$; the black contour marks $\ell{=}30$.}
+  \caption{\textbf{Outside the $\ell{=}30$ contour (a).}
+  $R_{\rm eff}=100\,r_g$; color encodes peak $L_{\rm tot}/L_{\rm Edd}$; black: $\ell{=}30$.}
   \label{fig:param-a}
 \end{figure}
 
-\begin{figure}[b!]
-  \centering
-  \includegraphics[width=0.98\columnwidth]{fig10b_Reff1000.pdf}
-  \vspace{-2pt}
-  \caption{\textbf{Viable region lies \emph{outside} the $\ell{=}30$ contour (b).}
-  $R_{\rm eff}=1000\,r_g$. Color encodes peak $L_{\rm tot}/L_{\rm Edd}$; the black contour marks $\ell{=}30$.}
-  \label{fig:param-b}
-\end{figure}
+%\suppressfloats[t]
+
 
 \section{Discussion}\label{sec:discussion}
 These bounds align with Fig.~\ref{fig:param-a}-\ref{fig:param-b} and are sufficient to reach $L/\LEdd\sim2$--$3$ with rarer $5$--$10\times$ excursions. Slim disks allow modest super-Eddington flows but no spin ceiling. BZ/MAD explain jet power yet not the radiative dominance of radio-quiet quasars. This framework ties hyperluminous output and the spin ceiling via near-extremal, equatorial coupling.
 
+
+% --- Parameter-space (panel b) : make it slightly shorter to allow text insertion ---
+\begin{figure}[t!]
+  \centering
+  \includegraphics[width=0.95\columnwidth,trim=0 6 0 4,clip]{fig10b_Reff1000.pdf}
+  \vspace{-2pt}
+  \caption{\textbf{Outside the $\ell{=}30$ contour (b).}
+  $R_{\rm eff}=1000\,r_g$; color encodes peak $L_{\rm tot}/L_{\rm Edd}$; black: $\ell{=}30$.}
+  \label{fig:param-b}
+\end{figure}
+
+\FloatBarrier
+
 \medskip
 \noindent\textit{Relation to Blandford--Znajek jets.}
 BZ is polar/Poynting-dominated; our mechanism is equatorial/radiative. Hybrid states and an anti-correlated see-saw are expected; counterexamples (simultaneously strong jets and high radiative output) can occur in transitional MAD-like regimes.
+
 
 \paragraph{Power partition between polar and equatorial channels.}
 We model the spin-extraction power as a partition between a polar Blandford--Znajek (BZ) channel and an equatorial feedback channel,
