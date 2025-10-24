@@ -80,11 +80,16 @@
 
 % ===== in preamble (before \begin{document}) =====
 % one-liners
+%\providecommand{\tldr}[1]{%
+%  \noindent\textit{In brief}\ \textemdash\ #1%
+%  \par\smallskip
+%  \noindent\rule{\columnwidth}{0.2pt}%
+%  \par\medskip
+%}
 \providecommand{\tldr}[1]{%
   \noindent\textit{In brief}\ \textemdash\ #1%
   \par\smallskip
-  \noindent\rule{\columnwidth}{0.2pt}%
-  \par\medskip
+  \noindent\rule{\columnwidth}{0.2pt}\par\medskip
 }
 
 % "See also" one-liner（AASTeX安全・改行と余白つき）
