@@ -64,6 +64,14 @@
 \newcommand{\epscoup}{\epsilon_{\rm coup}}
 \newcommand{\aeq}{a_{\rm eq}}
 
+% tight enumerate/itemize （環境ラッパ・パッケージ不要）
+\newenvironment{tenumerate}{%
+  \begin{enumerate}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}\setlength{\parskip}{0pt}%
+}{\end{enumerate}}
+\newenvironment{titemize}{%
+  \begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}\setlength{\parskip}{0pt}%
+}{\end{itemize}}
+
 % ---- Figure callout ----
 \newcommand{\figcallout}[2]{%
   \noindent\begingroup\small\itshape
@@ -102,13 +110,13 @@ We present a high-spin, near-threshold equatorial radiative channel that (i) sus
 % Executive Summary（5行）
 % ===============================
 \section*{Executive Summary}
-\begin{enumerate}
+\begin{tenumerate}
   \item Near–extremal spins enable a compactness-gated \emph{equatorial} radiative channel that sustains $L/L_{\rm Edd}>1$ while self-limiting the spin.
   \item The lever is repeated Penrose-like coupling at the ISCO–ergoregion interface, depositing power back into the disk and extracting angular momentum.
   \item The framework predicts three joint hooks: a hard X/MeV shoulder (20--120~keV, obs), lag hardening (X$\to$UV/optical), and equator-aligned X-ray polarization.
   \item Screens remove confounders: Compton-thick absorption, extreme inclination, and high compactness ($\ell<30$ required).
   \item \textbf{Kill-shot:} in vetted high-spin/high-$\lambda$ quasars, failure to recover $\ge\!2$ hooks (after screens) refutes the framework.
-\end{enumerate}
+\end{tenumerate}
 
 \section{Introduction}\label{sec:intro}
 \noindent\textbf{Threshold, transparency, and a natural spin ceiling.}
@@ -346,7 +354,7 @@ These establish the trends in the plots below.
 Exclude heavy absorption (Compton-thick etc.), extreme inclination, and high compactness ($\ell\!\gtrsim\!30$).
 
 \noindent\textbf{Hooks (apply jointly under the screens).}
-\begin{itemize}
+\begin{titemize}
   \item \textbf{Hard X/MeV shoulder (20--120 keV, obs):}
         model comparison favors a shoulder over a featureless baseline by
         $\Delta$AICc \emph{or} $\Delta$BIC $\ge 6$
@@ -355,7 +363,7 @@ Exclude heavy absorption (Compton-thick etc.), extreme inclination, and high com
         energy-resolved lags increase \emph{monotonically} with photon energy within an epoch.
   \item \textbf{Equator-aligned X-ray polarization (2--10 keV):}
         EVPA $\parallel$ equator; polarization degree increases toward high spin/high $\lambda$.
-\end{itemize}
+\end{titemize}
 
 \noindent\textbf{Falsification.}
 In vetted high-spin, high-$\lambda$ quasars, \emph{failure to recover at least two hooks} after the screens above \emph{refutes} the framework.
