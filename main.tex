@@ -80,7 +80,7 @@
 
 % === one-liners（1つだけに統一） ===
 \DeclareRobustCommand{\tldr}[1]{%
-  \noindent\textit{In brief}\ \textemdash\ #1%
+  \noindent\textit{In brief:}\ \textemdash\ #1%
   \par\smallskip
   \noindent\rule{\columnwidth}{0.2pt}\par\medskip
 }
@@ -92,7 +92,7 @@
 % === Figure callout ===
 \newcommand{\figcallout}[2]{%
   \noindent\begingroup\small\itshape
-  \textbf{Figure~\ref{#1}}\ \textemdash\ #2\par
+  \textbf{Figure~\ref{#1}}:\ #2\par
   \endgroup\vspace{2pt}%
 }
 % ----- PDF bookmark-safe strings -----
