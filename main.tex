@@ -331,16 +331,21 @@ Evolution obeys
   \centering
   \includegraphics[width=.95\linewidth]{Fig3a.pdf}\\[4pt]
   \includegraphics[width=.95\linewidth]{Fig3b.pdf}
-  \caption{\textbf{A spin ceiling emerges from torque balance.}
-  (a) $\dot a$ crosses zero where Eqs.~\eqref{eq:dM}--\eqref{eq:da} with $\Omega_H$ from Eq.~\eqref{eq:OmegaH} balance the torques. (b) The implied equilibrium spin $\aeq$ increases with coupling $\epscoup$; the shaded band marks a plausible range.}  \label{fig:fig3}
+  \caption{\textbf{Spin evolution and equilibrium vs.\ coupling.}
+  \emph{Top:} Spin drift rate $da_\ast/dt$ from Eqs.~(\ref{eq:dM})--(\ref{eq:da}) for representative accretion states; negative values drive $a_\ast$ below unity.
+  \emph{Bottom:} Equilibrium spin $a_{\rm eq}$ obtained from $da_\ast/dt=0$ as a function of $\epsilon_{\rm coup}$; the shaded band $\epsilon_{\rm coup}\sim10^{-2}$--$10^{-1}$ is the fiducial range used elsewhere.
+See also \eqref{eq:OmegaH}.}  \label{fig:fig3}
 \end{figure}
 
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=\columnwidth,height=0.36\textheight,keepaspectratio]{fig2a_spin_evolution.pdf}
-  \caption{\textbf{Near-threshold systems hover close to the ceiling.}
-  Time evolution of $a_\ast$ from Eqs.~\eqref{eq:dM}--\eqref{eq:da} shows self-regulated drift toward and around $\aeq$.}
-  \label{fig:spin-evo}
+  % Fig.4（時間発展：スピンダウン）
+  \caption{\textbf{Spin-down on Myr scales under equatorial extraction.}
+  Time evolution of the spin parameter $a_\ast(t)$ obtained by integrating
+  Eqs.~(\ref{eq:dM})--(\ref{eq:dJ})--(\ref{eq:da}) with horizon frequency \eqref{eq:OmegaH}
+  for a fiducial coupling $\epsilon_{\rm coup}$ (gold). The monotonic drift toward
+  $a_{\rm eq}<1$ illustrates the self-limiting ceiling; see Sec.~\ref{sec:discussion}.}  \label{fig:spin-evo}
 \end{figure}
 \end{CrowdedFloats}
 %\FloatBarrier
@@ -366,10 +371,12 @@ and $2$--$3\,\LEdd$ when combined with concurrent accretion, while $da_\ast/dt<0
   \centering
   \includegraphics[width=.95\linewidth]{Fig4a.pdf}\\[4pt]
   \includegraphics[width=.95\linewidth]{Fig4b.pdf}
-  \caption{\textbf{Timescales and luminosities follow the coupling law.}
-  (a) Equilibration time $\tau_{\rm eq}$ versus coupling $\epsilon_{\rm coup}$.
-  (b) $L/L_{\rm Edd}$ versus equilibrium spin $a_{\rm eq}$, with points labeled by $\epsilon_{\rm coup}$ (cf.\ Eqs.~(1), (2), (11)).}
-  \label{fig:fig4}
+  \caption{\textbf{Equilibrium timescale and luminosity mapping.}
+  \emph{Top:} Time to equilibrium $\tau_{\rm eq}$ versus coupling $\epsilon_{\rm coup}$,
+  computed from the spin-evolution system Eqs.~(\ref{eq:dM})--(\ref{eq:da}) with horizon frequency \eqref{eq:OmegaH};
+  the shaded band $\epsilon_{\rm coup}\sim10^{-2}$--$10^{-1}$ is the fiducial range used elsewhere.
+  \emph{Bottom:} Total luminosity at equilibrium, $L_{\rm tot}/L_{\rm Edd}$ from Eq.~(\ref{eq:Ltot}) evaluated at $a_\ast=a_{\rm eq}$,
+  showing a typical $2$--$3$ band (blue) with labeled $\epsilon_{\rm coup}$ values along the trend.}
 \end{figure}
 
 \section{Results}\label{sec:results}
@@ -415,9 +422,10 @@ In vetted high-spin, high-$\lambda$ quasars, \emph{failure to recover at least t
   \includegraphics[width=.49\columnwidth]{Fig5a.pdf}
   \hfill
   \includegraphics[width=.49\columnwidth]{Fig5b.pdf}
-  \caption{\textbf{What each hook should look like (linked to the equations).} 
-  (a) Fe K$\alpha$ lag (in $r_g/c$) versus $a_{\rm eq}$. 
-  (b) Observable fraction (hard X/MeV or polarization) versus $a_{\rm eq}$.}
+  \caption{\textbf{Hook observables vs.\ equilibrium spin.}
+  \emph{Left:} Fe K$\alpha$ reverberation lag $\tau_{\rm FeK}$ (in $r_g/c$) as a function of $a_{\rm eq}$; lags increase toward lower $a_{\rm eq}$ (stronger coupling).
+  \emph{Right:} Observable fraction $f_{\rm hook}$ (hard X/MeV shoulder or 2--10~keV polarization) vs.\ $a_{\rm eq}$ from the toy population mapping; the fraction rises steeply toward low $a_{\rm eq}$.
+  See Sec.~\ref{sec:hooks} and App.~\ref{app:protocol} for definitions and pass criteria.}
   \label{fig:fig5}
 \end{figure}
 
@@ -462,8 +470,10 @@ BZ is polar/Poynting-dominated; our mechanism is equatorial/radiative. Hybrid st
   \centering
   \includegraphics[width=0.95\columnwidth,trim=0 6 0 4,clip]{fig10a_Reff100.pdf}
   \vspace{-2pt}
-  \caption{\textbf{Transparency selects the viable high-luminosity regime (a).}
-  For $R_{\rm eff}=100\,r_g$, the allowed region lies \emph{outside} $\ell{=}\ellcrit$ (black), where peak $L_{\rm tot}/L_{\rm Edd}$ (color) reaches $2$--$3$ with rarer $5$--$10\times$ excursions.}
+  \caption{\textbf{Transparency selects the viable high-luminosity regime.}
+  Peak Eddington ratio $L_{\rm tot}/L_{\rm Edd}$ (color) on the $(\epsilon_{\rm coup},d)$ plane; the black contour marks $\ell{=}\ellcrit$ from Eq.~(\ref{eq:ell})
+  with components defined in Eqs.~(\ref{eq:Lself},\ref{eq:Reff}). For $R_{\rm eff}=100\,r_g$, the allowed region lies \emph{outside} the $\ell{=}\ellcrit$ contour, where
+  $L_{\rm tot}/L_{\rm Edd}\sim2$--$3$ is typical with rarer $5$--$10\times$ excursions; see App.~\ref{app:protocol}.}
   \label{fig:param-a}
 \end{figure}
 \endgroup
@@ -472,9 +482,10 @@ BZ is polar/Poynting-dominated; our mechanism is equatorial/radiative. Hybrid st
   \centering
   \includegraphics[width=0.95\columnwidth,trim=0 6 0 4,clip]{fig10b_Reff1000.pdf}
   \vspace{-2pt}
-  \caption{\textbf{A larger dissipation footprint widens the transparent window (b).}
-  For $R_{\rm eff}=1000\,r_g$, the $\ell{=}\ellcrit$ boundary (black) shifts so that higher peaks in $L_{\rm tot}/L_{\rm Edd}$ remain compactness-safe.}
-  \label{fig:param-b}
+  \caption{\textbf{A larger dissipation footprint widens the transparent window.}
+  Peak $L_{\rm tot}/L_{\rm Edd}$ (color) on the $(\epsilon_{\rm coup},d)$ plane for a larger footprint $R_{\rm eff}=1000\,r_g$.
+  The $\ell{=}\ellcrit$ boundary (black; from Eq.~(\ref{eq:ell}) with components in Eqs.~(\ref{eq:Lself},\ref{eq:Reff})) shifts so that
+  higher peaks in $L_{\rm tot}/L_{\rm Edd}$ remain compactness-safe, enlarging the viable region compared to Fig.~\ref{fig:param-a}.}
 \end{figure}
 
 \FloatBarrier
@@ -534,6 +545,14 @@ Self-sustained Penrose excitation near extremal Kerr SMBHs can inject rotational
 % ---------------- Appendix ----------------
 \clearpage
 \appendix
+
+\section{Operational Protocol (Self-contained)}\label{app:protocol}
+\noindent\textbf{Screens.} Exclude Compton-thick, extreme inclination; require $\ell<\ellcrit$.\\
+\noindent\textbf{Hook (i):} Shoulder passes if $\Delta$AICc \emph{or} $\Delta$BIC $\ge 6$ (20--120~keV obs).\\
+\noindent\textbf{Hook (ii):} Lag hardening passes if $d\tau/d\log E>0$ and monotone within an epoch.\\
+\noindent\textbf{Hook (iii):} X-ray polarization: EVPA $\parallel$ equator; degree increases with spin/$\lambda$.\\
+\noindent\textbf{Verdict.} After screens, absence of $\ge2$ hooks $\Rightarrow$ falsified; else passes.
+
 
 \floattable
 \begin{deluxetable*}{lcccc}[p]   % [t]で上部固定。収まらなければ[p]に
