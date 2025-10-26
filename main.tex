@@ -78,32 +78,23 @@
   \begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}\setlength{\parskip}{0pt}%
 }{\end{itemize}}
 
-% ===== in preamble (before \begin{document}) =====
-% one-liners
-%\providecommand{\tldr}[1]{%
-%  \noindent\textit{In brief}\ \textemdash\ #1%
-%  \par\smallskip
-%  \noindent\rule{\columnwidth}{0.2pt}%
-%  \par\medskip
-%}
-\providecommand{\tldr}[1]{%
+% === one-liners（1つだけに統一） ===
+\DeclareRobustCommand{\tldr}[1]{%
   \noindent\textit{In brief}\ \textemdash\ #1%
   \par\smallskip
   \noindent\rule{\columnwidth}{0.2pt}\par\medskip
 }
 
-% "See also" one-liner（AASTeX安全・改行と余白つき）
 \DeclareRobustCommand{\nav}[1]{%
   \noindent\textit{See also:}~#1\par\smallskip
 }
 
-% ---- Figure callout ----
+% === Figure callout ===
 \newcommand{\figcallout}[2]{%
   \noindent\begingroup\small\itshape
-  \textbf{Figure~\ref{#1}} \textemdash{} #2\par
+  \textbf{Figure~\ref{#1}}\ \textemdash\ #2\par
   \endgroup\vspace{2pt}%
 }
-
 % ----- PDF bookmark-safe strings -----
 \PassOptionsToPackage{unicode}{hyperref}
 \pdfstringdefDisableCommands{%
