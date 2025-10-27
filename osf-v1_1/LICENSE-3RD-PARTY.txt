@@ -1,0 +1,4 @@
+This bundle includes unmodified third-party files:
+- aasjournalv7.bst (AASTeX)
+- aastex701.cls (AASTeX)
+License: LaTeX Project Public License (LPPL). Source: CTAN / AASTeX distribution.
