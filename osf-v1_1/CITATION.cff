@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Self-Sustained Penrose Excitation of Accretion Disks (OSF v1.1)"
+authors:
+  - family-names: Wakabayashi
+    given-names: Jun
+    orcid: "0009-0008-1891-4579"
+version: "v1.1"
+date-released: "2025-10-26"
+doi: "10.17605/osf.io/62gzv"
+repository-code: "https://github.com/waka132009/arXiv-v1"
+preferred-citation:
+  type: article
+  title: "Self-Sustained Penrose Excitation of Accretion Disks"
+  authors:
+    - family-names: Wakabayashi
+      given-names: Jun
+  year: 2025
+  doi: "10.17605/osf.io/62gzv"
+  notes: "OSF snapshot v1.1; ApJL submission forthcoming (v1.2)."
+  
