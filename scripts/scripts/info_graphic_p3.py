@@ -253,9 +253,9 @@ def build_pdf_page_3_hooks(outfile: Path):
     ax_hook2_container = fig.add_subplot(gs_hooks[0, 1])
     ax_hook2_container.axis("off")
     # FIX: Add background box
-    ax_hook2_container.add_patch(Rectangle((0, 0), 1, 1, 
+    ax_hook2_container.add_patch(Rectangle((-0.1, 0), 1.2, 1, 
                                      facecolor='#f8f9fa', edgecolor='#e2e8f0', 
-                                     lw=1, transform=ax_hook2_container.transAxes, zorder=-1))
+                                     lw=1, transform=ax_hook2_container.transAxes, zorder=-1, clip_on=False))
     ax_hook2_container.text(0.5, 1.10, "Hook 2: Lag Hardening", 
                             ha='center', va='top', fontsize=14, weight='bold', 
                             color="#0369a1", transform=ax_hook2_container.transAxes)
