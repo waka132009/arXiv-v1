@@ -89,7 +89,7 @@ def build_pdf_page_2_flowchart(outfile: Path):
 
     ax_flow2 = fig.add_subplot(gs_flowchart[0, 1])
     ax_flow2.axis("off")
-    ax_flow2.text(0.4, 0.4, "2. Penrose-like extraction —\nAt the ISCO–ergoregion boundary,\n an equatorial current sheet (plasmoids)\n taps BH spin energy.",
+    ax_flow2.text(0.4, 0.4, "2. Penrose-like extraction —\nAt the ISCO–ergoregion boundary,\nan equatorial current sheet (plasmoids)\ntaps BH spin energy.",
                   ha='center', va='center', fontsize=9, linespacing=1.3, bbox=box_props_123, wrap=True, transform=ax_flow2.transAxes)
 
     ax_flow3 = fig.add_subplot(gs_flowchart[0, 2])

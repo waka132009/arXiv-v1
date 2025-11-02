@@ -3,8 +3,12 @@
 Generates ONLY the "Key Observational Signatures (The "Hooks")" section
 (based on image_dff164.png layout) as a single, standalone PDF.
 
-This version (v2) uses the *exact* plot data from the 
-'interactive_paper.html' web demo to ensure data consistency.
+This version (v4) fixes:
+1.  Data for Hook 1 & 2 is sourced *exactly* from the web demo.
+2.  Hook 1 Y-axis and X-axis are 'log' scale to correctly show the "shoulder".
+3.  A background box (Rectangle) is added to each hook section.
+4.  Text overlaps are fixed by precisely adjusting inset_axes and text positions.
+5.  Hook 3 layout is corrected.
 
 Requires:
   matplotlib, numpy
@@ -66,21 +70,28 @@ def draw_hook1_shoulder_plot(ax: plt.Axes):
         Line2D([0], [0], color='#9ecae1', linestyle=(0, (3, 3)), lw=1.5, label="Standard Continuum"),
         Line2D([0], [0], color='#08519c', linestyle='-', lw=1.5, label="This Model (w/ Shoulder)")
     ]
-    ax.legend(handles=handles, loc='upper right', fontsize=8, frameon=False)
+   # 微調整（少し上にずらす）するコード
+    ax.legend(
+        handles=handles,
+        loc='upper right', # 凡例自身の「右上隅」を...
+        bbox_to_anchor=(0.86, 1.19), # グラフ領域の「(x=1.0, y=1.05)」の位置に配置する
+        fontsize=8,
+        frameon=False
+    )
 
 def draw_hook2_lag_plot(ax: plt.Axes):
     """Draws the Hook 2 (Lag Hardening) plot onto ax."""
     
-    # --- FIX: Data extracted directly from web demo JavaScript ---
+    # --- Data extracted directly from web demo JavaScript ---
     x_labels = ['1-3 keV', '3-5 keV', '5-10 keV']
     x = np.arange(len(x_labels))
     y_reprocessing = [5.0, 4.8, 4.5]
     y_model = [2.0, 3.5, 6.0]
 
     # Standard Reprocessing (dotted, light blue)
-    ax.plot(x, y_reprocessing, color='#9ecae1', linestyle=(0, (3, 3)), lw=1.5, marker='.', ms=4)
+    ax.plot(x, y_reprocessing, color='#a6cee3', linestyle=(0, (3, 3)), lw=1.5, marker='.', ms=4)
     # This Model (solid, dark blue)
-    ax.plot(x, y_model, color='#08519c', linestyle='-', lw=1.5, marker='D', ms=4)
+    ax.plot(x, y_model, color='#1f78b4', linestyle='-', lw=1.5, marker='D', ms=4)
     
     ax.set_xlabel("Energy Band (log E)", fontsize=10)
     ax.set_ylabel("Time Lag (arb. units)", fontsize=10)
@@ -95,10 +106,16 @@ def draw_hook2_lag_plot(ax: plt.Axes):
 
     # Custom Legend (as requested: "直線で十分")
     handles = [
-        Line2D([0], [0], color='#9ecae1', linestyle=(0, (3, 3)), lw=1.5, label="Standard Reprocessing"),
-        Line2D([0], [0], color='#08519c', linestyle='-', lw=1.5, label=r"This Model ($d \log \tau / d \log E > 0$)")
+        Line2D([0], [0], color='#a6cee3', linestyle=(0, (3, 3)), lw=1.5, label="Standard Reprocessing"),
+        Line2D([0], [0], color='#1f78b4', linestyle='-', lw=1.5, label=r"This Model ($d \log \tau / d \log E > 0$)")
     ]
-    ax.legend(handles=handles, loc='upper left', fontsize=8, frameon=False)
+    ax.legend(
+        handles=handles,
+        loc='upper right', 
+        bbox_to_anchor=(0.90, 1.19),
+        fontsize=8,
+        frameon=False
+    )
 
 
 def draw_hook3_polarization_plot(ax: plt.Axes):
@@ -108,24 +125,26 @@ def draw_hook3_polarization_plot(ax: plt.Axes):
     ax.set_ylim(-1, 1)
     ax.set_aspect('equal')
     
+    # --- FIX: Re-centered layout ---
+    
     # Main Arrow (matches image_dff164.png)
-    ax.add_patch(FancyArrowPatch((0, -0.2), (0.4, 0.4),
+    ax.add_patch(FancyArrowPatch((0, -0.1), (0.4, 0.5), # Adjusted coordinates
                                   arrowstyle='->', mutation_scale=25, 
                                   lw=2.0, color='black'))
     
     # Use mathtext for LaTeX symbols
-    ax.text(0, -0.4, r"$\mathbf{Angle \approx Equator (\pm 15^\circ)}$", 
-            ha='center', va='top', fontsize=12, weight='bold', color="#0369a1")
-    ax.text(0, -0.55,
+    ax.text(0.5, 0.2, r"$\mathbf{Angle \approx Equator (\pm 15^\circ)}$", 
+            ha='center', va='top', fontsize=12, weight='bold', color="#0369a1", transform=ax.transAxes)
+    ax.text(0.5, 0.05,
              r"X-ray polarization angle must be consistent"
              r" with the equatorial plane, within approx. $\pm 15^\circ$.",
-             ha='center', va='top', fontsize=9, linespacing=1.3, wrap=True)
+             ha='center', va='top', fontsize=9, linespacing=1.3, wrap=True, transform=ax.transAxes)
     
-    ax.text(0, -0.8, r"$\mathbf{Degree Tends to Rise}$", 
-            ha='center', va='top', fontsize=12, weight='bold', color="#0369a1")
-    ax.text(0, -0.95,
+    ax.text(0.5, -0.2, r"$\mathbf{Degree Tends to Rise}$", 
+            ha='center', va='top', fontsize=12, weight='bold', color="#0369a1", transform=ax.transAxes)
+    ax.text(0.5, -0.35,
              r"The degree of polarization tends to rise with energy.",
-             ha='center', va='top', fontsize=9, linespacing=1.3, wrap=True)
+             ha='center', va='top', fontsize=9, linespacing=1.3, wrap=True, transform=ax.transAxes)
 
 
 # --- Main PDF Building Function ---
@@ -149,17 +168,20 @@ def build_pdf_page_3_hooks(outfile: Path):
                                      facecolor='#f8f9fa', edgecolor='#e2e8f0', 
                                      lw=1, transform=ax_hook1_container.transAxes, zorder=-1))
     # Title
-    ax_hook1_container.text(0.5, 0.95, "Hook 1: High-Energy Shoulder", 
+    ax_hook1_container.text(0.5, 1.10, "Hook 1: High-Energy Shoulder", 
                             ha='center', va='top', fontsize=14, weight='bold', 
                             color="#0369a1", transform=ax_hook1_container.transAxes)
     # Plot
-    ax_hook1_plot = ax_hook1_container.inset_axes([0.1, 0.4, 0.8, 0.5])
+    # FIX: Adjusted inset_axes [l, b, w, h] to make space for text
+    ax_hook1_plot = ax_hook1_container.inset_axes([0.1, 0.45, 0.8, 0.45])
     draw_hook1_shoulder_plot(ax_hook1_plot)
     # Description
-    ax_hook1_container.text(0.5, 0.35,
-         r"Predicts a ""shoulder"" in the 20–120 keV"
-         r" band. This is a quantitative hook: requires a"
-         r" statistical preference of $\mathbf{\Delta BIC(shoulder\ vs.\ cutoff\text{-}PL) \geq 6}$.",
+    # FIX: Adjusted Y-position (0.35 -> 0.38)
+    ax_hook1_container.text(0.5, 0.28,
+         r"Predicts a ""shoulder"" in the 20–120 keV" "\n"
+         r" band. This is a quantitative hook:" "\n"
+         r"requires a statistical preference of" "\n" 
+         r"$\Delta \mathrm{BIC}\!\geq\!6$ (shoulder vs. cutoff-PL)",
          ha='center', va='top', fontsize=10, linespacing=1.3, wrap=True, transform=ax_hook1_container.transAxes)
 
     # --- Hook 2 ---
@@ -169,16 +191,18 @@ def build_pdf_page_3_hooks(outfile: Path):
     ax_hook2_container.add_patch(Rectangle((0, 0), 1, 1, 
                                      facecolor='#f8f9fa', edgecolor='#e2e8f0', 
                                      lw=1, transform=ax_hook2_container.transAxes, zorder=-1))
-    ax_hook2_container.text(0.5, 0.95, "Hook 2: Lag Hardening", 
+    ax_hook2_container.text(0.5, 1.10, "Hook 2: Lag Hardening", 
                             ha='center', va='top', fontsize=14, weight='bold', 
                             color="#0369a1", transform=ax_hook2_container.transAxes)
-    ax_hook2_plot = ax_hook2_container.inset_axes([0.1, 0.4, 0.8, 0.5])
+    # FIX: Adjusted inset_axes
+    ax_hook2_plot = ax_hook2_container.inset_axes([0.1, 0.45, 0.8, 0.45])
     draw_hook2_lag_plot(ax_hook2_plot)
-    ax_hook2_container.text(0.5, 0.35,
-         r"Predicts lag hardening: an energy-"
-         r"dependent trend where lags increase with"
-         r" energy ($\mathbf{d \log \tau / d \log E > 0}$) across X-ray"
-         r" bands, rather than a simple reprocessing echo.",
+    # FIX: Adjusted Y-position
+    ax_hook2_container.text(0.5, 0.38,
+         r"Predicts lag hardening: an energy-" "\n"
+         r"dependent trend where lags increase with" "\n"
+         r"energy ($\mathbf{d \log \tau / d \log E > 0}$) across X-ray" "\n"
+         r"bands, rather than a simple reprocessing echo.",
          ha='center', va='top', fontsize=10, linespacing=1.3, wrap=True, transform=ax_hook2_container.transAxes)
 
     # --- Hook 3 ---
@@ -188,11 +212,11 @@ def build_pdf_page_3_hooks(outfile: Path):
     ax_hook3_container.add_patch(Rectangle((0, 0), 1, 1, 
                                      facecolor='#f8f9fa', edgecolor='#e2e8f0', 
                                      lw=1, transform=ax_hook3_container.transAxes, zorder=-1))
-    ax_hook3_container.text(0.5, 0.95, "Hook 3: X-Ray Polarization", 
+    ax_hook3_container.text(0.5, 1.10, "Hook 3: X-Ray Polarization", 
                             ha='center', va='top', fontsize=14, weight='bold', 
                             color="#0369a1", transform=ax_hook3_container.transAxes)
-    # [l, b, w, h]
-    ax_hook3_plot = ax_hook3_container.inset_axes([0.0, 0.0, 1.0, 0.9]) 
+    # FIX: Adjusted inset_axes
+    ax_hook3_plot = ax_hook3_container.inset_axes([0.1, 0.1, 0.8, 0.8]) 
     draw_hook3_polarization_plot(ax_hook3_plot)
     # (Description is embedded in the plot function for Hook 3)
 
