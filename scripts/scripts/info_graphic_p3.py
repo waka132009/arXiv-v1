@@ -123,42 +123,61 @@ def draw_hook1_shoulder_plot(ax: plt.Axes):
     )
 
 def draw_hook2_lag_plot(ax: plt.Axes):
-    """Draws the Hook 2 (Lag Hardening) plot onto ax."""
-    
-    # --- Data extracted directly from web demo JavaScript ---
-    x_labels = ['1-3 keV', '3-5 keV', '5-10 keV']
-    x = np.arange(len(x_labels))
-    y_reprocessing = [5.0, 4.8, 4.5]
-    y_model = [2.0, 3.5, 6.0]
+    """
+    Hook 2 (Lag Hardening) — schematic only.
+    - 連続 log10(E/keV) に対して lag が単調増加（d lag / d log E > 0）
+    - 観測点なし：中央線 + 薄い許容帯 + （任意）低エネ参照帯
+    - スタイルは common.py に依存（ここでは rcParams を触らない）
+    """
+    # ---- パラメータ（必要なら数字だけ調整）----
+    x_min_keV, x_max_keV = 1.0, 100.0
+    slope_per_dec   = 0.9      # [arb./dec] d(lag)/d log10(E)
+    intercept_1keV  = 2.0      # [arb.]     lag at 1 keV
+    band_frac       = 0.15     # 許容帯の相対幅（±15%）
+    ref_band        = (1.0, 2.0)  # 低エネ参照帯（不要なら None）
 
-    # Standard Reprocessing (dotted, light blue)
-    ax.plot(x, y_reprocessing, color='#a6cee3', linestyle=(0, (3, 3)), lw=1.5, marker='.', ms=4)
-    # This Model (solid, dark blue)
-    ax.plot(x, y_model, color='#1f78b4', linestyle='-', lw=1.5, marker='D', ms=4)
-    
-    ax.set_xlabel("Energy Band (log E)", fontsize=10)
-    ax.set_ylabel("Time Lag (arb. units)", fontsize=10)
-    
-    ax.set_xticks(x)
-    ax.set_xticklabels(x_labels, fontsize=8)
-    ax.set_yticks(np.arange(2.0, 6.5, 0.5))
-    
+    # ---- 軸データ（連続）----
+    E_keV = np.logspace(np.log10(x_min_keV), np.log10(x_max_keV), 256)
+    xlog  = np.log10(E_keV)
+    lag_center = slope_per_dec * xlog + intercept_1keV
+    lag_low    = lag_center * (1 - band_frac)
+    lag_high   = lag_center * (1 + band_frac)
+
+    # ---- 参照帯（任意）----
+    if ref_band is not None and len(ref_band) == 2 and ref_band[0] < ref_band[1]:
+        ax.axvspan(ref_band[0], ref_band[1], alpha=0.08, lw=0, label="Reference band")
+
+    # ---- 概念図：許容帯 + 中央線（色は既存パレットに寄せる）----
+    ax.fill_between(E_keV, lag_low, lag_high, alpha=0.12, linewidth=0,
+                    color="#1f78b4", label="Expected range (schematic)")
+    ax.plot(E_keV, lag_center, lw=2.0, color="#1f78b4",
+            label="Model trend (schematic)")
+
+    # ---- 体裁（カテゴリ軸→連続log軸へ置換）----
+    ax.set_xscale("log")
+    ax.set_xlim(x_min_keV*0.9, x_max_keV*1.1)
+    ax.set_xlabel("Energy (keV)")
+    ax.set_ylabel("Lag (arb. units)")
+    # 既存グリッド感に合わせて y のメジャーのみ点線
+    ax.grid(True, which="major", axis="y", ls=":", lw=0.5, alpha=0.5)
+    ax.minorticks_on()
+    ax.set_xticks([1, 2, 5, 10, 20, 50, 100])
+    ax.get_xaxis().set_major_formatter(plt.ScalarFormatter())
+    # レイアウトに合わせた見栄えレンジ（必要なら自動にしてOK）
     ax.set_ylim(1.5, 6.5)
-    ax.grid(True, which="major", axis='y', ls=":", lw=0.5, alpha=0.5)
-    ax.tick_params(labelsize=9)
 
-    # Custom Legend (as requested: "直線で十分")
+    # ---- 右上注記（符号主張のみ。数式は凡例に入れない）----
+    ax.text(0.98, 0.98,
+            rf"$\frac{{d\,\mathrm{{lag}}}}{{d\log E}}>0$  (slope ≈ {slope_per_dec:.2f}/dec)",
+            ha="right", va="top", transform=ax.transAxes)
+
+    # ---- 凡例（最小主義）----
     handles = [
-        Line2D([0], [0], color='#a6cee3', linestyle=(0, (3, 3)), lw=1.5, label="Standard Reprocessing"),
-        Line2D([0], [0], color='#1f78b4', linestyle='-', lw=1.5, label=r"This Model ($d \log \tau / d \log E > 0$)")
+        Line2D([0], [0], color="#1f78b4", linestyle="-", lw=1.8, label="Model trend (schematic)"),
+        Line2D([0], [0], color="#1f78b4", linestyle="-", lw=8, alpha=0.12, label="Expected range (schematic)"),
     ]
-    ax.legend(
-        handles=handles,
-        loc='upper right', 
-        bbox_to_anchor=(0.90, 1.19),
-        fontsize=8,
-        frameon=False
-    )
+    ax.legend(handles=handles, loc="upper right", bbox_to_anchor=(0.90, 1.19),
+              fontsize=8, frameon=False)
 
 
 def draw_hook3_polarization_plot(ax: plt.Axes):
@@ -222,12 +241,9 @@ def build_pdf_page_3_hooks(outfile: Path):
     # FIX: Adjusted Y-position (0.35 -> 0.38)
     ax_hook1_container.text(
             0.5, 0.28,
-            r"Shoulder expected in the 20–120 keV"
-            "\n"
-            r"band. Quantitative hook:"
-            "\n"
-            r"$\Delta \mathrm{BIC}\!\geq\!6$ (shoulder vs.\ cutoff-PL)"
-            "\n"
+            r"Shoulder expected in the 20–120 keV" "\n"
+            r"band. Quantitative hook:" "\n"
+            r"$\Delta \mathrm{BIC}\!\geq\!6$ (shoulder vs.\ cutoff-PL)" "\n"
             r"over a standard continuum.",
             ha="center", va="top", fontsize=10,
             linespacing=1.3, wrap=False,
@@ -247,11 +263,11 @@ def build_pdf_page_3_hooks(outfile: Path):
     ax_hook2_plot = ax_hook2_container.inset_axes([0.1, 0.45, 0.8, 0.45])
     draw_hook2_lag_plot(ax_hook2_plot)
     # FIX: Adjusted Y-position
-    ax_hook2_container.text(0.5, 0.38,
-         r"Predicts lag hardening: an energy-" "\n"
-         r"dependent trend where lags increase with" "\n"
-         r"energy ($\mathbf{d \log \tau / d \log E > 0}$) across X-ray" "\n"
-         r"bands, rather than a simple reprocessing echo.",
+    ax_hook2_container.text(0.5, 0.28,
+         r"Lag increases with energy (``lag hardening'')." "\n"
+         r"Schematic trend expected from the model;" "\n"
+         r"$\frac{d\,\mathrm{lag}}{d\log E}>0$ across X-ray bands" "\n"
+         r"evaluated against a baseline continuum.",
          ha='center', va='top', fontsize=10, linespacing=1.3, wrap=True, transform=ax_hook2_container.transAxes)
 
     # --- Hook 3 ---
