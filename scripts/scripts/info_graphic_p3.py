@@ -20,6 +20,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch, Rectangle
 from matplotlib.lines import Line2D
 from pathlib import Path
+import matplotlib.patheffects as pe
 import matplotlib.gridspec as gridspec
 
 try:
@@ -34,41 +35,83 @@ except ImportError:
 # --- Plotting Functions for Hooks (Data from interactive_paper.html) ---
 
 def draw_hook1_shoulder_plot(ax: plt.Axes):
-    """Draws the Hook 1 (High-Energy Shoulder) plot onto ax."""
-    
-    # --- FIX: Data extracted directly from web demo JavaScript ---
-    # (The web demo 'spectrumData' had 8 points, this matches image_dff164.png's 6 points)
-    x_labels = ['1', '10', '20', '50', '100', '200']
-    x_values = [1, 10, 20, 50, 100, 200]
-    y_continuum = [100, 20, 10, 5, 3, 2] # Visually from image_dff164.png
-    y_model = [80, 25, 40, 50, 40, 10] # Visually from image_dff164.png
-    
-    # Standard Continuum (dotted, light blue)
-    ax.plot(x_values, y_continuum, color='#9ecae1', linestyle=(0, (3, 3)), lw=1.5, marker='.', ms=4)
-    # This Model (solid, dark blue)
-    ax.plot(x_values, y_model, color='#08519c', linestyle='-', lw=1.5, marker='D', ms=4)
-    
-    ax.set_xscale('log')
-    # --- FIX: Y-axis MUST be log scale to show the shoulder ---
-    ax.set_yscale('log') 
-    ax.set_xlabel("Energy (keV)", fontsize=10)
-    ax.set_ylabel("Relative Flux", fontsize=10)
-    
-    ax.set_xticks([1, 10, 20, 50, 100, 200])
-    ax.set_xticklabels(['1', '10', '20', '50', '100', '200'])
-    # FIX: Adjusted Y-ticks to match data range
-    ax.set_yticks([2, 10, 20, 80, 100])
-    ax.set_yticklabels(['2', '10', '20', '80', '100'])
-    
-    ax.set_xlim(0.8, 250)
-    ax.set_ylim(1, 150) # FIX: Adjusted Y-limit
-    ax.grid(True, which="major", ls=":", lw=0.5, alpha=0.5)
-    ax.tick_params(labelsize=9)
+    """
+    Hook 1（High-Energy Shoulder）— 可読化版
+    ・正規化：10 keV ピボット（実点を使う）
+    ・対数軸／肩帯（20–120 keV）／色弱対応の線種
+    ・標準反射ハンプの参照（点線）
+    ・代表誤差（少数点）
+    ・yレンジ固定で潰れ防止
+    """
+    # 元の簡易データ
+    E = np.array([1, 10, 20, 50, 100, 200], dtype=float)
+    y_cont  = np.array([100, 20, 10, 5, 3, 2], dtype=float)    # cutoff-PL（肩なし）
+    y_model = np.array([80,  25, 40, 50, 40,10], dtype=float)  # 肩あり
+
+    # ---- 正規化：10 keV ピボット ----
+    # 実データ点があるので外挿せずに済む
+    pivot_E = 10.0
+    idx10 = np.where(E == pivot_E)[0][0]
+    y_cont  = y_cont  / y_cont[idx10]
+    y_model = y_model / y_model[idx10]
+
+    # ---- 肩帯（obs 20–120 keV）----
+    ax.axvspan(20, 120, color='#4c78a8', alpha=0.13,
+               label ="shoulder band (obs 20–120 keV)")
+    ax.text(45, 5, "20–120 keV", fontsize=7, ha="center", va="bottom")
+
+    # ---- 反射ハンプの参照（薄グレー点線：混同防止）----
+    #Eh = np.logspace(np.log10(8), np.log10(40), 120)
+    #hump = 0.8 * (Eh/20.0)**(-0.3) * np.exp(-((np.log10(Eh)-np.log10(20))/0.35)**2)
+    # 10 keV に合わせて規格化
+    # 10 keV がレンジ外の場合は最も近い点にスナップ
+    #def nearest_idx(arr, val): return int(np.argmin(np.abs(arr - val)))
+    #hump /= hump[nearest_idx(Eh, 10.0)]
+    #ax.plot(Eh, hump, linestyle=":", linewidth=1.1, alpha=0.55, color="#777777",
+    #        label="standard reflection (schematic)")
+
+    # ---- 主曲線（色弱対応：実線＋● vs 長破線）----
+    ax.errorbar(E, y_model, yerr=[0,0,0.12,0.10,0,0.15], fmt='o-', lw=2.1, ms=4.6,
+                color='#0b4f9c', capsize=2, label="This model (with shoulder)")
+    ax.plot(E, y_cont, linestyle=(0,(8,4)), lw=2.0, color='#93c2e6',
+            label="Cutoff power-law")
+
+    # --- roll-off 注記（log–log補間で y を取る）---
+    def _loglog_interp(xp, yp, xq):
+        xp = np.asarray(xp); yp = np.asarray(yp)
+        return np.exp(np.interp(np.log(xq), np.log(xp), np.log(yp)))
+
+    roll_x = 160.0                                   # 矢印の先（keV）← ここを動かすだけ
+    roll_y = _loglog_interp(E, y_model, roll_x)      # y を log–log で補間
+    text_x = 130.0                                    # テキスト位置 x（keV）
+    text_y = roll_y * 4.0                            # テキスト位置 y（相対で上へ）
+
+    ann=ax.annotate("shoulder roll-off",
+                xy=(roll_x, roll_y), xycoords='data',
+                xytext=(text_x, text_y), textcoords='data',
+                ha='left', va='bottom',
+                arrowprops=dict(arrowstyle='->', lw=1.0), fontsize=8, zorder=6, annotation_clip=False)
+    ann.set_path_effects([pe.withStroke(linewidth=2.6, foreground='white')])
+    ## ---- roll-off 注記（~200 keV）----
+    #ax.annotate("shoulder roll-off", xy=(200, y_model[-1]), xycoords='data',
+    #            xytext=(110, 0.45), textcoords='data',
+    #            arrowprops=dict(arrowstyle='->', lw=1.0), fontsize=8)
+
+    # ---- 軸・レンジ・書式 ----
+    ax.set_xscale('log'); ax.set_yscale('log')
+    ax.set_xlim(0.9, 230)
+    ax.set_ylim(0.08, 8.0)  # ← 潰れ防止の固定レンジ
+    ax.set_xticks([1,2,5,10,20,50,100,200])
+    ax.get_xaxis().set_major_formatter(plt.ScalarFormatter())
+    ax.set_xlabel("Energy (keV)")
+    ax.set_ylabel("Relative Flux (normalized to 10 keV)")
+    ax.grid(True, which='both', axis='both', alpha=0.15)
+
     
     # Custom Legend (as requested: "直線で十分")
     handles = [
         Line2D([0], [0], color='#9ecae1', linestyle=(0, (3, 3)), lw=1.5, label="Standard Continuum"),
-        Line2D([0], [0], color='#08519c', linestyle='-', lw=1.5, label="This Model (w/ Shoulder)")
+        Line2D([0], [0], color='#08519c', linestyle='-', lw=1.5, label="This Model (with shoulder)")
     ]
    # 微調整（少し上にずらす）するコード
     ax.legend(
@@ -177,13 +220,19 @@ def build_pdf_page_3_hooks(outfile: Path):
     draw_hook1_shoulder_plot(ax_hook1_plot)
     # Description
     # FIX: Adjusted Y-position (0.35 -> 0.38)
-    ax_hook1_container.text(0.5, 0.28,
-         r"Predicts a ""shoulder"" in the 20–120 keV" "\n"
-         r" band. This is a quantitative hook:" "\n"
-         r"requires a statistical preference of" "\n" 
-         r"$\Delta \mathrm{BIC}\!\geq\!6$ (shoulder vs. cutoff-PL)",
-         ha='center', va='top', fontsize=10, linespacing=1.3, wrap=True, transform=ax_hook1_container.transAxes)
-
+    ax_hook1_container.text(
+            0.5, 0.28,
+            r"Shoulder expected in the 20–120 keV"
+            "\n"
+            r"band. Quantitative hook:"
+            "\n"
+            r"$\Delta \mathrm{BIC}\!\geq\!6$ (shoulder vs.\ cutoff-PL)"
+            "\n"
+            r"over a standard continuum.",
+            ha="center", va="top", fontsize=10,
+            linespacing=1.3, wrap=False,
+            transform=ax_hook1_container.transAxes
+    )
     # --- Hook 2 ---
     ax_hook2_container = fig.add_subplot(gs_hooks[0, 1])
     ax_hook2_container.axis("off")
