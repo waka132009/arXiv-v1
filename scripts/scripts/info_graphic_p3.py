@@ -32,6 +32,9 @@ except ImportError:
     print("Please place 'common.py' in the same directory as this script.")
     exit(1)
 
+#GLOBAL_VARS
+HOOK3_band=15.0
+
 # --- Plotting Functions for Hooks (Data from interactive_paper.html) ---
 
 def draw_hook1_shoulder_plot(ax: plt.Axes):
@@ -202,33 +205,108 @@ def draw_hook2_lag_plot(ax: plt.Axes):
               fontsize=8, frameon=False)
 
 
-def draw_hook3_polarization_plot(ax: plt.Axes):
-    """Draws the Hook 3 (X-Ray Polarization) schematic onto ax."""
-    ax.axis("off")
-    ax.set_xlim(-1, 1)
-    ax.set_ylim(-1, 1)
-    ax.set_aspect('equal')
-    
-    # --- FIX: Re-centered layout ---
-    
-    # Main Arrow (matches image_dff164.png)
-    ax.add_patch(FancyArrowPatch((0, -0.1), (0.4, 0.5), # Adjusted coordinates
-                                  arrowstyle='->', mutation_scale=25, 
-                                  lw=2.0, color='black'))
-    
-    # Use mathtext for LaTeX symbols
-    ax.text(0.5, 0.2, r"$\mathbf{Angle \approx Equator (\pm 15^\circ)}$", 
-            ha='center', va='top', fontsize=12, weight='bold', color="#0369a1", transform=ax.transAxes)
-    ax.text(0.5, 0.05,
-             r"X-ray polarization angle must be consistent"
-             r" with the equatorial plane, within approx. $\pm 15^\circ$.",
-             ha='center', va='top', fontsize=9, linespacing=1.3, wrap=True, transform=ax.transAxes)
-    
-    ax.text(0.5, -0.2, r"$\mathbf{Degree Tends to Rise}$", 
-            ha='center', va='top', fontsize=12, weight='bold', color="#0369a1", transform=ax.transAxes)
-    ax.text(0.5, -0.35,
-             r"The degree of polarization tends to rise with energy.",
-             ha='center', va='top', fontsize=9, linespacing=1.3, wrap=True, transform=ax.transAxes)
+def draw_hook3_polarization_plot(ax: plt.Axes,
+                        *,
+                        ref_band=(1.0, 2.0),
+                        angle_band_deg=15.0,
+                        deg_low_hi=(2.0, 8.0)):
+    """
+    Hook 3: X-ray Polarization (schematic)
+    - Angle: should align with equatorial plane within ±angle_band_deg.
+    - Degree: tends to rise with energy.
+    - 観測点なし／メカニズム非依存の期待形のみを表示。
+    """
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    # --- x軸（1–100 keV）---
+    x_min_keV, x_max_keV = 1.0, 100.0
+    E = np.logspace(np.log10(x_min_keV), np.log10(x_max_keV), 256)
+    xlog = np.log10(E)
+
+    # --- Angle (deg) — 左y軸 ---
+    # equator=0° を基準、±band を薄帯で示す
+    y_center = np.zeros_like(E)
+    HOOK3_band = float(angle_band_deg)
+    y_low = -HOOK3_band * np.ones_like(E)
+    y_high = +HOOK3_band * np.ones_like(E)
+
+    # 参照帯（任意）
+    if isinstance(ref_band, (tuple, list)) and len(ref_band) == 2:
+        lo, hi = float(ref_band[0]), float(ref_band[1])
+        # 目盛にスナップ（1,2,5,10,20,50,100）
+        ticks = (1.0, 2.0, 5.0, 10.0, 20.0, 50.0, 100.0)
+        def snap(v):
+            for t in ticks:
+                if abs(v - t) <= max(1e-6, 1e-6 * t):
+                    return t
+            return v
+        lo, hi = snap(lo), snap(hi)
+        if lo < hi:
+            ax.axvspan(lo, hi, alpha=0.08, lw=0, label="Reference band", zorder=0)
+
+    # 薄帯＋中心線（角度）
+    ax.fill_between(E, y_low, y_high, alpha=0.12, linewidth=0,
+                    label=fr"Equatorial band ($\pm{int(HOOK3_band)}^\circ$)", zorder=1)
+    ax.plot(E, y_center, lw=2.0, label="Polarization angle (schematic)", zorder=2)
+
+    # --- Degree (%) — 右y軸（twin）---
+    ax_r = ax.twinx()
+    d0, d1 = float(deg_low_hi[0]), float(deg_low_hi[1])
+    deg = d0 + (d1 - d0) * (xlog - xlog.min()) / (xlog.max() - xlog.min())
+    ax_r.plot(E, deg, lw=1.6, ls="-.", label="Degree (schematic)", zorder=3)
+
+    # --- 体裁 ---
+    ax.set_xscale("log")
+    ax.set_xlim(x_min_keV*0.9, x_max_keV*1.1)
+    ax.set_xlabel("Energy (keV)")
+
+    ax.set_ylabel("Polarization angle (deg)", labelpad=3)
+    ax.set_ylim(-max(20.0, HOOK3_band*1.2), max(20.0, HOOK3_band*1.2))
+    ax.minorticks_on()
+    ax.set_xticks([1, 2, 5, 10, 20, 50, 100])
+    ax.get_xaxis().set_major_formatter(plt.ScalarFormatter())
+    ax.grid(True, which="major", alpha=0.28)
+    ax.grid(True, which="minor", alpha=0.12)
+
+    ax_r.set_ylabel("Polarization degree (%)", labelpad=4)
+    ax_r.set_ylim(0, max(10.0, d1*1.2))
+
+    # 右上注記（角度の主張を短く）
+    ax.text(0.98, 0.98,
+            r"Angle $\approx$ equator ($\pm 15^\circ$)",
+            ha="right", va="top", transform=ax.transAxes)
+
+    # 凡例（最小主義：左y軸2, 右y軸1）
+    # 位置は右上注記とぶつからないよう upper left を標準に
+    h1, l1 = ax.get_legend_handles_labels()
+    h2, l2 = ax_r.get_legend_handles_labels()
+    ax.legend(h1 + h2, l1 + l2, loc="upper left", frameon=False, fontsize=8)
+
+    # --- 余白ピン留め（Hook2と同系）+ 4行キャプション ---
+    #fig = ax.figure
+    # tight/constrained_layout を使っていない前提。効かない場合は off に。
+    # fig.set_constrained_layout(False)
+    #fig.subplots_adjust(left=0.235, right=0.965, top=0.88, bottom=0.285)
+
+    #bb = ax.get_position()
+    #x_center = 0.5 * (bb.x0 + bb.x1)
+    #y_base   = bb.y0 - 0.014
+    #dy       = 0.036
+    #cap_fs   = 10
+
+    #fig.text(x_center, y_base - 0*dy,
+    #         r"X-ray polarization angle is consistent with the equatorial plane.",
+    #         ha="center", va="top", fontsize=cap_fs)
+    #fig.text(x_center, y_base - 1*dy,
+    #         rf"Schematic expectation: angle within $\pm {int(band)}^\circ$;",
+    #         ha="center", va="top", fontsize=cap_fs)
+    #fig.text(x_center, y_base - 2*dy,
+    #         r"polarization degree tends to rise with energy,",
+    #         ha="center", va="top", fontsize=cap_fs)
+    #fig.text(x_center, y_base - 3*dy,
+    #         r"relative to a mechanism-agnostic baseline.",
+    #         ha="center", va="top", fontsize=cap_fs)
 
 
 # --- Main PDF Building Function ---
@@ -303,9 +381,16 @@ def build_pdf_page_3_hooks(outfile: Path):
                             ha='center', va='top', fontsize=14, weight='bold', 
                             color="#0369a1", transform=ax_hook3_container.transAxes)
     # FIX: Adjusted inset_axes
-    ax_hook3_plot = ax_hook3_container.inset_axes([0.1, 0.1, 0.8, 0.8]) 
+    ax_hook3_plot = ax_hook3_container.inset_axes([0.12, 0.17, 0.76, 0.62]) 
     draw_hook3_polarization_plot(ax_hook3_plot)
     # (Description is embedded in the plot function for Hook 3)
+    ax_hook3_container.text(0.5, 0.30,
+         r"X-ray polarization angle is consistent with the equatorial plane." "\n"
+         rf"Schematic expectation: angle within $\pm {int(HOOK3_band)}^\circ$;" "\n"
+         r"polarization degree tends to rise with energy," "\n"
+         r"relative to a mechanism-agnostic baseline.",
+         ha='center', va='top', fontsize=10, linespacing=1.3, wrap=True, transform=ax_hook2_container.transAxes)
+
 
     # --- Save Figure ---
     out_path = Path(outfile)
