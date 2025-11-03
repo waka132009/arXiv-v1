@@ -374,22 +374,23 @@ def build_pdf_page_3_hooks(outfile: Path):
     ax_hook3_container = fig.add_subplot(gs_hooks[0, 2])
     ax_hook3_container.axis("off")
     # FIX: Add background box
-    ax_hook3_container.add_patch(Rectangle((0, 0), 1, 1, 
+    ax_hook3_container.add_patch(Rectangle((-0.1, 0), 1.2, 1, 
                                      facecolor='#f8f9fa', edgecolor='#e2e8f0', 
-                                     lw=1, transform=ax_hook3_container.transAxes, zorder=-1))
+                                     lw=1, transform=ax_hook3_container.transAxes, zorder=-1, clip_on=False))
     ax_hook3_container.text(0.5, 1.10, "Hook 3: X-Ray Polarization", 
                             ha='center', va='top', fontsize=14, weight='bold', 
                             color="#0369a1", transform=ax_hook3_container.transAxes)
     # FIX: Adjusted inset_axes
-    ax_hook3_plot = ax_hook3_container.inset_axes([0.12, 0.17, 0.76, 0.62]) 
+    ax_hook3_plot = ax_hook3_container.inset_axes([0.1, 0.45, 0.8, 0.45]) 
     draw_hook3_polarization_plot(ax_hook3_plot)
     # (Description is embedded in the plot function for Hook 3)
     ax_hook3_container.text(0.5, 0.30,
-         r"X-ray polarization angle is consistent with the equatorial plane." "\n"
+         r"X-ray polarization angle is" "\n"
+         r"consistent with the equatorial plane." "\n"
          rf"Schematic expectation: angle within $\pm {int(HOOK3_band)}^\circ$;" "\n"
          r"polarization degree tends to rise with energy," "\n"
          r"relative to a mechanism-agnostic baseline.",
-         ha='center', va='top', fontsize=10, linespacing=1.3, wrap=True, transform=ax_hook2_container.transAxes)
+         ha='center', va='top', fontsize=10, linespacing=1.3, wrap=True, transform=ax_hook3_container.transAxes)
 
 
     # --- Save Figure ---
