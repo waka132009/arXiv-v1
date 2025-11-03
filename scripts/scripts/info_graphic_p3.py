@@ -144,8 +144,22 @@ def draw_hook2_lag_plot(ax: plt.Axes):
     lag_high   = lag_center * (1 + band_frac)
 
     # ---- 参照帯（任意）----
-    if ref_band is not None and len(ref_band) == 2 and ref_band[0] < ref_band[1]:
-        ax.axvspan(ref_band[0], ref_band[1], alpha=0.08, lw=0, label="Reference band")
+    if isinstance(ref_band, (tuple, list)) and len(ref_band) == 2:
+        lo, hi = float(ref_band[0]), float(ref_band[1])
+        if lo > hi:
+            lo, hi = hi, lo
+
+        # 主要目盛（log軸で使ってる値）にスナップ
+        ticks = (1.0, 2.0, 5.0, 10.0, 20.0, 50.0, 100.0)
+        def snap(v):
+            for t in ticks:
+                if abs(v - t) <= max(1e-6, 1e-6 * t):  # 浮動小数の誤差を吸収
+                    return t
+            return v
+
+        lo, hi = snap(lo), snap(hi)
+        if lo < hi:
+            ax.axvspan(lo, hi, alpha=0.08, lw=0, label="Reference band", zorder=0)
 
     # ---- 概念図：許容帯 + 中央線（色は既存パレットに寄せる）----
     ax.fill_between(E_keV, lag_low, lag_high, alpha=0.12, linewidth=0,
@@ -157,9 +171,13 @@ def draw_hook2_lag_plot(ax: plt.Axes):
     ax.set_xscale("log")
     ax.set_xlim(x_min_keV*0.9, x_max_keV*1.1)
     ax.set_xlabel("Energy (keV)")
-    ax.set_ylabel("Lag (arb. units)")
+    #ax.set_ylabel("Lag (arb. units)")
+    fig = ax.figure
+    fig.subplots_adjust(left=0.235, right=0.965, top=0.88, bottom=0.285)
+    ax.set_ylabel("Lag (arb. units)", labelpad=3)
     # 既存グリッド感に合わせて y のメジャーのみ点線
-    ax.grid(True, which="major", axis="y", ls=":", lw=0.5, alpha=0.5)
+    ax.grid(True, which="major", alpha=0.28)
+    ax.grid(True, which="minor", alpha=0.12)
     ax.minorticks_on()
     ax.set_xticks([1, 2, 5, 10, 20, 50, 100])
     ax.get_xaxis().set_major_formatter(plt.ScalarFormatter())
@@ -167,16 +185,20 @@ def draw_hook2_lag_plot(ax: plt.Axes):
     ax.set_ylim(1.5, 6.5)
 
     # ---- 右上注記（符号主張のみ。数式は凡例に入れない）----
+    #ax.text(0.98, 0.98,
+    #        rf"$\frac{{d\,\mathrm{{lag}}}}{{d\log E}}>0$  (slope ≈ {slope_per_dec:.2f}/dec)",
+    #        ha="right", va="top", transform=ax.transAxes)
     ax.text(0.98, 0.98,
-            rf"$\frac{{d\,\mathrm{{lag}}}}{{d\log E}}>0$  (slope ≈ {slope_per_dec:.2f}/dec)",
-            ha="right", va="top", transform=ax.transAxes)
+            r"$\frac{d\,\mathrm{lag}}{d\log E}>0$  (slope \approx 0.90/dec)",
+            ha="right", va="top", transform=ax.transAxes,
+            bbox=dict(facecolor="white", edgecolor="none", alpha=0.55, pad=1.5),fontsize=9)
 
     # ---- 凡例（最小主義）----
     handles = [
         Line2D([0], [0], color="#1f78b4", linestyle="-", lw=1.8, label="Model trend (schematic)"),
         Line2D([0], [0], color="#1f78b4", linestyle="-", lw=8, alpha=0.12, label="Expected range (schematic)"),
     ]
-    ax.legend(handles=handles, loc="upper right", bbox_to_anchor=(0.90, 1.19),
+    ax.legend(handles=handles, loc="upper right", bbox_to_anchor=(1.00, 1.19),
               fontsize=8, frameon=False)
 
 
@@ -263,7 +285,7 @@ def build_pdf_page_3_hooks(outfile: Path):
     ax_hook2_plot = ax_hook2_container.inset_axes([0.1, 0.45, 0.8, 0.45])
     draw_hook2_lag_plot(ax_hook2_plot)
     # FIX: Adjusted Y-position
-    ax_hook2_container.text(0.5, 0.28,
+    ax_hook2_container.text(0.5, 0.30,
          r"Lag increases with energy (``lag hardening'')." "\n"
          r"Schematic trend expected from the model;" "\n"
          r"$\frac{d\,\mathrm{lag}}{d\log E}>0$ across X-ray bands" "\n"
