@@ -248,8 +248,9 @@ def draw_hook3_polarization_plot(ax: plt.Axes,
     # 薄帯＋中心線（角度）
     ax.fill_between(E, -HOOK3_band, +HOOK3_band, alpha=0.12, linewidth=0, zorder=1,
                     label=r"Equatorial band ($\pm15^\circ$)")
-    ax.plot(E, np.zeros_like(E), lw=2.0, zorder=3, label="Polarization angle (schematic)")
-
+    #ax.plot(E, np.zeros_like(E), lw=2.0, zorder=3, label="Polarization angle (schematic)")
+    ax.plot(E, np.zeros_like(E), lw=2.6, color='#f8f9fa', zorder=3)
+    ax.plot(E, np.zeros_like(E), lw=2.0, color="#0369a1", zorder=4, label="Polarization angle (schematic)")
     # --- Degree (%) — 右y軸（twin）---
     ax_r = ax.twinx()
     d0, d1 = float(deg_low_hi[0]), float(deg_low_hi[1])
@@ -275,7 +276,8 @@ def draw_hook3_polarization_plot(ax: plt.Axes,
     ax.grid(True, which="minor", alpha=0.12)
    
     ax_r.set_ylabel("Polarization degree (%)", labelpad=4)
-    ax_r.set_ylim(0, max(10.0, d1*1.2))
+    #ax_r.set_ylim(0, max(10.0, d1*1.2))
+    ax_r.set_ylim(0, 9)
     ax_r.grid(False)
 
     # 右上注記（角度の主張を短く）
@@ -322,9 +324,9 @@ def build_pdf_page_3_hooks(outfile: Path):
     ax_hook1_container = fig.add_subplot(gs_hooks[0, 0])
     ax_hook1_container.axis("off")
     # FIX: Add background box
-    ax_hook1_container.add_patch(Rectangle((0, 0), 1, 1, 
+    ax_hook1_container.add_patch(Rectangle((-0.15, 0), 1.3, 1, 
                                      facecolor='#f8f9fa', edgecolor='#e2e8f0', 
-                                     lw=1, transform=ax_hook1_container.transAxes, zorder=-1))
+                                     lw=1, transform=ax_hook1_container.transAxes, zorder=-1, clip_on=False))
     # Title
     ax_hook1_container.text(0.5, 1.10, "Hook 1: High-Energy Shoulder", 
                             ha='center', va='top', fontsize=14, weight='bold', 
@@ -338,9 +340,9 @@ def build_pdf_page_3_hooks(outfile: Path):
     ax_hook1_container.text(
             0.5, 0.28,
             r"Shoulder expected in the 20–120 keV" "\n"
-            r"band. Quantitative hook:" "\n"
             r"$\Delta \mathrm{BIC}\!\geq\!6$ (shoulder vs.\ cutoff-PL)" "\n"
             r"over a standard continuum.",
+    #        r"$\Delta \mathrm{BIC}\!\geq\!6$",
             ha="center", va="top", fontsize=10,
             linespacing=1.3, wrap=False,
             transform=ax_hook1_container.transAxes
