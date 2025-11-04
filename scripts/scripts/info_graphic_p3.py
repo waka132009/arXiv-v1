@@ -246,15 +246,20 @@ def draw_hook3_polarization_plot(ax: plt.Axes,
             ax.axvspan(lo, hi, alpha=0.08, lw=0, label="Reference band", zorder=0)
 
     # 薄帯＋中心線（角度）
-    ax.fill_between(E, y_low, y_high, alpha=0.12, linewidth=0,
-                    label=fr"Equatorial band ($\pm{int(HOOK3_band)}^\circ$)", zorder=1)
-    ax.plot(E, y_center, lw=2.0, label="Polarization angle (schematic)", zorder=2)
+    ax.fill_between(E, -HOOK3_band, +HOOK3_band, alpha=0.12, linewidth=0, zorder=1,
+                    label=r"Equatorial band ($\pm15^\circ$)")
+    ax.plot(E, np.zeros_like(E), lw=2.0, zorder=3, label="Polarization angle (schematic)")
 
     # --- Degree (%) — 右y軸（twin）---
     ax_r = ax.twinx()
     d0, d1 = float(deg_low_hi[0]), float(deg_low_hi[1])
     deg = d0 + (d1 - d0) * (xlog - xlog.min()) / (xlog.max() - xlog.min())
-    ax_r.plot(E, deg, lw=1.6, ls="-.", label="Degree (schematic)", zorder=3)
+    ax_r.plot(E, deg, lw=1.6, ls="-.", zorder=2, label="Degree (schematic)")
+
+    import matplotlib.ticker as mticker
+    ax_r.yaxis.set_major_locator(mticker.MaxNLocator(integer=True))
+    ax.set_ylim(-18, 18); ax_r.set_ylim(0, 10)
+
 
     # --- 体裁 ---
     ax.set_xscale("log")
@@ -268,47 +273,38 @@ def draw_hook3_polarization_plot(ax: plt.Axes,
     ax.get_xaxis().set_major_formatter(plt.ScalarFormatter())
     ax.grid(True, which="major", alpha=0.28)
     ax.grid(True, which="minor", alpha=0.12)
-
+   
     ax_r.set_ylabel("Polarization degree (%)", labelpad=4)
     ax_r.set_ylim(0, max(10.0, d1*1.2))
+    ax_r.grid(False)
 
     # 右上注記（角度の主張を短く）
-    ax.text(0.98, 0.98,
-            r"Angle $\approx$ equator ($\pm 15^\circ$)",
-            ha="right", va="top", transform=ax.transAxes)
+    ax.text(0.80, 0.98, r"Angle $\approx$ equator ($\pm 15^\circ$)",
+            ha="right", va="top", transform=ax.transAxes,
+            bbox=dict(facecolor="white", edgecolor="none", alpha=0.55, pad=1.5), fontsize=9)
 
-    # 凡例（最小主義：左y軸2, 右y軸1）
-    # 位置は右上注記とぶつからないよう upper left を標準に
+    # --- twin の凡例を合体して外出し（内側の ax.legend を置き換え）---
     h1, l1 = ax.get_legend_handles_labels()
     h2, l2 = ax_r.get_legend_handles_labels()
-    ax.legend(h1 + h2, l1 + l2, loc="upper left", frameon=False, fontsize=8)
-
-    # --- 余白ピン留め（Hook2と同系）+ 4行キャプション ---
-    #fig = ax.figure
-    # tight/constrained_layout を使っていない前提。効かない場合は off に。
-    # fig.set_constrained_layout(False)
-    #fig.subplots_adjust(left=0.235, right=0.965, top=0.88, bottom=0.285)
-
-    #bb = ax.get_position()
-    #x_center = 0.5 * (bb.x0 + bb.x1)
-    #y_base   = bb.y0 - 0.014
-    #dy       = 0.036
-    #cap_fs   = 10
-
-    #fig.text(x_center, y_base - 0*dy,
-    #         r"X-ray polarization angle is consistent with the equatorial plane.",
-    #         ha="center", va="top", fontsize=cap_fs)
-    #fig.text(x_center, y_base - 1*dy,
-    #         rf"Schematic expectation: angle within $\pm {int(band)}^\circ$;",
-    #         ha="center", va="top", fontsize=cap_fs)
-    #fig.text(x_center, y_base - 2*dy,
-    #         r"polarization degree tends to rise with energy,",
-    #         ha="center", va="top", fontsize=cap_fs)
-    #fig.text(x_center, y_base - 3*dy,
-    #         r"relative to a mechanism-agnostic baseline.",
-    #         ha="center", va="top", fontsize=cap_fs)
-
-
+    short = {
+        "Reference band": "Ref. band",
+        r"Equatorial band ($\pm15^\circ$)": r"Equat. (±15°)",
+        "Polarization angle (schematic)": "Angle (schem.)",
+        "Degree (schematic)": "Degree (schem.)",
+    }
+    handles = h1 + h2
+    labels  = [short.get(s, s) for s in (l1 + l2)] 
+    
+    ax.legend(
+        handles, labels,
+        loc="lower center",                 # ★ 中央基準
+        bbox_to_anchor=(0.50, 1.02),        # ★ Axes上端の少し上
+        bbox_transform=ax.transAxes,
+        ncol=2, frameon=False,
+        fontsize=9,                         # 少しだけ絞る
+        handlelength=2.2, columnspacing=1.0, labelspacing=0.6,
+        borderaxespad=0.0
+    )
 # --- Main PDF Building Function ---
 def build_pdf_page_3_hooks(outfile: Path):
     """
