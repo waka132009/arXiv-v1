@@ -61,7 +61,7 @@ def draw_hook1_shoulder_plot(ax: plt.Axes):
     # ---- 肩帯（obs 20–120 keV）----
     ax.axvspan(20, 120, color='#4c78a8', alpha=0.13,
                label ="shoulder band (obs 20–120 keV)")
-    ax.text(45, 5, "20–120 keV", fontsize=7, ha="center", va="bottom")
+    ax.text(49, 5, "20–120 keV", fontsize=7, ha="center", va="bottom")
 
     # ---- 反射ハンプの参照（薄グレー点線：混同防止）----
     #Eh = np.logspace(np.log10(8), np.log10(40), 120)
@@ -191,8 +191,8 @@ def draw_hook2_lag_plot(ax: plt.Axes):
     #ax.text(0.98, 0.98,
     #        rf"$\frac{{d\,\mathrm{{lag}}}}{{d\log E}}>0$  (slope ≈ {slope_per_dec:.2f}/dec)",
     #        ha="right", va="top", transform=ax.transAxes)
-    ax.text(0.98, 0.98,
-            r"$\frac{d\,\mathrm{lag}}{d\log E}>0$  (slope \approx 0.90/dec)",
+    ax.text(0.7, 0.97,
+            r"$\frac{d\,\mathrm{lag}}{d\log E}>0\ \ (\mathrm{slope}\approx0.90/\mathrm{dec})$",
             ha="right", va="top", transform=ax.transAxes,
             bbox=dict(facecolor="white", edgecolor="none", alpha=0.55, pad=1.5),fontsize=9)
 
@@ -268,6 +268,7 @@ def draw_hook3_polarization_plot(ax: plt.Axes,
     ax.set_xlabel("Energy (keV)")
 
     ax.set_ylabel("Polarization angle (deg)", labelpad=3)
+    ax.tick_params(axis="y", pad=3)                        # ★ 追加：目盛りラベルの余白
     ax.set_ylim(-max(20.0, HOOK3_band*1.2), max(20.0, HOOK3_band*1.2))
     ax.minorticks_on()
     ax.set_xticks([1, 2, 5, 10, 20, 50, 100])
@@ -275,7 +276,8 @@ def draw_hook3_polarization_plot(ax: plt.Axes,
     ax.grid(True, which="major", alpha=0.28)
     ax.grid(True, which="minor", alpha=0.12)
    
-    ax_r.set_ylabel("Polarization degree (%)", labelpad=4)
+    ax_r.set_ylabel("Polarization degree (%)", labelpad=3)
+    ax_r.tick_params(axis="y", pad=3)
     #ax_r.set_ylim(0, max(10.0, d1*1.2))
     ax_r.set_ylim(0, 9)
     ax_r.grid(False)
