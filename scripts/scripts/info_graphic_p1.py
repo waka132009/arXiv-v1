@@ -35,7 +35,7 @@ def _panel(ax_page, box):
     ax_page.add_patch(FancyBboxPatch(
         (x0, y0), w, h, transform=ax_page.transAxes,
         boxstyle="round,pad=0.012,rounding_size=8",
-        facecolor=PANEL_BG, edgecolor="none", linewidth=1.0
+        facecolor=PANEL_BG, edgecolor="none", linewidth=0.0
     ))
     # top figure, bottom text
     ax_plot = ax_page.inset_axes([x0+0.04, y0+0.27, w-0.08, h-0.35])
@@ -95,7 +95,7 @@ def make_p1_conundrum(figpath="figures/sspe_infographic_p1_conundrum.pdf"):
 
     # ---- LEFT text ----
     left_lines = [
-        r"$\mathbf{Luminosity:}$ quasars exist with $L/L_{\rm Edd}>1$.",
+        r"$\mathbf{Luminosity:}$quasars exist with $L/L_{\rm Edd}>1$.",
         r"Super-Eddington phases likely required",
         r"for hyper-luminosity.",
         r"Population tail shows $L/L_{\rm Edd}\gtrsim 2$ (illustrative).",
@@ -133,7 +133,7 @@ def make_p1_conundrum(figpath="figures/sspe_infographic_p1_conundrum.pdf"):
 
     # ---- RIGHT text ----
     right_lines = [
-        r"$\mathbf{Spin\ ceiling:}$ sustained accretion",
+        r"$\mathbf{Spin\ ceiling:}$sustained accretion",
         r"should push $a_\ast\!\to\!1$, yet observations",
         r"cluster below the Thorne limit $a_\ast\simeq0.9985$.",
         r"Counter-torque or dissipation",
