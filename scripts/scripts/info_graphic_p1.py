@@ -35,7 +35,7 @@ def _panel(ax_page, box):
     ax_page.add_patch(FancyBboxPatch(
         (x0, y0), w, h, transform=ax_page.transAxes,
         boxstyle="round,pad=0.012,rounding_size=8",
-        facecolor=PANEL_BG, edgecolor=PANEL_EDGE, linewidth=1.0
+        facecolor=PANEL_BG, edgecolor="none", linewidth=1.0
     ))
     # top figure, bottom text
     ax_plot = ax_page.inset_axes([x0+0.04, y0+0.27, w-0.08, h-0.35])
@@ -84,8 +84,11 @@ def make_p1_conundrum(figpath="figures/sspe_infographic_p1_conundrum.pdf"):
     axL_plot.axhspan(1.0, axL_plot.get_ylim()[1], color=BLUE, alpha=0.06, lw=0)
     axL_plot.plot(x, y, lw=2.0, color=BLUE, label=r"$L/L_{\rm Edd}$")
     axL_plot.axhline(1.0, color="black", lw=1.0, ls="--")
-    axL_plot.text(0.02, 0.21, r"$L/L_{\rm Edd}=1$", fontsize=9,
-                  ha="left", va="bottom", transform=axL_plot.transAxes)
+    #axL_plot.text(0.02, 0.21, r"$L/L_{\rm Edd}=1$", fontsize=9,
+    #              ha="left", va="bottom", transform=axL_plot.transAxes)
+    axL_plot.text(0.02, 0.2, r"$L/L_{\rm Edd}=1$", fontsize=9,
+              ha="left", va="bottom", transform=axL_plot.transAxes,
+              bbox=dict(facecolor="white", edgecolor="none", alpha=0.6, pad=1.0))
     axL_plot.set_xlabel("Time (arb.)", fontsize=9)
     axL_plot.set_ylabel(r"$L/L_{\rm Edd}$", fontsize=9)
     axL_plot.tick_params(labelsize=8)
