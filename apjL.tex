@@ -14,6 +14,7 @@
 \usepackage{dblfloatfix}
 \usepackage{balance}
 \usepackage{flafter} % 図が参照より前に出ない保険
+\usepackage{orcidlink}
 
 
 % 二段図の許容量を増やす（団子解消に効く）
@@ -112,15 +113,18 @@
 
 \begin{document}
 
-% ---- 著者ブロックの最終修正案 ----
+% ---- 著者ブロックの最終修正案 (1:57 AMの提案) ----
 \title{Self-Sustained Penrose Excitation of Accretion Disks:\\
 A Spin-Regulated Mechanism for Super-Eddington Quasar Luminosities}
-
 \correspondingauthor{Jun Wakabayashi}
 
-\author[0009-0008-1891-4579]{Jun Wakabayashi}
+\author{Jun Wakabayashi}
 \affiliation{Independent Researcher, Japan}
+\orcidlink{0009-0008-1891-4579}
 \email{waka132009@gmail.com}
+
+%\maketitle
+
 
 
 % ---- Abstract (≤ 250 words) ----
@@ -137,37 +141,38 @@ the ergoregion and equatorial disk—i.e., horizon-exterior and therefore empiri
 \end{abstract}
 \keywords{accretion, accretion disks — black hole physics — quasars: general}
 
-%\maketitle
+
 
 % ---- 1. Introduction (4–6 paragraphs max) ----
 \section{Introduction}\label{sec:intro}
 
-\begin{figure*}[htbp]
+\begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.9\textwidth]{sspe_infographic_p1_conundrum.pdf}
+  \includegraphics[width=0.9\linewidth]{sspe_infographic_p1_conundrum.pdf}
 \caption{\textbf{The Quasar Conundrum.}
   Left: quasars exist with $L/L_{\rm Edd}>1$; a super-Eddington tail with $L/L_{\rm Edd}\gtrsim 2$ is implied.
   Right: observed spins cluster below the Thorne limit $a_\ast\simeq0.9985$ despite sustained accretion (spin ceiling).}
   \label{fig:p1} \label{fig:conundrum}
-\end{figure*}
+\end{figure}
 
 Observations of super-Eddington quasars ($L/L_{\rm Edd}>1$) and sub-unity spin ceilings ($a_*<1$) present a challenge to standard accretion models . Persistent tensions, such as large continuum-emitting sizes and complex wavelength-dependent lags, motivate the need for additional inner-disk heating mechanisms beyond local viscous dissipation. (Fig.~\ref{fig:conundrum})
 We propose that these phenomena are consequences of a \emph{spin-regulated equatorial channel}, activated as $a_*\!\to\!1$.
 Near-extremal spin brings the ISCO into close contact with the ergoregion, forcing an equatorial current sheet where plasmoid-dominated reconnection can occur.
 We posit that these ejecta provide the necessary "projectiles" for a magnetically-assisted Penrose-like energy split (cf. \citealt{Penrose1969,Penrose2002}).
 This process extracts the black hole's rotational energy, depositing it back into the disk to sustain $L/L_{\rm Edd}>1$ while the associated counter-torque simultaneously imposes a natural sub-unity spin ceiling.
-This Letter outlines the minimal framework for this mechanism, its spin-regulation dynamics (Sec. 2), and a set of explicit, falsifiable observational hooks derived from it (Sec. 3).
+This Letter outlines the minimal framework for this mechanism, its spin-regulation dynamics (Sec.~\ref{sec:theory}), and a set of explicit, falsifiable observational hooks derived from it (Sec.~\ref{sec:hooks}).
 
 
 % ---- 2. Minimal Framework ----
 \section{Minimal Framework}\label{sec:theory}
 We posit a phenomenological framework where a fraction of the black hole's rotational energy is extracted and deposited into the inner disk via an equatorial channel. This coupling activates steeply only near extremal spin, following a threshold law (Fig.~\ref{fig:onset})
 \begin{equation}
-\epscoup(a_\ast)=
-\begin{cases}
-0, & a_\ast\le \ath,\\[3pt]
-\epsilon_{\max}\Big(\dfrac{a_\ast-\ath}{1-\ath}\Big)^{n}, & a_\ast>\ath,
-\end{cases}\label{eq:eps}
+  \epscoup(a_\ast)=
+  \begin{cases}
+    0, & a_\ast\le \ath,\\[3pt]
+    \epsilon_{\max}\Big(\dfrac{a_\ast-\ath}{1-\ath}\Big)^{n}, & a_\ast>\ath,
+  \end{cases}
+  \label{eq:eps}
 \end{equation}
 % --- Figure 2 ---
 \begin{figure}[!htbp]
@@ -250,6 +255,9 @@ While BZ ($f_{\rm BZ}$) may dominate in radio-loud systems, we claim $f_{\rm eq}
 We propose that self-sustained Penrose excitation (SSPE) near extremal Kerr SMBHs provides a viable channel to inject rotational energy into the inner accretion disk.
 This mechanism naturally sustains super-Eddington luminosities (e.g., $L/L_{\rm Edd}\sim2$--$3$ or higher) while simultaneously enforcing a sub-unity spin ceiling via the associated counter-torque.
 The framework is explicitly falsifiable: in vetted high-spin, high-$\lambda$ samples, the systematic absence of at least two of the three proposed observational hooks (a 20--120 keV shoulder, X-to-UV lag hardening, and equator-aligned polarization) would refute this scenario.
+
+\section*{Competing interests}
+The author declares no competing interests.
 
 \begin{acknowledgments}
 This work stands on decades of insight into black-hole accretion, spin, and energy extraction. I am indebted to the community that built the modern framework of quasar physics\textemdash{}from classical Penrose energy extraction and disk theory to spin-jet coupling and polarimetry\textemdash{}and to teams who made public data and tools available.
