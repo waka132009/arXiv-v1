@@ -31,6 +31,13 @@ cp *.pdf ../tex/figs
 mv *.pdf ../figures
 ```
 
+## Dependencies (for scripts):
+
+- Python 3.x
+- matplotlib
+- numpy
+
+
 ## Build
 
 ```bash
