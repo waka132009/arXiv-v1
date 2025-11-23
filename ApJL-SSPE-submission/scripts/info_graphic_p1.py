@@ -95,7 +95,7 @@ def make_p1_conundrum(figpath="figures/sspe_infographic_p1_conundrum.pdf"):
 
     # ---- LEFT text ----
     left_lines = [
-        r"$\mathbf{Luminosity:}$ quasars exist with $L/L_{\rm Edd}>1$.",
+        r"$\mathbf{Luminosity:}$quasars exist with $L/L_{\rm Edd}>1$.",
         r"Super-Eddington phases likely required",
         r"for hyper-luminosity.",
         r"Population tail shows $L/L_{\rm Edd}\gtrsim 2$ (illustrative).",
@@ -133,7 +133,7 @@ def make_p1_conundrum(figpath="figures/sspe_infographic_p1_conundrum.pdf"):
 
     # ---- RIGHT text ----
     right_lines = [
-        r"$\mathbf{Spin\ ceiling:}$ sustained accretion",
+        r"$\mathbf{Spin\ ceiling:}$sustained accretion",
         r"should push $a_\ast\!\to\!1$, yet observations",
         r"cluster below the Thorne limit $a_\ast\simeq0.9985$.",
         r"Counter-torque or dissipation",
@@ -146,9 +146,9 @@ def make_p1_conundrum(figpath="figures/sspe_infographic_p1_conundrum.pdf"):
         ytxt -= 0.14
 
     # Footer navigation cue
-    #ax_page.text(0.95, 0.04, "See p.2 for the proposed mechanism →",
-    #             color="#444", ha="right", va="center", fontsize=10, style="italic",
-    #             transform=ax_page.transAxes)
+    ax_page.text(0.95, 0.04, "See p.2 for the proposed mechanism →",
+                 color="#444", ha="right", va="center", fontsize=10, style="italic",
+                 transform=ax_page.transAxes)
 
     fig.savefig(figpath, bbox_inches="tight", pad_inches=0.35)
     plt.close(fig)
