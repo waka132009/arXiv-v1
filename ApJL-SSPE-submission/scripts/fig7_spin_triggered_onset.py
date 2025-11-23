@@ -33,7 +33,7 @@ def main():
     ap.add_argument("--n",     type=float, default=4.0,   help="steepness exponent (3–6 recommended)")
     ap.add_argument("--xmin",  type=float, default=0.90,  help="x-axis min (spin)")
     ap.add_argument("--xmax",  type=float, default=1.00,  help="x-axis max (spin)")
-    ap.add_argument("--out",   default="figures/Fig_Onset.pdf", help="output PDF path")
+    ap.add_argument("--out",   default="./Fig_Onset.pdf", help="output PDF path")
     ap.add_argument("--polished", action="store_true", help="save into figures/polished/")
     ap.add_argument("--title", default="", help="optional title text")
     args = ap.parse_args()

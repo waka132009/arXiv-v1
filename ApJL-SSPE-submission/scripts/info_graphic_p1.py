@@ -43,7 +43,7 @@ def _panel(ax_page, box):
     ax_text.axis("off")
     return ax_plot, ax_text
 
-def make_p1_conundrum(figpath="figures/sspe_infographic_p1_conundrum.pdf"):
+def make_p1_conundrum(figpath="./sspe_infographic_p1_conundrum.pdf"):
     # ---- Page canvas ----
     fig = plt.figure(figsize=(9.0, 5.8))
     ax_page = fig.add_axes([0.03, 0.03, 0.94, 0.94])
@@ -146,9 +146,9 @@ def make_p1_conundrum(figpath="figures/sspe_infographic_p1_conundrum.pdf"):
         ytxt -= 0.14
 
     # Footer navigation cue
-    ax_page.text(0.95, 0.04, "See p.2 for the proposed mechanism →",
-                 color="#444", ha="right", va="center", fontsize=10, style="italic",
-                 transform=ax_page.transAxes)
+    #ax_page.text(0.95, 0.04, "See p.2 for the proposed mechanism →",
+    #             color="#444", ha="right", va="center", fontsize=10, style="italic",
+    #             transform=ax_page.transAxes)
 
     fig.savefig(figpath, bbox_inches="tight", pad_inches=0.35)
     plt.close(fig)

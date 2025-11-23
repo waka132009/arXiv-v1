@@ -155,7 +155,7 @@ def build_pdf_page_2_flowchart(outfile: Path):
 
 # --- Main execution ---
 def main():
-    out_dir = Path("figures")
+    out_dir = Path(".")
     out_dir.mkdir(parents=True, exist_ok=True)
     
     # このスクリプトは P2 のフローチャートのみを生成する
