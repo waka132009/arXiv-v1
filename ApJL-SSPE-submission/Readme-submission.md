@@ -4,6 +4,8 @@
 
 ``` bash
 ApJL-SSPE-submission
+├─ Readme-submission.md
+├─ apjL.pdf
 ├─ figures/          # final PDFs for submission
 ├─ scripts/          # Python scripts to regenerate figures
 └─ tex/
