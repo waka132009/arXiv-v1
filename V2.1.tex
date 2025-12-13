@@ -75,6 +75,9 @@
 \newcommand{\FeKa}{\mathrm{Fe\,K}\alpha}
 \newcommand{\epscoup}{\epsilon_{\rm coup}}
 \newcommand{\aeq}{a_{\rm eq}}
+% ------- 表内を折り返して表示 ------
+\newcommand{\mcell}[1]{\shortstack[l]{#1}}
+
 
 % --- Compactness threshold (single source of truth) ---
 \newcommand{\ellcrit}{30}
@@ -677,17 +680,17 @@ placing much sharper constraints on the microphysics of the coupling than our ph
 }
 \startdata
 Hook 1 &
-Hard X-ray spectrum with reliable background; model-comparison (AICc/BIC) &
+\mcell{Hard X-ray spectrum\\(background-controlled)\\+ model comparison\\(AICc/BIC)} &
 Yes &
-After screens, the vetted high-spin/high-$\lambda$ sample systematically prefers featureless continua (no shoulder)\\
+\mcell{After screens, vetted high-spin/high-$\lambda$ sample\\systematically prefers featureless continua\\(no shoulder)}\\
 Hook 2 &
-Simultaneous (or tightly interleaved) X-ray + UV/optical light curves; Fourier lags &
+\mcell{Simultaneous (or tightly interleaved)\\X-ray + UV/optical light curves\\+ Fourier lags} &
 Partly &
-After screens, lag--energy slopes fail to be positive/monotone within epochs across the bright subset\\
+\mcell{After screens, lag--energy slopes\\fail to be positive/monotone within epochs\\across the bright subset}\\
 Hook 3 &
-Hard-component X-ray polarimetry; EVPA reference to disk plane; spin/$\lambda$ proxies &
+\mcell{Hard-component X-ray polarimetry\\+ EVPA reference to disk plane\\+ spin/$\lambda$ proxies} &
 Limited &
-After screens, EVPA shows no preference for equatorial alignment and no trend with inferred spin/$\lambda$\\
+\mcell{After screens, EVPA shows no preference\\for equatorial alignment and no trend\\with inferred spin/$\lambda$}\\
 \enddata
 \tablecomments{The primary kill-shot used in this work is the joint-hook rule: absence of $\ge2$ hooks in vetted high-spin/high-$\lambda$ quasars after screens.}
 \end{deluxetable*}
