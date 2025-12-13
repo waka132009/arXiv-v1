@@ -162,6 +162,17 @@ In several objects where powerful relativistic jets clearly dominate the large-s
 In other words, the disk seems to be ``puffed up and overheated'' on scales where standard radiative and viscous heating would predict a cooler, geometrically thinner structure. 
 This combination --- BZ-dominated power extraction \emph{and} a conspicuously hot, inflated outer disk --- suggests that a non-negligible fraction of the black-hole spin energy might be being redirected back into the equatorial flow.
 
+\subsection*{Tensions across probes: local fixes vs.\ global synthesis}
+Taken in isolation, each of several long-running tensions can be accommodated by source-by-source adjustments within existing frameworks: 
+(i) hard X/MeV shoulders can be fit with multi-component Comptonization or corona-geometry variants; 
+(ii) wavelength-dependent lag spectra can be absorbed into more complex reprocessing geometries; 
+(iii) microlensing and reverberation sizes can be softened by modest disk thickening and radiative-transfer complications; and 
+(iv) in jet-favorable systems, outer-disk heating can be attributed to jet feedback or environment-dependent illumination. 
+However, the recurring appearance of these tensions \emph{in the same high-spin, high-$\lambda$ population} suggests that treating them as unrelated, probe-specific anomalies is an increasingly high-dimensional patchwork.
+
+This paper frames SSPE as a single \emph{equatorial inner-disk heating channel} that can be confronted with data across these disparate probes under a shared screening logic (compactness, absorption, inclination). 
+The intent is not to declare uniqueness, but to provide a unifying, explicitly falsifiable target that invites coordinated scrutiny by the spectral--timing, microlensing/reverberation, and GRMHD/plasma communities.
+
 In a companion Letter \citep[][hereafter Paper~I]{Wakabayashi2025OSFv1}, I introduced the concept of \emph{Self-Sustained Penrose Excitation} (SSPE): 
 a quasi-equatorial, Penrose-like energy-transfer channel that couples the ergoregion to the innermost accretion flow.
 When the Kerr spin exceeds a critical threshold $a_\ast \gtrsim a_{\rm th} \simeq 0.97$, this coupling becomes efficient enough that a modest fractional extraction of the available rotational energy, parameterized by $\epsilon_{\rm coup} \sim 10^{-2}$--$10^{-1}$, can continuously re-inject power into the inner disk.
@@ -508,6 +519,12 @@ The observational hooks and kill-shot in Sec.~\ref{sec:obs} are designed precise
 \clearpage
 %\Needspace{10\baselineskip} 
 \section{Discussion}\label{sec:discussion}
+
+\subsection{Synthesis across probes}\label{sec:synthesis}
+Taken in isolation, each observational tension motivating SSPE admits a plausible local explanation. 
+The core claim here is \emph{not} that such explanations are impossible, but that their repeated co-occurrence in the same high-spin, high-$\lambda$, often radio-quiet subset makes a single shared inner-disk heating channel a lower-complexity hypothesis.
+SSPE is offered as such a channel in a form that can be rejected decisively: after applying the screens (absorption, inclination, compactness), the high-spin/high-$\lambda$ subset should recover at least two of the three hooks (Sec.~\ref{sec:obs}); systematic failure would support $f_{\rm eq}\!\to\!0$ and render SSPE unnecessary.
+
 \tldr{The equatorial branch complements polar BZ; an anti-correlated see-saw is expected across states.}
 These bounds align with Fig.~\ref{fig:param-a}--\ref{fig:param-b} and are sufficient to reach $L/\LEdd\sim2$--$3$ with rarer $5$--$10\times$ excursions. Slim disks allow modest super-Eddington flows but no spin ceiling. BZ/MAD explain jet power yet not the radiative dominance of radio-quiet quasars. This framework ties hyperluminous output and the spin ceiling via near-extremal, equatorial coupling.
 Consistent with GRFFE/GRMHD studies, an \emph{equatorial return-current sheet forms within the ergoregion} and becomes plasmoid-unstable; detached plasmoids naturally split into branches with $E-\Omega_H L\lessgtr 0$ (captured vs.\ escaping), enabling rotational-energy extraction via a Penrose-like radiative channel \citep{Penrose1969,Penrose2002,Komissarov2004MNRAS,EastYang2018PRD,Pan2018PRD,Parfrey2019PRL,Bransgrove2021PRL}.
@@ -528,6 +545,7 @@ Figure~\ref{fig:param_space} illustrates how the compactness screen
 $\ell = \ell_{\rm crit}$ carves the $(\epsilon_{\rm coup}, d)$ plane for
 two representative choices of $R_{\rm eff}$; the figure is meant as a
 diagnostic guide, not as a prediction for a specific object.
+Crucially, the map is an \emph{upper-limit transparency bound}: it states how large the dissipation footprint may be \emph{if} an $\ell<\ellcrit$ quasi-beam component is to escape pair-choking, without assuming where or how the beam is launched.
 
 \setlength{\textfloatsep}{6pt plus 2pt minus 2pt} % 図まわりの余白を局所的に詰める
 \begin{figure}[tp!]
@@ -542,6 +560,8 @@ diagnostic guide, not as a prediction for a specific object.
 \end{figure}
 \endgroup
 % --- Parameter-space (panel b) : make it slightly shorter to allow text insertion ---
+Interpreted conservatively, increasing $R_{\rm eff}$ enlarges the \emph{allowed} transparent window, not the likelihood of direct escape.
+
 \begin{figure}[tp!]
   \centering
   \includegraphics[width=0.95\columnwidth,trim=0 6 0 4,clip]{fig10b_Reff1000.pdf}
@@ -622,7 +642,6 @@ The primary falsifiable content of the SSPE framework remains the \emph{co-occur
 A confirmed direct quasi-beam event would instead provide an exceptionally clean window into the ergoregion dynamics, 
 placing much sharper constraints on the microphysics of the coupling than our phenomenological treatment assumes.
 
-\subsection*{Validation roadmap: observations and simulations}
 % --- Validation Roadmap（置換用） ---
 \subsection{Validation Roadmap}\label{sec:roadmap}
 \tldr{Polarization--spin trends, intra-epoch lag slopes, and compactness screens lead; GRMHD+RT+population studies anchor the pipeline.}
@@ -646,8 +665,9 @@ placing much sharper constraints on the microphysics of the coupling than our ph
 %In vetted high-spin, high-$\lambda$ samples, absence of $\ge 2$ hooks after the transparency/absorption/inclination screens refutes the framework.
 % --- ここまで ---
 
-\paragraph{What would falsify this framework (kill shots).}
-We explicitly delineate outcome patterns under which the equatorial channel is unnecessary. In the high-spin, high-$\lambda$ subset (e.g., $a_*\gtrsim0.8$, $\lambda\!\equiv\!L_{\rm bol}/L_{\rm Edd}\gtrsim0.3$), any of the following, if established \emph{as a population trend}, would falsify our claim:
+\paragraph{Additional falsifiers (secondary).}
+The primary falsification protocol is the hook-based kill-shot in Sec.~\ref{sec:obs}. 
+The following are \emph{supporting} population-level patterns that, if established robustly, would further disfavor a non-zero equatorial fraction $f_{\rm eq}$:
 \begin{enumerate}
 \item Systematic absence of the EUV/soft-X/MeV excess (no ``shoulder'') \emph{and} systematically weak high-ionization lines (He\,II, N\,V, C\,IV) relative to the parent population.
 \item Reverberation lags from X$\rightarrow$UV showing no energy dependence (no inward reheating signature).
