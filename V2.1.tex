@@ -430,6 +430,21 @@ These are complemented by a population-level kill-shot: high-spin, high-Eddingto
 \tldr{After screens, three hooks: MeV shoulder, lag hardening, and equator-aligned polarization\textemdash{}should co-occur in the bright, high-spin subset.}
 \suppressfloats[t]  % avoid a float jumping above the heading
 
+%\floattable
+\begin{deluxetable*}{llccc}
+\tablenum{2}
+\tablecaption{Operational hook specification\label{tab:hook-spec}}
+\tablehead{
+\colhead{Item} & \colhead{Observable} & \colhead{Band / Product} &
+\colhead{Pass criterion} & \colhead{Primary confounders}
+}
+\startdata
+Hook 1 & Hard X/MeV shoulder & 20--120 keV & $\Delta$BIC $\ge6$ & model degeneracy\\
+Hook 2 & Lag hardening & lag vs.\ $E$ slope & positive/monotone & dilution\\
+Hook 3 & Equatorial polarization & 2--10 keV & EVPA $\parallel$ disk & jet contamination\\
+\enddata
+\tablecomments{Screens applied first; failure to recover $\ge2$ hooks falsifies SSPE.}
+\end{deluxetable*}
 \noindent\textit{Why this matters.} What to look for and how to falsify, in plain terms.
 
 % --- Quick recall of the equations each plot is tied to (往復を減らす) ---
@@ -749,29 +764,3 @@ I also thank colleagues and readers who provided critical comments on early draf
 \bibliography{V2.1}
 
 \end{document}
-
-
-\section{Observational Hooks and Falsification}
-\suppressfloats[t]  % ← このページ上部でのフロート先出しを抑止
-% --- ここから置換 ---
-We highlight three testable signatures expected to co-occur at high spin and high Eddington ratio under transparency ($\ellsoft$).\vspace{2pt}
-
-\noindent\textbf{Screens first:} exclude heavy absorption (Compton-thick etc.), extreme inclination, and high compactness ($\ell\gtrsim\ellcrit$).
-
-\begin{itemize}[leftmargin=*]
-  \item \textbf{Hard-X/MeV shoulder (20--120~keV, obs):}
-        model comparison favors a shoulder over a featureless baseline by
-        $\Delta$AICc \emph{or} $\Delta$BIC $\ge 6$
-        (rest $\sim$0.3--1~MeV at $z\gtrsim6$).
-  \item \textbf{Lag hardening (X$\to$UV/optical):}
-        energy-resolved lags increase \emph{monotonically} with photon energy within an epoch.
-  \item \textbf{Equator-aligned X-ray polarization (2--10~keV):}
-        EVPA $\parallel$ equator; polarization degree increases toward high spin/high $\lambda$.
-\end{itemize}
-
-\noindent\textbf{Falsify} if $\ge 2$ of the above are absent in a high-spin, high-$\lambda$ sample after the screens.
-% --- 置換ここまで ---
-
-\section{Position in Context (Concise)}
-We briefly situate the proposed equatorial Penrose-like coupling relative to BZ/MAD jets, reconnection-driven coronal heating, and reverberation/polarimetry constraints; an expanded survey is provided in the OSF Appendix.
-
