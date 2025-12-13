@@ -662,6 +662,35 @@ placing much sharper constraints on the microphysics of the coupling than our ph
 % --- Validation Roadmap（置換用） ---
 \subsection{Validation Roadmap}\label{sec:roadmap}
 \tldr{Polarization--spin trends, intra-epoch lag slopes, and compactness screens lead; GRMHD+RT+population studies anchor the pipeline.}
+% --- Table 3: Roadmap matrix (insert right after \subsection{Validation Roadmap}...) ---
+\suppressfloats[t]
+\begin{deluxetable*}{llcl}
+\tablewidth{0pt}
+\tabletypesize{\footnotesize}
+\tablenum{3}
+\tablecaption{\textbf{Validation roadmap matrix.} What can be tested now, and what would falsify SSPE under the stated screens.\label{tab:roadmap}}
+\tablehead{
+\colhead{Hook} &
+\colhead{Minimal data products} &
+\colhead{Executable now?} &
+\colhead{Population-level falsification trigger}
+}
+\startdata
+Hook 1 &
+Hard X-ray spectrum with reliable background; model-comparison (AICc/BIC) &
+Yes &
+After screens, the vetted high-spin/high-$\lambda$ sample systematically prefers featureless continua (no shoulder)\\
+Hook 2 &
+Simultaneous (or tightly interleaved) X-ray + UV/optical light curves; Fourier lags &
+Partly &
+After screens, lag--energy slopes fail to be positive/monotone within epochs across the bright subset\\
+Hook 3 &
+Hard-component X-ray polarimetry; EVPA reference to disk plane; spin/$\lambda$ proxies &
+Limited &
+After screens, EVPA shows no preference for equatorial alignment and no trend with inferred spin/$\lambda$\\
+\enddata
+\tablecomments{The primary kill-shot used in this work is the joint-hook rule: absence of $\ge2$ hooks in vetted high-spin/high-$\lambda$ quasars after screens.}
+\end{deluxetable*}
 
 \noindent\textbf{Observational fronts.}
 \begin{enumerate}
@@ -710,7 +739,7 @@ Self-sustained Penrose excitation near extremal Kerr SMBHs can inject rotational
 
 
 \floattable
-\begin{deluxetable*}{lcccc}[p]   % [t]で上部固定。収まらなければ[p]に
+\begin{deluxetable*}{lcccc}   % [t]で上部固定。収まらなければ[p]に
 \tablewidth{0pt}
 \tabletypesize{\normalsize}           % 大きく見せたい：\normalsize / 収めたい：\scriptsize
 \tablecaption{\textbf{Candidate Gallery} \textemdash{} Representative objects; values are indicative.\label{tab:cands}}
