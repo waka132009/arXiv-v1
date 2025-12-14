@@ -687,12 +687,12 @@ Hook 1 &
 \tableline
 Hook 2 &
 \mcell{Simultaneous (or tightly interleaved)\\X-ray + UV/optical light curves\\+ Fourier lags} &
-Partly &
+\textbf{Partly} &
 \mcell{After screens, lag--energy slopes\\fail to be positive/monotone within epochs\\across the bright subset}\\
 \tableline
 Hook 3 &
 \mcell{Hard-component X-ray polarimetry\\+ EVPA reference to disk plane\\+ spin/$\lambda$ proxies} &
-Limited &
+\textbf{Limited} &
 \mcell{After screens, EVPA shows no preference\\for equatorial alignment and no trend\\with inferred spin/$\lambda$}\\
 \enddata
 \tablecomments{The primary kill-shot used in this work is the joint-hook rule: absence of $\ge2$ hooks in vetted high-spin/high-$\lambda$ quasars after screens.}
@@ -703,7 +703,13 @@ Limited &
   \item[\textbf{(i)}] \textit{\textbf{Polarization vs.\ spin.}}Test that EVPA is equator-aligned and that the degree rises with $a_\ast$/$\lambda$; control for jet and scattering-cone geometries; report rank-correlation $p$-values and effect sizes.
   \item[\textbf{(ii)}] \textit{\textbf{Lag hardening.}} Within single epochs, verify that X$\to$UV/optical lags increase monotonically with photon energy; mask absorption events; provide cadence/noise tests.
   \item[\textbf{(iii)}] \textit{\textbf{Spectral compactness screen.}} Use cutoff-energy/pair proxies to flag high-$\ell$ cases (non-transparent) and separate them from the transparent sample used for hooks.
-  \item[\textbf{(iv)}] \textit{\textbf{See-saw with BZ.}} In jet-dominated sources, test anti-correlation between polar Poynting dominance and equatorial radiative signatures across states.
+\item[\textbf{(iv)}] \textit{\textbf{BZ--equatorial power partition (see-saw).}}
+Using Sec.~\ref{sec:power} as the bookkeeping ($P_{\rm tot}=P_{\rm BZ}+P_{\rm eq}$; $f_{\rm BZ}+f_{\rm eq}=1$),
+test whether states (or sources) with larger jet-dominance proxies
+(e.g., radio loudness, core dominance, or independent jet-power estimates)
+systematically show weaker equatorial reheating diagnostics (Hooks~1--3),
+at fixed spin/$\lambda$ and after screens.
+Report partial correlations (controlling for inclination and absorption) and state-by-state transitions where available.
 \end{enumerate}
 
 \noindent\textbf{Simulation fronts.}
@@ -717,6 +723,7 @@ Limited &
 %In vetted high-spin, high-$\lambda$ samples, absence of $\ge 2$ hooks after the transparency/absorption/inclination screens refutes the framework.
 % --- ここまで ---
 
+\FloatBarrier
 \paragraph{Additional falsifiers (secondary).}
 The primary falsification protocol is the hook-based kill-shot in Sec.~\ref{sec:obs}. 
 The following are \emph{supporting} population-level patterns that, if established robustly, would further disfavor a non-zero equatorial fraction $f_{\rm eq}$:
@@ -734,6 +741,7 @@ Self-sustained Penrose excitation near extremal Kerr SMBHs can inject rotational
 
 % ---------------- Appendix ----------------
 \clearpage
+%\FloatBarrier
 \appendix
 
 \section{Operational Protocol (Self-contained)}\label{app:protocol}
