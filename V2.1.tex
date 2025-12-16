@@ -180,7 +180,7 @@ The intent is not to declare uniqueness, but to provide a unifying, explicitly f
 
 This paper introduces and develops \emph{Self-Sustained Penrose Excitation} (SSPE): a quasi-equatorial, Penrose-like energy-transfer channel that couples the ergoregion to the innermost accretion flow. When the Kerr spin exceeds a near-threshold value $a_\ast \gtrsim a_{\rm th}\simeq 0.97$, a modest fractional coupling of the rotational-energy reservoir, parameterized by $\epscoup(a_\ast)\sim 10^{-2}$--$10^{-1}$, can continuously re-inject power into the inner disk while providing a counter-torque that self-limits the spin.
 
-Our goal is to establish SSPE as a quantitatively testable hypothesis. First, we formalize the geometry and kinematics of the ISCO--ergoregion interface and introduce a minimal parameterization of the coupling efficiency and threshold (Section~\ref{sec:theory}). Second, we present a semi-analytic parameter study exploring how $L/L_{\rm Edd}$, duty cycle, and spin evolution respond to changes in $\epscoup$, coupling scale, and effective screening of high-$\ell$ influx (Section~\ref{sec:results}). Third, we translate each observational hook into concrete signal-to-noise, model-selection, and polarimetric requirements, and state an explicit falsification criterion (Section~\ref{sec:hooks}). Fourth, we apply the framework to BZ-favorable, jet-dominated quasars with anomalously hot/extended disks, arguing that equatorial feedback can naturally inflate and overheat the outer disk even in such systems (Section~\ref{sec:power}).
+Our goal is to establish SSPE as a quantitatively testable hypothesis. First, we formalize the geometry and kinematics of the ISCO--ergoregion interface and introduce a minimal parameterization of the coupling efficiency and threshold (Section~\ref{sec:theory}). Second, we present a semi-analytic parameter study exploring how $L/L_{\rm Edd}$, duty cycle, and spin evolution respond to changes in $\epscoup$, coupling scale, and effective screening of high-$\ell$ influx (Section~\ref{sec:results}). Third, we translate each observational hook into concrete signal-to-noise, model-selection, and polarimetric requirements, and state an explicit falsification criterion (Section~\ref{sec:hooks}). Fourth, we apply the framework to BZ-favorable, jet-dominated quasars with anomalously hot/extended disks, arguing that equatorial feedback can  inflate and overheat the outer disk even in such systems (Section~\ref{sec:power}).
 
 \paragraph{Scope and modeling stance.}
 We present a phenomenological framework: the microphysics of beam formation, transport, and equatorial deposition is intentionally kept agnostic, while the \emph{observable consequences} of such coupling are made explicit and falsifiable.
@@ -376,7 +376,7 @@ Evolution obeys
 \end{CrowdedFloats}
 %\FloatBarrier
 \subsection{Net Luminosity}\label{sec:lum}
-\tldr{Total luminosity combines accretion and equatorial feedback, naturally yielding $L/L_{\rm Edd}\sim2$--$3$.}
+\tldr{Total luminosity combines accretion and equatorial feedback, generically yielding $L/L_{\rm Edd}\sim2$--$3$.}
 The total luminosity is
 \begin{equation}
 \Ltot=L_{\rm acc}+L_{\rm self},\qquad
@@ -407,7 +407,18 @@ and $2$--$3\,\LEdd$ when combined with concurrent accretion, while $da_\ast/dt<0
 
 \section{Semi-analytic parameter study}\label{sec:results}
 \tldr{Model trends map directly to hooks; figures follow their defining equations to prevent misalignment.}
+\noindent
+The semi-analytic exploration above yields three robust trends that do not depend on the microphysical details of how the equatorial branch is realized.
+First, once the coupling activates above the threshold spin $a_\ast\gtrsim \ath$, even a modest efficiency $\epscoup\sim 10^{-2}$--$10^{-1}$ can supply an inner-disk feedback luminosity $L_{\rm self}=\epscoup P_{\rm ext}$ that is comparable to $\LEdd$ for plausible reservoir and duty-cycle choices, so that the combined output $\Ltot=L_{\rm acc}+L_{\rm self}$ generically reaches the observed $L/\LEdd\sim2$--$3$ band.
+Second, the same extraction term necessarily carries angular momentum and therefore introduces a counter-torque; integrating the minimal evolution system generically drives $a_\ast$ toward an equilibrium $a_{\rm eq}<1$ on Myr-scale equilibration times, with stronger coupling yielding a lower $a_{\rm eq}$.
+Third, compactness links the observability of the hard component to geometry: the requirement $\ell\lesssim \ellcrit$ couples $(\epscoup,d)$ to the dissipation footprint $R_{\rm eff}$, carving a transparency-limited window in which bright states remain pair-safe.
 
+\noindent
+These trends map directly onto the observational program in Sec.~\ref{sec:hooks}.
+In the compactness-safe window (i.e., after screening out high-$\ell$ states), SSPE predicts that the hard component associated with equatorial feedback should be simultaneously (i) spectrally visible as a high-energy shoulder, (ii) temporally imprinted via lag--energy hardening consistent with inner-disk reheating and reprocessing, and (iii) geometrically encoded through disk-parallel hard X-ray polarization.
+Because activation is steep near $\ath$, the hooks are expected to concentrate in the high-spin, high-$\lambda$ subset rather than appearing as unrelated, source-by-source anomalies.
+Conversely, failure to recover at least two hooks in vetted high-spin/high-$\lambda$ quasars (after excluding heavy absorption, extreme inclination, and compactness-choked cases) constitutes a decisive falsification criterion.
+Finally, the same bookkeeping clarifies why SSPE should be treated as an equatorial complement to polar BZ extraction: across states, a changing partition between $P_{\rm BZ}$ and $P_{\rm eq}$ implies an anti-correlation between jet dominance and equatorial reheating diagnostics, with rare geometries potentially allowing partial direct leakage discussed separately in Sec.~\ref{sec:quasibeam}.
 
 The figures embedded in Sec.~\ref{sec:theory} visualize each theoretical ingredient immediately after the defining equations to avoid misalignment between formulae and diagnostics. Here we summarize cross-implications and observational hooks.
 
@@ -517,7 +528,7 @@ and weak radio emission seen in many luminous quasars.
 In this landscape, SSPE is best viewed as an \emph{equatorial exhaust channel}. 
 When the ISCO approaches the ergoregion and the inner flow becomes thick and strongly coupled, 
 a quasi-equatorial beam can transfer rotational energy back into the inner disk and cocoon. 
-This naturally supports mildly to strongly super-Eddington luminosities while enforcing an effective ``spin ceiling'' 
+This plausibly supports mildly to strongly super-Eddington luminosities while enforcing an effective ``spin ceiling'' 
 $a_*\!\lesssim\!0.97$--$0.99$ for systems that lack a powerful jet. 
 BZ and SSPE then form a see-saw: polar extraction dominates in MAD, radio-loud states, 
 while equatorial extraction dominates in high-$\lambda$, radio-quiet states. 
@@ -534,13 +545,13 @@ SSPE is offered as such a channel in a form that can be rejected decisively: aft
 
 \tldr{The equatorial branch complements polar BZ; an anti-correlated see-saw is expected across states.}
 These bounds align with Fig.~\ref{fig:param-a}--\ref{fig:param-b} and are sufficient to reach $L/\LEdd\sim2$--$3$ with rarer $5$--$10\times$ excursions. Slim disks allow modest super-Eddington flows but no spin ceiling. BZ/MAD explain jet power yet not the radiative dominance of radio-quiet quasars. This framework ties hyperluminous output and the spin ceiling via near-extremal, equatorial coupling.
-Consistent with GRFFE/GRMHD studies, an \emph{equatorial return-current sheet forms within the ergoregion} and becomes plasmoid-unstable; detached plasmoids naturally split into branches with $E-\Omega_H L\lessgtr 0$ (captured vs.\ escaping), enabling rotational-energy extraction via a Penrose-like radiative channel \citep{Penrose1969,Penrose2002,Komissarov2004MNRAS,EastYang2018PRD,Pan2018PRD,Parfrey2019PRL,Bransgrove2021PRL}.
+Consistent with GRFFE/GRMHD studies, an \emph{equatorial return-current sheet forms within the ergoregion} and becomes plasmoid-unstable; detached plasmoids unavoidably split into branches with $E-\Omega_H L\lessgtr 0$ (captured vs.\ escaping), enabling rotational-energy extraction via a Penrose-like radiative channel \citep{Penrose1969,Penrose2002,Komissarov2004MNRAS,EastYang2018PRD,Pan2018PRD,Parfrey2019PRL,Bransgrove2021PRL}.
 
 
 %\medskip
 \noindent\textit{Relation to Blandford--Znajek jets.}
 BZ is polar/Poynting-dominated; our mechanism is equatorial/radiative. Hybrid states and an anti-correlated see-saw are expected; counterexamples (simultaneously strong jets and high radiative output) can occur in transitional MAD-like regimes.
-Importantly, SSPE is not posed as a competitor to BZ, but as an equatorial channel that can coexist with the global magnetospheric topology required for BZ. In this sense, SSPE may utilize the equatorial return current and inner-disk coupling naturally present in BZ-favorable configurations.
+Importantly, SSPE is not posed as a competitor to BZ, but as an equatorial channel that can coexist with the global magnetospheric topology required for BZ. In this sense, SSPE may utilize the equatorial return current and inner-disk coupling present in BZ-favorable configurations in principle.
 % --- Parameter-space (panel a) : make it slightly shorter to allow text insertion ---
 \begingroup
 The relevant emission / deposition radius $R_{\rm eff}$ for the SSPE-driven
