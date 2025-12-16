@@ -133,7 +133,8 @@ A Spin-Regulated Mechanism for Super-Eddington Quasar Luminosities}
 \email{waka132009@gmail.com}
 
 \begin{abstract}
-We present a high-spin, near-threshold equatorial radiative channel that (i) sustains super-Eddington luminosities and (ii) naturally enforces a sub-unity spin ceiling, explaining why spins do not exceed unity in practice. Compactness-limited transparency ($\ell$) gates the observable power, and a simple torque balance links the luminosity to the same control that sets the ceiling. The framework is immediately testable via three co-occurring hooks at high spin and high accretion rate: (1) a 20--120~keV high-energy shoulder favored over a featureless continuum by $\Delta$AICc or $\Delta$BIC $\ge 6$; (2) lag hardening from X to UV/optical; and (3) equator-aligned X-ray polarization with a rising degree. The path to falsification is explicit: in vetted high-spin, high-$\lambda$ quasars, failure to recover at least two hooks---after excluding heavy absorption, extreme inclination, and high-compactness cases---would refute the scenario.
+We present a high-spin, near-threshold equatorial radiative channel that (i) sustains super-Eddington luminosities and (ii) self-consistently enforces a sub-unity spin ceiling, explaining why spins do not exceed unity in practice. Compactness-limited transparency ($\ell$) gates the observable power, and a simple torque balance links the luminosity to the same control that sets the ceiling. The framework is immediately testable via three co-occurring hooks at high spin and high accretion rate: (1) a 20--120~keV high-energy shoulder favored over a featureless continuum by $\Delta$AICc or $\Delta$BIC $\ge 6$; (2) lag hardening from X to UV/optical; and (3) equator-aligned X-ray polarization with a rising degree. The path to falsification is explicit: in vetted high-spin, high-$\lambda$ quasars, failure to recover at least two hooks---after excluding heavy absorption, extreme inclination, and high-compactness cases---would refute the scenario.
+We also note that rare geometries may allow partial direct leakage of the quasi-beam, potentially producing fast-variability events (speculative; see Sec.~\ref{sec:quasibeam})
 \end{abstract}
 
 \keywords{Quasars --- Accretion, accretion disks --- Black hole physics --- Relativistic processes}
@@ -147,7 +148,7 @@ We present a high-spin, near-threshold equatorial radiative channel that (i) sus
   \item The lever is repeated Penrose-like coupling at the ISCO-ergoregion interface, depositing power back into the disk and extracting angular momentum.
   \item The framework predicts three joint hooks: a hard X/MeV shoulder (20--120~keV, obs), lag hardening (X$\to$UV/optical), and equator-aligned X-ray polarization.
   \item Screens remove confounders: Compton-thick absorption, extreme inclination, and high compactness ($\ellhard$ required).
-  \item \textbf{Kill-shot:} in vetted high-spin/high-$\lambda$ quasars, failure to recover $\ge\!2$ hooks (after screens) refutes the framework.
+  \item \textbf{Decisive falsification criterion:} in vetted high-spin/high-$\lambda$ quasars, failure to recover $\ge\!2$ hooks (after screens) refutes the framework.
 \end{tenumerate}
 
 \section{Introduction}\label{sec:intro}
@@ -155,7 +156,7 @@ We present a high-spin, near-threshold equatorial radiative channel that (i) sus
 
 Accreting supermassive black holes (SMBHs) display a remarkable range of radiative efficiencies and Eddington ratios. 
 Standard thin-disk theory struggles to account for quasars radiating persistently at factors of a few above the Eddington limit without invoking either extremely fine-tuned parameters or poorly constrained ``slim'' accretion flows. 
-At the same time, near-extremal Kerr spins appear to be common among luminous active galactic nuclei (AGN), yet the dimensionless spin parameter $a_\ast$ must remain bounded below unity by basic causal and thermodynamic arguments.
+At the same time, near-extremal Kerr spins appear to be common among luminous active galactic nuclei (AGN), yet the dimensionless spin parameter $a_\ast$ is expected to remain bounded below unity by basic causal and thermodynamic arguments.
 Any viable model for the most luminous quasars must therefore accomplish two tasks at once: 
 (i) provide an additional, repeatable energy source that can sustain $L \sim 2$--$3\,L_{\rm Edd}$ (with occasional excursions to $5$--$10\,L_{\rm Edd}$), and 
 (ii) explain why the spin distribution shows an apparent ``ceiling'' just short of $a_\ast = 1$.
@@ -173,25 +174,13 @@ Taken in isolation, each of several long-running tensions can be accommodated by
 (iv) in jet-favorable systems, outer-disk heating can be attributed to jet feedback or environment-dependent illumination. 
 However, the recurring appearance of these tensions \emph{in the same high-spin, high-$\lambda$ population} suggests that treating them as unrelated, probe-specific anomalies is an increasingly high-dimensional patchwork.
 
+
 This paper frames SSPE as a single \emph{equatorial inner-disk heating channel} that can be confronted with data across these disparate probes under a shared screening logic (compactness, absorption, inclination). 
 The intent is not to declare uniqueness, but to provide a unifying, explicitly falsifiable target that invites coordinated scrutiny by the spectral--timing, microlensing/reverberation, and GRMHD/plasma communities.
 
-In a companion Letter \citep[][hereafter Paper~I]{Wakabayashi2025OSFv1}, I introduced the concept of \emph{Self-Sustained Penrose Excitation} (SSPE): 
-a quasi-equatorial, Penrose-like energy-transfer channel that couples the ergoregion to the innermost accretion flow.
-When the Kerr spin exceeds a critical threshold $a_\ast \gtrsim a_{\rm th} \simeq 0.97$, this coupling becomes efficient enough that a modest fractional extraction of the available rotational energy, parameterized by $\epsilon_{\rm coup} \sim 10^{-2}$--$10^{-1}$, can continuously re-inject power into the inner disk.
-Paper~I showed that such a mechanism can in principle sustain $L \sim 2$--$3\,L_{\rm Edd}$ for near-extremal spins while simultaneously providing a counter-torque that prevents $a_\ast$ from exceeding the spin ceiling.
-It also proposed three specific ``observational hooks'' --- a hard X/MeV shoulder, lag hardening, and equator-aligned X-ray polarization --- together with an operational kill-shot based on objects screened to low line-of-sight angular momentum $\ell \lesssim 30$.
+This paper introduces and develops \emph{Self-Sustained Penrose Excitation} (SSPE): a quasi-equatorial, Penrose-like energy-transfer channel that couples the ergoregion to the innermost accretion flow. When the Kerr spin exceeds a near-threshold value $a_\ast \gtrsim a_{\rm th}\simeq 0.97$, a modest fractional coupling of the rotational-energy reservoir, parameterized by $\epscoup(a_\ast)\sim 10^{-2}$--$10^{-1}$, can continuously re-inject power into the inner disk while providing a counter-torque that self-limits the spin.
 
-The goal of this ApJ paper (Paper~II) is to move beyond the concise, phenomenological presentation of Paper~I and to develop SSPE into a quantitatively testable framework.
-First, we formalize the geometry and kinematics of the ISCO--ergoregion interface and introduce a minimal parameterization of the Penrose-like coupling, $\epsilon_{\rm coup}(a_\ast)$, and the spin threshold $a_{\rm th}$ (Section~\ref{sec:theory}).
-Second, we present a semi-analytic parameter study that explores how the Eddington ratio, duty cycle, and spin evolution respond to changes in $\epsilon_{\rm coup}$, the coupling scale, and the effective screening of high-$\ell$ influx (Section~\ref{sec:results}).
-Third, we expand each observational hook into a concrete set of signal-to-noise, model-selection, and polarimetric requirements, and elevate the kill-shot condition to an explicit falsifiability criterion (Section~\ref{sec:hooks}).
-Fourth, we apply the SSPE framework to jet-dominated quasars whose disks appear anomalously extended and hot, arguing that equatorial feedback from SSPE can naturally inflate and overheat the outer disk even in BZ-favorable systems (Section~\ref{sec:power}).
-
-Throughout this paper I adopt $G = c = 1$ units and use $L_{\rm Edd}$ to denote the standard Thomson-scattering Eddington luminosity.
-The focus is deliberately on a minimal, falsifiable framework:  
-wherever possible, I phrase predictions in terms of directly observable quantities and emphasize combinations of measurements that can decisively rule out SSPE if nature chooses a different path.
-
+Our goal is to establish SSPE as a quantitatively testable hypothesis. First, we formalize the geometry and kinematics of the ISCO--ergoregion interface and introduce a minimal parameterization of the coupling efficiency and threshold (Section~\ref{sec:theory}). Second, we present a semi-analytic parameter study exploring how $L/L_{\rm Edd}$, duty cycle, and spin evolution respond to changes in $\epscoup$, coupling scale, and effective screening of high-$\ell$ influx (Section~\ref{sec:results}). Third, we translate each observational hook into concrete signal-to-noise, model-selection, and polarimetric requirements, and state an explicit falsification criterion (Section~\ref{sec:hooks}). Fourth, we apply the framework to BZ-favorable, jet-dominated quasars with anomalously hot/extended disks, arguing that equatorial feedback can naturally inflate and overheat the outer disk even in such systems (Section~\ref{sec:power}).
 
 \paragraph{Scope and modeling stance.}
 We present a phenomenological framework: the microphysics of beam formation, transport, and equatorial deposition is intentionally kept agnostic, while the \emph{observable consequences} of such coupling are made explicit and falsifiable.
@@ -416,7 +405,7 @@ and $2$--$3\,\LEdd$ when combined with concurrent accretion, while $da_\ast/dt<0
   showing a typical $2$--$3$ band (blue) with labeled $\epsilon_{\rm coup}$ values along the trend.}
 \end{figure}
 
-\section{Results}\label{sec:results}
+\section{Semi-analytic parameter study}\label{sec:results}
 \tldr{Model trends map directly to hooks; figures follow their defining equations to prevent misalignment.}
 
 
@@ -426,8 +415,8 @@ The figures embedded in Sec.~\ref{sec:theory} visualize each theoretical ingredi
 
 \section{Observational hooks and falsifiability}\label{sec:hooks}
 In this paper we treat SSPE as a concrete, falsifiable working hypothesis rather than a completed theory. The microphysics of the coupling between the ergoregion, quasi-equatorial beams, and the inner disk is intentionally left agnostic and absorbed into a small set of phenomenological parameters.
-What is fixed --- and offered to observers and simulators --- are three testable hooks and an explicit kill-shot: (1). A hard X/MeV ``shoulder'' in the $\sim$20--120~keV band (Hook~1), (2). Lag hardening in Fourier-resolved timing, in which harder bands lead softer bands over a well-defined frequency range (Hook~2), and (3). X-ray polarization preferentially aligned with the disk plane in the hard component (Hook~3).
-These are complemented by a population-level kill-shot: high-spin, high-Eddington-ratio, radio-quiet quasars must not \emph{systematically} lack Hooks~1--3. The goal of this paper is not to close the question, but to make it straightforward for the community to confirm, refine, or decisively rule out SSPE using existing and near-future data.
+What is fixed --- and offered to observers and simulators --- are three testable hooks and an explicit falsification criterion: (1). A hard X/MeV ``shoulder'' in the $\sim$20--120~keV band (Hook~1), (2). Lag hardening in Fourier-resolved timing, in which harder bands lead softer bands over a well-defined frequency range (Hook~2), and (3). X-ray polarization preferentially aligned with the disk plane in the hard component (Hook~3).
+These are complemented by a population-level falsification criterion: high-spin, high-Eddington-ratio, radio-quiet quasars must not \emph{systematically} lack Hooks~1--3. The goal of this paper is not to close the question, but to make it straightforward for the community to confirm, refine, or decisively rule out SSPE using existing and near-future data.
 
 \subsection{Observational Hooks}\label{sec:obs}
 \tldr{After screens, three hooks: MeV shoulder, lag hardening, and equator-aligned polarization\textemdash{}should co-occur in the bright, high-spin subset.}
@@ -532,7 +521,7 @@ This naturally supports mildly to strongly super-Eddington luminosities while en
 $a_*\!\lesssim\!0.97$--$0.99$ for systems that lack a powerful jet. 
 BZ and SSPE then form a see-saw: polar extraction dominates in MAD, radio-loud states, 
 while equatorial extraction dominates in high-$\lambda$, radio-quiet states. 
-The observational hooks and kill-shot in Sec.~\ref{sec:obs} are designed precisely to test this equatorial branch.
+The observational hooks and falsification criterion in Sec.~\ref{sec:obs} are designed precisely to test this equatorial branch.
 
 \clearpage
 %\Needspace{10\baselineskip} 
@@ -551,7 +540,7 @@ Consistent with GRFFE/GRMHD studies, an \emph{equatorial return-current sheet fo
 %\medskip
 \noindent\textit{Relation to Blandford--Znajek jets.}
 BZ is polar/Poynting-dominated; our mechanism is equatorial/radiative. Hybrid states and an anti-correlated see-saw are expected; counterexamples (simultaneously strong jets and high radiative output) can occur in transitional MAD-like regimes.
-
+Importantly, SSPE is not posed as a competitor to BZ, but as an equatorial channel that can coexist with the global magnetospheric topology required for BZ. In this sense, SSPE may utilize the equatorial return current and inner-disk coupling naturally present in BZ-favorable configurations.
 % --- Parameter-space (panel a) : make it slightly shorter to allow text insertion ---
 \begingroup
 The relevant emission / deposition radius $R_{\rm eff}$ for the SSPE-driven
@@ -643,7 +632,7 @@ We emphasize that we do \emph{not} attempt a full classification here, but the f
 \noindent\textit{Candidate hunting grounds.}
 At the level of working hypotheses, two regimes appear especially promising:
 \begin{titemize}
-  \item[(i)] \textbf{Lamppost fits with ``implausibly low'' heights.}
+  \item[(i)] \textbf{Lamppost fits with extremely compact source heights ($h\sim$ a few $r_g$).}
   In some bright quasars and Seyferts, lamppost spectral fits drive the inferred source height to values 
   $h\!\sim\!{\rm few}\,r_g$ or lower, where the physical interpretation becomes ambiguous. 
   Within SSPE such cases could instead correspond to quasi-equatorial beams emerging just above the horizon, 
@@ -664,7 +653,7 @@ placing much sharper constraints on the microphysics of the coupling than our ph
 
 % --- Validation Roadmap（置換用） ---
 \subsection{Validation Roadmap}\label{sec:roadmap}
-\tldr{Polarization--spin trends, intra-epoch lag slopes, and compactness screens lead; GRMHD+RT+population studies anchor the pipeline; Table~\ref{tab:roadmap} summarizes the minimal products and falsification triggers.}
+\tldr{Polarization--spin trends, intra-epoch lag slopes, and compactness screens lead; GRMHD+RT+population studies anchor the pipeline; Table~\ref{tab:roadmap} summarizes the minimal products and falsification criterion triggers.}
 % --- Table 3: Roadmap matrix (insert right after \subsection{Validation Roadmap}...) ---
 \Needspace{8\baselineskip}
 \suppressfloats[t]
@@ -677,7 +666,7 @@ placing much sharper constraints on the microphysics of the coupling than our ph
 \colhead{Hook} &
 \colhead{Minimal data products} &
 \colhead{Executable now?} &
-\colhead{Population-level falsification trigger}
+\colhead{Population-level falsification criteriontrigger}
 }
 \startdata
 \tableline
@@ -696,7 +685,7 @@ Hook 3 &
 \textbf{Limited} &
 \mcell{After screens, EVPA shows no preference\\for equatorial alignment and no trend\\with inferred spin/$\lambda$}\\
 \enddata
-\tablecomments{The primary kill-shot used in this work is the joint-hook rule: absence of $\ge2$ hooks in vetted high-spin/high-$\lambda$ quasars after screens.}
+\tablecomments{The primary falsification criterion used in this work is the joint-hook rule: absence of $\ge2$ hooks in vetted high-spin/high-$\lambda$ quasars after screens.}
 \end{deluxetable*}
 
 \noindent\textbf{Observational fronts.}
@@ -711,7 +700,7 @@ test whether states (or sources) with larger jet-dominance proxies
 systematically show weaker equatorial reheating diagnostics (Hooks~1--3),
 at fixed spin/$\lambda$ and after screens.
 Report partial correlations (controlling for inclination and absorption) and state-by-state transitions where available.
-This see-saw test is a cross-check on the power partition, not an additional hook in the primary kill-shot protocol.
+This see-saw test is a cross-check on the power partition, not an additional hook in the primary falsification protocol.
 \end{enumerate}
 
 \noindent\textbf{Simulation fronts.}
@@ -727,7 +716,7 @@ This see-saw test is a cross-check on the power partition, not an additional hoo
 
 \FloatBarrier
 \paragraph{Additional falsifiers (secondary).}
-The primary falsification protocol is the hook-based kill-shot in Sec.~\ref{sec:obs}. 
+The primary falsification protocol is the hook-based falsification protocol in Sec.~\ref{sec:obs}. 
 The following are \emph{supporting} population-level patterns that, if established robustly, would further disfavor a non-zero equatorial fraction $f_{\rm eq}$:
 \begin{enumerate}
 \item Systematic absence of the Hard-X/MeV shoulder (20--120~keV, obs) \emph{and} systematically weak high-ionization lines (He\,II, N\,V, C\,IV) relative to the parent population.
