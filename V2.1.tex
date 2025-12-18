@@ -433,6 +433,7 @@ These are complemented by a population-level falsification criterion: high-spin,
 
 \subsection{Observational Hooks}\label{sec:obs}
 \tldr{After screens, three hooks: MeV shoulder, lag hardening, and equator-aligned polarization\textemdash{}should co-occur in the bright, high-spin subset.}
+\noindent We emphasize that the observational hooks and thresholds were specified \emph{a priori} as a falsification-oriented protocol, and only subsequently confronted with existing reports and archival indicators to assess feasibility. This ordering is intended to minimize post hoc tuning and to keep the framework portable across instruments and subfields.
 \suppressfloats[t]  % avoid a float jumping above the heading
 
 %\floattable
@@ -475,6 +476,15 @@ Exclude heavy absorption (Compton-thick etc.), extreme inclination, and high com
 
 \noindent\textbf{Falsification.}
 In vetted high-spin, high-$\lambda$ quasars, \emph{failure to recover at least two hooks} after the screens above \emph{refutes} the framework.
+\begin{quote}
+\noindent\textbf{Observer Quickstart (Tier-1 archival screening; non-committal).}\par
+\small
+\begin{tenumerate}
+\item \textbf{Hook 1 (spectral):} fit a baseline (e.g., cutoff power-law) and a shoulder-enabled alternative over 20--120~keV, and report preference using $\Delta\mathrm{BIC}$ or $\Delta\mathrm{AICc}$ (threshold: $\ge 6$).
+\item \textbf{Hook 2 (timing):} compute the lag--energy relation in the same epoch and test only the sign/monotonicity, requiring $d(\mathrm{lag})/d\log E>0$ over the adopted band.
+\item \textbf{Decision:} sources satisfying both Tier-1 hooks motivate Tier-2 follow-up; persistent null results in vetted high-spin/high-$\lambda$, radio-quiet samples contribute directly to falsification under Sec.~\ref{sec:obs}.
+\end{tenumerate}
+\end{quote}
 % --- 図はトップ優先で近くに出す ---
 \begin{figure}[t!]
   \vspace*{2pt}
