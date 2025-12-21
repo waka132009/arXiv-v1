@@ -155,7 +155,7 @@ We also note that rare geometries may allow partial direct leakage of the quasi-
 \tldr{This paper develops a concrete, spin-regulated mechanism --- Self-Sustained Penrose Excitation (SSPE) --- that can both power super-Eddington quasar luminosities and enforce a near-extremal spin ceiling, while remaining explicitly falsifiable by X-ray and polarimetric data.}
 
 Accreting supermassive black holes (SMBHs) display a remarkable range of radiative efficiencies and Eddington ratios. 
-Standard thin-disk theory struggles to account for quasars radiating persistently at factors of a few above the Eddington limit without invoking either extremely fine-tuned parameters or poorly constrained ``slim'' accretion flows. 
+Standard thin-disk theory struggles to account for quasars radiating persistently at factors of a few above the Eddington limit without invoking either extremely fine-tuned parameters or poorly constrained ``slim'' accretion flows \citep{Abramowicz1988}. 
 At the same time, near-extremal Kerr spins appear to be common among luminous active galactic nuclei (AGN), yet the dimensionless spin parameter $a_\ast$ is expected to remain bounded below unity by basic causal and thermodynamic arguments.
 Any viable model for the most luminous quasars must therefore accomplish two tasks at once: 
 (i) provide an additional, repeatable energy source that can sustain $L \sim 2$--$3\,L_{\rm Edd}$ (with occasional excursions to $5$--$10\,L_{\rm Edd}$), and 
@@ -436,7 +436,6 @@ These are complemented by a population-level falsification criterion: high-spin,
 
 %\floattable
 \begin{deluxetable*}{llccc}
-%\tablenum{2}
 \tablecaption{Operational hook specification\label{tab:hook-spec}}
 \tablehead{
 \colhead{Item} & \colhead{Observable} & \colhead{Band / Product} &
@@ -470,6 +469,7 @@ Exclude heavy absorption (Compton-thick etc.), extreme inclination, and high com
         energy-resolved lags increase \emph{monotonically} with photon energy within an epoch.
   \item[(3)] \textbf{Equator-aligned X-ray polarization (2--10~keV):}
         EVPA $\parallel$ equator; polarization degree increases toward high spin/high $\lambda$.
+        We note that wind-scattering models can also polarize the X-ray continuum (e.g., \citealt{Young2011AGNWindPol}), but they rely on a distinct geometry and typically predict different inclination/energy dependencies; our screening explicitly targets low-obscuration, radio-quiet systems to reduce such degeneracies.
 \end{titemize}
 
 \noindent\textbf{Falsification.}
@@ -498,12 +498,9 @@ In vetted high-spin, high-$\lambda$ quasars, \emph{failure to recover at least t
 \end{figure}
 
 %\FloatBarrier
-\noindent\textem{At a glance.} How power repartitions at high $\lambda$ across mechanisms.
-
 \floattable
 \begin{deluxetable*}{lccc}[t] % ← ★付き＋[t]で上部固定（専用ページなら [p]）
-%\tablenum{1}
-\tablecaption{\textbf{Bottom line:} the equatorial channel sustains $L/L_{\rm Edd}\!>\!1$ \emph{and} imposes a spin ceiling $a_{\rm eq}\!\approx\!a_{\rm th}$, complementary to slim-disk (no ceiling) and BZ/MAD (polar power, $a_{\rm eq}\!\sim\!0.5$--$0.7$).\label{tab:mech-contrast}}
+\tablecaption{\textbf{At a glance:} How power repartitions at high $\lambda$ across mechanisms. \textbf{Bottom line:} the equatorial channel sustains $L/L_{\rm Edd}\!>\!1$ \emph{and} imposes a spin ceiling $a_{\rm eq}\!\approx\!a_{\rm th}$, complementary to slim-disk \citep{Abramowicz1988} (no ceiling) and BZ/MAD (polar power, $a_{\rm eq}\!\sim\!0.5$--$0.7$).\label{tab:mech-contrast}}
 \tabletypesize{\footnotesize}
 \tablewidth{0pt}
 \tablehead{
@@ -614,11 +611,14 @@ We model the spin-extraction power as a partition between a polar Blandford--Zna
 
 % amsmath は AASTeX で既定読み込み。無ければ \usepackage{amsmath}
 \begin{align}
-P_{\rm tot} &= P_{\rm BZ} + P_{\rm eq}, \\
-P_{\rm BZ}  &= f_{\rm BZ}\,P_{\rm ext}, \qquad
-P_{\rm eq} = f_{\rm eq}\,P_{\rm ext}, \\
-f_{\rm BZ} + f_{\rm eq} &= 1.
+P_{\rm tot} &= P_{\rm BZ} + P_{\rm eq} + P_{\rm oth}, \label{eq:ptot}\\
+P_{\rm BZ} &= f_{\rm BZ} P_{\rm ext},\quad
+P_{\rm eq} = f_{\rm eq} P_{\rm ext},\quad
+P_{\rm oth} = f_{\rm oth} P_{\rm ext}, \label{eq:pfrac}\\
+f_{\rm BZ} + f_{\rm eq} + f_{\rm oth} &= 1. \label{eq:ffrac}
 \end{align}
+
+\noindent Here $P_{\rm oth}$ collects channels not modeled in detail (e.g., pair-thick radiative outflows, advection, or dissipation that does not contribute to the equatorial quasi-beam). In the present work we focus on screened, radio-quiet high-spin/high-$\lambda$ systems where the hook-based program is designed to be most discriminating; a large $f_{\rm oth}$ is expected to weaken the spectral--timing--polarimetric hooks and can be treated as part of the screening/falsification logic.
 
 \noindent
 A practical implication is that SSPE can affect systems that appear, by their large-scale phenomenology, to be BZ-favorable.
@@ -694,7 +694,6 @@ placing much sharper constraints on the microphysics of the coupling than our ph
 \begin{deluxetable*}{llcl}
 \tablewidth{0pt}
 \tabletypesize{\footnotesize}
-%\tablenum{3}
 \tablecaption{\textbf{Validation roadmap matrix.} What can be tested now, and what would falsify SSPE under the stated screens.\label{tab:roadmap}}
 \tablehead{
 \colhead{Hook} &
@@ -826,7 +825,6 @@ I also thank colleagues and readers who provided critical comments on early draf
 
 \software{\texttt{latexmk}, \texttt{AASTeX701}}
 
-\nocite{*}
 %\balance
 \bibliographystyle{aasjournalv7}
 \bibliography{V2.1}
