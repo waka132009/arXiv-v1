@@ -254,10 +254,10 @@ The cap $\epsilon_{\max}$ limits equatorial deposition efficiency by energy-budg
 The activation $\epsilon_{\rm coup}(a_*)$ is intentionally steep: $(a_{\rm th},n)$ set the narrowness of the “spin ceiling”. In practice $\epsilon_{\rm coup}$ and the leakage fraction depend nonlinearly on flux loading and $\dot M$, with possible saturation arbitrarily close to the extremal limit. We therefore treat $(a_{\rm th},n,\epsilon_{\max},\alpha)$ as calibration parameters to be fixed by future GRMHD-in-ergoregion testbeds.
 
 
-\paragraph{Power partition.}
-We allow the extracted rotational power to partition between a polar BZ jet and an equatorial feedback channel:
+\paragraph{Power partition.}—We allow the extracted rotational power to partition into a polar Blandford--Znajek (BZ) channel, an equatorial feedback channel, and other loss channels:
 \[
-P_{\rm ext}=P_{\rm jet}+P_{\rm eq},\qquad f_{\rm BZ}+f_{\rm eq}=1.
+P_{\rm ext}=P_{\rm BZ}+P_{\rm eq}+P_{\rm oth},\qquad
+f_{\rm BZ}+f_{\rm eq}+f_{\rm oth}=1.
 \]
 Near $a_*\!\to\!1$, $f_{\rm eq}$ can become substantial (radio-quiet, radiation-dominated states), while $f_{\rm BZ}$ dominates in radio-loud systems; hybrid states are possible in transient MAD-like regimes.
 %\FloatBarrier
@@ -542,7 +542,7 @@ while equatorial extraction dominates in high-$\lambda$, radio-quiet states.
 The observational hooks and falsification criterion in Sec.~\ref{sec:obs} are designed precisely to test this equatorial branch.
 
 \noindent
-In what follows, we use the shorthand ``see-saw'' to denote an anti-correlated power partition between the polar and equatorial channels, i.e., $P_{\rm BZ}$ increasing as $P_{\rm eq}$ decreases, at fixed spin-energy budget.
+In what follows, we use the shorthand ``see-saw'' to denote an anti-correlated power partition between the polar and equatorial channels, i.e., $P_{\rm BZ}$ increasing as $P_{\rm eq}$ decreases, at fixed $P_{\rm ext}$ (and fixed/small $f_{\rm oth}$).
 
 \clearpage
 %\Needspace{10\baselineskip} 
@@ -727,7 +727,7 @@ Hook 3 &
   \item[\textbf{(ii)}] \textem{\textbf{Lag hardening.}} Within single epochs, verify that X$\to$UV/optical lags increase monotonically with photon energy; mask absorption events; provide cadence/noise tests.
   \item[\textbf{(iii)}] \textem{\textbf{Spectral compactness screen.}} Use cutoff-energy/pair proxies to flag high-$\ell$ cases (non-transparent) and separate them from the transparent sample used for hooks.
   \item[\textbf{(iv)}] \textem{\textbf{BZ--equatorial power partition (see-saw).}}
-Using Sec.~\ref{sec:power} as the bookkeeping ($P_{\rm tot}=P_{\rm BZ}+P_{\rm eq}$; $f_{\rm BZ}+f_{\rm eq}=1$),
+Using Sec.~\ref{sec:power} as the bookkeeping ($P_{\rm ext}=P_{\rm BZ}+P_{\rm eq}+P_{\rm oth}$; $f_{\rm BZ}+f_{\rm eq}+f_{\rm oth}=1$),
 test whether states (or sources) with larger jet-dominance proxies
 (e.g., radio loudness, core dominance, or independent jet-power estimates)
 systematically show weaker equatorial reheating diagnostics (Hooks~1--3),
