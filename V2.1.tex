@@ -613,16 +613,33 @@ Interpreted conservatively, increasing $R_{\rm eff}$ enlarges the \emph{allowed}
 
 
 \subsection{Power partition and spin budget}\label{sec:power}
+We denote by $P_{\rm ext}$ the total power extracted from the Kerr spin reservoir (Sec.~\ref{sec:theory}), which then partitions among polar (BZ), quasi-equatorial, and other channels:
 We model the spin-extraction power as a partition into a polar Blandford--Znajek (BZ) channel, an equatorial feedback channel, and residual channels not modeled in detail:
 
-% amsmath は AASTeX で既定読み込み。無ければ \usepackage{amsmath}
 \begin{align}
-P_{\rm tot} &= P_{\rm BZ} + P_{\rm eq} + P_{\rm oth}, \label{eq:ptot}\\
-P_{\rm BZ} &= f_{\rm BZ} P_{\rm ext},\quad
-P_{\rm eq} = f_{\rm eq} P_{\rm ext},\quad
+P_{\rm ext} = P_{\rm BZ} + P_{\rm eq} + P_{\rm oth}, \label{eq:ptot}\\
+P_{\rm BZ} = f_{\rm BZ} P_{\rm ext},\quad
+P_{\rm eq} = f_{\rm eq} P_{\rm ext},\notag\\
 P_{\rm oth} = f_{\rm oth} P_{\rm ext}, \label{eq:pfrac}\\
-f_{\rm BZ} + f_{\rm eq} + f_{\rm oth} &= 1. \label{eq:ffrac}
+f_{\rm BZ} + f_{\rm eq} + f_{\rm oth} = 1. \label{eq:ffrac}
 \end{align}
+
+%\begin{align}
+%P_{\rm ext} &= P_{\rm BZ} + P_{\rm eq} + P_{\rm oth}, \label{eq:ptot}\\
+%P_{\rm BZ} &= f_{\rm BZ} P_{\rm ext},\quad
+%P_{\rm eq} = f_{\rm eq} P_{\rm ext},\quad
+%P_{\rm oth} = f_{\rm oth} P_{\rm ext}, \label{eq:pfrac}\\
+%f_{\rm BZ} + f_{\rm eq} + f_{\rm oth} &= 1. \label{eq:ffrac}
+%\end{align}
+
+% amsmath は AASTeX で既定読み込み。無ければ \usepackage{amsmath}
+%\begin{gather}
+%P_{\rm tot} = P_{\rm BZ} + P_{\rm eq} + P_{\rm oth}, \label{eq:ptot}\\
+%P_{\rm BZ} = f_{\rm BZ} P_{\rm ext},\quad
+%P_{\rm eq} = f_{\rm eq} P_{\rm ext}, \notag\\
+%P_{\rm oth} = f_{\rm oth} P_{\rm ext}, \label{eq:pfrac}\\
+%f_{\rm BZ} + f_{\rm eq} + f_{\rm oth} = 1. \label{eq:ffrac}
+%\end{gather}
 
 \noindent Here $P_{\rm oth}$ collects channels not modeled in detail (e.g., pair-thick radiative outflows, advection, or dissipation that does not contribute to the equatorial quasi-beam). In the present work we focus on screened, radio-quiet high-spin/high-$\lambda$ systems where the hook-based program is designed to be most discriminating; a large $f_{\rm oth}$ is expected to weaken the spectral--timing--polarimetric hooks and can be treated as part of the screening/falsification logic.
 
