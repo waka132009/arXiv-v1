@@ -490,17 +490,16 @@ In vetted high-spin, high-$\lambda$ quasars, \emph{failure to recover at least t
 \end{tenumerate}
 \end{quote}
 % --- 図はトップ優先で近くに出す ---
-\begin{figure}[t!]
+\Needspace{22\baselineskip}
+\begin{figure}[t!]\label{fig:fig5}
   \vspace*{2pt}
   \centering
-  \includegraphics[width=.49\columnwidth]{Fig5a.pdf}
-  \hfill
-  \includegraphics[width=.49\columnwidth]{Fig5b.pdf}
+  \includegraphics[width=.95\linewidth]{Fig5a.pdf}\\[4pt]
+  \includegraphics[width=.95\linewidth]{Fig5b.pdf}
   \caption{\textbf{Hook observables vs.\ equilibrium spin.}
-  \emph{Left:} Fe K$\alpha$ reverberation lag $\tau_{\rm FeK}$ (in $r_g/c$) as a function of $a_{\rm eq}$; lags increase toward lower $a_{\rm eq}$ (stronger coupling).
-  \emph{Right:} Observable fraction $f_{\rm hook}$ (hard X/MeV shoulder or 2--10~keV polarization) vs.\ $a_{\rm eq}$ from the toy population mapping; the fraction rises steeply toward low $a_{\rm eq}$.
+  \emph{Top:} Fe K$\alpha$ reverberation lag $\tau_{\rm FeK}$ (in $r_g/c$) as a function of $a_{\rm eq}$; lags increase toward lower $a_{\rm eq}$ (stronger coupling).
+  \emph{Bottom:} Observable fraction $f_{\rm hook}$ (hard X/MeV shoulder or 2--10~keV polarization) vs.\ $a_{\rm eq}$ from the toy population mapping; the fraction rises steeply toward low $a_{\rm eq}$.
   See Sec.~\ref{sec:obs} and App.~\ref{app:protocol} for definitions and pass criteria.}
-  \label{fig:fig5}
 \end{figure}
 
 %\FloatBarrier
@@ -613,8 +612,7 @@ Interpreted conservatively, increasing $R_{\rm eff}$ enlarges the \emph{allowed}
 
 
 \subsection{Power partition and spin budget}\label{sec:power}
-We denote by $P_{\rm ext}$ the total power extracted from the Kerr spin reservoir (Sec.~\ref{sec:theory}), which then partitions among polar (BZ), quasi-equatorial, and other channels:
-We model the spin-extraction power as a partition into a polar Blandford--Znajek (BZ) channel, an equatorial feedback channel, and residual channels not modeled in detail:
+\noindent\textbf{Notation.} We denote by $P_{\rm ext}$ the total power extracted from the Kerr spin reservoir (Sec.~\ref{sec:theory}); it partitions into a polar Blandford--Znajek (BZ) channel, a quasi-equatorial channel, and residual channels:
 
 \begin{align}
 P_{\rm ext} = P_{\rm BZ} + P_{\rm eq} + P_{\rm oth}, \label{eq:ptot}\\
@@ -623,23 +621,6 @@ P_{\rm eq} = f_{\rm eq} P_{\rm ext},\notag\\
 P_{\rm oth} = f_{\rm oth} P_{\rm ext}, \label{eq:pfrac}\\
 f_{\rm BZ} + f_{\rm eq} + f_{\rm oth} = 1. \label{eq:ffrac}
 \end{align}
-
-%\begin{align}
-%P_{\rm ext} &= P_{\rm BZ} + P_{\rm eq} + P_{\rm oth}, \label{eq:ptot}\\
-%P_{\rm BZ} &= f_{\rm BZ} P_{\rm ext},\quad
-%P_{\rm eq} = f_{\rm eq} P_{\rm ext},\quad
-%P_{\rm oth} = f_{\rm oth} P_{\rm ext}, \label{eq:pfrac}\\
-%f_{\rm BZ} + f_{\rm eq} + f_{\rm oth} &= 1. \label{eq:ffrac}
-%\end{align}
-
-% amsmath は AASTeX で既定読み込み。無ければ \usepackage{amsmath}
-%\begin{gather}
-%P_{\rm tot} = P_{\rm BZ} + P_{\rm eq} + P_{\rm oth}, \label{eq:ptot}\\
-%P_{\rm BZ} = f_{\rm BZ} P_{\rm ext},\quad
-%P_{\rm eq} = f_{\rm eq} P_{\rm ext}, \notag\\
-%P_{\rm oth} = f_{\rm oth} P_{\rm ext}, \label{eq:pfrac}\\
-%f_{\rm BZ} + f_{\rm eq} + f_{\rm oth} = 1. \label{eq:ffrac}
-%\end{gather}
 
 \noindent Here $P_{\rm oth}$ collects channels not modeled in detail (e.g., pair-thick radiative outflows, advection, or dissipation that does not contribute to the equatorial quasi-beam). In the present work we focus on screened, radio-quiet high-spin/high-$\lambda$ systems where the hook-based program is designed to be most discriminating; a large $f_{\rm oth}$ is expected to weaken the spectral--timing--polarimetric hooks and can be treated as part of the screening/falsification logic.
 
@@ -788,7 +769,7 @@ Self-sustained Penrose excitation near extremal Kerr SMBHs can inject rotational
 
 % ---------------- Appendix ----------------
 \clearpage
-%\FloatBarrier
+\FloatBarrier
 \appendix
 
 \section{Operational Protocol (Self-contained)}\label{app:protocol}
