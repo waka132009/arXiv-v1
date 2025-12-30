@@ -227,8 +227,8 @@ where $\epsilon_{\max}$ is the saturation cap and $n$ controls activation sharpn
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=.92\linewidth]{Fig_Onset.pdf}
-\caption{\textbf{Activation turns on steeply above the threshold.}
-Peak $\Ltot/\LEdd$ rises rapidly once $a_\ast\!>\!\ath$, setting the lever for luminosity and spin regulation (cf.\ Eqs.~\eqref{eq:eps}--\eqref{eq:Ltot}).}
+  \caption{\textbf{Activation turns on steeply above the threshold.}
+  Peak $\Ltot/\LEdd$ rises rapidly once $a_\ast\!>\!\ath$, setting the lever for luminosity and spin regulation (cf.\ Eqs.~\eqref{eq:eps}--\eqref{eq:Ltot}).}
   \label{fig:onset}
 \end{figure}
 % --- Takeaway first (3行以内) ---
@@ -456,14 +456,12 @@ Exclude heavy absorption (Compton-thick etc.), extreme inclination, and high com
 
 \noindent\textbf{Hooks (apply jointly under the screens).}
 \begin{titemize}
-  \item[(1)] \textbf{Hard X/MeV shoulder (20--120 keV, obs):}
-        model comparison favors a shoulder over a featureless baseline by
-        $\Delta$AICc \emph{or} $\Delta$BIC $\ge 6$
-        (rest $\sim$0.3--1~MeV at $z\gtrsim6$).
-  \item[(2)] \textbf{Lag hardening (X$\to$UV/optical):}
-        energy-resolved lags increase \emph{monotonically} with photon energy within an epoch.
-  \item[(3)] \textbf{Equator-aligned X-ray polarization (2--10~keV):}
-        EVPA $\parallel$ equator; polarization degree increases toward high spin/high $\lambda$.
+  \item[(1)] \textbf{Hard X/MeV shoulder:}
+        evidence for a hard excess/shoulder beyond a featureless baseline continuum.
+  \item[(2)] \textbf{Lag hardening:}
+        a lag--energy relation consistent with harder photons lagging softer photons within an epoch.
+  \item[(3)] \textbf{Equator-aligned X-ray polarization:}
+        EVPA preferentially aligned with the disk plane, with a trend toward higher polarization degree at higher spin/high $\lambda$.
         We note that wind-scattering models can also polarize the X-ray continuum (e.g., \citealt{Young2011AGNWindPol}), but they rely on a distinct geometry and typically predict different inclination/energy dependencies; our screening explicitly targets low-obscuration, radio-quiet systems to reduce such degeneracies.
 \end{titemize}
 
@@ -473,9 +471,11 @@ In vetted high-spin, high-$\lambda$ quasars, \emph{failure to recover at least t
 \noindent\textbf{Observer Quickstart (Tier-1 archival screening; non-committal).}\par
 \small
 \begin{tenumerate}
-\item \textbf{Hook 1 (spectral):} fit a baseline (e.g., cutoff power-law) and a shoulder-enabled alternative over 20--120~keV, and report preference using $\Delta\mathrm{BIC}$ or $\Delta\mathrm{AICc}$ (threshold: $\ge 6$).
-\item \textbf{Hook 2 (timing):} compute the lag--energy relation in the same epoch and test only the sign/monotonicity, requiring $d(\mathrm{lag})/d\log E>0$ over the adopted band.
-\item \textbf{Decision:} sources satisfying both Tier-1 hooks motivate Tier-2 follow-up; persistent null results in vetted high-spin/high-$\lambda$, radio-quiet samples contribute directly to falsification under Sec.~\ref{sec:obs}.
+\item \textbf{Screen first:} apply the exclusion criteria (obscuration/geometry/compactness) as defined above.
+\item \textbf{Hook 1 (spectral):} perform the model comparison specified in Table~\ref{tab:hook-spec} and report the preference metric(s).
+\item \textbf{Hook 2 (timing):} compute the lag--energy relation and report the sign/monotonicity criterion specified in Table~\ref{tab:hook-spec}.
+\item \textbf{Hook 3 (polarization):} test the EVPA alignment criterion as specified in Table~\ref{tab:hook-spec}.
+\item \textbf{Decision:} Tier-1 passes motivate Tier-2 follow-up; persistent null results in vetted high-spin/high-$\lambda$, radio-quiet samples contribute directly to falsification.
 \end{tenumerate}
 \end{quote}
 
