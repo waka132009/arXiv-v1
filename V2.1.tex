@@ -421,25 +421,57 @@ Finally, the same bookkeeping clarifies why SSPE should be treated as an equator
 \clearpage
 
 \section{Observational hooks and falsifiability}\label{sec:hooks}
-In this paper we treat SSPE as a concrete, falsifiable working hypothesis rather than a completed theory. The microphysics of the coupling between the ergoregion, quasi-equatorial beams, and the inner disk is intentionally left agnostic and absorbed into a small set of phenomenological parameters.
-What is fixed --- and offered to observers and simulators --- are three testable hooks and an explicit falsification criterion: (1). A hard X/MeV ``shoulder'' in the $\sim$20--120~keV band (Hook~1), (2). Lag hardening in Fourier-resolved timing, in which harder bands lead softer bands over a well-defined frequency range (Hook~2), and (3). X-ray polarization preferentially aligned with the disk plane in the hard component (Hook~3).
-These are complemented by a population-level falsification criterion: high-spin, high-Eddington-ratio, radio-quiet quasars must not \emph{systematically} lack Hooks~1--3. The goal of this paper is not to close the question, but to make it straightforward for the community to confirm, refine, or decisively rule out SSPE using existing and near-future data.
+In this paper we treat SSPE as a concrete, falsifiable working hypothesis rather than a completed theory.
+The microphysics of the coupling between the ergoregion, quasi-equatorial channels, and the inner disk is intentionally left agnostic and absorbed into a small set of phenomenological parameters.
+What is fixed --- and offered to observers and simulators --- is an executable protocol: (i) minimal \textem{screens} that define vetted samples and handle missing observables fairly, (ii) three joint \textem{hooks} (spectral, timing, and polarimetric) with operational pass/fail criteria, and (iii) an explicit population-level \textem{kill-shot} criterion.
 
-\subsection{Observational Hooks}\label{sec:obs}
-\noindent\textbf{Screens (sample selection; to keep falsification fair).}
+We emphasize that the hook thresholds are treated as a \textem{specification} rather than a post hoc fit target.
+Accordingly, we adopt a single source of truth for the Tier-1 criteria (Table~\ref{tab:hook-spec}) and provide a lightweight execution recipe (Observer Quickstart) intended for archival screening.
+
+% --- unified protocol block starts here (Screens -> Tier -> Hooks -> Quickstart -> Falsification) ---
+
+\subsection{Observational hooks as an executable protocol}\label{sec:obs}
+
+\noindent\textbf{Screens (apply first; to keep falsification fair).}
 Because the kill-shot criterion is intentionally strict, we apply minimal screens to define
 ``vetted'' high-spin, high-$\lambda$ systems and to handle missing observables consistently:
-
 \begin{titemize}
-\item \textbf{Spin screen:} prioritize sources with an explicit spin estimate (e.g., Fe~K$\alpha$ reverberation/relativistic reflection, continuum-fitting where applicable, or polarimetric constraints). For Tier-1 we treat $a_\ast\gtrsim0.95$ as ``high spin'' and report the estimator and its systematic caveats.We emphasize that this is an operational screen rather than a sharp physical boundary: the goal is to avoid boundary disputes in Tier-1, while sources near the threshold can be revisited in Tier-2 with improved systematics.
-\item \textbf{Accretion screen:} define $\lambda\equiv L_{\rm bol}/L_{\rm Edd}$ using a documented $L_{\rm bol}$ method (SED-based where available) and a stated $M_{\rm BH}$ estimator; propagate a conservative systematic uncertainty (e.g., bolometric correction and virial mass systematics).
-\item \textbf{Geometry/obscuration screen:} exclude Compton-thick or heavily absorbed cases for which spectral curvature, lags, or polarization become instrumentally ambiguous. If an observable is effectively inaccessible (not measurable at useful S/N), treat it as \emph{missing} rather than \emph{failed}.
+\item \textbf{Spin screen:} prioritize sources with an explicit spin estimate (e.g., Fe~K$\alpha$ reverberation/relativistic reflection, continuum-fitting where applicable, or polarimetric constraints). For Tier-1 we treat $a_\ast\gtrsim0.95$ as ``high spin'' and report the estimator and its systematic caveats.
+\item \textbf{Accretion screen:} define $\lambda\equiv L_{\rm bol}/L_{\rm Edd}$ using a documented $L_{\rm bol}$ method (SED-based where available) and a stated $M_{\rm BH}$ estimator; propagate conservative systematics (bolometric correction and virial-mass uncertainties).
+\item \textbf{Geometry/obscuration screen:} exclude Compton-thick or heavily absorbed cases where spectral curvature, lags, or polarization become instrumentally ambiguous. If an observable is effectively inaccessible at useful S/N, treat it as \emph{missing} rather than \emph{failed}.
+\item \textbf{Compactness screen:} exclude pair-opaque states ($\ell\gtrsim\ellcrit$) where the hard component is suppressed; treat such cases as \emph{screened} rather than \emph{failed}.
 \end{titemize}
 
-\noindent We emphasize that the observational hooks and thresholds were specified \emph{a priori} as a falsification-oriented protocol, and only subsequently confronted with existing reports and archival indicators to assess feasibility. This ordering is intended to minimize post hoc tuning and to keep the framework portable across instruments and subfields.
-\suppressfloats[t]  % avoid a float jumping above the heading
+\noindent\textbf{Tier definitions.}
+We use \textem{Tier-1} to denote lightweight archival screening (existing hard-X spectroscopy and timing products with minimal assumptions).
+We use \textem{Tier-2} for higher-cost follow-up and systematic tightening (e.g., dedicated polarimetry, broader-band coverage, and targeted re-analysis for sources near screening thresholds).
 
-%\floattable
+\noindent\textbf{Hooks (apply jointly under the screens).}
+Operational definitions and pass/fail thresholds are given in Table~\ref{tab:hook-spec};
+here we state only the physical intent:
+\begin{titemize}
+  \item[(i)] \textbf{Hard X/MeV shoulder:} a hard excess/shoulder beyond a featureless baseline continuum.
+  \item[(ii)] \textbf{Lag hardening:} a lag--energy relation consistent with harder photons lagging softer photons within an epoch.
+  \item[(iii)] \textbf{Equator-aligned X-ray polarization:} EVPA preferentially aligned with the disk plane, with a trend toward higher polarization degree at higher spin/high $\lambda$.
+\end{titemize}
+
+\begin{quote}
+\noindent\textbf{Observer Quickstart (Tier-1 archival screening; non-committal).}\par
+\small
+\begin{tenumerate}
+\item \textbf{Screen first:} apply the screens above (spin/accretion/geometry/compactness) and document any missing observables.
+\item \textbf{Hook 1 (spectral):} perform the model comparison specified in Table~\ref{tab:hook-spec} and report the preference metric(s).
+\item \textbf{Hook 2 (timing):} compute the lag--energy relation and report the sign/monotonicity criterion specified in Table~\ref{tab:hook-spec}.
+\item \textbf{Hook 3 (polarization):} test the EVPA alignment criterion as specified in Table~\ref{tab:hook-spec}.
+\item \textbf{Decision:} Tier-1 passes motivate Tier-2 follow-up; persistent null results in vetted high-spin/high-$\lambda$, radio-quiet samples contribute directly to falsification.
+\end{tenumerate}
+\end{quote}
+
+\noindent\textbf{Falsification (explicit criterion).}
+After screens, the absence of two or more hooks in vetted high-spin/high-$\lambda$ samples falsifies the SSPE contribution; otherwise the source passes the Tier-1 screen.
+
+\noindent\textbf{Single source of truth.} We treat Table~\ref{tab:hook-spec} as the authoritative Tier-1 specification.
+
 \begin{deluxetable*}{llccc}
 \tablecaption{Operational hook specification\label{tab:hook-spec}}
 \tablehead{
@@ -453,41 +485,6 @@ Hook 3 & Equatorial polarization & 2--10 keV & EVPA $\parallel$ disk & jet conta
 \enddata
 \tablecomments{Screens applied first; failure to recover $\ge2$ hooks falsifies SSPE.}
 \end{deluxetable*}
-\noindent\textem{Why this matters.} What to look for and how to falsify, in plain terms.
-
-% --- Quick recall of the equations each plot is tied to (往復を減らす) ---
-\noindent\textem{Recall.}
-Activation $\epsilon_{\rm coup}(a_\ast)$ and power $P_{\rm eq}=\epsilon_{\rm coup}\,\dot{M}c^2\,g(\ell)$
-(cf.\ Eqs.~\eqref{eq:eps}, \eqref{eq:Ltot}), with transparency set by compactness $\ell$ (Eq.~\eqref{eq:ell}).
-These establish the trends in the plots below.
-
-\noindent\textbf{Screens (apply first).}
-Exclude heavy absorption (Compton-thick etc.), extreme inclination, and high compactness ($\ell\gtrsim\ellcrit$).
-
-\noindent\textbf{Hooks (apply jointly under the screens).}
-\begin{titemize}
-  \item[(1)] \textbf{Hard X/MeV shoulder:}
-        evidence for a hard excess/shoulder beyond a featureless baseline continuum.
-  \item[(2)] \textbf{Lag hardening:}
-        a lag--energy relation consistent with harder photons lagging softer photons within an epoch.
-  \item[(3)] \textbf{Equator-aligned X-ray polarization:}
-        EVPA preferentially aligned with the disk plane, with a trend toward higher polarization degree at higher spin/high $\lambda$.
-        We note that wind-scattering models can also polarize the X-ray continuum (e.g., \citealt{Young2011AGNWindPol}), but they rely on a distinct geometry and typically predict different inclination/energy dependencies; our screening explicitly targets low-obscuration, radio-quiet systems to reduce such degeneracies.
-\end{titemize}
-
-\noindent\textbf{Falsification.}
-In vetted high-spin, high-$\lambda$ quasars, \emph{failure to recover at least two hooks} after the screens above \emph{refutes} the framework.
-\begin{quote}
-\noindent\textbf{Observer Quickstart (Tier-1 archival screening; non-committal).}\par
-\small
-\begin{tenumerate}
-\item \textbf{Screen first:} apply the exclusion criteria (obscuration/geometry/compactness) as defined above.
-\item \textbf{Hook 1 (spectral):} perform the model comparison specified in Table~\ref{tab:hook-spec} and report the preference metric(s).
-\item \textbf{Hook 2 (timing):} compute the lag--energy relation and report the sign/monotonicity criterion specified in Table~\ref{tab:hook-spec}.
-\item \textbf{Hook 3 (polarization):} test the EVPA alignment criterion as specified in Table~\ref{tab:hook-spec}.
-\item \textbf{Decision:} Tier-1 passes motivate Tier-2 follow-up; persistent null results in vetted high-spin/high-$\lambda$, radio-quiet samples contribute directly to falsification.
-\end{tenumerate}
-\end{quote}
 
 %\FloatBarrier
 \floattable
