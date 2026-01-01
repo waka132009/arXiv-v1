@@ -165,7 +165,7 @@ def main():
             cell.PAD = 0.02
             cell.set_edgecolor("0.85")
             cell.set_linewidth(0.6)
-            cell.set_text_props(fontsize=8)
+            cell.set_text_props(fontsize=10)
             # Left-align certain columns
             if cols[j][0] in ("name","Notes"):
                 cell._text.set_ha("left")

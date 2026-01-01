@@ -160,7 +160,7 @@ def main():
 
         # 名前ラベル（重なり最小のオフセット）
         for x, y, n in zip(aeqs, tau_rg, names):
-            ax.annotate(n, (x, y), textcoords="offset points", xytext=(6, 4), fontsize=7)
+            ax.annotate(n, (x, y), textcoords="offset points", xytext=(6, 4), fontsize=10)
     else:
         # デモ点（CSVが空でも図が出るように）
         ax.plot([0.9, 0.95], [30, 10], marker="o", linestyle="")
@@ -180,7 +180,7 @@ def main():
         ax.plot(aeqs2, y2s, linestyle="--", linewidth=1.2)  # 傾向線（色は指定しない）
         ax.plot(aeqs2, y2s, marker="D", linestyle="")
         for x, y, n in zip(aeqs2, y2s, names2):
-            ax.annotate(n, (x, y), textcoords="offset points", xytext=(6, 4), fontsize=7)
+            ax.annotate(n, (x-0.001, y-0.003), textcoords="offset points", xytext=(6, 4), fontsize=10)
     else:
         ax.plot([0.9, 0.96], [0.15, 0.30], linestyle="--", linewidth=1.2)
         ax.plot([0.9, 0.96], [0.15, 0.30], marker="D", linestyle="")
