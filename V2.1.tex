@@ -152,7 +152,7 @@ We also note that rare geometries may allow partial direct leakage of the quasi-
   \item Near-extremal spins enable a compactness-gated \emph{equatorial} radiative channel that sustains $L/L_{\rm Edd}>1$ while self-limiting the spin.
   \item The lever is repeated Penrose-like coupling at the ISCO-ergoregion interface, depositing power back into the disk and extracting angular momentum.
   \item The framework predicts three joint hooks: a hard X/MeV shoulder (20--120~keV, obs), lag hardening (X$\to$UV/optical), and equator-aligned X-ray polarization.
-  \item \hyperref[list:screens]{Screens S1–S4} remove confounders: Compton-thick absorption, extreme inclination, and high compactness ($\ellhard$ required).
+  \item \hyperref[list:screens]{Screens A--D} remove confounders: Compton-thick absorption, extreme inclination, and high compactness ($\ellhard$ required).
   \item \textbf{Decisive falsification criterion:} in vetted high-spin/high-$\lambda$ quasars, failure to recover $\ge\!2$ hooks (after screens) refutes the framework.
 \end{tenumerate}
 
@@ -442,17 +442,17 @@ Accordingly, we adopt a single source of truth for the Tier-1 criteria (Table~\r
 Because the kill-shot criterion is intentionally strict, we apply minimal screens to define
 ``vetted'' high-spin, high-$\lambda$ systems and to handle missing observables consistently:
 \begin{titemize}\label{list:screens}
-\item \textbf{Spin screen:} prioritize sources with an explicit spin estimate (e.g., Fe~K$\alpha$ reverberation/relativistic reflection, continuum-fitting where applicable, or polarimetric constraints). For Tier-1 we treat $a_\ast\gtrsim0.95$ as ``high spin'' and report the estimator and its systematic caveats.
-\item \textbf{Accretion screen:} define $\lambda\equiv L_{\rm bol}/L_{\rm Edd}$ using a documented $L_{\rm bol}$ method (SED-based where available) and a stated $M_{\rm BH}$ estimator; propagate conservative systematics (bolometric correction and virial-mass uncertainties).
-\item \textbf{Geometry/obscuration screen:} exclude Compton-thick or heavily absorbed cases where spectral curvature, lags, or polarization become instrumentally ambiguous. If an observable is effectively inaccessible at useful S/N, treat it as \emph{missing} rather than \emph{failed}.
-\item \textbf{Compactness screen:} exclude pair-opaque states ($\ell\gtrsim\ellcrit$) where the hard component is suppressed; treat such cases as \emph{screened} rather than \emph{failed}.
+\item [A]\textbf{Spin screen:} prioritize sources with an explicit spin estimate (e.g., Fe~K$\alpha$ reverberation/relativistic reflection, continuum-fitting where applicable, or polarimetric constraints). For Tier-1 we treat $a_\ast\gtrsim0.95$ as ``high spin'' and report the estimator and its systematic caveats.
+\item [B]\textbf{Accretion screen:} define $\lambda\equiv L_{\rm bol}/L_{\rm Edd}$ using a documented $L_{\rm bol}$ method (SED-based where available) and a stated $M_{\rm BH}$ estimator; propagate conservative systematics (bolometric correction and virial-mass uncertainties).
+\item [C]\textbf{Geometry/obscuration screen:} exclude Compton-thick or heavily absorbed cases where spectral curvature, lags, or polarization become instrumentally ambiguous. If an observable is effectively inaccessible at useful S/N, treat it as \emph{missing} rather than \emph{failed}.
+\item [D]\textbf{Compactness screen:} exclude pair-opaque states ($\ell\gtrsim\ellcrit$) where the hard component is suppressed; treat such cases as \emph{screened} rather than \emph{failed}.
 \end{titemize}
 
 \noindent\textbf{Tier definitions.}
 We use \textem{Tier-1} to denote lightweight archival screening (existing hard-X spectroscopy and timing products with minimal assumptions).
 We use \textem{Tier-2} for higher-cost follow-up and systematic tightening (e.g., dedicated polarimetry, broader-band coverage, and targeted re-analysis for sources near screening thresholds).
 
-\noindent\textbf{Hooks (apply jointly under Screens S1--S4).}
+\noindent\textbf{Hooks (apply jointly under Screens A--D).}
 Operational definitions and pass/fail thresholds are given in Table~\ref{tab:hook-spec};
 here we state only the physical intent:
 \begin{titemize}
@@ -468,7 +468,7 @@ We measure lags relative to a fixed reference band (stated explicitly for each d
 \small
 \begin{tenumerate}
 \item [] \textbf{Step 1 (screen first):} \\
-Apply Screens S1--S4 and document any missing observables.
+Apply Screens A--D and document any missing observables.
 \item [] \textbf{Step 2 (Hook 1, spectral):} \\
 Perform the model comparison specified in Table~\ref{tab:hook-spec} and report the preference metric.
 \item [] \textbf{Step 3 (Hook 2, timing):} \\
@@ -481,7 +481,7 @@ Tier-1 passes motivate Tier-2 follow-up; persistent null results in vetted sampl
 \end{quote}
 
 \noindent\textbf{Falsification (explicit criterion).}
-Under Screens S1--S4, the absence of two or more hooks in vetted high-spin/high-$\lambda$ samples falsifies the SSPE contribution; otherwise the source passes the Tier-1 screen.
+Under Screens A--D, the absence of two or more hooks in vetted high-spin/high-$\lambda$ samples falsifies the SSPE contribution; otherwise the source passes the Tier-1 screen.
 
 \noindent\textbf{Single source of truth.} We treat Table~\ref{tab:hook-spec} as the authoritative Tier-1 specification.
 
@@ -496,7 +496,7 @@ Hook 1 & Hard X/MeV shoulder & 20--120 keV & $\ICmetric \ge \ICcrit$ & model deg
 Hook 2 & Lag hardening & lag vs.\ $E$ slope &  $d\tau/d\log E>0$ and monotone within an epoch. & dilution\\
 Hook 3 & Equatorial polarization & 2--10 keV & EVPA $\parallel$ disk & jet contamination\\
 \enddata
-\tablecomments{after applying Screens S1--S4; failure to recover $\ge2$ hooks falsifies SSPE.}
+\tablecomments{after applying Screens A--D; failure to recover $\ge2$ hooks falsifies SSPE.}
 \end{deluxetable*}
 
 %\FloatBarrier
@@ -553,7 +553,7 @@ In what follows, we use the shorthand ``see-saw'' to denote an anti-correlated p
 \subsection{Synthesis across probes}\label{sec:synthesis}
 Taken in isolation, each observational tension motivating SSPE admits a plausible local explanation. 
 The core claim here is \emph{not} that such explanations are impossible, but that their repeated co-occurrence in the same high-spin, high-$\lambda$, often radio-quiet subset makes a single shared inner-disk heating channel a lower-complexity hypothesis.
-SSPE is offered as such a channel in a form that can be rejected decisively: after applying the Screens S1--S4, the high-spin/high-$\lambda$ subset should recover at least two of the three hooks (Sec.~\ref{sec:obs}); systematic failure would support $f_{\rm eq}\!\to\!0$ and render SSPE unnecessary.
+SSPE is offered as such a channel in a form that can be rejected decisively: after applying the Screens A--D, the high-spin/high-$\lambda$ subset should recover at least two of the three hooks (Sec.~\ref{sec:obs}); systematic failure would support $f_{\rm eq}\!\to\!0$ and render SSPE unnecessary.
 
 These bounds align with Fig.~\ref{fig:param-a}--\ref{fig:param-b} and are sufficient to reach $L/\LEdd\sim2$--$3$ with rarer $5$--$10\times$ excursions. Slim disks allow modest super-Eddington flows but no spin ceiling. BZ/MAD explain jet power yet not the radiative dominance of radio-quiet quasars. This framework ties hyperluminous output and the spin ceiling via near-extremal, equatorial coupling.
 Consistent with GRFFE/GRMHD studies, an \emph{equatorial return-current sheet forms within the ergoregion} and becomes plasmoid-unstable; detached plasmoids unavoidably split into branches with $E-\Omega_H L\lessgtr 0$ (captured vs.\ escaping), enabling rotational-energy extraction via a Penrose-like radiative channel \citep{Penrose1969,Penrose2002,Komissarov2004MNRAS,EastYang2018PRD,Pan2018PRD,Parfrey2019PRL,Bransgrove2021PRL}.
@@ -572,7 +572,7 @@ In this paper we therefore treat $R_{\rm eff}$ as a sensitivity parameter
 rather than a fitted quantity.
 
 \subsection{Parameter space for quasi-beam transparency}\label{sec:paramspace}
-Figure~\ref{fig:param-a}--\ref{fig:param-b} illustrates how the Screen S4
+Figure~\ref{fig:param-a}--\ref{fig:param-b} illustrates how the Screen D
 $\ell = \ell_{\rm crit}$ carves the $(\epsilon_{\rm coup}, d)$ plane for
 two representative choices of $R_{\rm eff}$; the figure is meant as a
 diagnostic guide, not as a prediction for a specific object.
@@ -766,7 +766,7 @@ Self-sustained Penrose excitation near extremal Kerr SMBHs can inject rotational
 \appendix
 
 \section{Operational Protocol (Self-contained)}\label{app:protocol}
-\noindent\textbf{Screens S1--S4 \ref{sec:obs}} Exclude Compton-thick, extreme inclination; require $\ell<\ellcrit$.\\
+\noindent\textbf{Screens A--D \ref{sec:obs}} Exclude Compton-thick, extreme inclination; require $\ell<\ellcrit$.\\
 \noindent\textbf{Hook (i):} Shoulder passes if $\ICmetric \ge \ICcrit$ (20--120~keV obs).\\
 \noindent\textbf{Hook (ii):} Lag hardening passes if $d\tau/d\log E>0$ and monotone within an epoch.\\
 \noindent\textbf{Hook (iii):} X-ray polarization: EVPA $\parallel$ equator; degree increases with spin/$\lambda$.\\
