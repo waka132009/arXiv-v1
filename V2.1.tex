@@ -760,15 +760,25 @@ Self-sustained Penrose excitation near extremal Kerr SMBHs can inject rotational
 \appendix
 
 \section{Operational Protocol (Self-contained)}\label{app:protocol}
-\noindent\textbf{Screens A--D (defined in Sec.~\ref{sec:obs}; summarized here)}\\
+
+\noindent\textbf{Screens A--D (apply first; see Sec.~\ref{sec:obs} for details; summarized here).}\\
 \noindent\textbf{Screen A (spin):} require an available spin proxy; adopt vetted high-spin as $a_\ast \gtrsim 0.95$.\\
-\noindent\textbf{Screen B ($\lambda$):} require an Eddington-ratio estimate and select high-$\lambda$ systems (within stated systematics).\\
-\noindent\textbf{Screen C (geometry/obscuration):} exclude Compton-thick absorption and extreme inclination; treat an affected hook as missing only if plausibly blocked.\\
-\noindent\textbf{Screen D (compactness):} require $\ell<\ellcrit$ (fiducial $\ellcrit=30$).\\[2pt]
-\noindent\textbf{Hook (i):} Shoulder passes if $\ICmetric \ge \ICcrit$ (20--120~keV obs).\\
-\noindent\textbf{Hook (ii):} Lag hardening passes if $d\tau/d\log E>0$ and monotone within an epoch.\\
-\noindent\textbf{Hook (iii):} X-ray polarization: EVPA $\parallel$ equator; degree increases with spin/$\lambda$.\\
-\noindent\textbf{Verdict.} After screens, absence of $\ge2$ hooks $\Rightarrow$ falsified; else passes.
+\noindent\textbf{Screen B ($\lambda$):} require an Eddington-ratio estimate ($\lambda \equiv L_{\rm bol}/L_{\rm Edd}$) with stated systematics; select the high-$\lambda$ subset.\\
+\noindent\textbf{Screen C (geometry/obscuration):} exclude Compton-thick/heavily absorbed cases and extreme inclination; if a hook is plausibly blocked at useful S/N, treat it as \emph{missing} rather than failed.\\
+\noindent\textbf{Screen D (compactness):} require $\ell < \ell_{\rm crit}$ (fiducial $\ell_{\rm crit}=30$); pair-opaque states are \emph{screened} (not failures).\\
+
+\noindent\textbf{Lag convention (used in Hook 2).}
+We measure $\tau(E)$ relative to a fixed reference band $E_{\rm ref}$ (adopt $E_{\rm ref}=2$--4~keV); define $\tau>0$ when the band at $E$ lags the reference band.\\
+
+\noindent\textbf{Hooks (apply jointly under Screens A--D).}\\
+\noindent\textbf{Hook 1 (shoulder):} passes if $\Delta{\rm BIC}$ (or $\Delta{\rm AICc}$) $\ge 6$ in the 20--120~keV observed band.\\
+\noindent\textbf{Hook 2 (lag hardening):} passes if $d\tau/d\log E > 0$ and $\tau(E)$ is monotone within an epoch.\\
+\noindent\textbf{Hook 3 (equatorial polarization):} EVPA $\parallel$ disk/equator, with polarization degree increasing with spin/$\lambda$.\\
+
+\noindent\textbf{Decision (decisive falsification criterion).}
+After applying Screens A--D, systematic failure to recover $\ge 2$ hooks in vetted high-spin/high-$\lambda$ samples refutes SSPE; otherwise the sample passes Tier-1.\\
+
+\noindent\textbf{Toy mapping (optional visual aid).} See Fig.~\ref{fig:toy_mapping}.
 
 
 \textem{Toy mapping:} see Fig.~\ref{fig:fig_appendix}.
