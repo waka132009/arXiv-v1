@@ -502,11 +502,16 @@ Under Screens A--D, the absence of two or more hooks in vetted high-spin/high-$\
 \tableline
 Hook 1 & Hard X/MeV shoulder & 20--120 keV & $\ICmetric \ge \ICcrit$ & model degeneracy\\
 \tableline
-Hook 2 & Lag hardening & lag--energy slope & \mccell{$\tau(E)$ relative to $E_{\rm ref}=2$--4~keV \\ define $\tau>0$ for lags; \\ pass if $d\tau/d\log E>0$ \\ and monotone within an epoch.} & dilution\\
+Hook 2 & Lag hardening & lag--energy slope & \mccell{$\tau(E)$ relative to $E_{\rm ref}=2$--4~keV \\rest-frame; use /(1+z)\\in observed frame where feasible\\ define $\tau>0$ for lags; \\ pass if $d\tau/d\log E>0$ \\ and monotone within an epoch.} & dilution\\
 \tableline
 Hook 3 & Equatorial polarization & 2--10 keV & EVPA $\parallel$ disk & jet contamination\\
 \enddata
-\tablecomments{after applying Screens A--D; failure to recover $\ge2$ hooks falsifies SSPE.}
+\tablecomments{
+after applying Screens A–D; we adopt $\Delta \mathrm{IC}\ge 6$
+(e.g., $\Delta$BIC or $\Delta$AICc) as a pragmatic strong-evidence decision threshold
+following common usage in model selection (e.g., \citealt{KassRaftery1995}; \citealt{BurnhamAnderson2002});
+failure to recover $\ge 2$ hooks falsifies SSPE.
+}
 \end{deluxetable*}
 
 \FloatBarrier
