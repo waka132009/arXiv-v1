@@ -74,7 +74,7 @@
 \newcommand{\aeq}{a_{\rm eq}}
 % ------- 表内を折り返して表示 ------
 \newcommand{\mcell}[1]{\shortstack[l]{#1}}
-
+\newcommand{\mccell}[1]{\begin{tabular}[c]{@{}c@{}}#1\end{tabular}}
 % === Emphasis Macro ===
 % textitの代わりに使用する強調用マクロ。Small Caps (\textsc) や Sans Serif (\textsf) に変更可能
 \newcommand{\textem}[1]{\textsf{#1}}
@@ -429,7 +429,7 @@ Finally, the same bookkeeping clarifies why SSPE should be treated as an equator
 \section{Observational hooks and falsifiability}\label{sec:hooks}
 In this paper we treat SSPE as a concrete, falsifiable working hypothesis rather than a completed theory.
 The microphysics of the coupling between the ergoregion, quasi-equatorial channels, and the inner disk is intentionally left agnostic and absorbed into a small set of phenomenological parameters.
-What is fixed --- and offered to observers and simulators --- is an executable protocol: (i) minimal \textem{screens} that define vetted samples and handle missing observables fairly, (ii) three joint \textem{hooks} (spectral, timing, and polarimetric) with operational pass/fail criteria, and (iii) an explicit population-level \textem{kill-shot} criterion.
+What is fixed --- and offered to observers and simulators --- is an executable protocol: (i) minimal \textem{screens} that define vetted samples and handle missing observables fairly, (ii) three joint \textem{hooks} (spectral, timing, and polarimetric) with operational pass/fail criteria, and (iii) an explicit population-level \textem{decisive falsification criterion} criterion.
 
 We emphasize that the hook thresholds are treated as a \textem{specification} rather than a post hoc fit target.
 Accordingly, we adopt a single source of truth for the Tier-1 criteria (Table~\ref{tab:hook-spec}) and provide a lightweight execution recipe (Observer Quickstart) intended for archival screening.
@@ -439,7 +439,7 @@ Accordingly, we adopt a single source of truth for the Tier-1 criteria (Table~\r
 \subsection{Observational hooks as an executable protocol}\label{sec:obs}
 
 \noindent\textbf{Screens (apply first; to keep falsification fair).}
-Because the kill-shot criterion is intentionally strict, we apply minimal screens to define
+Because the falsification criterion is intentionally strict, we apply minimal screens to define
 ``vetted'' high-spin, high-$\lambda$ systems and to handle missing observables consistently:
 \begin{titemize}\label{list:screens}
 \item [A]\textbf{Spin screen:} prioritize sources with an explicit spin estimate (e.g., Fe~K$\alpha$ reverberation/relativistic reflection, continuum-fitting where applicable, or polarimetric constraints). For Tier-1 we treat $a_\ast\gtrsim0.95$ as ``high spin'' and report the estimator and its systematic caveats.
@@ -456,12 +456,14 @@ We use \textem{Tier-2} for higher-cost follow-up and systematic tightening (e.g.
 Operational definitions and pass/fail thresholds are given in Table~\ref{tab:hook-spec};
 here we state only the physical intent:
 \begin{titemize}
-  \item[(i)] \textbf{Hard X/MeV shoulder:} a hard excess/shoulder beyond a featureless baseline continuum.
-  \item[(ii)] \textbf{Lag hardening:} a lag--energy relation consistent with harder photons lagging softer photons within an epoch.
-  \item[(iii)] \textbf{Equator-aligned X-ray polarization:} EVPA preferentially aligned with the disk plane, with a trend toward higher polarization degree at higher spin/high $\lambda$.
+  \item[Hook 1] \textbf{Hard X/MeV shoulder:} a hard excess/shoulder beyond a featureless baseline continuum.
+  \item[Hook 2] \textbf{Lag hardening:} a lag--energy relation consistent with harder photons lagging softer photons within an epoch. \\
+  \item[Hook 3] \textbf{Equator-aligned X-ray polarization:} EVPA preferentially aligned with the disk plane, with a trend toward higher polarization degree at higher spin/high $\lambda$.
 \end{titemize}
 \noindent\textbf{Lag convention.}
-We measure lags relative to a fixed reference band (stated explicitly for each dataset), and adopt $\tau>0$ when the target band lags the reference.
+We measure energy-resolved lags $\tau(E)$ relative to a fixed \emph{reference} band $E_{\rm ref}$ (we adopt $E_{\rm ref}=2$--4~keV unless stated otherwise),
+and define $\tau>0$ when the band at $E$ \emph{lags} the reference band.
+In this convention, ``lag hardening'' corresponds to \emph{hard lags}: $\tau(E)$ increases with energy.
 
 \begin{quote}
 \noindent\textbf{Observer Quickstart (Tier-1 archival screening; non-committal).}\par
@@ -492,8 +494,11 @@ Under Screens A--D, the absence of two or more hooks in vetted high-spin/high-$\
 \colhead{Pass criterion} & \colhead{Primary confounders}
 }
 \startdata
+\tableline
 Hook 1 & Hard X/MeV shoulder & 20--120 keV & $\ICmetric \ge \ICcrit$ & model degeneracy\\
-Hook 2 & Lag hardening & lag vs.\ $E$ slope &  $d\tau/d\log E>0$ and monotone within an epoch. & dilution\\
+\tableline
+Hook 2 & Lag hardening & lag--energy slope & \mccell{$\tau(E)$ relative to $E_{\rm ref}=2$--4~keV \\ define $\tau>0$ for lags; \\ pass if $d\tau/d\log E>0$ \\ and monotone within an epoch.} & dilution\\
+\tableline
 Hook 3 & Equatorial polarization & 2--10 keV & EVPA $\parallel$ disk & jet contamination\\
 \enddata
 \tablecomments{after applying Screens A--D; failure to recover $\ge2$ hooks falsifies SSPE.}
@@ -766,7 +771,8 @@ Self-sustained Penrose excitation near extremal Kerr SMBHs can inject rotational
 \appendix
 
 \section{Operational Protocol (Self-contained)}\label{app:protocol}
-\noindent\textbf{Screens A--D \ref{sec:obs}} Exclude Compton-thick, extreme inclination; require $\ell<\ellcrit$.\\
+\noindent\textbf{Screens A--D (defined in Sec.~\ref{sec:obs}; summarized here)} \\
+Exclude Compton-thick, extreme inclination; require $\ell<\ellcrit$.\\
 \noindent\textbf{Hook (i):} Shoulder passes if $\ICmetric \ge \ICcrit$ (20--120~keV obs).\\
 \noindent\textbf{Hook (ii):} Lag hardening passes if $d\tau/d\log E>0$ and monotone within an epoch.\\
 \noindent\textbf{Hook (iii):} X-ray polarization: EVPA $\parallel$ equator; degree increases with spin/$\lambda$.\\
