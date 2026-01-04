@@ -208,7 +208,7 @@ Much of the literature treats the inner disk, magnetosphere, and ergoregion with
 \noindent All elements invoked below act outside the event horizon; the coupling operates in the ergoregion and deposits energy in the equatorial flow, avoiding assumptions about interior or singularity-scale physics.
 \noindent\textem{Abbreviations and references.}
 We use \emph{FFE} for the force-free, magnetically dominated limit ($\rho_e\mathbf{E}+\mathbf{J}\!\times\!\mathbf{B}\approx 0$, $\mathbf{J}\!\cdot\!\mathbf{E}=0$) and \emph{GRMHD} for ideal magnetohydrodynamics evolved on a Kerr background \citep{Komissarov2004MNRAS,GrallaJacobson2014MNRAS,EastYang2018PRD,Pan2018PRD}.
-We use \emph{PIC} for first-principles kinetic simulations that resolve reconnection and plasmoid formation in the ergospheric current sheet \citep{Parfrey2019PRL,Bransgrove2021PRL}.
+We use \emph{PIC} for first-principles kinetic simulations that resolve reconnection and plasmoid formation in the ergospheric current sheet \citep{Parfrey2019PRL,Bransgrove2021}.
 Throughout we group references as (FFE/GRMHD) versus (PIC).
 
 
@@ -242,9 +242,13 @@ where $\epsilon_{\max}$ is the saturation cap and $n$ controls activation sharpn
   \label{fig:onset}
 \end{figure}
 % --- Takeaway first (3行以内) ---
+\newline
 \noindent\textem{Activation threshold.}
 The equatorial coupling turns on steeply once the spin exceeds a threshold \(a_{\rm th}\).
 In our fiducial calibration, the rise is rapid near \(a_\ast \simeq 0.97\), setting the lever for both luminosity boost and spin regulation (cf.\ Eqs.~\eqref{eq:eps}--\eqref{eq:Ltot}).
+
+
+We adopt a fiducial $a_{\rm th}\simeq0.97$ as a pragmatic “near-extremal” boundary where the where the ISCO approaches the ergoregion boundary in the equatorial plane and small changes in $a$ produce disproportionately large changes in horizon-frame energetics and coupling geometry; the precise value is not fundamental and can be refined empirically.
 \FloatBarrier
 Unless noted, we adopt the following fiducials for figures and estimates: $M=10^9M_\odot$, $\eta_{\rm acc}=0.1$, $\epsilon_{\max}=0.1$, $n=2$, $R_0=10^2$, and $\alpha=50$; the illustrative threshold is $\ath\simeq0.97$.
 \noindent\emph{Micro-bridge.}
@@ -651,8 +655,9 @@ Our claim is modest: in the high-spin, high-Eddington subset, $f_{\rm eq}$ is st
 Independent of the SSPE hypothesis, multiple lines of evidence have highlighted persistent tensions between thin-disk expectations and observations, including continuum-emitting sizes inferred from quasar microlensing and wavelength-dependent continuum lags that exceed simple reprocessing predictions (e.g., \citealt{Morgan2010,Li2019}; see also the review by \citealt{Cackett2021RM} and the corona--disk coupling model of \citealt{Sun2020CHAR}).
 \\Here $P_{\rm ext}$ denotes the net extractable power available outside the horizon; Eqs.~(12)--(14) describe its internal bookkeeping, while the relation $P_{\rm ext}=P_{\rm BZ}+P_{\rm eq}$ is a coarse-grained \emph{channel} partition (polar vs.\ equatorial) used only for the see-saw discussion.
 \\Rather than forcing a single channel, our framework allows a \emph{coexisting} partition of magnetospheric power between a polar BZ-like outflow and an equatorial heating/venting branch,
-$P_{\rm ext}=P_{\rm BZ}+P_{\rm eq}$ (or $f_{\rm BZ}+f_{\rm eq}=1$),
+$P_{\rm ext}\approx P_{\rm BZ}+P_{\rm eq}$ (or $f_{\rm BZ}+f_{\rm eq}\approx 1$),
 and treats the partition as an empirical question to be decided by joint observables.
+For the see-saw discussion we often consider an effective two-channel view (polar vs.\ equatorial) at approximately fixed/small $f_{\rm oth}$, while the full bookkeeping remains Eqs.~(12)--(14).
 This motivates testing whether jet proxies (e.g., radio loudness) covary with disk-size/lag excess and with the equatorial-hook suite (Hooks~1--3), providing an observational handle on the proposed see-saw.
 
 \subsection{Rare direct quasi-beam events as ergoregion probes}\label{sec:quasibeam}
