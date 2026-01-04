@@ -460,7 +460,7 @@ Because the falsification criterion is intentionally strict, we apply minimal sc
 \item [A]\textbf{Spin screen:} prioritize sources with an explicit spin estimate (e.g., Fe~K$\alpha$ reverberation/relativistic reflection, continuum-fitting where applicable, or polarimetric constraints). For Tier-1 we treat $a_\ast\gtrsim0.95$ as ``high spin'' and report the estimator and its systematic caveats.
 \item [B]\textbf{Accretion screen:} define $\lambda\equiv L_{\rm bol}/L_{\rm Edd}$ using a documented $L_{\rm bol}$ method (SED-based where available) and a stated $M_{\rm BH}$ estimator; propagate conservative systematics (bolometric correction and virial-mass uncertainties).
 \item [C]\textbf{Geometry/obscuration screen:} exclude Compton-thick or heavily absorbed cases where spectral curvature, lags, or polarization become instrumentally ambiguous. If an observable is effectively inaccessible at useful S/N, treat it as \emph{missing} rather than \emph{failed}.
-\item [D]\textbf{Compactness screen:} exclude pair-opaque states ($\ell\gtrsim\ellcrit$) where the hard component is suppressed; treat such cases as \emph{screened} rather than \emph{failed}.
+\item [D]\textbf{Compactness screen:} exclude pair-opaque states ($\ell\gtrsim\ellcrit$) where the hard component is suppressed;Compactness screen is an observability gate:sources that violate the transparency/compactness requirement are treated as \emph{not testable} for the Tier-1 hooks (screened), rather than as negative evidence against SSPE (failed). \\ Accordingly, SSPE is falsified only within the domain where the hooks are measurable; outside this domain the protocol makes no claim.
 \end{titemize}
 
 \noindent\textbf{Tier definitions.}
@@ -526,7 +526,10 @@ Hook 2 & Lag hardening & lag--energy slope & \mccell{$\tau(E)$ relative to $E_{\
 Hook 3 & Equatorial polarization & 2--10 keV & EVPA $\parallel$ disk & jet contamination\\
 \enddata
 \tablecomments{
-After applying Screens~A--D, each hook may have degeneracies in isolation; SSPE is evaluated by joint coherence across Hooks~1--3. We adopt $\Delta \mathrm{IC}\ge 6$ (e.g., $\Delta$BIC or $\Delta$AICc) as a pragmatic strong-evidence decision threshold following common usage in model selection (e.g., \citealt{KassRaftery1995}; \citealt{BurnhamAnderson2002}); failure to recover $\ge 2$ hooks falsifies SSPE.}
+After applying Screens~A--D, each hook may have degeneracies in isolation; SSPE is evaluated by joint coherence across Hooks~1--3. We adopt $\Delta \mathrm{IC}\ge 6$ (e.g., $\Delta$BIC or $\Delta$AICc) as a pragmatic strong-evidence decision threshold following common usage in model selection (e.g., \citealt{KassRaftery1995}; \citealt{BurnhamAnderson2002}); failure to recover $\ge 2$ hooks falsifies SSPE.
+\\[1ex]
+Screen~D acts as an observability gate (screened $\neq$ failed): sources outside the transparency domain are excluded from Tier-1 evaluation rather than counted as negative evidence.
+}
 \end{deluxetable*}
 
 \FloatBarrier
