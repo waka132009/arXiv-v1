@@ -489,6 +489,10 @@ Tier-1 passes motivate Tier-2 follow-up; persistent null results in vetted sampl
 
 \noindent\textbf{Falsification (explicit criterion).}
 Under Screens A--D, the absence of two or more hooks in vetted high-spin/high-$\lambda$ samples falsifies the SSPE contribution; otherwise the source passes the Tier-1 screen.
+paragraph{Degeneracy control via joint coherence.}
+Each hook may admit degeneracies in isolation (e.g., complex coronal geometry or slim-disk radiative transfer can mimic shoulder-like curvature, and propagation/reverberation effects can shape energy-dependent lags).
+SSPE therefore targets \emph{joint observational coherence}: after applying Screens~A--D, the model is evaluated by the co-occurrence of Hooks~1--3 within the same source/epoch, with quantitative model selection (e.g., $\Delta\mathrm{IC}\!\ge\!6$) applied where a competing spectral/timing description exists.
+This design intentionally shifts the burden from microphysical closure to low-cost, falsifiable multi-observable consistency.
 
 \noindent\textbf{Single source of truth.} We treat Table~\ref{tab:hook-spec} as the authoritative Tier-1 specification.
 
@@ -507,11 +511,7 @@ Hook 2 & Lag hardening & lag--energy slope & \mccell{$\tau(E)$ relative to $E_{\
 Hook 3 & Equatorial polarization & 2--10 keV & EVPA $\parallel$ disk & jet contamination\\
 \enddata
 \tablecomments{
-after applying Screens A–D; we adopt $\Delta \mathrm{IC}\ge 6$
-(e.g., $\Delta$BIC or $\Delta$AICc) as a pragmatic strong-evidence decision threshold
-following common usage in model selection (e.g., \citealt{KassRaftery1995}; \citealt{BurnhamAnderson2002});
-failure to recover $\ge 2$ hooks falsifies SSPE.
-}
+After applying Screens~A--D, each hook may have degeneracies in isolation; SSPE is evaluated by joint coherence across Hooks~1--3. We adopt $\Delta \mathrm{IC}\ge 6$ (e.g., $\Delta$BIC or $\Delta$AICc) as a pragmatic strong-evidence decision threshold following common usage in model selection (e.g., \citealt{KassRaftery1995}; \citealt{BurnhamAnderson2002}); failure to recover $\ge 2$ hooks falsifies SSPE.}
 \end{deluxetable*}
 
 \FloatBarrier

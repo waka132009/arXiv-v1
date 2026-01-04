@@ -98,7 +98,7 @@ def build_figure(n_plasmoids: int = 7,
         circ = Circle((px, 0.0), r0 * (1.0 + 0.15 * np.cos(i)),
                       fill=False, lw=1.2, edgecolor=COL["plas"], zorder=2)
         ax.add_patch(circ)
-    ax.text(xs[0] - 0.2, 0.55, "plasmoid chain",
+    ax.text(xs[0] - 0.2, 0.55, "plasmoids / intermittent ejections",
             ha="left", va="bottom", fontsize=FS-0.2, color=C, bbox=bbox)
 
     # --- Positive/negative branches：帯の上下へ±オフセットして並走 ---
@@ -123,7 +123,7 @@ def build_figure(n_plasmoids: int = 7,
     slope = np.tan(np.deg2rad(opening_deg / 2.0))
     ax.plot([L1, L2], [0.18 + slope * (L2 - L1), 0.18], lw=0.9, color=C, zorder=3)
     ax.plot([L1, L2], [-0.18 - slope * (L2 - L1), -0.18], lw=0.9, color=C, zorder=3)
-    ax.text(5.15, -0.35, "equatorial nozzle",
+    ax.text(5.15, -0.35, "equatorial venting spread (schematic)",
             ha="left", va="center", fontsize=FS-0.2, color=C, bbox=bbox)
 
     # --- ラベル（“点指し”で結ぶ／重なり回避） ---
@@ -134,7 +134,7 @@ def build_figure(n_plasmoids: int = 7,
                                 connectionstyle="arc3,rad=-0.15"),
                 fontsize=FS, color=COL["neg"], bbox=bbox)
 
-    ax.annotate(r'positive-energy branch $\rightarrow$ quasi-beam',
+    ax.annotate(r'positive-energy branch $\rightarrow$ equatorially concentrated outflow (candidate quasi-beam)',
                 xy=(2.95 + 0.9, y_pos), xycoords='data',
                 xytext=(3.55, 1.30), textcoords='data',
                 arrowprops=dict(arrowstyle='->', lw=0.9, color=COL["pos"],
@@ -153,7 +153,7 @@ def build_figure(n_plasmoids: int = 7,
     if with_legend:
         handles = [
             Line2D([0], [0], lw=sheet_width, color=COL["sheet"], alpha=0.18,
-                   label="equatorial return current sheet"),  # 帯の見た目に合わせる
+                   label="equatorial current layer (schematic)"),  # 帯の見た目に合わせる
 #            Line2D([0], [0], lw=2.0, color=COL["sheet"], label="_nolegend_"),  # 枠線は凡例に出さない
             Line2D([0], [0], lw=1.2, color=COL["erg"], ls=(0, (6, 4)),
                    label="ergosurface (schematic)"),
