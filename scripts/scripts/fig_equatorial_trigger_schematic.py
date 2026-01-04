@@ -123,7 +123,7 @@ def build_figure(n_plasmoids: int = 7,
     slope = np.tan(np.deg2rad(opening_deg / 2.0))
     ax.plot([L1, L2], [0.18 + slope * (L2 - L1), 0.18], lw=0.9, color=C, zorder=3)
     ax.plot([L1, L2], [-0.18 - slope * (L2 - L1), -0.18], lw=0.9, color=C, zorder=3)
-    ax.text(5.15, -0.35, "equatorial venting spread (schematic)",
+    ax.text(5.15, -0.35, "equatorial outflow spread (schematic)",
             ha="left", va="center", fontsize=FS-0.2, color=C, bbox=bbox)
 
     # --- ラベル（“点指し”で結ぶ／重なり回避） ---
