@@ -377,7 +377,7 @@ Evolution obeys
   Time evolution of the spin parameter $a_\ast(t)$ obtained by integrating
   Eqs.~(\ref{eq:dM})--(\ref{eq:dJ})--(\ref{eq:da}) with horizon frequency Eq.~(\ref{eq:OmegaH})
   for a fiducial coupling $\epsilon_{\rm coup}$ (gold). The monotonic drift toward
-  $a_{\rm eq}<1$ illustrates the self-limiting ceiling; see Sec.~\ref{sec:discussion}.}
+  $a_{\rm eq}<1$ illustrates the self-limiting ceiling; The timescale scales approximately with the cumulative active time; for intermittent high-$\lambda$ episodes with duty cycle $d$, the approach to $a_{\rm eq}$ is slowed by $\sim 1/d$ relative to continuous extraction.see Sec.~\ref{sec:discussion}.}
   \label{fig:spin-evo}
 \end{figure}
 \end{CrowdedFloats}
@@ -419,9 +419,20 @@ and $2$--$3\,\LEdd$ when combined with concurrent accretion, while $da_\ast/dt<0
 \subsection{Semi-analytic parameter study}\label{sec:results}
 
 \paragraph{Analytic Exploration} The semi-analytic exploration above yields three robust trends that do not depend on the microphysical details of how the equatorial branch is realized.
+
+
 First, once the coupling activates above the threshold spin $a_\ast\gtrsim \ath$, even a modest efficiency $\epscoup\sim 10^{-2}$--$10^{-1}$ can supply an inner-disk feedback luminosity $L_{\rm self}=\epscoup P_{\rm ext}$ that is comparable to $\LEdd$ for plausible reservoir and duty-cycle choices, so that the combined output $\Ltot=L_{\rm acc}+L_{\rm self}$ generically reaches the observed $L/\LEdd\sim2$--$3$ band.
+
+
 Second, the same extraction term necessarily carries angular momentum and therefore introduces a counter-torque; integrating the minimal evolution system generically drives $a_\ast$ toward an equilibrium $a_{\rm eq}<1$ on Myr-scale equilibration times, with stronger coupling yielding a lower $a_{\rm eq}$.
+
+
 Third, compactness links the observability of the hard component to geometry: the requirement $\ell\lesssim \ellcrit$ couples $(\epscoup,d)$ to the dissipation footprint $R_{\rm eff}$, carving a transparency-limited window in which bright states remain pair-safe.
+
+
+In practice, luminous high-$\lambda$ phases may be intermittent.
+Accordingly, the relevant condition for spin regulation is that the \emph{integrated} time spent in SSPE-active states (above $a_{\rm th}$ and within the compactness-safe window) is comparable to or exceeds the effective equilibration time.
+If vetted high-spin/high-$\lambda$ populations exhibit no spin ceiling despite sufficient cumulative active time, the framework would be disfavored.
 
 \paragraph{Trends Map} These trends map directly onto the observational program in Sec.~\ref{sec:hooks}.
 In the compactness-safe window (i.e., after screening out high-$\ell$ states), SSPE predicts that the hard component associated with equatorial feedback should be simultaneously (i) spectrally visible as a high-energy shoulder, (ii) temporally imprinted via lag--energy hardening consistent with inner-disk reheating and reprocessing, and (iii) geometrically encoded through disk-parallel hard X-ray polarization.
@@ -560,7 +571,7 @@ The core claim here is \emph{not} that such explanations are impossible, but tha
 SSPE is offered as such a channel in a form that can be rejected decisively: after applying the Screens A--D, the high-spin/high-$\lambda$ subset should recover at least two of the three hooks (Sec.~\ref{sec:obs}); systematic failure would support $f_{\rm eq}\!\to\!0$ and render SSPE unnecessary.
 
 These bounds align with Fig.~\ref{fig:param-a}--\ref{fig:param-b} and are sufficient to reach $L/\LEdd\sim2$--$3$ with rarer $5$--$10\times$ excursions. Slim disks allow modest super-Eddington flows but no spin ceiling. BZ/MAD explain jet power yet not the radiative dominance of radio-quiet quasars. This framework ties hyperluminous output and the spin ceiling via near-extremal, equatorial coupling.
-Consistent with GRFFE/GRMHD studies, an \emph{equatorial return-current sheet forms within the ergoregion} and becomes plasmoid-unstable; detached plasmoids unavoidably split into branches with $E-\Omega_H L\lessgtr 0$ (captured vs.\ escaping), enabling rotational-energy extraction via a Penrose-like radiative channel \citep{Penrose1969,Penrose2002,Komissarov2004MNRAS,EastYang2018PRD,Pan2018PRD,Parfrey2019PRL,Bransgrove2021PRL}.
+Consistent with GRFFE/GRMHD studies, an \emph{equatorial return-current sheet forms within the ergoregion} and becomes plasmoid-unstable; detached plasmoids unavoidably split into branches with $E-\Omega_H L\lessgtr 0$ (captured vs.\ escaping), enabling rotational-energy extraction via a Penrose-like radiative channel \citep{Penrose1969,Penrose2002,Komissarov2004MNRAS,EastYang2018PRD,Pan2018PRD,Parfrey2019PRL,Bransgrove2021}.
 
 
 %\medskip
