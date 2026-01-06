@@ -89,6 +89,9 @@
 %\newcommand{\ICmetric}{\Delta\mathrm{BIC}}
 \newcommand{\ICmetric}{\Delta\mathrm{BIC}\ (\mathrm{or}\ \Delta\mathrm{AICc})}
 
+% --- block macro ---
+\newcommand{\phead}[1]{\par\medskip\noindent\textbf{#1}\textemdash\ }
+
 % tight enumerate/itemize （環境ラッパ・パッケージ不要）
 \newenvironment{tenumerate}{%
   \begin{enumerate}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}\setlength{\parskip}{0pt}%
@@ -275,11 +278,10 @@ f_{\rm BZ}+f_{\rm eq}+f_{\rm oth}=1.
 Near $a_*\!\to\!1$, $f_{\rm eq}$ can become substantial (radio-quiet, radiation-dominated states), while $f_{\rm BZ}$ dominates in radio-loud systems; hybrid states are possible in transient MAD-like regimes.
 %\FloatBarrier
 
-\medskip
-\noindent\textbf{Qualitative selection rule (geometry/flux).}---
+\phead{Qualitative selection rule (geometry/flux).}
 The polar BZ-like channel is expected to dominate when the horizon-threading poloidal flux is large and coherent (i.e., a near-MAD-like state, indicated by strong jet proxies or radio loudness).
 
-By contrast, an equatorial heating/venting branch becomes comparatively more relevant when the inner flow is thick and time-dependent (high-$\beta$ / radiation-pressure dominated inner flow; moderate coherent vertical flux) and the accumulated large-scale vertical flux is moderate, so that dissipation and reconnection concentrate in the equatorial return-current layer.
+By contrast, an equatorial heating/venting branch becomes comparatively more relevant when the inner flow is thick and time-dependent (high-$\beta$ / radiation-pressure dominated inner flow; moderate coherent vertical flux) and the accumulated large-scale vertical flux is not extreme, so that dissipation and reconnection concentrate in the equatorial return-current layer.
 
 In this regime the requirement for SSPE is not a finely tuned nozzle, but simply that a nonzero fraction of reconnection ejecta vents through the equatorial branch ($f_{\rm eq}>0$), with the magnitude of $f_{\rm eq}$ to be constrained by joint observational coherence rather than by choosing among GRMHD/FFE/PIC closures.
 
@@ -407,6 +409,7 @@ Figure~\ref{fig:spin-down} illustrates the resulting spin evolution under equato
   \emph{Top:} Spin drift rate $da_\ast/dt$ from Eqs.~(\ref{eq:dM})--(\ref{eq:da}) for representative accretion states; negative values drive $a_\ast$ below unity.
   \emph{Bottom:} Equilibrium spin $a_{\rm eq}$ obtained from $da_\ast/dt=0$ as a function of $\epsilon_{\rm coup}$; ... the shaded band $\epsilon_{\rm coup}\sim10^{-2}$--$10^{-1}$ is the fiducial range used elsewhere. See also Eq.~(\ref{eq:OmegaH}).}
 \end{figure}
+\FloatBarrier
 
 \begin{figure}[!htbp]
   \centering
@@ -419,10 +422,21 @@ Figure~\ref{fig:spin-down} illustrates the resulting spin evolution under equato
   $a_{\rm eq}<1$ illustrates the self-limiting ceiling. The timescale scales approximately with the cumulative active time; for intermittent high-$\lambda$ episodes with duty cycle $d$, the approach to $a_{\rm eq}$ is slowed by $\sim 1/d$ relative to continuous extraction. See Sec.~\ref{sec:discussion}.}
 \end{figure}
 \end{CrowdedFloats}
-%\FloatBarrier
-\FloatBarrier
-\clearpage
 
+\phead{Timescale consistency (active time vs. quasar lifetime).}
+Figure~\ref{fig:spin-down} is plotted against the \emph{cumulative active time} spent in the high-$\lambda$ SSPE-active state, rather than wall-clock time. 
+
+If activity is intermittent with duty cycle $d$, the corresponding elapsed time is $t_{\rm real}\simeq t_{\rm act}/d$, but the spin evolution depends primarily on $t_{\rm act}$ because extraction is effective only during active episodes.
+
+For the fiducial coupling used in Eq.~(Eqs.~\eqref{eq:dM}--\eqref{eq:da}), the characteristic drift toward $a_{\rm eq}<1$ occurs over $t_{\rm act}\sim{\rm Myr}$--tens of Myr (Fig.~\ref{fig:spin-down}), implying $t_{\rm real}\sim (t_{\rm act}/d)$.
+
+For plausible quasar lifetimes of $\sim 10$--$100$~Myr and moderate intermittency ($d\sim 0.1$--$1$), the required cumulative active time can be accumulated within a single luminous phase or across repeated high-$\lambda$ episodes.
+
+Conversely, in short-lived or highly intermittent systems where $t_{\rm act}\ll t_{\rm sd}$, the framework predicts a surviving high-spin tail even at high $\lambda$; this is an observationally testable outcome rather than a loophole.
+
+
+\FloatBarrier
+%\clearpage
 \subsection{Net Luminosity}\label{sec:lum}
 The total luminosity is
 \begin{equation}
