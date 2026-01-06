@@ -40,7 +40,7 @@ def main():
     ax.yaxis.set_minor_locator(MultipleLocator(0.001))
 
     # ラベル（本文に合わせるなら '$a_\\ast$' 推奨）
-    ax.set_xlabel("Time [Myr]", labelpad=8)
+    ax.set_xlabel("Cumulative active time t_act [Myr]", labelpad=8)
     ax.set_ylabel(r"Spin parameter $a_\ast$", labelpad=12)
 
     # タイトルを上大きめで
@@ -53,7 +53,6 @@ def main():
     out = Path(__file__).resolve().parents[1] / "figures" / "fig2a_spin_evolution"
     out.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out.with_suffix(".pdf"))
-    fig.savefig(out.with_suffix(".png"), dpi=300)
     plt.close(fig)
 
 if __name__ == "__main__":
