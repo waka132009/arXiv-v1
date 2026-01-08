@@ -410,6 +410,8 @@ Figure~\ref{fig:spin-down} illustrates the resulting spin evolution under equato
   \emph{Bottom:} Equilibrium spin $a_{\rm eq}$ obtained from $da_\ast/dt=0$ as a function of $\epsilon_{\rm coup}$; ... the shaded band $\epsilon_{\rm coup}\sim10^{-2}$--$10^{-1}$ is the fiducial range used elsewhere. See also Eq.~(\ref{eq:OmegaH}).}
 \end{figure}
 \FloatBarrier
+\clearpage
+
 
 \begin{figure}[!htbp]
   \centering
@@ -422,6 +424,7 @@ Figure~\ref{fig:spin-down} illustrates the resulting spin evolution under equato
   $a_{\rm eq}<1$ illustrates the self-limiting ceiling. The timescale scales approximately with the cumulative active time; for intermittent high-$\lambda$ episodes with duty cycle $d$, the approach to $a_{\rm eq}$ is slowed by $\sim 1/d$ relative to continuous extraction. See Sec.~\ref{sec:discussion}.}
 \end{figure}
 \end{CrowdedFloats}
+
 
 \phead{Timescale consistency (active time vs. quasar lifetime).}
 Figure~\ref{fig:spin-down} is plotted against the \emph{cumulative active time} spent in the high-$\lambda$ SSPE-active state, rather than wall-clock time. 
@@ -528,21 +531,48 @@ Because the falsification criterion is intentionally strict, we apply minimal sc
 \item [D]\textbf{Compactness screen:} exclude pair-opaque states ($\ell\gtrsim\ellcrit$) where the hard component is suppressed;Compactness screen is an observability gate:sources that violate the transparency/compactness requirement are treated as \emph{not testable} for the Tier-1 hooks (screened), rather than as negative evidence against SSPE (failed). \\ Accordingly, SSPE is falsified only within the domain where the hooks are measurable; outside this domain the protocol makes no claim.
 \end{titemize}
 
+\phead{Screen D (compactness) is an identifiability gate, not a physical exclusion.}
+At high compactness, radiative transfer and pair opacity can saturate the 20--120~keV band and wash out timing/polarimetric diagnostics, so the Hook suite becomes \emph{non-identifiable} rather than negative.
+
+We therefore label $\ell>\ell_{\rm crit}$ sources as \emph{screened / untestable with the present low-cost protocol}, not as SSPE-failing cases.
+
+In other words, Screen~D prevents false negatives due to observational saturation, and it can be relaxed when higher-energy coverage or improved modeling becomes available.
+
+This choice is conservative: it reduces the claim to the domain where the proposed decision function is well-posed.
+
 \noindent\textbf{Tier definitions.}
 We use \textem{Tier-1} to denote lightweight archival screening (existing hard-X spectroscopy and timing products with minimal assumptions).
 We use \textem{Tier-2} for higher-cost follow-up and systematic tightening (e.g., dedicated polarimetry, broader-band coverage, and targeted re-analysis for sources near screening thresholds).
 
-\noindent\textbf{Hooks (apply jointly under Screens A--D).}
+%
+%\phead{Why Screen D is not cherry-picking (identifiability gate).}
+%Screen~D ($\ell<\ellcrit$, fiducially $\ell_{\rm crit}\!=\!30$) is not a model-favoring cut but an \emph{identifiability} requirement: above this compactness the hard X/MeV spectrum and timing diagnostics become dominated by pair opacity, down-scattering, and dilution, so the Hook suite cannot be interpreted uniquely.
+%
+%We therefore treat $\ell\ge\ell_{\rm crit}$ sources as \emph{screened} (not “passed” or “failed”): they are excluded from falsification accounting because the protocol cannot reliably decide either way.
+%
+%Importantly, the framework makes a directionally opposite expectation in the screened regime—SSPE signatures, if present, should be progressively \emph{harder to recover} as $\ell$ increases—so future MeV coverage or improved modeling of pair cascades can explicitly reopen this region for testing.
+
+\phead{Hooks (apply jointly under Screens A--D).}
 Operational definitions and pass/fail thresholds are given in Table~\ref{tab:hook-spec};
+
 here we state only the physical intent:
 \begin{titemize}
   \item[Hook 1] \textbf{Hard X/MeV shoulder:} a hard excess/shoulder beyond a featureless baseline continuum.
   \item[Hook 2] \textbf{Lag hardening:} a lag--energy relation consistent with harder photons lagging softer photons within an epoch. \\
   \item[Hook 3] \textbf{Equator-aligned X-ray polarization:} EVPA preferentially aligned with the disk plane, with a trend toward higher polarization degree at higher spin/high $\lambda$.
 \end{titemize}
-\noindent\textbf{Lag convention.}
-We measure energy-resolved lags $\tau(E)$ relative to a fixed \emph{reference} band $E_{\rm ref}$ (we adopt $E_{\rm ref}=2$--4~keV in the rest frame unless stated otherwise; in observed frame use Eref/(1+z) where feasible),
-and define $\tau>0$ when the band at $E$ \emph{lags} the reference band.
+
+\phead{Robustness to the information-criterion threshold.}
+We adopt a conventional threshold (fiducially $\Delta IC\ge 6$) to keep the Tier-1 decision rule executable and reproducible, but the protocol does not hinge on this single value.
+
+In practice, we recommend reporting the classification stability under a small bracket (e.g., $\Delta IC\in[4,10]$) as a sensitivity check; sources that flip classification under this bracket are labeled \emph{ambiguous} and deferred to Tier-2.
+
+\phead{Lag convention.}
+We measure energy-resolved lags $\tau(E)$ relative to a fixed \emph{reference} band $E_{\rm ref}$ (we adopt $E_{\rm ref}=2$--4~keV in the rest frame unless stated.
+otherwise; in observed frame use Eref/(1+z) where feasible),
+
+And define $\tau>0$ when the band at $E$ \emph{lags} the reference band.
+
 In this convention, ``lag hardening'' corresponds to \emph{hard lags}: $\tau(E)$ increases with energy.
 
 \begin{quote}
@@ -713,12 +743,17 @@ f_{\rm BZ} + f_{\rm eq} + f_{\rm oth} = 1. \label{eq:ffrac}
 
 \noindent
 A practical implication is that SSPE can affect systems that appear, by their large-scale phenomenology, to be BZ-favorable.
+
 Even when the polar channel dominates the long-term power budget (i.e., $P_{\rm BZ}\gg P_{\rm eq}$ on average), a nonzero equatorial branch provides an internal heating pathway that acts directly on the disk photosphere rather than through external irradiation.
+
 In such states, the observable tension is not ``a jet plus a thin disk'', but a jet coexisting with a disk that looks \emph{too extended and too hot} for a strictly passive, radiatively efficient thin-disk interpretation---as suggested by microlensing/reverberation size inferences and wavelength-dependent lag amplitudes that exceed simple reprocessing expectations.
+
 Within SSPE, the same bookkeeping that permits strong jet power also permits intermittent equatorial reheating episodes whose signatures should correlate with the spectral-timing hooks (Sec.~\ref{sec:hooks}) while remaining compatible with radio-loudness.
+
 This is not an attempt to fit any single source; rather, it motivates a concrete null test: in jet-dominated quasars exhibiting anomalously large continuum sizes or overheated outer disks, the absence of \emph{both} hard-component hooks (Hook~1/2) \emph{and} disk-parallel hard-X polarization (Hook~3), after controlling for absorption and compactness screening, would disfavor equatorial feedback as the common cause.
 
 This partition predicts an anti-correlation between radio-jet dominance and equatorial reheating diagnostics within the high-$a_*$, high-$\lambda$ subset, with hybrid states possible in transient MAD phases.
+
 Our claim is modest: in the high-spin, high-Eddington subset, $f_{\rm eq}$ is statistically non-zero and sometimes dominant; in others, $f_{\rm BZ}$ may prevail. Outside this subset we make no claim.
 
 \paragraph{Thin-disk tensions and coexisting channels.}
@@ -729,6 +764,13 @@ $P_{\rm ext}\approx P_{\rm BZ}+P_{\rm eq}$ (or $f_{\rm BZ}+f_{\rm eq}\approx 1$)
 and treats the partition as an empirical question to be decided by joint observables.
 For the see-saw discussion we often consider an effective two-channel view (polar vs.\ equatorial) at approximately fixed/small $f_{\rm oth}$, while the full bookkeeping remains Eqs.~(12)--(14).
 This motivates testing whether jet proxies (e.g., radio loudness) covary with disk-size/lag excess and with the equatorial-hook suite (Hooks~1--3), providing an observational handle on the proposed see-saw.
+
+\phead{Testable prediction (radio--X joint anti-correlation).}
+If the outgoing power partition obeys a see-saw relation ($f_{\rm BZ}+f_{\rm eq}\simeq 1$ at fixed $\dot{M}$ and spin), then a population selected by Screens~A--D should exhibit an anti-correlation between a jet proxy and an equatorial SSPE proxy.
+
+Operationally, we propose comparing radio loudness (or core radio luminosity at fixed mass and $\lambda$) against the shoulder metric ($\ICmetric$) and/or the Hook~2 timing slope within matched bins of $(M,a_*,\lambda)$.
+
+The minimal falsifiable statement is the sign: after matching, the rank correlation should be negative (BZ-strong sources tend to be SSPE-weak, and vice versa).
 
 \subsection{Rare direct quasi-beam events as ergoregion probes}\label{sec:quasibeam}
 \noindent We stress that the following subsection is explicitly speculative and \emph{not} required for the core SSPE framework: the primary observational program remains the hook-based spectral--timing--polarimetric tests in Sec.~\ref{sec:obs}.
