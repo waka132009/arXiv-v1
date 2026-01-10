@@ -134,7 +134,7 @@ def build_figure(n_plasmoids: int = 7,
                                 connectionstyle="arc3,rad=-0.15"),
                 fontsize=FS, color=COL["neg"], bbox=bbox)
 
-    ax.annotate(r'positive-energy branch $\rightarrow$ equatorially concentrated outflow (candidate quasi-beam)',
+    ax.annotate(r'positive-energy branch $\rightarrow$ equatorial quasi-beam (equatorially concentrated outflow)',
                 xy=(2.95 + 0.9, y_pos), xycoords='data',
                 xytext=(3.55, 1.30), textcoords='data',
                 arrowprops=dict(arrowstyle='->', lw=0.9, color=COL["pos"],
