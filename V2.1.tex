@@ -89,6 +89,9 @@
 %\newcommand{\ICmetric}{\Delta\mathrm{BIC}}
 \newcommand{\ICmetric}{\Delta\mathrm{BIC}\ (\mathrm{or}\ \Delta\mathrm{AICc})}
 
+% --- OmegaH macro ---
+\newcommand{\OmegaH}{\Omega_{\rm H}}
+
 % --- block macro ---
 \newcommand{\phead}[1]{\par\medskip\noindent\textbf{#1}\textemdash\ }
 
@@ -281,24 +284,31 @@ Near $a_*\!\to\!1$, $f_{\rm eq}$ can become substantial (radio-quiet, radiation-
 \phead{Qualitative selection rule (geometry/flux).}
 The polar BZ-like channel is expected to dominate when the horizon-threading poloidal flux is large and coherent (i.e., a near-MAD-like state, indicated by strong jet proxies or radio loudness).
 
-By contrast, an equatorial heating/venting branch becomes comparatively more relevant when the inner flow is thick and time-dependent (high-$\beta$ / radiation-pressure dominated inner flow; moderate coherent vertical flux) and the accumulated large-scale vertical flux is not extreme, so that dissipation and reconnection concentrate in the equatorial return-current layer.
+By contrast, an equatorial channel becomes comparatively more relevant when the inner flow is thick and time-dependent (high-$\beta$ / radiation-pressure dominated inner flow; moderate coherent vertical flux) and the accumulated large-scale vertical flux is not extreme, so that dissipation and reconnection concentrate in the equatorial return-current layer.
 
-In this regime the requirement for SSPE is not a finely tuned nozzle, but simply that a nonzero fraction of reconnection ejecta vents through the equatorial branch ($f_{\rm eq}>0$), with the magnitude of $f_{\rm eq}$ to be constrained by joint observational coherence rather than by choosing among GRMHD/FFE/PIC closures.
+In this regime the requirement for SSPE is not a finely tuned nozzle, but simply that a nonzero fraction of reconnection ejecta vents through the equatorial channel ($f_{\rm eq}>0$), with the magnitude of $f_{\rm eq}$ to be constrained by joint observational coherence rather than by choosing among GRMHD/FFE/PIC closures.
 
 
 \subsection{Mechanism sketch: a leaky equatorial return path}\label{sec:mech-sketch}
+\phead{Terminology.}
+We refer to the power-budget component $P_{\rm eq}$ (fraction $f_{\rm eq}$) as the \emph{equatorial channel}.
+
+The transport agent of this channel is the \emph{equatorial quasi-beam}, i.e., an intermittently launched, equatorially concentrated positive-energy branch originating near the ISCO--ergoregion interface.
+
+
 We use “Penrose process” in the strict Kerr sense of negative-energy states, and “Penrose-like coupling” as a phenomenological label for ergoregion/horizon-mediated energy transfer without committing to a specific microphysical implementation.
 
-
-\noindent{\it Why an equatorial channel is plausible (without microphysical adjudication).}
+\phead{Why an equatorial channel is plausible (without microphysical adjudication).}
 In rapidly spinning systems an equatorial return-current sheet is expected to form where field polarity reverses across the inner flow; time-dependent reconnection in such sheets generically produces plasmoids and intermittent ejecta in GRMHD/FFE and PIC studies (references in Fig.~2).
 
 Our framework does not derive a nozzle or collimation from first principles.
+
 It only requires that a non-negligible fraction of the reconnection ejecta can vent through an equatorially concentrated branch, whose relevance is to be decided by joint observational coherence (Hooks~1--3) rather than by adjudicating GRMHD/FFE/PIC closure here.
 
 \paragraph{Projectile sufficiency.}
-Reconnection ejecta (plasmoids) in the ergoregion carry specific energy $E$ and angular momentum $L$. A Penrose split (i.e., the negative-/positive-energy branch separation) requires a branch with $E-\Omega_H L<0$ (horizon condition).\footnote{Notation follows Fig.~\ref{fig:equatorial_trigger}.}
-
+Reconnection ejecta (plasmoids) in the ergoregion carry specific energy $E$ and angular momentum $L$. A Penrose split (i.e., the negative-/positive-energy branch separation) requires a branch with $E-\OmegaH L<0$ (horizon condition).
+\footnote{Notation follows Fig.~\ref{fig:equatorial_trigger}.}
+\footnote{where $\OmegaH$ is the horizon angular velocity of a Kerr black hole.}
 
 Tension-driven redistribution during ejection changes $L$ by $\Delta L\!\sim\!\mathcal{O}(r_{\rm g}v_\phi)$ and reconnection outflows can reach $v\!\sim\!0.1$--$0.5c$ in high-$S$ sheets; hence tens-of-percent shifts in $L$ suffice to place a fraction on the negative-energy branch, with the complement forming the \emph{positive-energy branch} (equatorial quasi-beam).
 
@@ -309,12 +319,12 @@ Near-extremal spin brings the ISCO into close contact with the ergoregion and st
 Rather than deriving collimation from first principles, we adopt a minimal interface motivated by time-dependent studies: equatorially symmetric configurations can develop reconnecting equatorial current layers that become plasmoid-unstable and launch intermittent outflows (e.g., FFE/GRMHD and PIC studies cited in Fig.~\ref{fig:equatorial_trigger}). 
 
 
-In SSPE, it is sufficient that a non-negligible equatorial venting branch exists; its relevance is to be decided by the joint observational hooks, not by adjudicating GRMHD/FFE/PIC closure here.
+In SSPE, it is sufficient that a non-negligible equatorial channel exists; its relevance is to be decided by the joint observational hooks, not by adjudicating GRMHD/FFE/PIC closure here.
 
 
 \begin{equation}
 \label{eq:penrose-cond}
-E - \Omega_H L < 0.
+E - \OmegaH L < 0.
 \end{equation}
 See \citealt{Penrose1969,Penrose2002}.
 
@@ -325,9 +335,9 @@ A modest back-flow coupling ($\epsilon_{\rm coup}\!\sim\!10^{-2}$--$10^{-1}$) th
   \centering
   \includegraphics[width=\textwidth]{fig_equatorial_trigger_schematic.pdf}
   \caption{\textbf{Equatorial Penrose trigger: negative vs.\ positive branches.}}
-  Plasma from the inner disk / plung region enters the ergosphere and splits kinematically:
-  a \emph{negative-energy branch} with $E-\Omega_H L<0$ falls through the \emph{event horizon} ($r_{\rm H}$),
-  while a \emph{positive-energy branch} can emerge as an equatorially concentrated outflow (candidate quasi-beam) that reheats the inner rim near $r_{\rm ISCO}$ \citep{Penrose1969,Penrose2002}.
+  Plasma from the inner disk / plung region enters the ergosphere and splits kinematically:\\
+  a \textbf{negative-energy branch} with $E-\OmegaH L<0$ falls through the \emph{event horizon} ($r_{\rm H}$) In contrast, \\
+  a \textbf{positive-energy branch} can emerge as an \emph{equatorial quasi-beam} (an equatorially concentrated outflow) that reheats the inner rim near $r_{\rm ISCO}$ \citep{Penrose1969,Penrose2002}.
   \\Landmarks\textemdash{}ergosurface, $r_{\rm ISCO}$, and the equatorial return current sheet (blue ribbon)\textemdash{}are indicated; branches are shown as \emph{red solid} (positive) and \emph{blue dashed} (negative) to match Eq.~\eqref{eq:penrose-cond}.
   
   {\footnotesize(FFE/GRMHD: \citealt{Komissarov2004MNRAS,EastYang2018PRD,Pan2018PRD};
@@ -342,11 +352,11 @@ A modest back-flow coupling ($\epsilon_{\rm coup}\!\sim\!10^{-2}$--$10^{-1}$) th
 Recent XRISM observations of NGC~3783 reported the rapid emergence of an ultrafast outflow synchronized with the decay of a soft X-ray/UV flare, with CME-like kinematics suggesting magnetic driving and possibly reconnection near the disk \citep{Gu2025NGC3783XRISM}.
 
 While not an ergoregion-specific probe, this supports the empirical plausibility of intermittent reconnection-driven ``projectiles'' in inner AGN environments.
-\footnote{The empirical plausibility of intermittent ``projectiles'' was treated as an explicit working assumption in the publicly time-stamped OSF registration for this project (See also \citealt{Wakabayashi2025OSFv1}), prior to the XRISM report on NGC~3783.}
+\footnote{The empirical plausibility of intermittent ``projectiles'' was treated as an explicit working assumption in the publicly time-stamped OSF registration for this project (Oct 2025; DOI:10.17605/OSF.IO/Q7DTH), prior to the XRISM report on NGC~3783.}
 
 
 \paragraph{Why an equatorial, quasi-collimated branch?}
-We do not claim that the equatorial branch must dominate, nor do we fix the microphysical launch/transport details in this paper. Instead, we treat an intermittently venting equatorial branch as a falsifiable boundary condition: if present at a non-negligible level, it can be reprocessed by the inner disk/corona into the joint hooks (Secs.~\ref{sec:obs}--\ref{sec:hooks}). Whether this branch is realized in real quasars is decided by the co-occurrence of Hooks~1--3 under the screens, not by microphysical closure here.
+We do not claim that the equatorial channel must dominate, nor do we fix the microphysical launch/transport details in this paper. Instead, we treat an intermittently equatorial channel as a falsifiable boundary condition: if present at a non-negligible level, it can be reprocessed by the inner disk/corona into the joint hooks (Secs.~\ref{sec:obs}--\ref{sec:hooks}). Whether this branch is realized in real quasars is decided by the co-occurrence of Hooks~1--3 under the screens, not by microphysical closure here.
 The \emph{positive-energy branch} may therefore propagate as a narrow, radiation-supported quasi-beam rather than escaping exclusively along the poles.
 Because the transport remains largely collisionless/Poynting-dominated until
 it reprocesses in the inner disk, and because the dissipation footprint is
@@ -389,14 +399,14 @@ which couples Eqs.~\eqref{eq:Lself} and \eqref{eq:Reff} and motivates $R_{\rm ef
 \subsection{Spin and Mass Evolution}\label{sec:evol}
 The horizon angular frequency is
 \begin{equation}
-\Omega_H=\frac{a_\ast c^3}{2GM\big(1+\sqrt{1-a_\ast^2}\big)},
+\OmegaH=\frac{a_\ast c^3}{2GM\big(1+\sqrt{1-a_\ast^2}\big)},
 \label{eq:OmegaH}
 \end{equation}
 where $r_H=\rg\big(1+\sqrt{1-a_\ast^2}\big)$ and $\rg=GM/c^2$.
 Evolution obeys
 \begin{align}
 \frac{dM}{dt}&=\frac{dM_{\rm acc}}{dt}-\frac{P_{\rm ext}}{c^2},\label{eq:dM}\\
-\frac{dJ}{dt}&=\frac{dJ_{\rm acc}}{dt}-\frac{P_{\rm ext}}{\Omega_H},\label{eq:dJ}\\
+\frac{dJ}{dt}&=\frac{dJ_{\rm acc}}{dt}-\frac{P_{\rm ext}}{\OmegaH},\label{eq:dJ}\\
 \frac{da_\ast}{dt}&=\frac{c}{GM^2}\frac{dJ}{dt}-2a_\ast\frac{1}{M}\frac{dM}{dt}.\label{eq:da}
 \end{align}
 
@@ -485,7 +495,7 @@ and $2$--$3\,\LEdd$ when combined with concurrent accretion, while $da_\ast/dt<0
 \clearpage
 \subsection{Semi-analytic parameter study}\label{sec:results}
 
-\paragraph{Analytic Exploration} The semi-analytic exploration above yields three robust trends that do not depend on the microphysical details of how the equatorial branch is realized.
+\paragraph{Analytic Exploration} The semi-analytic exploration above yields three robust trends that do not depend on the microphysical details of how the equatorial channel is realized.
 
 
 First, once the coupling activates above the threshold spin $a_\ast\gtrsim \ath$, even a modest efficiency $\epscoup\sim 10^{-2}$--$10^{-1}$ can supply an inner-disk feedback luminosity $L_{\rm self}=\epscoup P_{\rm ext}$ that is comparable to $\LEdd$ for plausible reservoir and duty-cycle choices, so that the combined output $\Ltot=L_{\rm acc}+L_{\rm self}$ generically reaches the observed $L/\LEdd\sim2$--$3$ band.
@@ -513,7 +523,7 @@ Finally, the same bookkeeping clarifies why SSPE should be treated as an equator
 In this paper we treat SSPE as a concrete, falsifiable working hypothesis rather than a completed theory.
 
 
-This work does not adjudicate between GRMHD/FFE/PIC implementations; it treats an equatorial venting channel as a falsifiable boundary condition and targets observational joint coherence.
+This work does not adjudicate between GRMHD/FFE/PIC implementations; it treats an equatorial channel as a falsifiable boundary condition and targets observational joint coherence.
 The microphysics of the coupling between the ergoregion, quasi-equatorial channels, and the inner disk is intentionally left agnostic and absorbed into a small set of phenomenological parameters.
 
 
@@ -661,12 +671,12 @@ However, BZ by itself does not explain the combination of high inferred spins, h
 
 In this landscape, SSPE is best viewed as an \emph{equatorial exhaust channel}. 
 When the ISCO approaches the ergoregion and the inner flow becomes thick and strongly coupled, 
-a quasi-equatorial beam can transfer rotational energy back into the inner disk and cocoon. 
+a equatorial quasi-beam can transfer rotational energy back into the inner disk and cocoon. 
 This plausibly supports mildly to strongly super-Eddington luminosities while enforcing an effective ``spin ceiling'' 
 $a_*\!\lesssim\!0.97$--$0.99$ for systems that lack a powerful jet. 
 BZ and SSPE then form a see-saw: polar extraction dominates in MAD, radio-loud states, 
 while equatorial extraction dominates in high-$\lambda$, radio-quiet states. 
-The observational hooks and falsification criterion in Sec.~\ref{sec:obs} are designed precisely to test this equatorial branch.
+The observational hooks and falsification criterion in Sec.~\ref{sec:obs} are designed precisely to test this equatorial channel.
 
 \noindent
 In what follows, we use the shorthand ``see-saw'' to denote an anti-correlated power partition between the polar and equatorial channels, i.e., $P_{\rm BZ}$ increasing as $P_{\rm eq}$ decreases, at fixed $P_{\rm ext}$ (and fixed/small $f_{\rm oth}$).
@@ -688,7 +698,7 @@ Slim disks allow modest super-Eddington flows but no spin ceiling. BZ/MAD explai
 
 This framework ties hyperluminous output and the spin ceiling via near-extremal, equatorial coupling.
 
-Consistent with GRFFE/GRMHD studies, an \emph{equatorial return-current sheet forms within the ergoregion} and becomes plasmoid-unstable; detached plasmoids unavoidably split into branches with $E-\Omega_H L\lessgtr 0$ (captured vs.\ escaping), enabling rotational-energy extraction via a Penrose-like radiative channel \citep{Penrose1969,Penrose2002,Komissarov2004MNRAS,EastYang2018PRD,Pan2018PRD,Parfrey2019PRL,Bransgrove2021}.
+Consistent with GRFFE/GRMHD studies, an \emph{equatorial return-current sheet forms within the ergoregion} and becomes plasmoid-unstable; detached plasmoids unavoidably split into branches with $E-\OmegaH L\lessgtr 0$ (captured vs.\ escaping), enabling rotational-energy extraction via a Penrose-like radiative channel \citep{Penrose1969,Penrose2002,Komissarov2004MNRAS,EastYang2018PRD,Pan2018PRD,Parfrey2019PRL,Bransgrove2021}.
 
 
 %\medskip
@@ -749,7 +759,7 @@ Interpreted conservatively, increasing $R_{\rm eff}$ enlarges the \emph{allowed}
 
 
 \subsection{Power partition and spin budget}\label{sec:power}
-\noindent\textbf{Notation.} We denote by $P_{\rm ext}$ the total power extracted from the Kerr spin reservoir (Sec.~\ref{sec:theory}); it partitions into a polar Blandford--Znajek (BZ) channel, a quasi-equatorial channel, and residual channels:
+\noindent\textbf{Notation.} We denote by $P_{\rm ext}$ the total power extracted from the Kerr spin reservoir (Sec.~\ref{sec:theory}); it partitions into a polar Blandford--Znajek (BZ) channel, a equatorial channel, and residual channels:
 
 \begin{align}
 P_{\rm ext} = P_{\rm BZ} + P_{\rm eq} + P_{\rm oth}, \label{eq:ptot}\\
@@ -766,7 +776,7 @@ In the present work we focus on screened, radio-quiet high-spin/high-$\lambda$ s
 \noindent
 A practical implication is that SSPE can affect systems that appear, by their large-scale phenomenology, to be BZ-favorable.
 
-Even when the polar channel dominates the long-term power budget (i.e., $P_{\rm BZ}\gg P_{\rm eq}$ on average), a nonzero equatorial branch provides an internal heating pathway that acts directly on the disk photosphere rather than through external irradiation.
+Even when the polar channel dominates the long-term power budget (i.e., $P_{\rm BZ}\gg P_{\rm eq}$ on average), a nonzero equatorial channel provides an internal heating pathway that acts directly on the disk photosphere rather than through external irradiation.
 
 In such states, the observable tension is not ``a jet plus a thin disk'', but a jet coexisting with a disk that looks \emph{too extended and too hot} for a strictly passive, radiatively efficient thin-disk interpretation---as suggested by microlensing/reverberation size inferences and wavelength-dependent lag amplitudes that exceed simple reprocessing expectations.
 
@@ -783,7 +793,7 @@ Independent of the SSPE hypothesis, multiple lines of evidence have highlighted 
 
 Here $P_{\rm ext}$ denotes the net extractable power available outside the horizon; Eqs.~(12)--(14) describe its internal bookkeeping, while the relation $P_{\rm ext}=P_{\rm BZ}+P_{\rm eq}$ is a coarse-grained \emph{channel} partition (polar vs.\ equatorial) used only for the see-saw discussion.
 
-Rather than forcing a single channel, our framework allows a \emph{coexisting} partition of magnetospheric power between a polar BZ-like outflow and an equatorial heating/venting branch,
+Rather than forcing a single channel, our framework allows a \emph{coexisting} partition of magnetospheric power between a polar BZ-like outflow and an equatorial channel,
 
 $P_{\rm ext}\approx P_{\rm BZ}+P_{\rm eq}$ (or $f_{\rm BZ}+f_{\rm eq}\approx 1$),
 and treats the partition as an empirical question to be decided by joint observables.
@@ -813,7 +823,7 @@ These reprocessed components constitute the primary hooks discussed in Sec.~\ref
 \noindent\textem{Rare outcome: partial beam leakage.}
 However, there is no guarantee that the inner flow is always geometrically and optically thick in the relevant directions. 
 In special configurations---for example, low $H/R$ at the inner rim, local warps or gaps, or mild misalignment between the spin axis and the large-scale disk---%
-a fraction of the quasi-equatorial beam may find a comparatively transparent channel and emerge without full reprocessing.
+a fraction of the equatorial quasi-beam may find a comparatively transparent channel and emerge without full reprocessing.
 In that case SSPE could produce \emph{direct} signatures on timescales of a few $r_g/c$, much shorter than the thermal and viscous response of the disk.
 
 \medskip
@@ -835,7 +845,7 @@ At the level of working hypotheses, two regimes appear especially promising:
   \item[(i)] \textbf{Lamppost fits with extremely compact source heights ($h\sim$ a few $r_g$).}
   In some bright quasars and Seyferts, lamppost spectral fits drive the inferred source height to values 
   $h\!\sim\!{\rm few}\,r_g$ or lower, where the physical interpretation becomes ambiguous. 
-  Within SSPE such cases could instead correspond to quasi-equatorial beams emerging just above the horizon, 
+  Within SSPE such cases could instead correspond to equatorial quasi-beams emerging just above the horizon, 
   rather than a compact source suspended on the spin axis.
   \item[(ii)] \textbf{High-$\lambda$ narrow-line Seyfert~1s (NLS1s).}
   These systems host relatively low-mass SMBHs accreting at high Eddington ratios and often display 
@@ -882,6 +892,7 @@ Hook 3 &
 \mcell{After screens, EVPA shows no preference\\for equatorial alignment and no trend\\with inferred spin/$\lambda$}\\
 \enddata
 \tablecomments{The primary falsification criterion used in this work is the joint-hook rule: absence of $\ge2$ hooks in vetted high-spin/high-$\lambda$ quasars after screens.}
+\tablecomments{Hook~2 is marked as \emph{Partly} mainly because simultaneous, high-time-resolution multi-band timing datasets are still rare (e.g., strict epoch matching across bands).}
 \end{deluxetable*}
 
 \noindent\textbf{Observational fronts.}
@@ -901,7 +912,7 @@ This see-saw test is a cross-check on the power partition, not an additional hoo
 
 \noindent\textbf{Simulation fronts.}
 \begin{enumerate}
-  \item[\textbf{(i)}] \textem{GRMHD near the ergoregion.} Resolve the equatorial return current sheet; quantify energy partition into positive/negative branches ($E-\Omega_H L\gtrless 0$); compare with torque-balance trends.
+  \item[\textbf{(i)}] \textem{GRMHD near the ergoregion.} Resolve the equatorial return current sheet; quantify energy partition into positive/negative branches ($E-\OmegaH L\gtrless 0$); compare with torque-balance trends.
   \item[\textbf{(ii)}] \textem{Radiative transfer with pairs.} Propagate hard X/MeV emission through compactness-limited media; map when the shoulder survives vs.\ is quenched (link to $\ell$ cut).
   \item[\textbf{(iii)}] \textem{Population modeling.} Combine spin distributions with transparency and coupling priors to predict the fraction of sources passing $\ge 2$ hooks.
 \end{enumerate}
