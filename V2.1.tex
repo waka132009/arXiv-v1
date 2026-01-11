@@ -205,7 +205,7 @@ This stance allows clean confrontation with data now and provides a clear interf
 Throughout we deliberately restrict attention to a single Kerr SMBH and its immediate accretion environment; issues of cosmological SMBH growth, seeding, and host-galaxy evolution are deferred to separate work.
 
 \paragraph{Boundary conditions are not fixed near $a_*\!\to\!1$.}
-Much of the literature treats the inner disk, magnetosphere, and ergoregion with effectively fixed cross-component boundary conditions. We instead emphasize that near-extremal spin the boundaries themselves evolve: frame dragging enlarges and reshapes the ergoregion, the ISCO approaches it, and the equatorial return path becomes thin and resistive. In this coupled regime an equatorial current sheet is generically required by the global field topology; shear and flux loading drive plasmoid-dominated reconnection; and the resulting split redistributes $(E,L)$ so that a negative-energy branch is absorbed by the hole while a gain branch vents as a narrow equatorial quasi-beam, part of which returns to heat the inner disk.
+Much of the literature treats the inner disk, magnetosphere, and ergoregion with effectively fixed cross-component boundary conditions. We instead emphasize that near-extremal spin the boundaries themselves evolve: frame dragging enlarges and reshapes the ergoregion, the ISCO approaches it, and the equatorial return path becomes thin and resistive. In this coupled regime an equatorial current sheet is generically required by the global field topology; shear and flux loading drive plasmoid-dominated reconnection; and the resulting split redistributes $(E,L)$ so that a negative-energy branch is absorbed by the hole while a positve-energy branch vents as a narrow equatorial quasi-beam, part of which returns to heat the inner disk.
 
 
 \section{Theoretical Framework}\label{sec:theory}
@@ -214,7 +214,7 @@ Much of the literature treats the inner disk, magnetosphere, and ergoregion with
 \noindent All elements invoked below act outside the event horizon; the coupling operates in the ergoregion and deposits energy in the equatorial flow, avoiding assumptions about interior or singularity-scale physics.
 \noindent\textem{Abbreviations and references.}
 We use \emph{FFE} for the force-free, magnetically dominated limit ($\rho_e\mathbf{E}+\mathbf{J}\!\times\!\mathbf{B}\approx 0$, $\mathbf{J}\!\cdot\!\mathbf{E}=0$) and \emph{GRMHD} for ideal magnetohydrodynamics evolved on a Kerr background \citep{Komissarov2004MNRAS,GrallaJacobson2014MNRAS,EastYang2018PRD,Pan2018PRD}.
-We use \emph{PIC} for first-principles kinetic simulations that resolve reconnection and plasmoid formation in the ergospheric current sheet \citep{Parfrey2019PRL,Bransgrove2021}.
+We use \emph{PIC} for first-principles kinetic simulations that resolve reconnection and plasmoid formation in the ergoregion current sheet \citep{Parfrey2019PRL,Bransgrove2021}.
 Throughout we group references as (FFE/GRMHD) versus (PIC).
 
 
@@ -254,7 +254,7 @@ The equatorial coupling turns on steeply once the spin exceeds a threshold \(a_{
 In our fiducial calibration, the rise is rapid near \(a_\ast \simeq 0.97\), setting the lever for both luminosity boost and spin regulation (cf.\ Eqs.~\eqref{eq:penrose-cond}--\eqref{eq:Ltot}).
 
 
-We adopt a fiducial $a_{\rm th}\simeq0.97$ as a pragmatic “near-extremal” boundary where the ISCO approaches the ergoregion boundary in the equatorial plane and small changes in $a$ produce disproportionately large changes in horizon-frame energetics and coupling geometry; the precise value is not fundamental and can be refined empirically.
+We adopt a fiducial $a_{\rm th}\simeq0.97$ as a pragmatic “near-extremal” boundary where the ISCO approaches the ergosurface boundary in the equatorial plane and small changes in $a$ produce disproportionately large changes in horizon-frame energetics and coupling geometry; the precise value is not fundamental and can be refined empirically.
 \FloatBarrier
 Unless noted, we adopt the following fiducials for figures and estimates: $M=10^9M_\odot$, $\eta_{\rm acc}=0.1$, $\epsilon_{\max}=0.1$, $n=2$, $R_0=10^2$, and $\alpha=50$; the illustrative threshold is $\ath\simeq0.97$.
 \noindent\emph{Micro-bridge.}
@@ -294,6 +294,8 @@ In this regime the requirement for SSPE is not a finely tuned nozzle, but simply
 We refer to the power-budget component $P_{\rm eq}$ (fraction $f_{\rm eq}$) as the \emph{equatorial channel}.
 
 The transport agent of this channel is the \emph{equatorial quasi-beam}, i.e., an intermittently launched, equatorially concentrated positive-energy branch originating near the ISCO--ergoregion interface.
+
+We use \emph{ergoregion} when referring to the physical condition for negative-energy states (Penrose splitting), and \emph{ergosphere}/\emph{ergosurface} when referring to the geometric region/boundary in Fig.~2.
 
 
 We use “Penrose process” in the strict Kerr sense of negative-energy states, and “Penrose-like coupling” as a phenomenological label for ergoregion/horizon-mediated energy transfer without committing to a specific microphysical implementation.
@@ -335,7 +337,7 @@ A modest back-flow coupling ($\epsilon_{\rm coup}\!\sim\!10^{-2}$--$10^{-1}$) th
   \centering
   \includegraphics[width=\textwidth]{fig_equatorial_trigger_schematic.pdf}
   \caption{\textbf{Equatorial Penrose trigger: negative vs.\ positive branches.}\newline
-  Plasma from the inner disk / plunge region enters the ergosphere and splits kinematically into two branches:\\
+  Plasma from the inner disk / plunge region enters the ergoregion(inside the ergo surface) and splits kinematically into two branches:\\
   a \textbf{negative-energy branch} with $E-\OmegaH L<0$ falls through the \emph{event horizon} ($r_{\rm H}$), and \\
   a \textbf{positive-energy branch} that can emerge as an \emph{equatorial quasi-beam} (an equatorially concentrated outflow) that reheats the inner rim near $r_{\rm ISCO}$ \citep{Penrose1969,Penrose2002}.
   \\Landmarks\textemdash{}ergosurface, $r_{\rm ISCO}$, and the equatorial return-current sheet (blue ribbon)\textemdash{}are indicated; branches are shown as \emph{red solid} (positive) and \emph{blue dashed} (negative) to match Eq.~\eqref{eq:penrose-cond}.
