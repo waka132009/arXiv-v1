@@ -202,6 +202,9 @@ This paper introduces and develops \emph{Self-Sustained Penrose Excitation} (SSP
 
 Our goal is to establish SSPE as a quantitatively testable hypothesis. First, we formalize the geometry and kinematics of the ISCO--ergoregion interface and introduce a minimal parameterization of the coupling efficiency and threshold (Section~\ref{sec:theory}). Second, we present a semi-analytic parameter study exploring how $L/L_{\rm Edd}$, duty cycle, and spin evolution respond to changes in $\epscoup$, coupling scale, and effective screening of high-$\ell$ influx (Section~\ref{sec:results}). Third, we translate each observational hook into concrete signal-to-noise, model-selection, and polarimetric requirements, and state an explicit falsification criterion (Section~\ref{sec:hooks}). Fourth, we apply the framework to BZ-favorable, jet-dominated quasars with anomalously hot/extended disks, arguing that equatorial feedback can  inflate and overheat the outer disk even in such systems (Section~\ref{sec:power}).
 
+We do not attempt to replace super-Eddington disk models (e.g., slim disks); rather, SSPE adds a spin-regulated, testable protocol layer whose discriminant is the joint appearance of Hooks~1--3 and the presence of a sub-unity spin ceiling.
+
+
 \paragraph{Scope and modeling stance.}
 We present a phenomenological framework: the microphysics of beam formation, transport, and equatorial deposition is intentionally kept agnostic, while the \emph{observable consequences} of such coupling are made explicit and falsifiable.
 This stance allows clean confrontation with data now and provides a clear interface to future GRMHD/plasma studies that could instantiate the coupling agent.
@@ -209,6 +212,7 @@ Throughout we deliberately restrict attention to a single Kerr SMBH and its imme
 
 \paragraph{Boundary conditions are not fixed near $a_*\!\to\!1$.}
 Much of the literature treats the inner disk, magnetosphere, and ergoregion with effectively fixed cross-component boundary conditions. We instead emphasize that near-extremal spin the boundaries themselves evolve: frame dragging enlarges and reshapes the ergoregion, the ISCO approaches it, and the equatorial return path becomes thin and resistive. In this coupled regime an equatorial current sheet is generically required by the global field topology; shear and flux loading drive plasmoid-dominated reconnection; and the resulting split redistributes $(E,L)$ so that a negative-energy branch is absorbed by the hole while a positive-energy branch vents as a narrow equatorial quasi-beam, part of which returns to heat the inner disk.
+
 
 
 \section{Theoretical Framework}\label{sec:theory}
@@ -553,6 +557,8 @@ Because the falsification criterion is intentionally strict, we apply minimal sc
 \end{titemize}
 
 \phead{Screen D (compactness) is an identifiability gate, not a physical exclusion.}
+Here ``screened'' means \emph{information-limited} (observationally saturated), so such cases are withheld from falsification counting.
+
 At high compactness, radiative transfer and pair opacity can saturate the 20--120~keV band and wash out timing/polarimetric diagnostics, so the Hook suite becomes \emph{non-identifiable} rather than negative.
 
 We therefore label $\ell>\ell_{\rm crit}$ sources as \emph{screened / untestable with the present low-cost protocol}, not as SSPE-failing cases.
@@ -560,6 +566,7 @@ We therefore label $\ell>\ell_{\rm crit}$ sources as \emph{screened / untestable
 In other words, Screen~D prevents false negatives due to observational saturation, and it can be relaxed when higher-energy coverage or improved modeling becomes available.
 
 This choice is conservative: it reduces the claim to the domain where the proposed decision function is well-posed.
+
 
 \noindent\textbf{Tier definitions.}
 We use \textem{Tier-1} to denote lightweight archival screening (existing hard-X spectroscopy and timing products with minimal assumptions).
@@ -822,9 +829,14 @@ The minimal falsifiable statement is the sign: after matching, the rank correlat
 
 \noindent\textem{Normal outcome: reprocessing into Hooks~1/2.}
 In the working picture adopted here, SSPE acts primarily as an \emph{equatorial power channel}: 
+
 a narrow quasi-beam extracts rotational energy near the ISCO--ergoregion interface and re-injects it into the inner disk and surrounding cocoon. 
+
 Most of the time this energy is promptly reprocessed into the hard X/MeV shoulder (Hook~1) and lag-hardening signatures (Hook~2), with only modest direct leakage beyond the disk and torus.
+
 These reprocessed components constitute the primary hooks discussed in Sec.~\ref{sec:obs}.
+
+This speculative leakage scenario is not required for the protocol and does not affect the falsification logic in Table~\ref{tab:roadmap}.
 
 
 \medskip
