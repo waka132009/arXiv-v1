@@ -87,7 +87,11 @@
 % --- Information-criterion threshold for Hook-1 (single source of truth) ---
 \newcommand{\ICcrit}{6}
 %\newcommand{\ICmetric}{\Delta\mathrm{BIC}}
-\newcommand{\ICmetric}{\Delta\mathrm{BIC}\ (\mathrm{or}\ \Delta\mathrm{AICc})}
+\newcommand{\BICmetric}{\Delta\mathrm{BIC}}
+\newcommand{\AICcmetric}{\Delta\mathrm{AICc}}
+\newcommand{\ICmetric}{\Delta\mathrm{BIC}\ (\Delta\mathrm{AICc}\ optional)}
+\newcommand{\ICmetrics}{\BICmetric\ (\mathrm{primary});\ \AICcmetric\ (\mathrm{secondary})}
+
 
 % --- OmegaH macro ---
 \newcommand{\OmegaH}{\Omega_{\rm H}}
@@ -592,6 +596,9 @@ otherwise; in observed frame use Eref/(1+z) where feasible),
 And define $\tau>0$ when the band at $E$ \emph{lags} the reference band.
 
 In this convention, ``lag hardening'' corresponds to \emph{hard lags}: $\tau(E)$ increases with energy.
+
+(See Fig~\ref{fig:fig_appendix} for a visual mapping of Screens and Hooks to the Tier-1/Tier-2 decisions.)
+
 
 \begin{quote}
 \noindent\textbf{Observer Quickstart (Tier-1 archival screening; non-committal).}\par
