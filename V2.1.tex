@@ -86,7 +86,6 @@
 
 % --- Information-criterion threshold for Hook-1 (single source of truth) ---
 \newcommand{\ICcrit}{6}
-%\newcommand{\ICmetric}{\Delta\mathrm{BIC}}
 \newcommand{\BICmetric}{\Delta\mathrm{BIC}}
 \newcommand{\AICcmetric}{\Delta\mathrm{AICc}}
 \newcommand{\ICmetric}{\Delta\mathrm{BIC}\ (\Delta\mathrm{AICc}\ optional)}
@@ -597,7 +596,7 @@ And define $\tau>0$ when the band at $E$ \emph{lags} the reference band.
 
 In this convention, ``lag hardening'' corresponds to \emph{hard lags}: $\tau(E)$ increases with energy.
 
-(See Fig~\ref{fig:fig_appendix} for a visual mapping of Screens and Hooks to the Tier-1/Tier-2 decisions.)
+(See Fig.~\ref{fig:fig_appendix} for a visual mapping of Screens and Hooks to the Tier-1/Tier-2 decisions.)
 
 
 \begin{quote}
@@ -893,7 +892,7 @@ Hook 1 &
 \textbf{Yes} &
 \mcell{After screens, vetted high-spin/high-$\lambda$ sample\\systematically prefers featureless continua\\(no shoulder)}\\
 \tableline
-Hook 2 & \mcell{Energy-resolved X-ray light curves\\(multiple bands; sufficient counts)\\+ lag--energy spectrum $\tau(E)$\\(relative to a stated $E_{\rm ref}$)\\\textem{Tier-2:} X$\to$UV/optical reprocessing lags\\where available} & \textbf{Partly} & \mcell{After screens, lag--energy slopes\\fail to be $d\tau/d\log E>0$ and monotone within an epoch\\across the bright subset}\\
+Hook 2 & \mcell{Energy-resolved X-ray light curves\\(multiple bands; sufficient counts)\\+ lag--energy spectrum $\tau(E)$\\(relative to a stated $E_{\rm ref}$)\\\textem{Tier-2:} X$\to$UV/optical reprocessing lags\\where available} & \textbf{Partly}\tablenotemark{a} & \mcell{After screens, lag--energy slopes\\fail to be $d\tau/d\log E>0$ and monotone within an epoch\\across the bright subset}\\
 \tableline
 Hook 3 &
 \mcell{Hard-component X-ray polarimetry\\+ EVPA reference to disk plane\\+ spin/$\lambda$ proxies} &
@@ -901,7 +900,7 @@ Hook 3 &
 \mcell{After screens, EVPA shows no preference\\for equatorial alignment and no trend\\with inferred spin/$\lambda$}\\
 \enddata
 \tablecomments{The primary falsification criterion used in this work is the joint-hook rule: absence of $\ge2$ hooks in vetted high-spin/high-$\lambda$ quasars after screens.}
-\tablecomments{Hook~2 is marked as \emph{Partly} mainly because simultaneous, high-time-resolution multi-band timing datasets are still rare (e.g., strict epoch matching across bands).}
+\tablenotetext{a}{Hook~2 is marked as \emph{Partly} mainly because simultaneous, high-time-resolution multi-band timing datasets are still rare (e.g., strict epoch matching across bands).}
 \end{deluxetable*}
 
 \noindent\textbf{Observational fronts.}
@@ -992,22 +991,26 @@ After applying Screens A--D, systematic failure to recover $\ge 2$ hooks in vett
 
 
 \floattable
-\begin{deluxetable*}{lcccc}   % [t]で上部固定。収まらなければ[p]に
+\begin{deluxetable*}{lccccc}   % [t]で上部固定。収まらなければ[p]に
 \tablewidth{0pt}
 \tabletypesize{\normalsize}           % 大きく見せたい：\normalsize / 収めたい：\scriptsize
 \tablecaption{\textbf{Candidate Gallery} \textemdash{} Representative objects; values are indicative.\label{tab:cands}}
 \tablehead{
   \colhead{Name} & \colhead{$z$} &
-  \colhead{$M_{\rm BH}/M_\odot$} & \colhead{$L/L_{\rm Edd}$} &
-  \colhead{Notes}
+  \colhead{$M_{\rm BH}/M_\odot$} & \colhead{$L/L_{\rm Edd}$} & \colhead{Arch. (Hook~1/2/3)} & \colhead{Notes}
 }
 \startdata
-TON 618        & 2.219 & $\sim6.6\times10^{10}$ & $\sim3$     & \parbox[t]{0.36\textwidth}{Extremely massive; radio-loud; literature refs.\tablenotemark{a}}\\
-J2157-3602     & 4.75  & $\sim3.4\times10^{9}$  & $\gtrsim10$ & \parbox[t]{0.36\textwidth}{Hyper-luminous; super-Eddington episode indications.\tablenotemark{b}}\\
-J0100+2802     & 6.30  & $\sim1.2\times10^{10}$ & $\sim2$     & \parbox[t]{0.36\textwidth}{$z>6$ luminous quasar.\tablenotemark{c}}\\
-J0439+1634     & 6.51  & $\sim7\times10^{9}$    & $\sim2{-}3$ & \parbox[t]{0.36\textwidth}{Possible lensing history.\tablenotemark{d}}\\
+TON 618        & 2.219 & $\sim6.6\times10^{10}$ & $\sim3$     & Y/?/N & \parbox[t]{0.36\textwidth}{Extremely massive; radio-loud; literature refs.\tablenotemark{a}}\\
+J2157-3602     & 4.75  & $\sim3.4\times10^{9}$  & $\gtrsim10$ & Y/?/N & \parbox[t]{0.36\textwidth}{Hyper-luminous; super-Eddington episode indications.\tablenotemark{b}}\\
+J0100+2802     & 6.30  & $\sim1.2\times10^{10}$ & $\sim2$     & Y/?/? & \parbox[t]{0.36\textwidth}{$z>6$ luminous quasar.\tablenotemark{c}}\\
+J0439+1634     & 6.51  & $\sim7\times10^{9}$    & $\sim2{-}3$ & Y/?/N & \parbox[t]{0.36\textwidth}{Possible lensing history.\tablenotemark{d}}\\
 \enddata
-\tablecomments{Values are illustrative; per-object sourcing is out of scope.}
+\tablecomments{Values are illustrative; per-object sourcing is out of scope.
+  \begin{titemize}
+    \item Y = likely sufficient public archival data for Tier-1 check
+    \item ? = unclear / partial / needs quick inspection
+    \item N = no suitable archival data; new obs needed
+  \end{titemize}}
 \tablenotetext{a}{Virial-factor dominated systematics; radio-loud bias possible.}
 \tablenotetext{b}{Bolometric/line-width systematics $\gtrsim 0.3$ dex.}
 \tablenotetext{c}{High-$z$ mass methods differ (reflection vs.\ continuum).}
