@@ -138,8 +138,7 @@
 
 \begin{document}
 
-\title{Self-Sustained Penrose Excitation of Accretion Disks:\\
-A Spin-Regulated Mechanism for Super-Eddington Quasar Luminosities}
+\title{Self-Sustained Penrose Excitation as a Testable Phenomenological Protocol\\ for High-Spin Quasars}
 \correspondingauthor{Jun Wakabayashi}
 
 \author[0009-0008-1891-4579]{Jun Wakabayashi}
@@ -591,9 +590,9 @@ here we state only the physical intent:
 \end{titemize}
 
 \phead{Robustness to the information-criterion threshold.}
-We adopt a conventional threshold (fiducially $\Delta IC\ge 6$) to keep the Tier-1 decision rule executable and reproducible, but the protocol does not hinge on this single value.
+We adopt a conventional threshold (fiducially $\BICmetric \ge \ICcrit$) to keep the Tier-1 decision rule executable and reproducible, but the protocol does not hinge on this single value.
 
-In practice, we recommend reporting the classification stability under a small bracket (e.g., $\Delta IC\in[4,10]$) as a sensitivity check; sources that flip classification under this bracket are labeled \emph{ambiguous} and deferred to Tier-2.
+In practice, we recommend reporting the classification stability under a small bracket around the threshold (e.g., $\BICmetric\in[4,10]$) as a sensitivity check; sources that flip classification within this bracket are labeled ambiguous and deferred to Tier-2.
 
 \phead{Lag convention.}
 We measure energy-resolved lags $\tau(E)$ relative to a fixed \emph{reference} band $E_{\rm ref}$ (we adopt $E_{\rm ref}=2$--4~keV in the rest frame unless stated.\\
@@ -630,7 +629,7 @@ Under Screens A--D, the absence of two or more hooks in vetted high-spin/high-$\
 \paragraph{Degeneracy control via joint coherence.}
 Each hook may admit degeneracies in isolation (e.g., complex coronal geometry or slim-disk radiative transfer can mimic shoulder-like curvature, and propagation/reverberation effects can shape energy-dependent lags).
 SSPE therefore targets \emph{joint observational coherence}:
-\\after applying Screens~A--D, the model is evaluated by the co-occurrence of Hooks~1--3 within the same source/epoch, with quantitative model selection (e.g., $\Delta\mathrm{IC}\!\ge\!6$) applied where a competing spectral/timing description exists.
+\\after applying Screens~A--D, the model is evaluated by the co-occurrence of Hooks~1--3 within the same source/epoch, with quantitative model selection (e.g., $\ICmetric\!\ge\!\ICcrit$) applied where a competing spectral/timing description exists.
 
 
 \noindent{\it Minimal discrimination argument.} 
@@ -973,7 +972,7 @@ Self-sustained Penrose excitation near extremal Kerr SMBHs can inject rotational
 We measure $\tau(E)$ relative to a fixed reference band $E_{\rm ref}$ (adopt $E_{\rm ref}=2$--4~keV in the rest frame; use $E_{\rm ref}$/(1+z) in observed frame where feasible); define $\tau>0$ when the band at $E$ lags the reference band.\\
 
 \noindent\textbf{Hooks (apply jointly under Screens A--D).}\\
-\noindent\textbf{Hook 1 (shoulder):} passes if $\Delta{\rm BIC}$ (or $\Delta{\rm AICc}$) $\ge 6$ in the 20--120~keV observed band.\\
+\noindent\textbf{Hook 1 (shoulder):} passes if $\ICmetric \ge \ICcrit$ in the 20--120~keV observed band.\\
 \noindent\textbf{Hook 2 (lag hardening):} passes if $d\tau/d\log E > 0$ and $\tau(E)$ is monotone within an epoch.\\
 \noindent\textbf{Hook 3 (equatorial polarization):} EVPA $\parallel$ disk/equator, with polarization degree increasing with spin/$\lambda$.\\
 
