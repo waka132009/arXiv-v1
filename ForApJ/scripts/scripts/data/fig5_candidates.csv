@@ -1,0 +1,4 @@
+name,MBH_Msun,a_eq,a_eq_lo,a_eq_hi,lag_rg,lag_rg_lo,lag_rg_hi,lag_ms,lag_s,hard_x_frac,pol_pct
+"TON 618",6.6e10,0.98,,, ,,, , ,0.25,
+"Phoenix A",1.0e10,0.97,, , ,,, 12.0,,,
+"3C 273",8.9e8,0.94,, , ,,, , , ,2.5

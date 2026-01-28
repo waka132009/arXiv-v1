@@ -206,22 +206,39 @@ Taken in isolation, each of several long-running tensions can be accommodated by
 However, the recurring appearance of these tensions \emph{in the same high-spin, high-$\lambda$ population} suggests that treating them as unrelated, probe-specific anomalies is an increasingly high-dimensional patchwork.
 
 This paper frames SSPE as a single \emph{equatorial inner-disk heating channel} that can be confronted with data across these disparate probes under a shared screening logic (compactness, absorption, inclination). 
+
 The intent is not to declare uniqueness, but to provide a unifying, explicitly falsifiable target that invites coordinated scrutiny by the spectral--timing, microlensing/reverberation, and GRMHD/plasma communities.
 
-This paper introduces and develops \emph{Self-Sustained Penrose Excitation} (SSPE): a quasi-equatorial, Penrose-like energy-transfer channel that couples the ergoregion to the innermost accretion flow. When the Kerr spin exceeds a near-threshold value $a_\ast \gtrsim a_{\rm th}\simeq 0.97$, a modest fractional coupling of the rotational-energy reservoir, parameterized by $\epscoup(a_\ast)\sim 10^{-2}$--$10^{-1}$, can continuously re-inject power into the inner disk while providing a counter-torque that self-limits the spin.
+This paper introduces and develops \emph{Self-Sustained Penrose Excitation} (SSPE): a quasi-equatorial, Penrose-like energy-transfer channel that couples the ergoregion to the innermost accretion flow.
 
-Our goal is to establish SSPE as a quantitatively testable hypothesis. First, we formalize the geometry and kinematics of the ISCO--ergoregion interface and introduce a minimal parameterization of the coupling efficiency and threshold (Section~\ref{sec:theory}). Second, we present a semi-analytic parameter study exploring how $L/L_{\rm Edd}$, duty cycle, and spin evolution respond to changes in $\epscoup$, coupling scale, and effective screening of high-$\ell$ influx (Section~\ref{sec:results}). Third, we translate each observational hook into concrete signal-to-noise, model-selection, and polarimetric requirements, and state an explicit falsification criterion (Section~\ref{sec:hooks}). Fourth, we apply the framework to BZ-favorable, jet-dominated quasars with anomalously hot/extended disks, arguing that equatorial feedback can  inflate and overheat the outer disk even in such systems (Section~\ref{sec:power}).
+When the Kerr spin exceeds a near-threshold value $a_\ast \gtrsim a_{\rm th}\simeq 0.97$, a modest fractional coupling of the rotational-energy reservoir, parameterized by $\epscoup(a_\ast)\sim 10^{-2}$--$10^{-1}$, can continuously re-inject power into the inner disk while providing a counter-torque that self-limits the spin.
+
+Our goal is to establish SSPE as a quantitatively testable hypothesis.
+
+First, we formalize the geometry and kinematics of the ISCO--ergoregion interface and introduce a minimal parameterization of the coupling efficiency and threshold (Section~\ref{sec:theory}).
+
+Second, we present a semi-analytic parameter study exploring how $L/L_{\rm Edd}$, duty cycle, and spin evolution respond to changes in $\epscoup$, coupling scale, and effective screening of high-$\ell$ influx (Section~\ref{sec:results}).
+
+Third, we translate each observational hook into concrete signal-to-noise, model-selection, and polarimetric requirements, and state an explicit falsification criterion (Section~\ref{sec:hooks}).
+
+Fourth, we apply the framework to BZ-favorable, jet-dominated quasars with anomalously hot/extended disks, arguing that equatorial feedback can inflate and overheat the outer disk even in such systems (Section~\ref{sec:power}).
 
 We do not attempt to replace super-Eddington disk models (e.g., slim disks); rather, SSPE adds a spin-regulated, testable protocol layer whose discriminant is the joint appearance of Hooks~1--3 and the presence of a sub-unity spin ceiling.
 
 
 \paragraph{Scope and modeling stance.}
 We present a phenomenological framework: the microphysics of beam formation, transport, and equatorial deposition is intentionally kept agnostic, while the \emph{observable consequences} of such coupling are made explicit and falsifiable.
+
 This stance allows clean confrontation with data now and provides a clear interface to future GRMHD/plasma studies that could instantiate the coupling agent.
+
 Throughout we deliberately restrict attention to a single Kerr SMBH and its immediate accretion environment; issues of cosmological SMBH growth, seeding, and host-galaxy evolution are deferred to separate work.
 
 \paragraph{Boundary conditions are not fixed near $a_*\!\to\!1$.}
-Much of the literature treats the inner disk, magnetosphere, and ergoregion with effectively fixed cross-component boundary conditions. We instead emphasize that near-extremal spin the boundaries themselves evolve: frame dragging enlarges and reshapes the ergoregion, the ISCO approaches it, and the equatorial return path becomes thin and resistive. In this coupled regime an equatorial current sheet is generically required by the global field topology; shear and flux loading drive plasmoid-dominated reconnection; and the resulting split redistributes $(E,L)$ so that a negative-energy branch is absorbed by the hole while a positive-energy branch vents as a narrow equatorial quasi-beam, part of which returns to heat the inner disk.
+Much of the literature treats the inner disk, magnetosphere, and ergoregion with effectively fixed cross-component boundary conditions.
+
+We instead emphasize that near-extremal spin the boundaries themselves evolve: frame dragging enlarges and reshapes the ergoregion, the ISCO approaches it, and the equatorial return path becomes thin and resistive.
+
+In this coupled regime an equatorial current sheet is generically required by the global field topology; shear and flux loading drive plasmoid-dominated reconnection; and the resulting split redistributes $(E,L)$ so that a negative-energy branch is absorbed by the hole while a positive-energy branch vents as a narrow equatorial quasi-beam, part of which returns to heat the inner disk.
 
 
 
@@ -229,6 +246,7 @@ Much of the literature treats the inner disk, magnetosphere, and ergoregion with
 \tldr{Near-threshold Kerr coupling at the ISCO--ergoregion interface supplies disk heating while extracting spin, under a compactness gate $\ellhard$.}
 
 \noindent All elements invoked below act outside the event horizon; the coupling operates in the ergoregion and deposits energy in the equatorial flow, avoiding assumptions about interior or singularity-scale physics.
+
 \noindent\textem{Abbreviations and references.}
 We use \emph{FFE} for the force-free, magnetically dominated limit ($\rho_e\mathbf{E}+\mathbf{J}\!\times\!\mathbf{B}\approx 0$, $\mathbf{J}\!\cdot\!\mathbf{E}=0$) and \emph{GRMHD} for ideal magnetohydrodynamics evolved on a Kerr background \citep{Komissarov2004MNRAS,GrallaJacobson2014MNRAS,EastYang2018PRD,Pan2018PRD}.
 We use \emph{PIC} for first-principles kinetic simulations that resolve reconnection and plasmoid formation in the ergoregion current sheet \citep{Parfrey2019PRL,Bransgrove2021}.
@@ -245,7 +263,9 @@ E_{\rm rot}(a_\ast)=\Bigg[1-\sqrt{\tfrac{1}{2}\Big(1+\sqrt{1-a_\ast^2}\Big)}\Big
 reaching $\sim0.29\,Mc^2$ as $a_\ast\to1$.
 
 \subsection{Spin-Triggered Coupling}\label{sec:coupling}
-We posit a threshold spin $\ath$ above which an ergoregion-coupled agent activates. The effective coupling follows
+We posit a threshold spin $\ath$ above which an ergoregion-coupled agent activates.
+
+The effective coupling follows
 \Needspace{7\baselineskip}
 \begin{equation}
 \epscoup(a_\ast)=
@@ -268,6 +288,7 @@ where $\epsilon_{\max}$ is the saturation cap and $n$ controls activation sharpn
 \newline
 \noindent\textem{Activation threshold.}
 The equatorial coupling turns on steeply once the spin exceeds a threshold \(a_{\rm th}\).
+
 In our fiducial calibration, the rise is rapid near \(a_\ast \simeq 0.97\), setting the lever for both luminosity boost and spin regulation (cf.\ Eqs.~\eqref{eq:penrose-cond}--\eqref{eq:Ltot}).
 
 
@@ -275,18 +296,23 @@ We adopt a fiducial $a_{\rm th}\simeq0.97$ as a pragmatic “near-extremal” bo
 \FloatBarrier
 Unless noted, we adopt the following fiducials for figures and estimates: $M=10^9M_\odot$, $\eta_{\rm acc}=0.1$, $\epsilon_{\max}=0.1$, $n=2$, $R_0=10^2$, and $\alpha=50$; the illustrative threshold is $\ath\simeq0.97$.
 \noindent\emph{Micro-bridge.}
-While we keep microphysics agnostic, the fiducial range
-$\epsilon_{\rm coup}\sim10^{-2}$--$10^{-1}$ is broadly consistent with
-energy-release fractions seen in near-horizon, plasmoid-dominated
-reconnection in recent GRMHD studies. For the present framework we only
-assume that $\epsilon_{\rm coup}$ rises sharply above $a_{\rm th}$ and
-saturates below $\epsilon_{\max}$; detailed calibration is left for
-future simulations.
+While we keep microphysics agnostic, the fiducial range $\epsilon_{\rm coup}\sim10^{-2}$--$10^{-1}$ is broadly consistent with energy-release fractions seen in near-horizon, plasmoid-dominated reconnection in recent GRMHD studies.
+
+For the present framework we only assume that $\epsilon_{\rm coup}$ rises sharply above $a_{\rm th}$ and saturates below $\epsilon_{\max}$; detailed calibration is left for future simulations.
 
 \paragraph{Phenomenological parameters and physical ranges.}
-The cap $\epsilon_{\max}$ limits equatorial deposition efficiency by energy-budget and pair-compactness constraints; $n$ controls activation sharpness above $\ath$ as an effective criticality index of the coupling geometry. $(R_0,\alpha)$ regulate the dissipation footprint to maintain transparency, trading compactness against reprocessing. We restrict these to physically plausible ranges and view them as interfaces for future GRMHD/plasma calibration, not curve-fitting knobs.
+The cap $\epsilon_{\max}$ limits equatorial deposition efficiency by energy-budget and pair-compactness constraints; $n$ controls activation sharpness above $\ath$ as an effective criticality index of the coupling geometry.
+ 
+$(R_0,\alpha)$ regulate the dissipation footprint to maintain transparency, trading compactness against reprocessing.
+
+We restrict these to physically plausible ranges and view them as interfaces for future GRMHD/plasma calibration, not curve-fitting knobs.
+
 \paragraph{Sensitivity and saturation.}
-The activation $\epsilon_{\rm coup}(a_*)$ is intentionally steep: $(a_{\rm th},n)$ set the narrowness of the “spin ceiling”. In practice $\epsilon_{\rm coup}$ and the leakage fraction depend nonlinearly on flux loading and $\dot M$, with possible saturation arbitrarily close to the extremal limit. We therefore treat $(a_{\rm th},n,\epsilon_{\max},\alpha)$ as calibration parameters to be fixed by future GRMHD-in-ergoregion testbeds.
+The activation $\epsilon_{\rm coup}(a_*)$ is intentionally steep: $(a_{\rm th},n)$ set the narrowness of the “spin ceiling”.
+
+In practice $\epsilon_{\rm coup}$ and the leakage fraction depend nonlinearly on flux loading and $\dot M$, with possible saturation arbitrarily close to the extremal limit.
+
+We therefore treat $(a_{\rm th},n,\epsilon_{\max},\alpha)$ as calibration parameters to be fixed by future GRMHD-in-ergoregion testbeds.
 
 
 \paragraph{Power partition.}
@@ -383,10 +409,8 @@ Instead, we treat an intermittently equatorial channel as a falsifiable boundary
 Whether this branch is realized in real quasars is decided by the co-occurrence of Hooks~1--3 under the screens, not by microphysical closure here.
 
 The \emph{positive-energy branch} may therefore propagate as a narrow, radiation-supported quasi-beam rather than escaping exclusively along the poles.
-Because the transport remains largely collisionless/Poynting-dominated until
-it reprocesses in the inner disk, and because the dissipation footprint is
-extended ($R_{\rm eff}\!\sim\!10^{2}$--$10^{3}\,r_g$), the pair compactness
-along the beam stays low, consistent with the transparency requirement of Eq.~(6).
+
+Because the transport remains largely collisionless/Poynting-dominated until it reprocesses in the inner disk, and because the dissipation footprint is extended ($R_{\rm eff}\!\sim\!10^{2}$--$10^{3}\,r_g$), the pair compactness along the beam stays low, consistent with the transparency requirement of Eq.~(6).
 
 %\FloatBarrier
 \subsection{Self-Sustained Penrose Excitation}\label{sec:penrose}
@@ -561,6 +585,7 @@ The microphysics of the coupling between the ergoregion, quasi-equatorial channe
 What is fixed --- and offered to observers and simulators --- is an executable protocol: (i) minimal \textem{screens} that define vetted samples and handle missing observables fairly, (ii) three joint \textem{hooks} (spectral, timing, and polarimetric) with operational pass/fail criteria, and (iii) an explicit population-level \textem{decisive falsification criterion}.
 
 We emphasize that the hook thresholds are treated as a \textem{specification} rather than a post hoc fit target.
+
 Accordingly, we adopt a single source of truth for the Tier-1 criteria (Table~\ref{tab:hook-spec}) and provide a lightweight execution recipe (Observer Quickstart) intended for archival screening.
 
 % --- unified protocol block starts here (Screens -> Tier -> Hooks -> Quickstart -> Falsification) ---
@@ -651,6 +676,7 @@ Under Screens A--D, the absence of two or more hooks in vetted high-spin/high-$\
 
 \paragraph{Degeneracy control via joint coherence.}
 Each hook may admit degeneracies in isolation (e.g., complex coronal geometry or slim-disk radiative transfer can mimic shoulder-like curvature, and propagation/reverberation effects can shape energy-dependent lags).
+
 SSPE therefore targets \emph{joint observational coherence}:
 \\after applying Screens~A--D, the model is evaluated by the co-occurrence of Hooks~1--3 within the same source/epoch, with quantitative model selection (e.g., $\ICmetric\!\ge\!\ICcrit$) applied where a competing spectral/timing description exists.
 
@@ -707,12 +733,15 @@ Likewise, the Blandford--Znajek (BZ) mechanism provides a robust path for launch
 However, BZ by itself does not explain the combination of high inferred spins, high Eddington ratios, and weak radio emission seen in many luminous quasars.
 
 In this landscape, SSPE is best viewed as an \emph{equatorial exhaust channel}. 
-When the ISCO approaches the ergoregion and the inner flow becomes thick and strongly coupled, 
-a equatorial quasi-beam can transfer rotational energy back into the inner disk and cocoon. 
+
+When the ISCO approaches the ergoregion and the inner flow becomes thick and strongly coupled, a equatorial quasi-beam can transfer rotational energy back into the inner disk and cocoon. 
+
 This plausibly supports mildly to strongly super-Eddington luminosities while enforcing an effective ``spin ceiling'' 
 $a_*\!\lesssim\!0.97$--$0.99$ for systems that lack a powerful jet. 
+
 BZ and SSPE then form a see-saw: polar extraction dominates in MAD, radio-loud states, 
 while equatorial extraction dominates in high-$\lambda$, radio-quiet states. 
+
 The observational hooks and falsification criterion in Sec.~\ref{sec:obs} are designed precisely to test this equatorial channel.
 
 \noindent
