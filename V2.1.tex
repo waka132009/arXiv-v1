@@ -460,18 +460,25 @@ Evolution obeys
 \end{align}
 
 
-Figure~\ref{fig:spin-down} illustrates the resulting spin evolution under equatorial extraction for a fiducial coupling, and shows that the effective timescale is set by the integrated high-$\lambda$ duty cycle rather than a single continuous episode.
+\paragraph{Torque-balance interpretation of the spin ceiling.}
+Figure~\ref{fig:fig3} visualizes the torque balance behind the spin ceiling in our minimal evolution model (Eqs~\eqref{eq:dM}--\eqref{eq:da}).
+
+For a given coupling strength $\epsilon_{\rm coup}$, we evaluate $da_\ast/dt$ as the sum of accretion-driven spin-up and SSPE extraction-driven spin-down.
+
+In this setup, a larger $\epsilon_{\rm coup}$ corresponds to a more effective transfer of extracted spin energy (i.e., a stronger counter-torque acting on the hole), which shifts the zero-crossing of $da_\ast/dt$ to lower $a_\ast$.
+
+The resulting equilibrium spin $a_{\rm eq}$ (defined by $da_\ast/dt=0$) therefore decreases systematically with increasing $\epsilon_{\rm coup}$.
 
 
 % === Figures tied to 3.6 (torque balance + spin track) ===
 \begin{CrowdedFloats}
-\begin{figure}[!htbp]\label{fig:fig3}
+\begin{figure}[!htbp]
   \vspace*{2pt}
   \centering
   \includegraphics[width=.95\linewidth]{Fig3a.pdf}\\[4pt]
   \includegraphics[width=.95\linewidth]{Fig3b.pdf}
-  \caption{\textbf{Spin evolution and equilibrium vs.\ coupling.}
-  \emph{Top:} Spin drift rate $da_\ast/dt$ from Eqs.~(\ref{eq:dM})--(\ref{eq:da}) for representative accretion states; negative values drive $a_\ast$ below unity.
+  \caption{\textbf{Spin evolution and equilibrium vs.\ coupling.}\label{fig:fig3}\\
+  \emph{Top:} Spin drift rate $da_\ast/dt$ from Eqs.~(\ref{eq:dM})--(\ref{eq:da}) ; negative values imply net spin-down. Normalization is arbitrary; only sign and zero-crossing are used. \\
   \emph{Bottom:} Equilibrium spin $a_{\rm eq}$ obtained from $da_\ast/dt=0$ as a function of $\epsilon_{\rm coup}$; ... the shaded band $\epsilon_{\rm coup}\sim10^{-2}$--$10^{-1}$ is the fiducial range used elsewhere. See also Eq.~(\ref{eq:OmegaH}).}
 \end{figure}
 \FloatBarrier
@@ -490,8 +497,10 @@ Figure~\ref{fig:spin-down} illustrates the resulting spin evolution under equato
 \end{figure}
 \end{CrowdedFloats}
 
+\paragraph{Spin-down Timescale}
+Figure~\ref{fig:spin-down} illustrates the resulting spin evolution under equatorial extraction for a fiducial coupling, and shows that the effective timescale is set by the integrated high-$\lambda$ duty cycle rather than a single continuous episode.
 
-\phead{Timescale consistency (active time vs. quasar lifetime).}
+\paragraph{Timescale consistency (active time vs. quasar lifetime).}
 Figure~\ref{fig:spin-down} is plotted against the \emph{cumulative active time} spent in the high-$\lambda$ SSPE-active state, rather than wall-clock time. 
 
 If activity is intermittent with duty cycle $d$, the corresponding elapsed time is $t_{\rm real}\simeq t_{\rm act}/d$, but the spin evolution depends primarily on $t_{\rm act}$ because extraction is effective only during active episodes.

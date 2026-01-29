@@ -126,15 +126,15 @@ def main():
 
     # “白抜きボックス”の注記（x軸上）も前面＆クリップ無効
     ax.text(
-        0.06, 0.0, r"$\dot a=0$",
+        0.06, -0.008, r"$da_\ast/dt = 0$",
         transform=ax.get_yaxis_transform(),   # x: axes fraction, y: data(=0)
         ha="left", va="bottom", fontsize=8, zorder=3, clip_on=False,
         bbox=dict(boxstyle="round,pad=0.15", fc="white", ec="none", alpha=0.9),
     )
 
     # 軸ラベル（数式を図に焼き込み）
-    ax.set_xlabel(r"spin parameter $a$")
-    ax.set_ylabel(r"$\mathrm{d}a/\mathrm{d}t$  (arb. units)")
+    ax.set_xlabel(r"spin parameter $a_\ast$")
+    ax.set_ylabel(r"$da_\ast/dt$ (arb.\ units)")
 
     ax.grid(True, which="both", alpha=0.25)
 
