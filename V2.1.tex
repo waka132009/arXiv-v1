@@ -233,7 +233,7 @@ This stance allows clean confrontation with data now and provides a clear interf
 
 Throughout we deliberately restrict attention to a single Kerr SMBH and its immediate accretion environment; issues of cosmological SMBH growth, seeding, and host-galaxy evolution are deferred to separate work.
 
-\paragraph{Boundary conditions are not fixed near $a_*\!\to\!1$.}
+\paragraph{Boundary conditions are not fixed near $a_\ast\!\to\!1$.}
 Much of the literature treats the inner disk, magnetosphere, and ergoregion with effectively fixed cross-component boundary conditions.
 
 We instead emphasize that near-extremal spin the boundaries themselves evolve: frame dragging enlarges and reshapes the ergoregion, the ISCO approaches it, and the equatorial return path becomes thin and resistive.
@@ -308,7 +308,7 @@ $(R_0,\alpha)$ regulate the dissipation footprint to maintain transparency, trad
 We restrict these to physically plausible ranges and view them as interfaces for future GRMHD/plasma calibration, not curve-fitting knobs.
 
 \paragraph{Sensitivity and saturation.}
-The activation $\epsilon_{\rm coup}(a_*)$ is intentionally steep: $(a_{\rm th},n)$ set the narrowness of the “spin ceiling”.
+The activation $\epsilon_{\rm coup}(a_\ast)$ is intentionally steep: $(a_{\rm th},n)$ set the narrowness of the “spin ceiling”.
 
 In practice $\epsilon_{\rm coup}$ and the leakage fraction depend nonlinearly on flux loading and $\dot M$, with possible saturation arbitrarily close to the extremal limit.
 
@@ -321,7 +321,7 @@ We allow the extracted rotational power to partition into a polar Blandford--Zna
 P_{\rm ext}=P_{\rm BZ}+P_{\rm eq}+P_{\rm oth},\qquad
 f_{\rm BZ}+f_{\rm eq}+f_{\rm oth}=1.
 \]
-Near $a_*\!\to\!1$, $f_{\rm eq}$ can become substantial (radio-quiet, radiation-dominated states), while $f_{\rm BZ}$ dominates in radio-loud systems; hybrid states are possible in transient MAD-like regimes.
+Near $a_\ast\!\to\!1$, $f_{\rm eq}$ can become substantial (radio-quiet, radiation-dominated states), while $f_{\rm BZ}$ dominates in radio-loud systems; hybrid states are possible in transient MAD-like regimes.
 %\FloatBarrier
 
 \phead{Qualitative selection rule (geometry/flux).}
@@ -469,6 +469,8 @@ In this setup, a larger $\epsilon_{\rm coup}$ corresponds to a more effective tr
 
 The resulting equilibrium spin $a_{\rm eq}$ (defined by $da_\ast/dt=0$) therefore decreases systematically with increasing $\epsilon_{\rm coup}$.
 
+We define the equilibration timescale $\tau_{\rm eq}$ as the cumulative active time required for $a_\ast$ to reach $a_{\rm eq}$ within a fixed tolerance; this is the relevant clock when SSPE operates intermittently .
+
 
 % === Figures tied to 3.6 (torque balance + spin track) ===
 \begin{CrowdedFloats}
@@ -505,8 +507,6 @@ Figure~\ref{fig:spin-down} illustrates the resulting spin evolution under equato
 Figure~\ref{fig:spin-down} is plotted against the \emph{cumulative active time} spent in the high-$\lambda$ SSPE-active state, rather than wall-clock time. 
 
 If activity is intermittent with duty cycle $d$, the corresponding elapsed time is $t_{\rm real}\simeq t_{\rm act}/d$, but the spin evolution depends primarily on $t_{\rm act}$ because extraction is effective only during active episodes.
-
-(\emph{equilibration timescale} $\tau_{\rm eq}$ is defined as the cumulative active time required for $a_\ast$ to reach $a_{\rm eq}$ within a fixed tolerance; see Fig.~\ref{fig:fig_eqtime}).
 
 For the fiducial coupling used in Eqs.~\eqref{eq:dM}--\eqref{eq:da}, the characteristic drift toward $a_{\rm eq}<1$ occurs over $t_{\rm act}\sim{\rm Myr}$--tens of Myr (Fig.~\ref{fig:spin-down}), implying $t_{\rm real}\sim (t_{\rm act}/d)$.
 
@@ -612,7 +612,7 @@ Because the falsification criterion is intentionally strict, we apply minimal sc
 
 For Tier-1 we treat $a_\ast\gtrsim0.95$ as ``high spin'' and report the estimator and its systematic caveats.
 
-We adopt $a_* \ge 0.95$ as an operational high-spin criterion, allowing margin for systematic uncertainties in spin estimators relative to the near-threshold activation($a_* \simeq 0.97$) implied by the phenomenology.
+We adopt $a_\ast \ge 0.95$ as an operational high-spin criterion, allowing margin for systematic uncertainties in spin estimators relative to the near-threshold activation($a_\ast \simeq 0.97$) implied by the phenomenology.
 
 \item [B]\textbf{Accretion screen:} define $\lambda\equiv L_{\rm bol}/L_{\rm Edd}$ using a documented $L_{\rm bol}$ method (SED-based where available) and a stated $M_{\rm BH}$ estimator; propagate conservative systematics (bolometric correction and virial-mass uncertainties).
 \item [C]\textbf{Geometry/obscuration screen:} exclude Compton-thick or heavily absorbed cases where spectral curvature, lags, or polarization become instrumentally ambiguous.
@@ -736,7 +736,7 @@ Thorne-limit arguments remain valid in their original thin-disk regime;
 BZ jets remain the natural outlet for MAD, strongly magnetized, radio-loud systems. 
 SSPE instead targets the high-$\lambda$, high-spin, radio-quiet sector where neither tool fully constrains the phenomenology.}
 
-Classical spin-evolution work shows that radiation capture in a razor-thin Novikov--Thorne disk drives an asymptotic limit $a_*\!\simeq\!0.998$ \citep{Thorne1974}. 
+Classical spin-evolution work shows that radiation capture in a razor-thin Novikov--Thorne disk drives an asymptotic limit $a_\ast\!\simeq\!0.998$ \citep{Thorne1974}. 
 
 We regard this as a clean limiting case, not a universal ceiling: real quasars host geometrically thick, magnetized, outflow-bearing inner flows that violate the assumptions of the original derivation.
 
@@ -749,7 +749,7 @@ In this landscape, SSPE is best viewed as an \emph{equatorial exhaust channel}.
 When the ISCO approaches the ergoregion and the inner flow becomes thick and strongly coupled, a equatorial quasi-beam can transfer rotational energy back into the inner disk and cocoon. 
 
 This plausibly supports mildly to strongly super-Eddington luminosities while enforcing an effective ``spin ceiling'' 
-$a_*\!\lesssim\!0.97$--$0.99$ for systems that lack a powerful jet. 
+$a_\ast\!\lesssim\!0.97$--$0.99$ for systems that lack a powerful jet. 
 
 BZ and SSPE then form a see-saw: polar extraction dominates in MAD, radio-loud states, 
 while equatorial extraction dominates in high-$\lambda$, radio-quiet states. 
@@ -862,7 +862,7 @@ Within SSPE, the same bookkeeping that permits strong jet power also permits int
 
 This is not an attempt to fit any single source; rather, it motivates a concrete null test: in jet-dominated quasars exhibiting anomalously large continuum sizes or overheated outer disks, the absence of \emph{both} hard-component hooks (Hook~1/2) \emph{and} disk-parallel hard-X polarization (Hook~3), after controlling for absorption and compactness screening, would disfavor equatorial feedback as the common cause.
 
-This partition predicts an anti-correlation between radio-jet dominance and equatorial reheating diagnostics within the high-$a_*$, high-$\lambda$ subset, with hybrid states possible in transient MAD phases.
+This partition predicts an anti-correlation between radio-jet dominance and equatorial reheating diagnostics within the high-$a_\ast$, high-$\lambda$ subset, with hybrid states possible in transient MAD phases.
 
 Our claim is modest: in the high-spin, high-Eddington subset, $f_{\rm eq}$ is statistically non-zero and sometimes dominant; in others, $f_{\rm BZ}$ may prevail. Outside this subset we make no claim.
 
@@ -883,7 +883,7 @@ This motivates testing whether jet proxies (e.g., radio loudness) covary with di
 \phead{Testable prediction (radio--X joint anti-correlation).}
 If the outgoing power partition obeys a see-saw relation ($f_{\rm BZ}+f_{\rm eq}\simeq 1$ at fixed $\dot{M}$ and spin), then a population selected by Screens~A--D should exhibit an anti-correlation between a jet proxy and an equatorial SSPE proxy.
 
-Operationally, we propose comparing radio loudness (or core radio luminosity at fixed mass and $\lambda$) against the shoulder metric ($\ICmetric$) and/or the Hook~2 timing slope within matched bins of $(M,a_*,\lambda)$.
+Operationally, we propose comparing radio loudness (or core radio luminosity at fixed mass and $\lambda$) against the shoulder metric ($\ICmetric$) and/or the Hook~2 timing slope within matched bins of $(M,a_\ast,\lambda)$.
 
 The minimal falsifiable statement is the sign: after matching, the rank correlation should be negative (BZ-strong sources tend to be SSPE-weak, and vice versa).
 
@@ -1014,7 +1014,7 @@ The following are \emph{supporting} population-level patterns that, if establish
 \begin{enumerate}
 \item Systematic absence of the Hard-X/MeV shoulder (20--120~keV, obs) \emph{and} systematically weak high-ionization lines (He\,II, N\,V, C\,IV) relative to the parent population.
 \item Reverberation lags from X$\rightarrow$UV showing no energy dependence (no inward reheating signature).
-\item $L_{\rm bol}$ not anti-correlated (even weakly) with $a_*$ within the bright subset (no self-regulated spin-down imprint).
+\item $L_{\rm bol}$ not anti-correlated (even weakly) with $a_\ast$ within the bright subset (no self-regulated spin-down imprint).
 \item Optical/X-ray polarization failing to favor equatorial angles or degrees when near-threshold spins are inferred.
 \end{enumerate}
 If \emph{two or more} items above hold simultaneously for the same high-spin, high-$\lambda$ subset, we would consider $f_{\rm eq}\!\to\!0$ supported and this mechanism unnecessary.

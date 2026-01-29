@@ -40,7 +40,7 @@ def main():
     ax.yaxis.set_minor_locator(MultipleLocator(0.001))
 
     # ラベル（本文に合わせるなら '$a_\\ast$' 推奨）
-    ax.set_xlabel("Cumulative active time t_act [Myr]", labelpad=8)
+    ax.set_xlabel(r"Cumulative active time $t_{\rm act}$ [Myr]", fontsize=18, labelpad=8)
     ax.set_ylabel(r"Spin parameter $a_\ast$", labelpad=12)
 
     # タイトルを上大きめで
