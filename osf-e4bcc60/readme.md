@@ -1,0 +1,3 @@
+- This OSF registration fixes the ApJ submission bundle corresponding to Git commit e4bcc60.
+- Build: latexmk -pdf V2.1.tex
+- Figures are expected under figs/ as specified by \graphicspath{{figs/}}.
