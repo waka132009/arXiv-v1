@@ -589,7 +589,7 @@ Finally, the same bookkeeping clarifies why SSPE should be treated as an equator
 \section{Observational hooks and falsifiability}\label{sec:hooks}
 \tldr{\textit{Screens:} select high-$\lambda$ systems with favorable geometry/obscuration and compactness. \\
 \textit{Hooks:} search for a hard X/MeV ``shoulder,'' lag hardening with energy, and equator-aligned polarization signatures.\\
-\textit{Kill-shot:} if a screened high-spin/high-$\lambda$ sample(with robust spin estimates) lacks $\geq 2$ independent hooks, SSPE is ruled out in that regime.}
+\textit{Kill-shot:} if a screened high-spin/high-$\lambda$ sample (with robust spin estimates) lacks $\geq 2$ independent hooks, SSPE is ruled out in that regime.}
 In this paper we treat SSPE as a concrete, falsifiable working hypothesis rather than a completed theory.
 
 
@@ -653,9 +653,9 @@ here we state only the physical intent:
 \end{titemize}
 
 \phead{Robustness to the information-criterion threshold.}
-We adopt a conventional threshold (fiducially $\BICmetric \ge \ICcrit$) to keep the Tier-1 decision rule executable and reproducible, but the protocol does not hinge on this single value.
+We adopt a conventional threshold (fiducially $\ICmetric \ge \ICcrit$) to keep the Tier-1 decision rule executable and reproducible, but the protocol does not hinge on this single value.
 
-In practice, we recommend reporting the classification stability under a small bracket around the threshold (e.g., $\BICmetric\in[4,10]$) as a sensitivity check; sources that flip classification within this bracket are labeled ambiguous and deferred to Tier-2.
+In practice, we recommend reporting the classification stability under a small bracket around the threshold (e.g., $\ICmetric\in[4,10]$) as a sensitivity check; sources that flip classification within this bracket are labeled ambiguous and deferred to Tier-2.
 
 \phead{Lag convention.}
 We measure energy-resolved lags $\tau(E)$ relative to a fixed \emph{reference} band $E_{\rm ref}$ (we adopt $E_{\rm ref}=2$--4~keV in the rest frame unless stated.\\
@@ -724,9 +724,9 @@ Hook 2 & Lag hardening & lag--energy slope & \mccell{$\tau(E)$ relative to $E_{\
 Hook 3 & Equatorial polarization & 2--10 keV & EVPA $\parallel$ disk & jet contamination\\
 \enddata
 \tablecomments{
-After applying Screens~A--D, each hook may have degeneracies in isolation; SSPE is evaluated by joint coherence across Hooks~1--3. We adopt $\Delta \mathrm{IC}\ge 6$ (e.g., $\Delta$BIC or $\Delta$AICc) as a pragmatic strong-evidence decision threshold following common usage in model selection (e.g., \citealt{KassRaftery1995}; \citealt{BurnhamAnderson2002}); failure to recover $\ge 2$ hooks falsifies SSPE.
+After applying Screens~A--D, each hook may have degeneracies in isolation; SSPE is evaluated by joint coherence across Hooks~1--3. We adopt $\ICmetric \ge \ICcrit$ as a pragmatic strong-evidence decision threshold (with $\AICcmetric \ge \ICcrit$ as a secondary check) as a pragmatic strong-evidence decision threshold following common usage in model selection (e.g., \citealt{KassRaftery1995}; \citealt{BurnhamAnderson2002}); failure to recover $\ge 2$ hooks falsifies SSPE.
 \\[1ex]
-Screen~D acts as an observability gate (screened $\neq$ failed): sources outside the transparency domain are excluded from Tier-1 evaluation rather than counted as negative evidence.
+Screen~D acts as an observability gate \textbf{(screened $\neq$ failed)}: sources outside the transparency domain are excluded from Tier-1 evaluation rather than counted as negative evidence.
 }
 \end{deluxetable*}
 
