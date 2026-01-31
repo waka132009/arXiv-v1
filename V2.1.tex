@@ -627,6 +627,10 @@ If an observable is effectively inaccessible at useful S/N, treat it as \emph{mi
 \phead{Screen D (compactness) is an identifiability gate, not a physical exclusion.}
 Here ``screened'' means \emph{information-limited} (observationally saturated), so such cases are withheld from falsification counting.
 
+When the relevant Hook diagnostic is not decidable given the achieved bandpass/S/N (e.g., due to radiative-transfer or pair-opacity complications), we label it as \emph{missing} rather than \emph{failed}.
+
+To prevent post-hoc reclassification, we predefine an operational floor for each Hook Table~\ref{tab:hook-spec}: below this floor the outcome is \emph{missing} by construction and does not count toward falsification.
+
 At high compactness, radiative transfer and pair opacity can saturate the 20--120~keV band and wash out timing/polarimetric diagnostics, so the Hook suite becomes \emph{non-identifiable} rather than negative.
 
 We therefore label $\ell>\ell_{\rm crit}$ sources as \emph{screened / untestable with the present low-cost protocol}, not as SSPE-failing cases.
@@ -1011,9 +1015,12 @@ This see-saw test is a cross-check on the power partition, not an additional hoo
 % --- ここまで ---
 
 \FloatBarrier
-\paragraph{Additional falsifiers (secondary).}
-The primary falsification protocol is the hook-based falsification protocol in Sec.~\ref{sec:obs}. 
-The following are \emph{supporting} population-level patterns that, if established robustly, would further disfavor a non-zero equatorial fraction $f_{\rm eq}$:
+\phead{Primary falsifier (decision rule).---}We treat SSPE as a population-level, protocol-driven claim rather than a single-object diagnostic.
+
+In vetted high-spin, high-$\lambda$ samples, absence of $\ge 2$ independent hooks after the transparency/absorption/inclination screens refutes the framework \emph{within the testable domain}.
+\smallskip
+\phead{Additional falsifiers (secondary).---}Beyond the primary decision rule (Sec.~\ref{sec:obs}), the following are \emph{supporting} population-level patterns that, if established robustly, would further disfavor a non-zero equatorial fraction $f_{\rm eq}$:
+
 \begin{enumerate}
 \item Systematic absence of the Hard-X/MeV shoulder (20--120~keV, obs) \emph{and} systematically weak high-ionization lines (He\,II, N\,V, C\,IV) relative to the parent population.
 \item Reverberation lags from X$\rightarrow$UV showing no energy dependence (no inward reheating signature).
