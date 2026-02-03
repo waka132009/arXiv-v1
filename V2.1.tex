@@ -72,6 +72,7 @@
 \newcommand{\FeKa}{\mathrm{Fe\,K}\alpha}
 \newcommand{\epscoup}{\epsilon_{\rm coup}}
 \newcommand{\aeq}{a_{\rm eq}}
+\newcommand{\MBH}{M_{\mathrm{BH}}}
 % ------- 表内を折り返して表示 ------
 \newcommand{\mcell}[1]{\shortstack[l]{#1}}
 \newcommand{\mccell}[1]{\begin{tabular}[c]{@{}c@{}}#1\end{tabular}}
@@ -535,7 +536,7 @@ Figure~\ref{fig:fig_eqtime} summarizes the equilibration time and the mapping to
 
 
 \paragraph{Energetic sanity check (one-line).}
-With $M_{\rm BH}=10^9\,M_\odot$ [$Mc^2\simeq1.8\times10^{63}$ erg] and $E_{\rm rot}\!\sim\!0.1\,Mc^2$, a reservoir e-fold $\tau=10^7$ yr, $\epscoup=0.05$, and duty $d=0.2$ yield 
+With $\MBH=10^9\,M_\odot$ [$Mc^2\simeq1.8\times10^{63}$ erg] and $E_{\rm rot}\!\sim\!0.1\,Mc^2$, a reservoir e-fold $\tau=10^7$ yr, $\epscoup=0.05$, and duty $d=0.2$ yield 
 $L_{\rm self}\!\sim\!(E_{\rm rot}/\tau)\,(\epscoup/d)\!\approx\!1.4\times10^{47}\,{\rm erg\,s^{-1}}\!\sim\!1.1\,\LEdd$,
 and $2$--$3\,\LEdd$ when combined with concurrent accretion, while $da_\ast/dt<0$ prevents overspin.
 
@@ -620,7 +621,7 @@ For Tier-1 we treat $a_\ast\gtrsim0.95$ as ``high spin'' and report the estimato
 
 We adopt $a_\ast \ge 0.95$ as an operational high-spin criterion, allowing margin for systematic uncertainties in spin estimators relative to the near-threshold activation($a_\ast \simeq 0.97$) implied by the phenomenology.
 
-\item [B]\textbf{Accretion screen:} define $\lambda\equiv L_{\rm bol}/L_{\rm Edd}$ using a documented $L_{\rm bol}$ method (SED-based where available) and a stated $M_{\rm BH}$ estimator; propagate conservative systematics (bolometric correction and virial-mass uncertainties).
+\item [B]\textbf{Accretion screen:} define $\lambda\equiv L_{\rm bol}/L_{\rm Edd}$ using a documented $L_{\rm bol}$ method (SED-based where available) and a stated $\MBH$ estimator; propagate conservative systematics (bolometric correction and virial-mass uncertainties).
 \item [C]\textbf{Geometry/obscuration screen:} exclude Compton-thick or heavily absorbed cases where spectral curvature, lags, or polarization become instrumentally ambiguous.
 
 If an observable is effectively inaccessible at useful S/N, treat it as \emph{missing} rather than \emph{failed}.
@@ -726,7 +727,7 @@ This design intentionally shifts the burden from microphysical closure to low-co
 \tableline
 Hook 1 & Hard X/MeV shoulder & 20--120 keV & $\ICmetric \ge \ICcrit$ & model degeneracy\\
 \tableline
-Hook 2 & Lag hardening & lag--energy slope & \mccell{$\tau(E)$ relative to $E_{\rm ref}=2$--4~keV \\rest-frame; use /(1+z)\\in observed frame where feasible\\ define $\tau>0$ for lags; \\ pass if $d\tau/d\log E>0$ \\ and monotone within an epoch(See~App.\ref{app:protocol}).} & dilution\\
+Hook 2 & Lag hardening & lag--energy slope & \mccell{$\tau(E)$ relative to $E_{\rm ref}=2$--4~keV \\rest-frame; use /(1+z)\\in observed frame where feasible\\ define $\tau>0$ for lags; \\ pass if $d\tau/d\log E>0$ \\ and monotone within an epoch\tablenotemark{a}.} & dilution\\
 \tableline
 Hook 3 & Equatorial polarization & 2--10 keV & EVPA $\parallel$ disk & jet contamination\\
 \enddata
@@ -735,6 +736,7 @@ After applying Screens~A--D, each hook may have degeneracies in isolation; SSPE 
 \\[1ex]
 Screen~D acts as an observability gate \textbf{(screened $\neq$ failed)}: sources outside the transparency domain are excluded from Tier-1 evaluation rather than counted as negative evidence.
 }
+\tablenotetext{a}{Epoch is operationally defined in Appendix~\ref{app:protocol}.}
 \end{deluxetable*}
 
 \FloatBarrier
@@ -914,11 +916,11 @@ Reproducing all three simultaneously would typically require coordinated adjustm
 \noindent\textbf{(iii) Black-hole linked scaling as a Tier-2 discriminator.}
 SSPE predicts that the joint-hook strength should correlate with spin-linked quantities (e.g., the equilibrium spin trends and iron-line diagnostics), whereas a purely geometric corona interpretation lacks a generic mechanism to lock the same correlations without additional tuning.
 
-In SSPE the heating channel is ultimately powered by black-hole rotational energy extraction, so the joint-hook strength is expected to correlate with spin-linked quantities at fixed $(M_{\rm BH},\lambda)$.
+In SSPE the heating channel is ultimately powered by black-hole rotational energy extraction, so the joint-hook strength is expected to correlate with spin-linked quantities at fixed $(\MBH,\lambda)$.
 
 A purely geometric multi-layer corona can reproduce individual observables, but it lacks a generic mechanism to lock the same correlations without additional tuning.
 
-We therefore treat spin-linked scaling (e.g., via reflection/Fe K diagnostics; Fig.~\ref{fig:fig_appendix}) as a Tier-2 discriminator.
+We therefore treat spin-linked scaling (e.g., via reflection/Fe K diagnostics; Fig.~\ref{fig:fig_appendix}) as a Tier-2 discriminator; see the Tier-1/Tier-2 decision workflow in Sec.~\ref{sec:obs} and the Tier-2 timing extensions summarized in Table~\ref{tab:roadmap}.
 
 Section~\ref{sec:quasibeam} discusses a speculative direct-leakage scenario; it is not required for the core protocol or falsification logic.
 
@@ -1005,7 +1007,7 @@ Hook 1 &
 \textbf{Yes} &
 \mcell{After screens, vetted high-spin/high-$\lambda$ sample\\systematically prefers featureless continua\\(no shoulder)}\\
 \tableline
-Hook 2 & \mcell{Energy-resolved X-ray light curves\\(multiple bands; sufficient counts)\\+ lag--energy spectrum $\tau(E)$\\(relative to a stated $E_{\rm ref}$)\\\textem{Tier-2:} X$\to$UV/optical reprocessing lags\\where available} & \textbf{Partly}\tablenotemark{a} & \mcell{After screens, lag--energy slopes\\fail to be $d\tau/d\log E>0$ and monotone within an epoch\\across the bright subset}\\
+Hook 2 & \mcell{Energy-resolved X-ray light curves\\(multiple bands; sufficient counts)\\+ lag--energy spectrum $\tau(E)$\\(relative to a stated $E_{\rm ref}$)\\\textem{Tier-2:} X$\to$UV/optical reprocessing lags\\where available} & \textbf{Partly} & \mcell{After screens, lag--energy slopes\\fail to be $d\tau/d\log E>0$ and monotone within an epoch.\tablenotemark{a}\\across the bright subset}\\
 \tableline
 Hook 3 &
 \mcell{Hard-component X-ray polarimetry\\+ EVPA reference to disk plane\\+ spin/$\lambda$ proxies} &
@@ -1015,6 +1017,7 @@ Hook 3 &
 \tablecomments{The primary falsification criterion used in this work is the joint-hook rule: absence of $\ge2$ hooks in vetted high-spin/high-$\lambda$ quasars after screens.}
 \tablenotetext{a}{Hook~2 is marked as \emph{Partly} mainly because simultaneous, high-time-resolution multi-band timing datasets are still rare (e.g., strict epoch matching across bands).}
 \end{deluxetable*}
+
 
 \noindent\textbf{Observational fronts.}
 \begin{enumerate}
@@ -1043,9 +1046,11 @@ This see-saw test is a cross-check on the power partition, not an additional hoo
 % --- ここまで ---
 
 \FloatBarrier
-\phead{Primary falsifier (population-level).}SSPE is refuted if a vetted sample of at least $N_{\min}$ independent objects fails the joint-hook requirement in more than a fraction $f_{\rm fail}$ of the sample (under Screens~A--D and the operational floors), i.e., fails to recover $\ge2$ hooks within same epoch.
+\phead{Primary falsifier (population-level).}SSPE is refuted if at least $N_{\min}$ \emph{independent objects that survive all Screens~A--D}(i.e., the vetted sample) yield \emph{decidable} joint-hook outcomes, and more than a fraction $f_{\rm fail}$ of those objects fail to recover $\ge 2$ hooks \emph{within the same epoch}.
 
-We adopt $N_{\min}=10$ and $f_{\rm fail}=0.5$ as pragmatic defaults.
+Here each object is counted once (choose a single representative epoch per object to avoid double-counting), and ``fail'' counts only decidable hook outcomes (\emph{missing excluded by construction}).
+
+We adopt $N_{\min}=10$ and $f_{\rm fail}=0.5$ as pragmatic defaults; alternative choices can be reported as sensitivity checks.
 
 Here $N_{\min}$ refers to the subset that survives all Screens~A--D(i.e., objects for which the hooks are testable under the transparency/absorption/inclination gates).
 
@@ -1081,7 +1086,7 @@ We measure $\tau(E)$ relative to a fixed reference band $E_{\rm ref}$ (adopt $E_
 
 \noindent\textbf{Hooks (apply jointly under Screens A--D).}\\
 \noindent\textbf{Hook 1 (shoulder):} passes if $\ICmetric \ge \ICcrit$ in the 20--120~keV observed band.\\
-\noindent\textbf{Hook 2 (lag hardening):} passes if $d\tau/d\log E > 0$ and $\tau(E)$ is monotone within \emph{an epoch}.\\
+\noindent\textbf{Hook 2 (lag hardening):} passes if $d\tau/d\log E > 0$ and $\tau(E)$ is monotone within an \emph{epoch}.\\
 \noindent\textbf{Hook 3 (equatorial polarization):} EVPA $\parallel$ disk/equator, with polarization degree increasing with spin/$\lambda$.\\
 \smallskip
 \phead{Epoch definition (operational).}We define an \emph{epoch} as a single, quasi-stationary observing block during which(i) the hardness ratio and (ii) the broadband flux, computed with fixed band definitions and a fixed reduction/selection procedure within the block, are statistically consistent with constancy.\\
@@ -1125,7 +1130,7 @@ After applying Screens A--D, systematic failure to recover $\ge 2$ hooks in vett
 \tablecaption{\textbf{Candidate Gallery} \textemdash{} Representative objects; values are indicative.\label{tab:cands}}
 \tablehead{
   \colhead{Name} & \colhead{$z$} &
-  \colhead{$M_{\rm BH}/M_\odot$} & \colhead{$L/L_{\rm Edd}$} & \colhead{Arch. (Hook~1/2/3)} & \colhead{Notes}
+  \colhead{$\MBH/M_\odot$} & \colhead{$L/L_{\rm Edd}$} & \colhead{Arch. (Hook~1/2/3)} & \colhead{Notes}
 }
 \startdata
 TON 618        & 2.219 & $\sim6.6\times10^{10}$ & $\sim3$     & Y/?/N & \parbox[t]{0.36\textwidth}{Extremely massive; radio-loud; literature refs.\tablenotemark{a}}\\
