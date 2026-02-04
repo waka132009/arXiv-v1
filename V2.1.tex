@@ -1048,11 +1048,14 @@ This see-saw test is a cross-check on the power partition, not an additional hoo
 \FloatBarrier
 \phead{Primary falsifier (population-level).}SSPE is refuted if at least $N_{\min}$ \emph{independent objects that survive all Screens~A--D}(i.e., the vetted sample) yield \emph{decidable} joint-hook outcomes, and more than a fraction $f_{\rm fail}$ of those objects fail to recover $\ge 2$ hooks \emph{within the same epoch}.
 
+We define an object as \emph{decidable} for the joint-hook rule if and only if at least two hooks yield non-missing outcomes (pass/fail) within the chosen representative epoch.
+
 Here each object is counted once (choose a single representative epoch per object to avoid double-counting), and ``fail'' counts only decidable hook outcomes (\emph{missing excluded by construction}).
 
 We adopt $N_{\min}=10$ and $f_{\rm fail}=0.5$ as pragmatic defaults; alternative choices can be reported as sensitivity checks.
 
 Here $N_{\min}$ refers to the subset that survives all Screens~A--D(i.e., objects for which the hooks are testable under the transparency/absorption/inclination gates).
+
 
 \smallskip
 \phead{Additional falsifiers (secondary).---}Beyond the primary decision rule (Sec.~\ref{sec:obs}), the following are \emph{supporting} population-level patterns that, while individually non-decisive and potentially confounded, would further disfavor a non-zero equatorial fraction $f_{\rm eq}$:
@@ -1060,7 +1063,7 @@ Here $N_{\min}$ refers to the subset that survives all Screens~A--D(i.e., object
 \begin{enumerate}
 \item Systematic absence of the Hard-X/MeV shoulder (20--120~keV, obs) \emph{and} systematically weak high-ionization lines (He\,II, N\,V, C\,IV) relative to the parent population.
 \item Reverberation lags from X$\rightarrow$UV showing no energy dependence (no inward reheating signature).
-\item $L_{\rm bol}$ not anti-correlated (even weakly) with $a_\ast$ within matched bins of (MBH, $\lambda$) the bright subset (no self-regulated spin-down imprint).
+\item $L_{\rm bol}$ not anti-correlated (even weakly) with $a_\ast$ within matched $(\MBH,\lambda)$ bins for the bright subset (no self-regulated spin-down imprint).\\ To prevent post-hoc bin-shifting, we define matched bins using pre-specified fixed logarithmic intervals (e.g., 0.5 dex in both $\MBH$ and $\lambda$) and report sensitivity to reasonable alternative bin widths.
 \item Optical/X-ray polarization failing to favor equatorial angles or degrees when near-threshold spins are inferred.
 \end{enumerate}
 If \emph{two or more} items above hold simultaneously for the same high-spin, high-$\lambda$ subset, we would consider $f_{\rm eq}\!\to\!0$ supported and this mechanism unnecessary.
