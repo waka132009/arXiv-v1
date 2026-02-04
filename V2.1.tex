@@ -162,17 +162,6 @@ The path to falsification is explicit: in vetted high-spin, high-$\lambda$ quasa
 
 \keywords{Quasars --- Radio-quiet quasars, Accretion, accretion disks --- Black hole physics --- Relativistic processes}
 
-% ===============================
-% Executive Summary（5行）
-% ===============================
-\section*{Executive Summary}
-\begin{tenumerate}
-  \item Near-extremal spins enable a compactness-gated \emph{equatorial} radiative channel that sustains $L/L_{\rm Edd}>1$ while self-limiting the spin.
-  \item The lever is repeated Penrose-like coupling at the ISCO-ergoregion interface, depositing power back into the disk and extracting angular momentum.
-  \item The framework specifies three joint observational hooks (spectral, timing, polarimetric) with operational pass/fail criteria (Table~\ref{tab:hook-spec}).
-  \item Minimal screens define vetted samples and remove key confounders (Screens A--D; Sec.~\ref{sec:obs}).
-  \item \textbf{Decisive falsification criterion:} in vetted high-spin/high-$\lambda$ quasars, failure to recover $\ge\!2$ hooks (after screens) refutes the framework.
-\end{tenumerate}
 
 \section{Introduction}\label{sec:intro}
 \tldr{This paper develops a concrete, spin-regulated mechanism --- Self-Sustained Penrose Excitation (SSPE) --- that can both power super-Eddington quasar luminosities and enforce a near-extremal spin ceiling, while remaining explicitly falsifiable by X-ray and polarimetric data.}
@@ -588,6 +577,18 @@ Conversely, failure to recover at least two hooks in vetted high-spin/high-$\lam
 
 Finally, the same bookkeeping clarifies why SSPE should be treated as an equatorial complement to polar BZ extraction: across states, a changing partition between $P_{\rm BZ}$ and $P_{\rm eq}$ implies an anti-correlation between jet dominance and equatorial reheating diagnostics, with rare geometries potentially allowing partial direct leakage discussed separately in Sec.~\ref{sec:quasibeam}.
 
+% ===============================
+% Executive Summary（5行）
+% ===============================
+\section*{Executive Summary}
+\begin{tenumerate}
+  \item \textbf{Semi-analytic picture (this section):} Once the coupling activates above a threshold spin, an equatorial radiative channel can sustain $L/L_{\rm Edd}>1$ while naturally driving the spin toward an equilibrium ceiling.
+  \item \textbf{What sets the state:} The channel is powered by repeated Penrose-like coupling at the ISCO--ergoregion interface, depositing power back into the inner disk while extracting angular momentum.
+  \item \textbf{Why observability is gated:} Compactness links detectability to geometry; a transparency-limited window explains why the hard component is seen only in specific bright states.
+  \item \textbf{Next (Sec.~\ref{sec:hooks}):} We translate the framework into an operational observing protocol with minimal Screens (A--D) and three joint hooks (spectral, timing, polarimetric) with explicit pass/fail criteria (Table~1).
+  \item \textbf{Decisive test (Sec.~\ref{sec:discussion}):} In vetted high-spin/high-$\lambda$ samples, failure to recover $\ge 2$ hooks within a representative epoch (after Screens) falsifies the framework.
+\end{tenumerate}
+
 \clearpage
 
 \section{Observational hooks and falsifiability}\label{sec:hooks}
@@ -734,7 +735,7 @@ Hook 3 & Equatorial polarization & 2--10 keV & EVPA $\parallel$ disk & jet conta
 \tablecomments{
 After applying Screens~A--D, each hook may have degeneracies in isolation; SSPE is evaluated by joint coherence across Hooks~1--3. We adopt $\ICmetric \ge \ICcrit$ as a pragmatic strong-evidence decision threshold (with $\AICcmetric \ge \ICcrit$ as a secondary check) as a pragmatic strong-evidence decision threshold following common usage in model selection (e.g., \citealt{KassRaftery1995}; \citealt{BurnhamAnderson2002}); failure to recover $\ge 2$ hooks falsifies SSPE.
 \\[1ex]
-Screen~D acts as an observability gate \textbf{(screened $\neq$ failed)}: sources outside the transparency domain are excluded from Tier-1 evaluation rather than counted as negative evidence.
+Screen~D acts as an observability gate \textbf{(screened $\neq$ failed)}: sources outside the transparency domain are excluded from the current archival Tier-1 falsification tally due to instrumental sensitivity limits, but remain primary targets for future MeV-regime Tier-2 tests.
 }
 \tablenotetext{a}{Epoch is operationally defined in Appendix~\ref{app:protocol}.}
 \end{deluxetable*}
@@ -914,7 +915,7 @@ and (3) disk-parallel polarization constitutes a low-dimensional joint constrain
 Reproducing all three simultaneously would typically require coordinated adjustments of multiple independent corona degrees of freedom across sources and epochs.
 
 \noindent\textbf{(iii) Black-hole linked scaling as a Tier-2 discriminator.}
-SSPE predicts that the joint-hook strength (i.e., the significance of the joint-hook evidence as quantified by the available hook metrics for a given object/epoch; e.g., $\BICmetric$ for Hook~1, $d\tau/d\log E$ for Hook~2, and polarization degree for Hook~3 when available) should correlate with spin-linked quantities (e.g., the equilibrium spin trends and iron-line diagnostics), whereas a purely geometric corona interpretation lacks a generic mechanism to lock the same correlations without additional tuning.
+SSPE predicts that the joint-hook strength (i.e., the significance of the joint-hook evidence as quantified by the available hook metrics for a given object/epoch; e.g., $\BICmetric$ for Hook~1, $d\tau/d\log E>0$ for Hook~2, and polarization degree for Hook~3 when available) should correlate with spin-linked quantities (e.g., the equilibrium spin trends and iron-line diagnostics), whereas a purely geometric corona interpretation lacks a generic mechanism to lock the same correlations without additional tuning.
 
 In SSPE the heating channel is ultimately powered by black-hole rotational energy extraction; accordingly, we expect the same correlations at fixed $(\MBH,\lambda)$.
 
@@ -954,7 +955,7 @@ In that case SSPE could produce \emph{direct} signatures on timescales of a few 
 We emphasize that we do \emph{not} attempt a full classification here, but the following features are natural in the present framework:
 \begin{titemize}
   \item[(1)] \textbf{Ultra-fast, ultra-hard flares:} isolated spikes or bursts with variability timescales $\sim$\,few $r_g/c$, 
-  spectral peaks extending into the hard X-ray / the sub-MeV band (e.g., 0.2--1~MeV)., and hardness ratios exceeding those of the quasi-steady shoulder.
+  spectral peaks extending into the hard X-ray / the sub-MeV band (e.g., 0.2--1~MeV), and hardness ratios exceeding those of the quasi-steady shoulder.
   \item[(2)] \textbf{Hard-to-soft evolution:} individual events in which the hardest photons lead a softer tail, 
   consistent with a narrow beam depositing energy into a thicker reprocessing layer.
   \item[(3)] \textbf{Transient polarization swings:} in principle, a direct beam component should exhibit strong polarization with EVPA tied to the local equatorial geometry; 
@@ -1041,9 +1042,6 @@ This see-saw test is a cross-check on the power partition, not an additional hoo
   \item[\textbf{(iii)}] \textem{Population modeling.} Combine spin distributions with transparency and coupling priors to predict the fraction of sources passing $\ge 2$ hooks.
 \end{enumerate}
 
-%\noindent\textbf{Failure mode (falsification).}
-%In vetted high-spin, high-$\lambda$ samples, absence of $\ge 2$ hooks after the transparency/absorption/inclination screens refutes the framework.
-% --- ここまで ---
 
 \FloatBarrier
 \phead{Primary falsifier (population-level).}SSPE is refuted if at least $N_{\min}$ \emph{independent objects that survive all Screens~A--D}(i.e., the vetted sample) yield \emph{decidable} joint-hook outcomes, and more than a fraction $f_{\rm fail}$ of those objects fail to recover $\ge 2$ hooks \emph{within the same epoch}.
