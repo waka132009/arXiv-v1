@@ -897,7 +897,7 @@ If the outgoing power partition obeys a see-saw relation ($f_{\rm BZ}+f_{\rm eq}
 
 Operationally, we propose comparing radio loudness (or core radio luminosity at fixed mass and $\lambda$) against the shoulder metric ($\ICmetric$) and/or the Hook~2 timing slope within matched bins of $(M,a_\ast,\lambda)$.
 
-The minimal falsifiable statement is the sign: after matching, the rank correlation should be negative (BZ-strong sources tend to be SSPE-weak, and vice versa).
+The minimal falsifiable statement is the sign: after matching, the rank correlation should be negative ($\rho_S<0$) with a significance $p<0.01$. (BZ-strong sources tend to be SSPE-weak, and vice versa).
 
 \subsection{Degeneracy with disk--corona phenomenology and how the protocol breaks it}\label{sec:degeneracy}
 Disk–corona phenomenology can mimic individual hooks; our goal is to break degeneracy at the protocol level rather than by adjudicating microphysics.
@@ -914,9 +914,9 @@ and (3) disk-parallel polarization constitutes a low-dimensional joint constrain
 Reproducing all three simultaneously would typically require coordinated adjustments of multiple independent corona degrees of freedom across sources and epochs.
 
 \noindent\textbf{(iii) Black-hole linked scaling as a Tier-2 discriminator.}
-SSPE predicts that the joint-hook strength should correlate with spin-linked quantities (e.g., the equilibrium spin trends and iron-line diagnostics), whereas a purely geometric corona interpretation lacks a generic mechanism to lock the same correlations without additional tuning.
+SSPE predicts that the joint-hook strength (i.e., the significance of the joint-hook evidence as quantified by the available hook metrics for a given object/epoch; e.g., $\BICmetric$ for Hook~1, $d\tau/d\log E$ for Hook~2, and polarization degree for Hook~3 when available) should correlate with spin-linked quantities (e.g., the equilibrium spin trends and iron-line diagnostics), whereas a purely geometric corona interpretation lacks a generic mechanism to lock the same correlations without additional tuning.
 
-In SSPE the heating channel is ultimately powered by black-hole rotational energy extraction, so the joint-hook strength is expected to correlate with spin-linked quantities at fixed $(\MBH,\lambda)$.
+In SSPE the heating channel is ultimately powered by black-hole rotational energy extraction; accordingly, we expect the same correlations at fixed $(\MBH,\lambda)$.
 
 A purely geometric multi-layer corona can reproduce individual observables, but it lacks a generic mechanism to lock the same correlations without additional tuning.
 
@@ -932,7 +932,7 @@ In the working picture adopted here, SSPE acts primarily as an \emph{equatorial 
 
 a narrow quasi-beam extracts rotational energy near the ISCO--ergoregion interface and re-injects it into the inner disk and surrounding cocoon. 
 
-Most of the time this energy is promptly reprocessed into the hard X/MeV shoulder (Hook~1) and lag-hardening signatures (Hook~2), with only modest direct leakage beyond the disk and torus.
+Most of the time this energy is promptly reprocessed into the hard X/MeV shoulder (Hook~1) and a positive lag-energy slope ($d\tau/d\log E>0$; Hook~2), with only modest direct leakage beyond the disk and torus.
 
 These reprocessed components constitute the primary hooks discussed in Sec.~\ref{sec:obs}.
 
@@ -954,7 +954,7 @@ In that case SSPE could produce \emph{direct} signatures on timescales of a few 
 We emphasize that we do \emph{not} attempt a full classification here, but the following features are natural in the present framework:
 \begin{titemize}
   \item[(1)] \textbf{Ultra-fast, ultra-hard flares:} isolated spikes or bursts with variability timescales $\sim$\,few $r_g/c$, 
-  spectral peaks extending into the hard X-ray / soft $\gamma$-ray band, and hardness ratios exceeding those of the quasi-steady shoulder.
+  spectral peaks extending into the hard X-ray / the sub-MeV band (e.g., 0.2--1~MeV)., and hardness ratios exceeding those of the quasi-steady shoulder.
   \item[(2)] \textbf{Hard-to-soft evolution:} individual events in which the hardest photons lead a softer tail, 
   consistent with a narrow beam depositing energy into a thicker reprocessing layer.
   \item[(3)] \textbf{Transient polarization swings:} in principle, a direct beam component should exhibit strong polarization with EVPA tied to the local equatorial geometry; 
@@ -1061,7 +1061,7 @@ Here $N_{\min}$ refers to the subset that survives all Screens~A--D(i.e., object
 \phead{Additional falsifiers (secondary).---}Beyond the primary decision rule (Sec.~\ref{sec:obs}), the following are \emph{supporting} population-level patterns that, while individually non-decisive and potentially confounded, would further disfavor a non-zero equatorial fraction $f_{\rm eq}$:
 
 \begin{enumerate}
-\item Systematic absence of the Hard-X/MeV shoulder (20--120~keV, obs) \emph{and} systematically weak high-ionization lines (He\,II, N\,V, C\,IV) relative to the parent population.
+\item Systematic absence of the Hard-X/MeV shoulder (20--120~keV, obs) \emph{and} systematically weak high-ionization lines (pass if their equivalent widths are $\ge 2\sigma$ below the control-sample mean, where $\sigma$ is the rms scatter of the matched control sample).
 \item Reverberation lags from X$\rightarrow$UV showing no energy dependence (no inward reheating signature).
 \item $L_{\rm bol}$ not anti-correlated (even weakly) with $a_\ast$ within matched $(\MBH,\lambda)$ bins for the bright subset (no self-regulated spin-down imprint).\\ To prevent post-hoc bin-shifting, we define matched bins using pre-specified fixed logarithmic intervals (e.g., 0.5 dex in both $\MBH$ and $\lambda$) and report sensitivity to reasonable alternative bin widths.
 \item Optical/X-ray polarization failing to favor equatorial angles or degrees when near-threshold spins are inferred.
