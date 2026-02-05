@@ -625,7 +625,8 @@ We adopt $a_\ast \ge 0.95$ as an operational high-spin criterion, allowing margi
 \item [B]\textbf{Accretion screen:} define $\lambda\equiv L_{\rm bol}/L_{\rm Edd}$ using a documented $L_{\rm bol}$ method (SED-based where available) and a stated $\MBH$ estimator; propagate conservative systematics (bolometric correction and virial-mass uncertainties).
 \item [C]\textbf{Geometry/obscuration screen:} exclude Compton-thick or heavily absorbed cases where spectral curvature, lags, or polarization become instrumentally ambiguous.
 
-If an observable is effectively inaccessible at useful S/N, treat it as \emph{missing} rather than \emph{failed}.
+If an observable is effectively inaccessible at useful S/N (i.e., it cannot yield a decidable pass/fail under a pre-registered analysis and detection criterion for that instrument; see Appendix~\ref{app:protocol}), treat it as \emph{missing} rather than \emph{failed}.
+
 \item [D]\textbf{Compactness screen:} gate out pair-opaque states ($\ell\gtrsim\ellcrit$) where the hard component is suppressed;Compactness screen is an observability gate:\\sources that violate the transparency/compactness requirement are treated as \emph{not testable} for the Tier-1 hooks (screened), rather than as negative evidence against SSPE (failed). \\ Accordingly, SSPE is falsified only within the domain where the hooks are measurable; outside this domain the protocol makes no claim.
 \end{titemize}
 
@@ -864,6 +865,8 @@ f_{\rm BZ} + f_{\rm eq} + f_{\rm oth} = 1. \label{eq:ffrac}
 
 In the present work we focus on screened, radio-quiet high-spin/high-$\lambda$ systems where the hook-based program is designed to be most discriminating; a large $f_{\rm oth}$ is expected to weaken the spectral--timing--polarimetric hooks and can be treated as part of the screening/falsification logic.
 
+If independent evidence suggests that $f_{\rm oth}$ is not small or is rapidly variable, the see-saw diagnostic is treated as non-decidable for that object/epoch and is not used as a falsifier; the primary protocol remains Hooks~1--3 with Screens~A--D.
+
 \noindent
 A practical implication is that SSPE can affect systems that appear, by their large-scale phenomenology, to be BZ-favorable.
 
@@ -1061,7 +1064,7 @@ Here $N_{\min}$ refers to the subset that survives all Screens~A--D(i.e., object
 \begin{enumerate}
 \item Systematic absence of the Hard-X/MeV shoulder (20--120~keV, obs) \emph{and} systematically weak high-ionization lines (pass if their equivalent widths are $\ge 2\sigma$ below the control-sample mean, where $\sigma$ is the rms scatter of the matched control sample).
 \item Reverberation lags from X$\rightarrow$UV showing no energy dependence (no inward reheating signature).
-\item $L_{\rm bol}$ not anti-correlated (even weakly) with $a_\ast$ within matched $(\MBH,\lambda)$ bins for the bright subset (no self-regulated spin-down imprint).\\ To prevent post-hoc bin-shifting, we define matched bins using pre-specified fixed logarithmic intervals (e.g., 0.5 dex in both $\MBH$ and $\lambda$) and report sensitivity to reasonable alternative bin widths.
+\item $L_{\rm bol}$ not anti-correlated (even weakly) with $a_\ast$ within matched $(\MBH,\lambda)$ bins for the bright subset, after screening for extreme inclination/obscuration (Screens~B--C) (no self-regulated spin-down imprint).\\(Residual inclination-dependent scatter is treated as noise and assessed via sensitivity to reasonable alternative bin definitions.)
 \item Optical/X-ray polarization failing to favor equatorial angles or degrees when near-threshold spins are inferred.
 \end{enumerate}
 If \emph{two or more} items above hold simultaneously for the same high-spin, high-$\lambda$ subset, we would consider $f_{\rm eq}\!\to\!0$ supported and this mechanism unnecessary.
