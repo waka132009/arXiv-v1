@@ -98,7 +98,11 @@
 
 % --- block macro ---
 \newcommand{\phead}[1]{\par\medskip\noindent\textbf{#1}\textemdash\ }
-
+\newcommand{\pheadl}[2]{%
+  \par\medskip
+  \phantomsection\label{#1}%
+  \noindent\textbf{#2}\textemdash\ %
+}
 % tight enumerate/itemize （環境ラッパ・パッケージ不要）
 \newenvironment{tenumerate}{%
   \begin{enumerate}\setlength{\itemsep}{0pt}\setlength{\parsep}{0pt}\setlength{\parskip}{0pt}%
@@ -620,7 +624,7 @@ Because the falsification criterion is intentionally strict, we apply minimal sc
 
 For Tier-1 we treat $a_\ast\gtrsim0.95$ as ``high spin'' and report the estimator and its systematic caveats.
 
-We adopt $a_\ast \ge 0.95$ as an operational high-spin criterion, allowing margin for systematic uncertainties in spin estimators relative to the near-threshold activation($a_\ast \simeq 0.97$) implied by the phenomenology.
+We adopt $a_\ast \ge 0.95$ as an operational high-spin criterion, allowing margin for systematic uncertainties in spin estimators relative to the phenomenology-implied provisional activation scale ($a_\ast \simeq 0.97$), to be calibrated observationally.
 
 \item [B]\textbf{Accretion screen:} define $\lambda\equiv L_{\rm bol}/L_{\rm Edd}$ using a documented $L_{\rm bol}$ method (SED-based where available) and a stated $\MBH$ estimator; propagate conservative systematics (bolometric correction and virial-mass uncertainties).
 \item [C]\textbf{Geometry/obscuration screen:} exclude Compton-thick or heavily absorbed cases where spectral curvature, lags, or polarization become instrumentally ambiguous.
@@ -635,7 +639,7 @@ Here ``screened'' means \emph{information-limited} (observationally saturated), 
 
 When the relevant Hook diagnostic is not decidable given the achieved bandpass/S/N (e.g., due to radiative-transfer or pair-opacity complications), we label it as \emph{missing} rather than \emph{failed}.
 
-To prevent post-hoc reclassification, we predefine an operational floor for each Hook Table~\ref{tab:hook-spec}: below this floor the outcome is \emph{missing} by construction and does not count toward falsification.
+To prevent post-hoc reclassification, we predefine an operational floor for each Hook in Table~\ref{tab:hook-spec}; below this floor the outcome is \emph{missing} by construction and does not count toward falsification.
 
 At high compactness, radiative transfer and pair opacity can saturate the 20--120~keV band and wash out timing/polarimetric diagnostics, so the Hook suite becomes \emph{non-identifiable} rather than negative.
 
@@ -658,7 +662,7 @@ Operational definitions and pass/fail thresholds are given in Table~\ref{tab:hoo
 here we state only the physical intent:
 \begin{titemize}
   \item[Hook 1] \textbf{Hard X/MeV shoulder:} a hard excess/shoulder beyond a featureless baseline continuum.
-  \item[Hook 2] \textbf{Lag hardening:} a lag--energy relation consistent with harder photons lagging softer photons within an epoch. \\
+  \item[Hook 2] \textbf{Lag hardening:} a lag--energy relation consistent with harder photons lagging softer photons within an epoch (\emph{epoch} as operationally defined in Appendix~\ref{app:protocol}). \\
   \item[Hook 3] \textbf{Equator-aligned X-ray polarization:} EVPA preferentially aligned with the disk plane, with a trend toward higher polarization degree at higher spin/high $\lambda$.
 \end{titemize}
 
@@ -668,10 +672,7 @@ We adopt a conventional threshold (fiducially $\ICmetric \ge \ICcrit$) to keep t
 In practice, we recommend reporting the classification stability under a small bracket around the threshold (e.g., $\ICmetric\in[4,10]$) as a sensitivity check; sources that flip classification within this bracket are labeled ambiguous and deferred to Tier-2.
 
 \phead{Lag convention.}
-We measure energy-resolved lags $\tau(E)$ relative to a fixed \emph{reference} band $E_{\rm ref}$ (we adopt $E_{\rm ref}=2$--4~keV in the rest frame unless stated.\\
-otherwise; in observed frame use Eref/(1+z) where feasible),
-
-And define $\tau>0$ when the band at $E$ \emph{lags} the reference band.
+We adopt $E_{\rm ref}=2\text{--}4~{\rm keV}$ in the rest frame unless stated otherwise; in the observed frame use $(E_{\rm ref}/(1+z))$ where feasible, and define $\tau>0$ when the band at $E$ lags the reference band.
 
 In this convention, ``lag hardening'' corresponds to \emph{hard lags}: $\tau(E)$ increases with energy.
 
@@ -729,16 +730,16 @@ This design intentionally shifts the burden from microphysical closure to low-co
 \tableline
 Hook 1 & Hard X/MeV shoulder & 20--120 keV & $\ICmetric \ge \ICcrit$ & model degeneracy\\
 \tableline
-Hook 2 & Lag hardening & lag--energy slope & \mccell{$\tau(E)$ relative to $E_{\rm ref}=2$--4~keV \\rest-frame; use /(1+z)\\in observed frame where feasible\\ define $\tau>0$ for lags; \\ pass if $d\tau/d\log E>0$ \\ and monotone within an epoch\tablenotemark{a}.} & dilution\\
+Hook 2 & Lag hardening & lag--energy slope & \mccell{$\tau(E)$ relative to $E_{\rm ref}=2$--4~keV \\rest-frame; use $(E_{\rm ref}/(1+z))$\\in observed frame where feasible\\ define $\tau>0$ for lags; \\ pass if $d\tau/d\log E>0$ \\ and monotone within an epoch\tablenotemark{a}.} & dilution\\
 \tableline
 Hook 3 & Equatorial polarization & 2--10 keV & EVPA $\parallel$ disk & jet contamination\\
 \enddata
 \tablecomments{
-After applying Screens~A--D, each hook may have degeneracies in isolation; SSPE is evaluated by joint coherence across Hooks~1--3. We adopt $\ICmetric \ge \ICcrit$ as a pragmatic strong-evidence decision threshold (with $\AICcmetric \ge \ICcrit$ as a secondary check) as a pragmatic strong-evidence decision threshold following common usage in model selection (e.g., \citealt{KassRaftery1995}; \citealt{BurnhamAnderson2002}); failure to recover $\ge 2$ hooks falsifies SSPE.
+After applying Screens~A--D, each hook may have degeneracies in isolation; SSPE is evaluated by joint coherence across Hooks~1--3. We adopt $\ICmetric \ge \ICcrit$ as a pragmatic strong-evidence decision threshold (with $\AICcmetric \ge \ICcrit$ as a secondary check) as a pragmatic strong-evidence decision threshold following common usage in model selection (e.g., \citealt{KassRaftery1995}; \citealt{BurnhamAnderson2002}); failure to recover $\ge 2$ hooks falsifies SSPE(counting only decidable hooks; missing excluded by construction).
 \\[1ex]
 Screen~D acts as an observability gate \textbf{(screened $\neq$ failed)}: sources outside the transparency domain are excluded from the current archival Tier-1 falsification tally due to instrumental sensitivity limits, but remain primary targets for future MeV-regime Tier-2 tests.
 }
-\tablenotetext{a}{Epoch is operationally defined in Appendix~\ref{app:protocol}.}
+\tablenotetext{a}{An \emph{epoch} is operationally defined in Appendix~\ref{app:protocol}.}
 \end{deluxetable*}
 
 \FloatBarrier
@@ -940,7 +941,7 @@ Most of the time this energy is promptly reprocessed into the hard X/MeV shoulde
 
 These reprocessed components constitute the primary hooks discussed in Sec.~\ref{sec:obs}.
 
-This speculative leakage scenario is not required for the protocol and does not affect the falsification logic in Table~\ref{tab:roadmap}.
+This speculative leakage scenario is not required for the protocol and does not affect the falsification logic in Table~\ref{tab:roadmap}(decision bookkeeping).
 
 
 \medskip
@@ -1047,7 +1048,7 @@ This see-saw test is a cross-check on the power partition, not an additional hoo
 
 
 \FloatBarrier
-\phead{Primary falsifier (population-level).}SSPE is refuted if at least $N_{\min}$ \emph{independent objects that survive all Screens~A--D}(i.e., the vetted sample) yield \emph{decidable} joint-hook outcomes, and more than a fraction $f_{\rm fail}$ of those objects fail to recover $\ge 2$ hooks \emph{within the same epoch}.
+\pheadl{ph:primary-falsifier}{Primary falsifier (population-level).}SSPE is refuted if at least $N_{\min}$ \emph{independent objects that survive all Screens~A--D}(i.e., the vetted sample) yield \emph{decidable} joint-hook outcomes, and more than a fraction $f_{\rm fail}$ of those objects fail to recover $\ge 2$ hooks \emph{within the same epoch}.
 
 We define an object as \emph{decidable} for the joint-hook rule if and only if at least two hooks yield non-missing outcomes (pass/fail) within the chosen representative epoch.
 
@@ -1079,14 +1080,14 @@ Self-sustained Penrose excitation near extremal Kerr SMBHs can inject rotational
 
 \section{Operational Protocol (Self-contained)}\label{app:protocol}
 
-\noindent\textbf{Screens A--D (apply first; see Sec.~\ref{sec:obs} for details; summarized here).}\\
+\noindent\textbf{Screens A--D (apply first; see Sec.~\ref{sec:obs} for details; summarized here).} \\Operational floors and pass/fail thresholds are defined in Table~\ref{tab:hook-spec} ; below the floor each hook is treated as missing by construction.\\
 \noindent\textbf{Screen A (spin):} require an available spin proxy; adopt vetted high-spin as $a_\ast \gtrsim 0.95$.\\
 \noindent\textbf{Screen B ($\lambda$):} require an Eddington-ratio estimate ($\lambda \equiv L_{\rm bol}/L_{\rm Edd}$) with stated systematics; select the high-$\lambda$ subset.\\
-\noindent\textbf{Screen C (geometry/obscuration):} exclude Compton-thick/heavily absorbed cases and extreme inclination; if a hook is plausibly blocked at useful S/N, treat it as \emph{missing} rather than failed.\\
-\noindent\textbf{Screen D (compactness):} require $\ell < \ell_{\rm crit}$ (fiducial $\ell_{\rm crit}=30$); pair-opaque states are \emph{screened} (not failures).\\
+\noindent\textbf{Screen C (geometry/obscuration):} exclude Compton-thick/heavily absorbed cases and extreme inclination; if a hook is plausibly blocked at useful S/N (i.e., non-decidable under Appendix~\ref{app:protocol}), treat it as \emph{missing} rather than failed.\\
+\noindent\textbf{Screen D (compactness):} require $\ell < \ell_{\rm crit}$ (fiducial $\ell_{\rm crit}=30$); pair-opaque states are \emph{screened} (not failures).\\Compactness $\ell$ is defined as in Eq.~\ref{eq:ell}.\\
 
 \noindent\textbf{Lag convention (used in Hook 2).}
-We measure $\tau(E)$ relative to a fixed reference band $E_{\rm ref}$ (adopt $E_{\rm ref}=2$--4~keV in the rest frame; use $E_{\rm ref}$/(1+z) in observed frame where feasible); define $\tau>0$ when the band at $E$ lags the reference band.\\
+We measure $\tau(E)$ relative to a fixed reference band $E_{\rm ref}$ (adopt $E_{\rm ref}=2$--4~keV in the rest frame; use $(E_{\rm ref}/(1+z))$ in observed frame where feasible); define $\tau>0$ when the band at $E$ lags the reference band.\\
 
 \noindent\textbf{Hooks (apply jointly under Screens A--D).}\\
 \noindent\textbf{Hook 1 (shoulder):} passes if $\ICmetric \ge \ICcrit$ in the 20--120~keV observed band.\\
@@ -1104,13 +1105,16 @@ If this criterion is not met, the hook is treated as \emph{missing} for that epo
 
 \phead{Decision (decisive falsification criterion).}
 After applying Screens A--D, systematic failure to recover $\ge 2$ hooks in vetted high-spin/high-$\lambda$ samples refutes SSPE; otherwise the sample passes Tier-1.\\
+For the population-level decision rule (including $N_{\min}$, $f_{\rm fail}$, and the definition of “decidable”), see the Primary falsifier (population-level) on p.~\pageref{ph:primary-falsifier}.
 
+
+\bigskip
 \noindent\textbf{Toy mapping (optional visual aid).} See Fig.~\ref{fig:fig_appendix}.
 
 \begin{figure*}[p]
   \centering
   \begin{minipage}{0.95\textwidth}
-    \textbf{Toy mapping (why this figure appears here).}
+    \textbf{Toy mapping (why this figure appears here).}\\
     The figure below provides an illustrative mapping from the equilibrium spin $a_{\rm eq}$ to two observables used in the hook protocol. It is a visual aid only and is not required for Tier-1 execution.
   \end{minipage}
   \vspace{1em}
