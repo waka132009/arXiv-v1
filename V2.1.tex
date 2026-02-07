@@ -367,6 +367,17 @@ E - \OmegaH L < 0.
 See \citealt{Penrose1969,Penrose2002}.
 
 A modest back-flow coupling ($\epsilon_{\rm coup}\!\sim\!10^{-2}$--$10^{-1}$) then suffices to heat the inner disk and regenerate magnetic flux, closing a self-sustained loop.
+
+\subsection{Scope/definitions}\label{sec:scope-def}
+We use “Penrose-like extraction” strictly as a phenomenological label for an energy source that may operate in Kerr systems; it is \textbf{not} asserted as a unique or sufficient condition for SSPE.
+
+The present work therefore does not address the activation boundary or microphysics of Penrose extraction.
+
+Instead, the testable claim is observational: in \textbf{vetted high-spin/high-$\lambda$} systems, the SSPE contribution predicts a joint-hook coherence within the same epoch under the pre-registered protocol (Table~\ref{tab:hook-spec}; Appendix~\ref{app:protocol}).
+
+Signatures detected with comparable frequency in low-spin control samples would indicate a spin-insensitive origin (general disk/corona physics) and thus fall outside the specific SSPE interpretation targeted here, without altering the protocol’s Tier-1 decision bookkeeping.
+
+
 % 節頭直後に図が先出しされるのを抑止したい場合は次を追加：
 % \suppressfloats[t]
 \begin{figure*}[p!]
@@ -405,12 +416,13 @@ The \emph{positive-energy branch} may therefore propagate as a narrow, radiation
 
 Because the transport remains largely collisionless/Poynting-dominated until it reprocesses in the inner disk, and because the dissipation footprint is extended ($R_{\rm eff}\!\sim\!10^{2}$--$10^{3}\,r_g$), the pair compactness along the beam stays low, consistent with the transparency requirement of Eq.~(6).
 
-%\FloatBarrier
+
 \subsection{Self-Sustained Penrose Excitation}\label{sec:penrose}
 The mean extraction power is $\langle P_{\rm ext}\rangle=E_{\rm rot}/\tau$, and with duty cycle $d$ the instantaneous power during active phases is $P_{\rm ext}\sim\langle P_{\rm ext}\rangle/d$. Here $\tau$ denotes the effective extraction e-folding timescale of the rotational-energy reservoir, i.e., $\langle P_{\rm ext}\rangle=E_{\rm rot}/\tau$ using Eq.~\eqref{eq:Erot}.
-%\FloatBarrier
+
 \subsection{Disk Dissipation and Scale}\label{sec:diss}
 A fraction $\epscoup(a_\ast)$ of $P_{\rm ext}$ is deposited into the disk:
+
 \begin{equation}
 L_{\rm self}=\epscoup\,P_{\rm ext},
 \label{eq:Lself}
@@ -735,7 +747,7 @@ Hook 2 & Lag hardening & lag--energy slope & \mccell{$\tau(E)$ relative to $E_{\
 Hook 3 & Equatorial polarization & 2--10 keV & EVPA $\parallel$ disk & jet contamination\\
 \enddata
 \tablecomments{
-After applying Screens~A--D, each hook may have degeneracies in isolation; SSPE is evaluated by joint coherence across Hooks~1--3. We adopt $\ICmetric \ge \ICcrit$ as a pragmatic strong-evidence decision threshold (with $\AICcmetric \ge \ICcrit$ as a secondary check) following common usage in model selection (e.g., \citealt{KassRaftery1995}; \citealt{BurnhamAnderson2002}); Failure to recover $\ge 2$ \emph{decidable} hooks falsifies SSPE (missing outcomes are excluded by construction).
+After applying Screens~A--D, each hook may have degeneracies in isolation; SSPE is evaluated by joint coherence across Hooks~1--3. We adopt $\ICmetric \ge \ICcrit$ as a pragmatic strong-evidence decision threshold (with $\AICcmetric \ge \ICcrit$ as a secondary check) following common usage in model selection (e.g., \citealt{KassRaftery1995}; \citealt{BurnhamAnderson2002}); Failure to recover $\ge 2$ \emph{decidable} hooks contributes to the population-level falsification tally; see the Primary falsifier (population-level) on p.~\pageref{ph:primary-falsifier}.
 \\[1ex]
 Screen~D acts as an observability gate \textbf{(screened $\neq$ failed)}: sources outside the transparency domain are excluded from the current archival Tier-1 falsification tally due to instrumental sensitivity limits, but remain primary targets for future MeV-regime Tier-2 tests.
 }
@@ -790,6 +802,7 @@ These bounds align with Fig.~\ref{fig:param-a}--\ref{fig:param-b} and are suffic
 Slim disks allow modest super-Eddington flows but no spin ceiling. BZ/MAD explain jet power yet not the radiative dominance of radio-quiet quasars.
 
 This framework ties hyperluminous output and the spin ceiling via near-extremal, equatorial coupling.
+
 
 Consistent with GRFFE/GRMHD studies, an \emph{equatorial return-current sheet forms within the ergoregion} and becomes plasmoid-unstable; detached plasmoids unavoidably split into branches with $E-\OmegaH L\lessgtr 0$ (captured vs.\ escaping), enabling rotational-energy extraction via a Penrose-like radiative channel \citep{Penrose1969,Penrose2002,Komissarov2004MNRAS,EastYang2018PRD,Pan2018PRD,Parfrey2019PRL,Bransgrove2021}.
 
@@ -986,9 +999,18 @@ We stress that these are \emph{suggestive} classes, not firm identifications: de
 \medskip
 \noindent\textem{Relationship to the main hooks.}
 From the perspective of this Paper, rare direct quasi-beam events are not an additional mandatory hook but a high-risk, high-reward extension.
+
 The primary falsifiable content of the SSPE framework remains the \emph{co-occurrence} of Hooks~1--3 under the screening criteria of Sec.~\ref{sec:obs}. 
+
 A confirmed direct quasi-beam event would instead provide an exceptionally clean window into the ergoregion dynamics, 
+
 placing much sharper constraints on the microphysics of the coupling than our phenomenological treatment assumes.
+
+\cleardoublepage
+\begin{samepage}
+\noindent\textem{Scope (low-spin controls).—}
+Signatures detected with comparable frequency in low-spin control samples(See Scope~\ref{sec:scope-def}) would indicate a spin-insensitive origin (general disk/corona physics) and are therefore \emph{not} interpreted as SSPE in this work, without altering the protocol’s Tier-1 decision bookkeeping.
+\end{samepage}
 
 % --- Validation Roadmap（置換用） ---
 \subsection{Validation Roadmap}\label{sec:roadmap}
@@ -1084,7 +1106,7 @@ Self-sustained Penrose excitation near extremal Kerr SMBHs can inject rotational
 \noindent\textbf{Screens A--D (apply first; see Sec.~\ref{sec:obs} for details; summarized here).} \\Operational floors and pass/fail thresholds are defined in Table~\ref{tab:hook-spec}; below the floor each hook is treated as missing by construction.\\
 \noindent\textbf{Screen A (spin):} require an available spin proxy; adopt vetted high-spin as $a_\ast \gtrsim 0.95$.\\
 \noindent\textbf{Screen B ($\lambda$):} require an Eddington-ratio estimate ($\lambda \equiv L_{\rm bol}/L_{\rm Edd}$) with stated systematics; select the high-$\lambda$ subset.\\
-\noindent\textbf{Screen C (geometry/obscuration):} exclude Compton-thick/heavily absorbed cases and extreme inclination; if a hook is plausibly blocked at useful S/N (i.e., non-decidable under Appendix~\ref{app:protocol}), treat it as \emph{missing} rather than failed.\\
+\noindent\textbf{Screen C (geometry/obscuration):} exclude Compton-thick/heavily absorbed cases and extreme inclination; if a hook is plausibly blocked at useful S/N---i.e., the observable is \textbf{non-decidable} as pass/fail under the fixed Tier-1 floors and decision rule in Table~\ref{tab:hook-spec} (given the stated uncertainties/limits)---treat it as \emph{missing} rather than failed.\\
 \noindent\textbf{Screen D (compactness):} require $\ell < \ell_{\rm crit}$ (fiducial $\ell_{\rm crit}=30$); pair-opaque states are \emph{screened} (not failures).\\Compactness $\ell$ is defined as in Eq.~\ref{eq:ell}.\\
 
 \noindent\textbf{Lag convention (used in Hook 2).}
@@ -1095,14 +1117,21 @@ We measure $\tau(E)$ relative to a fixed reference band $E_{\rm ref}$ (adopt $E_
 \noindent\textbf{Hook 2 (lag hardening):} passes if $d\tau/d\log E > 0$ and $\tau(E)$ is monotone within an \emph{epoch}.\\
 \noindent\textbf{Hook 3 (equatorial polarization):} EVPA $\parallel$ disk/equator, with polarization degree increasing with spin/$\lambda$.\\
 \smallskip
-\phead{Epoch definition (operational).}We define an \emph{epoch} as a single, quasi-stationary observing block during which (i) the hardness ratio and (ii) the broadband flux, computed with fixed band definitions and a fixed reduction/selection procedure within the block, are statistically consistent with constancy.\\
+\phead{Epoch definition (operational).}We define an \emph{epoch} as a single observing block during which (i) the hardness ratio and (ii) the broadband flux, computed with fixed band definitions and a fixed reduction/selection procedure within the block, are statistically consistent with constancy.\\
 Operationally, epoch constancy requires
+
+
 \[
 \max\!\left(\frac{|HR-HR_0|}{\sigma_{HR}},\, \frac{|F-F_0|}{\sigma_F}\right)\le 2
 \]
 over the block, where $(HR_0,F_0)$ are the block means and $(\sigma_{\rm HR},\sigma_F)$ are the $1\sigma$ uncertainties of\\individual measurements (not the standard error of the block mean), including instrumental noise.
 
 If this criterion is not met, the hook is treated as \emph{missing} for that epoch (not failed).
+
+\phead{Note (data quality).}
+Larger measurement uncertainties can make the constancy test easier to satisfy, but this does not strengthen the evidence: if a Tier-1 hook cannot be adjudicated as pass/fail at useful S/N under the fixed floors in Table~\ref{tab:hook-spec} (given the stated uncertainties/limits).
+
+Its outcome is treated as \emph{missing by construction} (not failed) and is excluded from the population-level falsification tally (i.e., it does not count as a failure).
 
 \phead{Decision (Tier-1 bookkeeping).}
 The Tier-1 pass/fail tally is evaluated using the population-level decision rule; see the Primary falsifier (population-level) on p.~\pageref{ph:primary-falsifier}.
