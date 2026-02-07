@@ -866,9 +866,10 @@ f_{\rm BZ} + f_{\rm eq} + f_{\rm oth} = 1. \label{eq:ffrac}
 
 In the present work we focus on screened, radio-quiet high-spin/high-$\lambda$ systems where the hook-based program is designed to be most discriminating; a large $f_{\rm oth}$ is expected to weaken the spectral--timing--polarimetric hooks and can be treated as part of the screening/falsification logic.
 
-If independent evidence suggests that $f_{\rm oth}$ is not small or is rapidly variable, the see-saw diagnostic is treated as non-decidable for that object/epoch and is not used as a falsifier; the primary protocol remains Hooks~1--3 with Screens~A--D.
+If independent evidence suggests that $f_{\rm oth}$ is not small or is rapidly variable, the see-saw diagnostic is treated as non-decidable for that object/epoch and is not used as a falsifier.
 
-\noindent
+Importantly, $f_{\rm oth}$ does not modify the Tier-1 decision logic: for screened, vetted objects with decidable joint-hook outcomes, an object’s failure to recover $\ge 2$ \emph{decidable} hooks refutes SSPE, independent of how the extracted power is partitioned into residual channels ($P_{\rm oth}$).
+
 A practical implication is that SSPE can affect systems that appear, by their large-scale phenomenology, to be BZ-favorable.
 
 Even when the polar channel dominates the long-term power budget (i.e., $P_{\rm BZ}\gg P_{\rm eq}$ on average), a nonzero equatorial channel provides an internal heating pathway that acts directly on the disk photosphere rather than through external irradiation.
@@ -1099,13 +1100,12 @@ Operationally, epoch constancy requires
 \[
 \max\!\left(\frac{|HR-HR_0|}{\sigma_{HR}},\, \frac{|F-F_0|}{\sigma_F}\right)\le 2
 \]
-over the block, where $(HR_0,F_0)$ are the block means and $(\sigma_{HR},\sigma_F)$ are the corresponding measurement uncertainties (including instrumental noise).
+over the block, where $(HR_0,F_0)$ are the block means and $(\sigma_{\rm HR},\sigma_F)$ are the $1\sigma$ uncertainties of\\individual measurements (not the standard error of the block mean), including instrumental noise.
 
 If this criterion is not met, the hook is treated as \emph{missing} for that epoch (not failed).
 
-\phead{Decision (decisive falsification criterion).}
-After applying Screens A--D, systematic failure to recover $\ge 2$ hooks in vetted high-spin/high-$\lambda$ samples refutes SSPE; otherwise the sample passes Tier-1.\\
-For the population-level decision rule (including $N_{\min}$, $f_{\rm fail}$, and the definition of “decidable”), see the Primary falsifier (population-level) on p.~\pageref{ph:primary-falsifier}.
+\phead{Decision (Tier-1 bookkeeping).}
+The Tier-1 pass/fail tally is evaluated using the population-level decision rule; see the Primary falsifier (population-level) on p.~\pageref{ph:primary-falsifier}.
 
 
 \bigskip
