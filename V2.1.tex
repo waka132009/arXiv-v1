@@ -1081,6 +1081,8 @@ We adopt $N_{\min}=10$ and $f_{\rm fail}=0.5$ as pragmatic defaults; alternative
 
 Here $N_{\min}$ refers to the subset that survives all Screens~A--D(i.e., objects for which the hooks are testable under the transparency/absorption/inclination gates).
 
+\noindent\emph{Operational trigger.—} The executable Tier-1 population decision is defined in Appendix~\ref{app:protocol} (Eqs.~\ref{eq:PF1}--\ref{eq:PF2}) and is the rule used for all Tier-1 bookkeeping in this work.
+
 
 \smallskip
 \phead{Additional falsifiers (secondary).---}Beyond the primary decision rule (Sec.~\ref{sec:obs}), the following are \emph{supporting} population-level patterns that, while individually non-decisive and potentially confounded, would further disfavor a non-zero equatorial fraction $f_{\rm eq}$:
@@ -1128,20 +1130,34 @@ Operationally, epoch constancy requires
 \end{equation}
 over the block, where $(HR_0,F_0)$ are the block means and $(\sigma_{\rm HR},\sigma_F)$ are the $1\sigma$ uncertainties of the individual measurements (not the standard error of the block mean), including instrumental noise.
 
-Operationally, epoch constancy requires that Eq.~\ref{eq:epoch-constancy} is satisfied for both HR and flux for the bulk of the measurements within the block (e.g., at least 95\% of points).
+Operationally, Eq.~(\ref{eq:epoch-constancy}) is applied to the in-block measurements under the fixed reduction/selection procedure, and the constancy requirement is enforced for the bulk of points (e.g., at least 95\%) to ensure robustness to occasional outliers.
 
 If this criterion is not met, the hook is treated as \emph{missing} for that epoch (not failed).
 
+
+\phead{Counts and units (Tier-1).—}
+All population-level tallies are at the \emph{object} level unless stated otherwise.
+\begin{quote}
+$N_{\rm total}$: number of \emph{objects} in the vetted sample.\\
+$N_{\rm miss}$: number of \emph{objects} for which the joint-hook rule is non-decidable (fewer than two adjudicable hook outcomes under Table~\ref{tab:hook-spec}).\\
+$N_{\rm eff}\equiv N_{\rm total}-N_{\rm miss}$: effective number of \emph{objects} entering the Tier-1 population test.\\
+$N_{\rm fail}$: number of \emph{objects} that fail the joint-hook requirement among the effective sample.\\
+$f_{\rm fail}\equiv N_{\rm fail}/N_{\rm eff}$.
+\end{quote}
+
 \phead{Population-level falsification (Tier-1).}
 Let $N_{\rm eff}\equiv N_{\rm total}-N_{\rm miss}$ be the effective sample size and $N_{\rm fail}$ the number of adjudicated Tier-1 failures.
-Falsification is triggered when
-\begin{equation}\label{eq:Population-level falsification-1}
+
+\phead{Single source of truth (Tier-1).—} Eqs.~(\ref{eq:PF1}--\ref{eq:PF2}) define the operational population-level trigger; any $(N_{\min}, f_{\rm fail})$ phrasing elsewhere is a heuristic summary for a given $(N_{\rm eff},\alpha)$.
+
+\noindent Falsification is triggered when
+\begin{equation}\label{eq:PF1}
 N_{\rm fail}\ \ge\ N_{\rm crit}(N_{\rm eff},\alpha),
 \end{equation}
 where $N_{\rm crit}$ is the smallest integer satisfying the one-sided condition
-\begin{equation}
+\begin{equation}\label{eq:PF2}
 P\!\left(X \ge N_{\rm crit}\ \middle|\ X\sim{\rm Binom}(N_{\rm eff},p_0{=}0.5)\right)\ \le\ \alpha.
-\end{equation}\label{eq:Population-level falsification-2}
+\end{equation}
 Missing sources are excluded from the denominator when computing the population-level failure rate, i.e., $N_{\rm eff}\equiv N_{\rm total}-N_{\rm miss}$.
 
 \phead{Note (data quality).}
