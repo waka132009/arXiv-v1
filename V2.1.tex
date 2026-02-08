@@ -744,12 +744,14 @@ Hook 1 & Hard X/MeV shoulder & 20--120 keV & $\ICmetric \ge \ICcrit$ & model deg
 \tableline
 Hook 2 & Lag hardening & lag--energy slope & \mccell{$\tau(E)$ relative to $E_{\rm ref}=2$--4~keV \\rest-frame; use $(E_{\rm ref}/(1+z))$\\in observed frame where feasible\\ define $\tau>0$ for lags; \\ pass if $d\tau/d\log E>0$ \\ and monotone within an epoch\tablenotemark{a}.} & dilution\\
 \tableline
-Hook 3 & Equatorial polarization & 2--10 keV & EVPA $\parallel$ disk & jet contamination\\
+Hook 3 & Equatorial polarization & 2--10 keV & EVPA $\parallel$ disk (equatorial plane) & jet contamination\\
 \enddata
 \tablecomments{
 After applying Screens~A--D, each hook may have degeneracies in isolation; SSPE is evaluated by joint coherence across Hooks~1--3. We adopt $\ICmetric \ge \ICcrit$ as a pragmatic strong-evidence decision threshold (with $\AICcmetric \ge \ICcrit$ as a secondary check) following common usage in model selection (e.g., \citealt{KassRaftery1995}; \citealt{BurnhamAnderson2002}); Failure to recover $\ge 2$ \emph{decidable} hooks contributes to the population-level falsification tally; see the Primary falsifier (population-level) on p.~\pageref{ph:primary-falsifier}.
 \\[1ex]
 Screen~D acts as an observability gate \textbf{(screened $\neq$ failed)}: sources outside the transparency domain are excluded from the current archival Tier-1 falsification tally due to instrumental sensitivity limits, but remain primary targets for future MeV-regime Tier-2 tests.
+\\[1ex]
+Table~\ref{tab:hook-spec} defines per-hook adjudication (pass/fail/missing), while Appendix~A defines the object-level tally and the population-level trigger (Eqs.~\ref{eq:PF1}--\ref{eq:PF2}).
 }
 \tablenotetext{a}{An \emph{epoch} is operationally defined in Appendix~\ref{app:protocol}.}
 \end{deluxetable*}
@@ -1122,15 +1124,14 @@ We measure $\tau(E)$ relative to a fixed reference band $E_{\rm ref}$ (adopt $E_
 \phead{Epoch definition (operational).}We define an \emph{epoch} as a single observing block during which (i) the hardness ratio and (ii) the broadband flux, computed with fixed band definitions and a fixed reduction/selection procedure within the block, are statistically consistent with constancy.\\
 Operationally, epoch constancy requires
 \begin{equation}
-\max\!\left(
-\frac{\left|HR - HR_0\right|}{\sigma_{HR}},\ 
-\frac{\left|F - F_0\right|}{\sigma_F}
-\right)\ \le\ 2,
+\frac{\left|HR_i - HR_0\right|}{\sigma_{{HR},i}}\ \le\ 2
+\quad\text{and}\quad
+\frac{\left|F_i - F_0\right|}{\sigma_{F,i}}\ \le\ 2,
 \label{eq:epoch-constancy}
 \end{equation}
-over the block, where $(HR_0,F_0)$ are the block means and $(\sigma_{\rm HR},\sigma_F)$ are the $1\sigma$ uncertainties of the individual measurements (not the standard error of the block mean), including instrumental noise.
+over the block, where $(HR_0,F_0)$ are the block means and $(\sigma_{{\rm HR},i},\sigma_{F,i})$ are the $1\sigma$ uncertainties of the individual measurements (not the standard error of the block mean), including instrumental noise.
 
-Operationally, Eq.~(\ref{eq:epoch-constancy}) is applied to the in-block measurements under the fixed reduction/selection procedure, and the constancy requirement is enforced for the bulk of points (e.g., at least 95\%) to ensure robustness to occasional outliers.
+In practice, Eq.~(\ref{eq:epoch-constancy}) is evaluated pointwise for the in-block measurements under the fixed reduction/selection procedure, and the epoch is accepted if at least 95\% of points satisfy the inequality for both HR and flux (ensuring robustness to occasional outliers).
 
 If this criterion is not met, the hook is treated as \emph{missing} for that epoch (not failed).
 
@@ -1139,6 +1140,7 @@ If this criterion is not met, the hook is treated as \emph{missing} for that epo
 All population-level tallies are at the \emph{object} level unless stated otherwise.
 \begin{quote}
 $N_{\rm total}$: number of \emph{objects} in the vetted sample.\\
+\noindent\emph{Vetted sample.—} In Tier-1, $N_{\rm total}$ counts objects that pass Screens~A--D; objects screened out by any screen (including Screen~D) are not included in $N_{\rm total}$.\\
 $N_{\rm miss}$: number of \emph{objects} for which the joint-hook rule is non-decidable (fewer than two adjudicable hook outcomes under Table~\ref{tab:hook-spec}).\\
 $N_{\rm eff}\equiv N_{\rm total}-N_{\rm miss}$: effective number of \emph{objects} entering the Tier-1 population test.\\
 $N_{\rm fail}$: number of \emph{objects} that fail the joint-hook requirement among the effective sample.\\
