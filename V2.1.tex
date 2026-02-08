@@ -332,12 +332,12 @@ We refer to the power-budget component $P_{\rm eq}$ (fraction $f_{\rm eq}$) as t
 The transport agent of this channel is the \emph{equatorial quasi-beam}, i.e., an intermittently launched, equatorially concentrated positive-energy branch originating near the ISCO--ergoregion interface.
 
 %We use \emph{ergoregion} when referring to the physical condition for negative-energy states (Penrose splitting), and \emph{ergosphere}/\emph{ergosurface} when referring to the geometric region/boundary in Fig.~2.
-We use \emph{ergoregion} for the physical condition of negative-energy states (Penrose splitting), and \emph{ergosurface} for the geometric boundary (Fig.~2). We avoid ‘ergosphere’ except as informal shorthand.
+We use \emph{ergoregion} for the physical condition of negative-energy states (Penrose splitting), and \emph{ergosurface} for the geometric boundary (Fig.~\ref{fig:equatorial_trigger}). We avoid ‘ergosphere’ except as informal shorthand.
 
 We use “Penrose process” in the strict Kerr sense of negative-energy states, and “Penrose-like coupling” as a phenomenological label for ergoregion-mediated energy transfer, capturing the essential energetics of the Penrose process while remaining agnostic.
 
 \phead{Why an equatorial channel is plausible (without microphysical adjudication).}
-In rapidly spinning systems an equatorial return-current sheet is expected to form where field polarity reverses across the inner flow; time-dependent reconnection in such sheets generically produces plasmoids and intermittent ejecta in GRMHD/FFE and PIC studies (references in Fig.~2).
+In rapidly spinning systems an equatorial return-current sheet is expected to form where field polarity reverses across the inner flow; time-dependent reconnection in such sheets generically produces plasmoids and intermittent ejecta in GRMHD/FFE and PIC studies (references in Fig.~\ref{fig:equatorial_trigger}).
 
 Our framework does not derive a nozzle or collimation from first principles.
 
@@ -1119,14 +1119,30 @@ We measure $\tau(E)$ relative to a fixed reference band $E_{\rm ref}$ (adopt $E_
 \smallskip
 \phead{Epoch definition (operational).}We define an \emph{epoch} as a single observing block during which (i) the hardness ratio and (ii) the broadband flux, computed with fixed band definitions and a fixed reduction/selection procedure within the block, are statistically consistent with constancy.\\
 Operationally, epoch constancy requires
+\begin{equation}
+\max\!\left(
+\frac{\left|HR - HR_0\right|}{\sigma_{HR}},\ 
+\frac{\left|F - F_0\right|}{\sigma_F}
+\right)\ \le\ 2,
+\label{eq:epoch-constancy}
+\end{equation}
+over the block, where $(HR_0,F_0)$ are the block means and $(\sigma_{\rm HR},\sigma_F)$ are the $1\sigma$ uncertainties of the individual measurements (not the standard error of the block mean), including instrumental noise.
 
-
-\[
-\max\!\left(\frac{|HR-HR_0|}{\sigma_{HR}},\, \frac{|F-F_0|}{\sigma_F}\right)\le 2
-\]
-over the block, where $(HR_0,F_0)$ are the block means and $(\sigma_{\rm HR},\sigma_F)$ are the $1\sigma$ uncertainties of\\individual measurements (not the standard error of the block mean), including instrumental noise.
+Operationally, epoch constancy requires that Eq.~\ref{eq:epoch-constancy} is satisfied for both HR and flux for the bulk of the measurements within the block (e.g., at least 95\% of points).
 
 If this criterion is not met, the hook is treated as \emph{missing} for that epoch (not failed).
+
+\phead{Population-level falsification (Tier-1).}
+Let $N_{\rm eff}\equiv N_{\rm total}-N_{\rm miss}$ be the effective sample size and $N_{\rm fail}$ the number of adjudicated Tier-1 failures.
+Falsification is triggered when
+\begin{equation}\label{eq:Population-level falsification-1}
+N_{\rm fail}\ \ge\ N_{\rm crit}(N_{\rm eff},\alpha),
+\end{equation}
+where $N_{\rm crit}$ is the smallest integer satisfying the one-sided condition
+\begin{equation}
+P\!\left(X \ge N_{\rm crit}\ \middle|\ X\sim{\rm Binom}(N_{\rm eff},p_0{=}0.5)\right)\ \le\ \alpha.
+\end{equation}\label{eq:Population-level falsification-2}
+Missing sources are excluded from the denominator when computing the population-level failure rate, i.e., $N_{\rm eff}\equiv N_{\rm total}-N_{\rm miss}$.
 
 \phead{Note (data quality).}
 Larger measurement uncertainties can make the constancy test easier to satisfy, but this does not strengthen the evidence: if a Tier-1 hook cannot be adjudicated as pass/fail at useful S/N under the fixed floors in Table~\ref{tab:hook-spec} (given the stated uncertainties/limits).
