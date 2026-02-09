@@ -742,18 +742,19 @@ This design intentionally shifts the burden from microphysical closure to low-co
 \tableline
 Hook 1 & Hard X/MeV shoulder & 20--120 keV & $\ICmetric \ge \ICcrit$ & model degeneracy\\
 \tableline
-Hook 2 & Lag hardening & lag--energy slope & \mccell{$\tau(E)$ relative to $E_{\rm ref}=2$--4~keV \\rest-frame; use $(E_{\rm ref}/(1+z))$\\in observed frame where feasible\\ define $\tau>0$ for lags; \\ pass if $d\tau/d\log E>0$ \\ and monotone within an epoch\tablenotemark{a}.} & dilution\\
+Hook 2 & Lag hardening & lag--energy slope & \mccell{$\tau(E)$ relative to $E_{\rm ref}=2$--4~keV \\rest-frame; use $(E_{\rm ref}/(1+z))$\\in observed frame where feasible\\ define $\tau>0$ for lags; \\ pass if $d\tau/d\log E>0$ \\ and monotone\tablenotemark{b} within an epoch\tablenotemark{a}.} & dilution\\
 \tableline
 Hook 3 & Equatorial polarization & 2--10 keV & EVPA $\parallel$ disk (equatorial plane) & jet contamination\\
 \enddata
 \tablecomments{
-After applying Screens~A--D, each hook may have degeneracies in isolation; SSPE is evaluated by joint coherence across Hooks~1--3. We adopt $\ICmetric \ge \ICcrit$ as a pragmatic strong-evidence decision threshold (with $\AICcmetric \ge \ICcrit$ as a secondary check) following common usage in model selection (e.g., \citealt{KassRaftery1995}; \citealt{BurnhamAnderson2002}); Failure to recover $\ge 2$ \emph{decidable} hooks contributes to the population-level falsification tally; see the Primary falsifier (population-level) on p.~\pageref{ph:primary-falsifier}.
+After applying Screens~A--D, each hook may have degeneracies in isolation; SSPE is evaluated by joint coherence across Hooks~1--3. We adopt $\ICmetric \ge \ICcrit$ as a pragmatic strong-evidence decision threshold (with $\AICcmetric \ge \ICcrit$ as a secondary check) following common usage in model selection (e.g., \citealt{KassRaftery1995}; \citealt{BurnhamAnderson2002}); Failure to recover $\ge 2$ \emph{decidable} hooks contributes to the population-level falsification tally; see Appendix~\ref{app:protocol}, Eqs.~(\ref{eq:PF1}--\ref{eq:PF2}).
 \\[1ex]
 Screen~D acts as an observability gate \textbf{(screened $\neq$ failed)}: sources outside the transparency domain are excluded from the current archival Tier-1 falsification tally due to instrumental sensitivity limits, but remain primary targets for future MeV-regime Tier-2 tests.
 \\[1ex]
 Table~\ref{tab:hook-spec} defines per-hook adjudication (pass/fail/missing), while Appendix~A defines the object-level tally and the population-level trigger (Eqs.~\ref{eq:PF1}--\ref{eq:PF2}).
 }
 \tablenotetext{a}{An \emph{epoch} is operationally defined in Appendix~\ref{app:protocol}.}
+\tablenotetext{b}{Here “monotone” means $\tau(E)$ is non-decreasing across the adopted energy bins within the quoted uncertainties (i.e., no statistically significant reversals).}
 \end{deluxetable*}
 
 \FloatBarrier
@@ -1104,6 +1105,7 @@ Self-sustained Penrose excitation near extremal Kerr SMBHs can inject rotational
 \clearpage
 \FloatBarrier
 \appendix
+\renewcommand{\theHequation}{\thesection\arabic{equation}}
 
 \section{Operational Protocol (Self-contained)}\label{app:protocol}
 
@@ -1165,10 +1167,10 @@ Missing sources are excluded from the denominator when computing the population-
 \phead{Note (data quality).}
 Larger measurement uncertainties can make the constancy test easier to satisfy, but this does not strengthen the evidence: if a Tier-1 hook cannot be adjudicated as pass/fail at useful S/N under the fixed floors in Table~\ref{tab:hook-spec} (given the stated uncertainties/limits).
 
-Its outcome is treated as \emph{missing by construction} (not failed) and is excluded from the population-level falsification tally (i.e., it does not count as a failure).
+In that case, its outcome is treated as \emph{missing by construction} (not failed) and is excluded from the population-level falsification tally (i.e., it does not count as a failure).
 
 \phead{Decision (Tier-1 bookkeeping).}
-The Tier-1 pass/fail tally is evaluated using the population-level decision rule; see the Primary falsifier (population-level) on p.~\pageref{ph:primary-falsifier}.
+The Tier-1 pass/fail tally is evaluated using the population-level decision rule; see Appendix~\ref{app:protocol}, Eqs.~(\ref{eq:PF1}--\ref{eq:PF2}).
 
 
 \bigskip
