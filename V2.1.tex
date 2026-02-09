@@ -641,7 +641,7 @@ We adopt $a_\ast \ge 0.95$ as an operational high-spin criterion, allowing margi
 \item [B]\textbf{Accretion screen:} define $\lambda\equiv L_{\rm bol}/L_{\rm Edd}$ using a documented $L_{\rm bol}$ method (SED-based where available) and a stated $\MBH$ estimator; propagate conservative systematics (bolometric correction and virial-mass uncertainties).
 \item [C]\textbf{Geometry/obscuration screen:} exclude Compton-thick or heavily absorbed cases where spectral curvature, lags, or polarization become instrumentally ambiguous.
 
-If an observable is effectively inaccessible at useful S/N (i.e., it cannot yield a decidable pass/fail under a pre-registered analysis and detection criterion for that instrument; see Appendix~\ref{app:protocol}), treat it as \emph{missing} rather than \emph{failed}.
+If an observable is effectively inaccessible at useful S/N—i.e., it cannot yield a decidable pass/fail under the fixed Tier-1 floors and decision rule in Table~\ref{tab:hook-spec} (given the stated uncertainties/limits)—treat it as \emph{missing} rather than \emph{failed}.
 
 \item [D]\textbf{Compactness screen:} gate out pair-opaque states ($\ell\gtrsim\ellcrit$) where the hard component is suppressed;Compactness screen is an observability gate:\\sources that violate the transparency/compactness requirement are treated as \emph{not testable} for the Tier-1 hooks (screened), rather than as negative evidence against SSPE (failed). \\ Accordingly, SSPE is falsified only within the domain where the hooks are measurable; outside this domain the protocol makes no claim.
 \end{titemize}
@@ -1165,9 +1165,7 @@ P\!\left(X \ge N_{\rm crit}\ \middle|\ X\sim{\rm Binom}(N_{\rm eff},p_0{=}0.5)\r
 Missing sources are excluded from the denominator when computing the population-level failure rate, i.e., $N_{\rm eff}\equiv N_{\rm total}-N_{\rm miss}$.
 
 \phead{Note (data quality).}
-Larger measurement uncertainties can make the constancy test easier to satisfy, but this does not strengthen the evidence: if a Tier-1 hook cannot be adjudicated as pass/fail at useful S/N under the fixed floors in Table~\ref{tab:hook-spec} (given the stated uncertainties/limits).
-
-In that case, its outcome is treated as \emph{missing by construction} (not failed) and is excluded from the population-level falsification tally (i.e., it does not count as a failure).
+If a Tier-1 hook cannot be adjudicated as pass/fail at useful S/N under the fixed floors in Table~\ref{tab:hook-spec} (given the stated uncertainties/limits), its outcome is treated as missing by construction (not failed) and is excluded from the population-level falsification tally (i.e., it does not count as a failure).
 
 \phead{Decision (Tier-1 bookkeeping).}
 The Tier-1 pass/fail tally is evaluated using the population-level decision rule; see Appendix~\ref{app:protocol}, Eqs.~(\ref{eq:PF1}--\ref{eq:PF2}).
