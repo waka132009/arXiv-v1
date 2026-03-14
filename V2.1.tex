@@ -234,7 +234,6 @@ We instead emphasize that near-extremal spin the boundaries themselves evolve: f
 In this coupled regime an equatorial current sheet is generically required by the global field topology; shear and flux loading drive plasmoid-dominated reconnection; and the resulting split redistributes $(E,L)$ so that a negative-energy branch is absorbed by the hole while a positive-energy branch vents as a narrow equatorial quasi-beam, part of which returns to heat the inner disk.
 
 
-
 \section{Theoretical Framework}\label{sec:theory}
 \tldr{Near-threshold Kerr coupling at the ISCO--ergoregion interface supplies disk heating while extracting spin, under a compactness gate $\ellhard$.}
 
@@ -624,6 +623,14 @@ We emphasize that the hook thresholds are treated as a \textem{specification} ra
 
 Accordingly, we adopt a single source of truth for the Tier-1 criteria (Table~\ref{tab:hook-spec}) and provide a lightweight execution recipe (Observer Quickstart) intended for archival screening.
 
+\phead{Our aim is discriminability, not population inference.}
+We do not claim universality or occurrence rates in the parent population.
+
+We provide an audit-ready candidate-identification and falsification protocol within a screened domain; questions of universality and prevalence are left to follow-up work.
+
+Failure to trigger Tier-1 falsification is not evidence for SSPE; it is treated as inconclusive within the present protocol.
+
+High raw failure fractions ($f_{\rm fail}$) are still reported and interpreted as tension with the scenario, even when the formal Tier-1 trigger is not met for the current effective sample size.
 % --- unified protocol block starts here (Screens -> Tier -> Hooks -> Quickstart -> Falsification) ---
 
 \subsection{Observational hooks as an executable protocol}\label{sec:obs}
@@ -652,6 +659,8 @@ Here ``screened'' means \emph{information-limited} (observationally saturated), 
 When the relevant Hook diagnostic is not decidable given the achieved bandpass/S/N (e.g., due to radiative-transfer or pair-opacity complications), we label it as \emph{missing} rather than \emph{failed}.
 
 To prevent post-hoc reclassification, we predefine an operational floor for each Hook in Table~\ref{tab:hook-spec}; below this floor the outcome is \emph{missing} by construction and does not count toward falsification.
+
+This bookkeeping rule is fixed in advance and is applied identically to all objects in the vetted sample.
 
 At high compactness, radiative transfer and pair opacity can saturate the 20--120~keV band and wash out timing/polarimetric diagnostics, so the Hook suite becomes \emph{non-identifiable} rather than negative.
 
