@@ -1146,6 +1146,7 @@ In practice, Eq.~(\ref{eq:epoch-constancy}) is evaluated pointwise for the in-bl
 
 If this criterion is not met, the hook is treated as \emph{missing} for that epoch (not failed).
 
+\clearpage
 
 \phead{Counts and units (Tier-1).—}
 All population-level tallies are at the \emph{object} level unless stated otherwise.
@@ -1158,10 +1159,10 @@ $N_{\rm fail}$: number of \emph{objects} that fail the joint-hook requirement am
 $f_{\rm fail}\equiv N_{\rm fail}/N_{\rm eff}$.
 \end{quote}
 
-\phead{Population-level falsification (Tier-1).}
-Let $N_{\rm eff}\equiv N_{\rm total}-N_{\rm miss}$ be the effective sample size and $N_{\rm fail}$ the number of adjudicated Tier-1 failures.
+%\phead{Population-level falsification (Tier-1).} For Tier-1 we adopt a one-sided significance level of $\alpha = 0.05$.
+%Any ($N_{\min}, f_{\rm fail}$) phrasing elsewhere is a heuristic summary for a given ($N_{\rm eff}, \alpha$) .
 
-\phead{Single source of truth (Tier-1).—} Eqs.~(\ref{eq:PF1}--\ref{eq:PF2}) define the operational population-level trigger; any $(N_{\min}, f_{\rm fail})$ phrasing elsewhere is a heuristic summary for a given $(N_{\rm eff},\alpha)$.
+\phead{Single source of truth (Tier-1).—}  For Tier-1 we adopt a one-sided significance level of $\alpha = 0.05$; Eqs.~(\ref{eq:PF1}--\ref{eq:PF2}) define the operational population-level trigger; any $(N_{\min}, f_{\rm fail})$ phrasing elsewhere is a heuristic summary for a given $(N_{\rm eff},\alpha)$.
 
 \noindent Falsification is triggered when
 \begin{equation}\label{eq:PF1}
@@ -1175,6 +1176,10 @@ Missing sources are excluded from the denominator when computing the population-
 
 \phead{Note (data quality).}
 If a Tier-1 hook cannot be adjudicated as pass/fail at useful S/N under the fixed floors in Table~\ref{tab:hook-spec} (given the stated uncertainties/limits), its outcome is treated as missing by construction (not failed) and is excluded from the population-level falsification tally (i.e., it does not count as a failure).
+
+If the lag–energy slope is measurable under the fixed floors and is consistent with zero or negative, Hook 2 is counted as failed, not missing.
+
+Hook 2 is treated as missing only when the data quality is insufficient to adjudicate the slope/monotonicity at the adopted floors.
 
 \phead{Decision (Tier-1 bookkeeping).}
 The Tier-1 pass/fail tally is evaluated using the population-level decision rule; see Appendix~\ref{app:protocol}, Eqs.~(\ref{eq:PF1}--\ref{eq:PF2}).
