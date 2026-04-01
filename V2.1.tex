@@ -154,12 +154,12 @@ We present a high-spin, near-threshold equatorial radiative channel that (i) sus
 
 Compactness-limited transparency ($\ell$) gates the observable power, and a simple torque balance links the luminosity to the same control that sets the ceiling.
 
-We provide an executable, falsification-oriented protocol; operationally, it predicts three same-epoch hooks at high spin and high accretion rate:\\
+We provide an executable, screening-based observational protocol; operationally, it predicts three same-epoch hooks at high spin and high accretion rate:\\
 (1) A 20--120~keV high-energy shoulder favored over a featureless continuum by $\ICmetric \ge \ICcrit$;\\
 (2) Lag hardening in energy-resolved X-ray timing, i.e., hard lags with $\tau(E)$ increasing with energy relative to a fixed soft reference band; and \\
 (3) Equator-aligned X-ray polarization of the hard component with a rising degree (with X-ray$\rightarrow$UV/optical reprocessing lags as a complementary Tier-2 check).
 
-The path to falsification is explicit: in vetted high-spin, high-$\lambda$ quasars, failure to recover at least two hooks---after excluding heavy absorption, extreme inclination, and high-compactness cases---would refute the scenario.
+The Tier-1 archival test is explicit: after screening for heavy absorption, extreme inclination, and high compactness, recovery of the joint-hook pattern in more than one source supports the existence-style claim, whereas zero or one such source leaves it not established
 
 \noindent\textbf{Speculative note:} We also note that rare geometries may allow partial direct leakage of the quasi-beam, potentially producing fast-variability events (speculative; see Sec.~\ref{sec:quasibeam}).
 \end{abstract}
@@ -168,7 +168,7 @@ The path to falsification is explicit: in vetted high-spin, high-$\lambda$ quasa
 
 
 \section{Introduction}\label{sec:intro}
-\tldr{This paper develops a concrete, spin-regulated mechanism --- Self-Sustained Penrose Excitation (SSPE) --- that can both power super-Eddington quasar luminosities and enforce a near-extremal spin ceiling, while remaining explicitly falsifiable by X-ray and polarimetric data.}
+\tldr{This paper develops a concrete, spin-regulated mechanism—Self-Sustained Penrose Excitation (SSPE)—that can both power super-Eddington quasar luminosities and enforce a near-extremal spin ceiling, while remaining operationally testable by X-ray and polarimetric diagnostics.}
 
 Accreting supermassive black holes (SMBHs) display a remarkable range of radiative efficiencies and Eddington ratios. 
 
@@ -200,19 +200,19 @@ However, the recurring appearance of these tensions \emph{in the same high-spin,
 
 This paper frames SSPE as a single \emph{equatorial inner-disk heating channel} that can be confronted with data across these disparate probes under a shared screening logic (compactness, absorption, inclination). 
 
-The intent is not to declare uniqueness, but to provide a unifying, explicitly falsifiable target that invites coordinated scrutiny by the spectral--timing, microlensing/reverberation, and GRMHD/plasma communities.
+The intent is not to declare uniqueness, but to provide a unifying, operationally testable target that invites coordinated scrutiny by the spectral--timing, microlensing/reverberation, and GRMHD/plasma communities.
 
 This paper introduces and develops \emph{Self-Sustained Penrose Excitation} (SSPE): a quasi-equatorial, Penrose-like energy-transfer channel that couples the ergoregion to the innermost accretion flow.
 
 When the Kerr spin exceeds a near-threshold value $a_\ast \gtrsim a_{\rm th}\simeq 0.97$, a modest fractional coupling of the rotational-energy reservoir, parameterized by $\epscoup(a_\ast)\sim 10^{-2}$--$10^{-1}$, can continuously re-inject power into the inner disk while providing a counter-torque that self-limits the spin.
 
-Our goal is to establish SSPE as a quantitatively testable hypothesis.
+Our goal is to establish SSPE as a quantitatively specified, operationally testable framework.
 
 First, we formalize the geometry and kinematics of the ISCO--ergoregion interface and introduce a minimal parameterization of the coupling efficiency and threshold (Section~\ref{sec:theory}).
 
 Second, we present a semi-analytic parameter study exploring how $L/L_{\rm Edd}$, duty cycle, and spin evolution respond to changes in $\epscoup$, coupling scale, and effective screening of high-$\ell$ influx (Section~\ref{sec:results}).
 
-Third, we translate each observational hook into concrete signal-to-noise, model-selection, and polarimetric requirements, and state an explicit falsification criterion (Section~\ref{sec:hooks}).
+Third, we translate each observational hook into concrete signal-to-noise, model-selection, and polarimetric requirements, and state an explicit screened-domain existence criterion (Section~\ref{sec:hooks}).
 
 Fourth, we apply the framework to BZ-favorable, jet-dominated quasars with anomalously hot/extended disks, arguing that equatorial feedback can inflate and overheat the outer disk even in such systems (Section~\ref{sec:power}).
 
@@ -220,7 +220,7 @@ We do not attempt to replace super-Eddington disk models (e.g., slim disks); rat
 
 
 \paragraph{Scope and modeling stance.}
-We present a phenomenological framework: the microphysics of beam formation, transport, and equatorial deposition is intentionally kept agnostic, while the \emph{observable consequences} of such coupling are made explicit and falsifiable.
+We present a phenomenological framework: the microphysics of beam formation, transport, and equatorial deposition is intentionally kept agnostic, while the \emph{observable consequences} of such coupling are made explicit and operationally testable.
 
 This stance allows clean confrontation with data now and provides a clear interface to future GRMHD/plasma studies that could instantiate the coupling agent.
 
@@ -232,7 +232,6 @@ Much of the literature treats the inner disk, magnetosphere, and ergoregion with
 We instead emphasize that near-extremal spin the boundaries themselves evolve: frame dragging enlarges and reshapes the ergoregion, the ISCO approaches it, and the equatorial return path becomes thin and resistive.
 
 In this coupled regime an equatorial current sheet is generically required by the global field topology; shear and flux loading drive plasmoid-dominated reconnection; and the resulting split redistributes $(E,L)$ so that a negative-energy branch is absorbed by the hole while a positive-energy branch vents as a narrow equatorial quasi-beam, part of which returns to heat the inner disk.
-
 
 \section{Theoretical Framework}\label{sec:theory}
 \tldr{Near-threshold Kerr coupling at the ISCO--ergoregion interface supplies disk heating while extracting spin, under a compactness gate $\ellhard$.}
@@ -287,19 +286,19 @@ In our fiducial calibration, the rise is rapid near \(a_\ast \simeq 0.97\), sett
 We adopt a fiducial $a_{\rm th}\simeq0.97$ as a pragmatic “near-extremal” boundary where the ISCO approaches the ergosurface boundary in the equatorial plane and small changes in $a$ produce disproportionately large changes in horizon-frame energetics and coupling geometry; the precise value is not fundamental and can be refined empirically.
 \FloatBarrier
 Unless noted, we adopt the following fiducials for figures and estimates: $M=10^9M_\odot$, $\eta_{\rm acc}=0.1$, $\epsilon_{\max}=0.1$, $n=2$, $R_0=10^2$, and $\alpha=50$; the illustrative threshold is $\ath\simeq0.97$.
-\noindent\emph{Micro-bridge.}
-While we keep microphysics agnostic, the fiducial range $\epsilon_{\rm coup}\sim10^{-2}$--$10^{-1}$ is broadly consistent with energy-release fractions seen in near-horizon, plasmoid-dominated reconnection in recent GRMHD studies.
+
+\phead{Micro-bridge.}While we keep microphysics agnostic, the fiducial range $\epsilon_{\rm coup}\sim10^{-2}$--$10^{-1}$ is broadly consistent with energy-release fractions seen in near-horizon, plasmoid-dominated reconnection in recent GRMHD studies.
 
 For the present framework we only assume that $\epsilon_{\rm coup}$ rises sharply above $a_{\rm th}$ and saturates below $\epsilon_{\max}$; detailed calibration is left for future simulations.
 
-\paragraph{Phenomenological parameters and physical ranges.}
+\phead{Phenomenological parameters and physical ranges.}
 The cap $\epsilon_{\max}$ limits equatorial deposition efficiency by energy-budget and pair-compactness constraints; $n$ controls activation sharpness above $\ath$ as an effective criticality index of the coupling geometry.
  
 $(R_0,\alpha)$ regulate the dissipation footprint to maintain transparency, trading compactness against reprocessing.
 
 We restrict these to physically plausible ranges and view them as interfaces for future GRMHD/plasma calibration, not curve-fitting knobs.
 
-\paragraph{Sensitivity and saturation.}
+\phead{Sensitivity and saturation.}
 The activation $\epsilon_{\rm coup}(a_\ast)$ is intentionally steep: $(a_{\rm th},n)$ set the narrowness of the “spin ceiling”.
 
 In practice $\epsilon_{\rm coup}$ and the leakage fraction depend nonlinearly on flux loading and $\dot M$, with possible saturation arbitrarily close to the extremal limit.
@@ -307,7 +306,7 @@ In practice $\epsilon_{\rm coup}$ and the leakage fraction depend nonlinearly on
 We therefore treat $(a_{\rm th},n,\epsilon_{\max},\alpha)$ as calibration parameters to be fixed by future GRMHD-in-ergoregion testbeds.
 
 
-\paragraph{Power partition.}
+\phead{Power partition.}
 We allow the extracted rotational power to partition into a polar Blandford--Znajek (BZ) channel, an equatorial feedback channel, and other loss channels:
 \[
 P_{\rm ext}=P_{\rm BZ}+P_{\rm eq}+P_{\rm oth},\qquad
@@ -523,7 +522,6 @@ For example, $t_{\rm act}=20\,{\rm Myr}$ with $d=0.2$ implies $t_{\rm real}\sime
 
 Conversely, in short-lived or highly intermittent systems where $t_{\rm act}\ll \tau_{\rm eq}$, the framework predicts a surviving high-spin tail even at high $\lambda$; this is an observationally testable outcome rather than a loophole.
 
-
 \FloatBarrier
 %\clearpage
 \subsection{Net Luminosity}\label{sec:lum}
@@ -580,7 +578,7 @@ In practice, luminous high-$\lambda$ phases may be intermittent.
 
 Accordingly, the relevant condition for spin regulation is that the \emph{integrated} time spent in SSPE-active states (above $a_{\rm th}$ and within the compactness-safe window) is comparable to or exceeds the effective equilibration time.
 
-If vetted high-spin/high-$\lambda$ populations exhibit no spin ceiling despite sufficient cumulative active time, the framework would be disfavored.
+If vetted high-spin/high-$\lambda$ sources exhibit no spin ceiling despite sufficient cumulative active time, the framework would be disfavored.
 
 \paragraph{Trends Map} These trends map directly onto the observational program in Sec.~\ref{sec:hooks}.
 
@@ -588,7 +586,7 @@ In the compactness-safe window (i.e., after screening out high-$\ell$ states), S
 
 Because activation is steep near $\ath$, the hooks are expected to concentrate in the high-spin, high-$\lambda$ subset rather than appearing as unrelated, source-by-source anomalies.
 
-Conversely, failure to recover at least two hooks in vetted high-spin/high-$\lambda$ quasars (after excluding heavy absorption, extreme inclination, and compactness-choked cases) constitutes a decisive falsification criterion.
+Conversely, in short-lived or highly intermittent systems where $t_{\rm act}\ll \tau_{\rm eq}$, the framework predicts a surviving high-spin tail even at high $\lambda$; this is an observationally testable outcome rather than a loophole.
 
 Finally, the same bookkeeping clarifies why SSPE should be treated as an equatorial complement to polar BZ extraction: across states, a changing partition between $P_{\rm BZ}$ and $P_{\rm eq}$ implies an anti-correlation between jet dominance and equatorial reheating diagnostics, with rare geometries potentially allowing partial direct leakage discussed separately in Sec.~\ref{sec:quasibeam}.
 
@@ -600,44 +598,43 @@ Finally, the same bookkeeping clarifies why SSPE should be treated as an equator
   \item \textbf{Semi-analytic picture (this section):} Once the coupling activates above a threshold spin, an equatorial radiative channel can sustain $L/L_{\rm Edd}>1$ while naturally driving the spin toward an equilibrium ceiling.
   \item \textbf{What sets the state:} The channel is powered by repeated Penrose-like coupling at the ISCO--ergoregion interface, depositing power back into the inner disk while extracting angular momentum.
   \item \textbf{Why observability is gated:} Compactness links detectability to geometry; a transparency-limited window explains why the hard component is seen only in specific bright states.
-  \item \textbf{Next (Sec.~\ref{sec:hooks}):} We translate the framework into an operational observing protocol with minimal Screens (A--D) and three joint hooks (spectral, timing, polarimetric) with explicit pass/fail criteria (Table~\ref{tab:hook-spec}).
-  \item \textbf{Decisive test (Sec.~\ref{sec:discussion}):} In vetted high-spin/high-$\lambda$ samples, failure to recover $\ge 2$ hooks within a representative epoch (missing outcomes excluded by construction) falsifies the framework.
+  \item \textbf{Next (Sec.~\ref{sec:hooks}):} We translate the framework into an operational screening protocol with minimal Screens (A--D) and three joint hooks (spectral, timing, polarimetric), together with explicit per-hook adjudication criteria (Table~\ref{tab:hook-spec}).
+  \item \textbf{Tier-1 archival test (Sec.~\ref{sec:discussion}):} In vetted high-spin/high-$\lambda$ samples, recovery of the SSPE-like joint-hook pattern in more than one screened source supports the existence-style claim. If zero or one such source remains, the claim is not established; if screened or decidable coverage is too limited, the archival result is treated as inconclusive.
 \end{tenumerate}
 
 \clearpage
 
-\section{Observational hooks and falsifiability}\label{sec:hooks}
+\section{Observational Hooks and Screening Protocol}\label{sec:hooks}
 \tldr{\textit{Screens:} select high-$\lambda$ systems with favorable geometry/obscuration and compactness. \\
 \textit{Hooks:} search for a hard X/MeV ``shoulder,'' lag hardening with energy, and equator-aligned polarization signatures.\\
-\textit{Kill-shot:} if a screened high-spin/high-$\lambda$ sample (with robust spin estimates) lacks $\geq 2$ independent hooks, SSPE is ruled out in that regime.}
-In this paper we treat SSPE as a concrete, falsifiable working hypothesis rather than a completed theory.
+\textit{Tier-1 archival test:} if the screened high-spin/high-$\lambda$ archival set does not recover the joint-hook pattern in more than one source, the existence-style claim is not established in that regime.}
+In this paper we treat SSPE as a concrete, operationally testable working framework rather than a completed theory.
 
 
-This work does not adjudicate between GRMHD/FFE/PIC implementations; it treats an equatorial channel as a falsifiable boundary condition and targets observational joint coherence.
+This work does not adjudicate between GRMHD/FFE/PIC implementations; it treats an equatorial channel as a operational boundary condition and targets observational joint coherence.
 
 The microphysics of the coupling between the ergoregion, quasi-equatorial channels, and the inner disk is intentionally left agnostic and absorbed into a small set of phenomenological parameters.
 
-What is fixed --- and offered to observers and simulators --- is an executable protocol: (i) minimal \textem{screens} that define vetted samples and handle missing observables fairly, (ii) three joint \textem{hooks} (spectral, timing, and polarimetric) with operational pass/fail criteria, and (iii) an explicit population-level \textem{decisive falsification criterion}.
+What is fixed --- and offered to observers and simulators --- is an executable protocol: (i) minimal \textem{screens} that define vetted samples and handle missing observables fairly, (ii) three joint \textem{hooks} (spectral, timing, and polarimetric) with explicit per-hook adjudication criteria, and (iii) an explicit screened-domain existence criterion.
 
 We emphasize that the hook thresholds are treated as a \textem{specification} rather than a post hoc fit target.
 
-Accordingly, we adopt a single source of truth for the Tier-1 criteria (Table~\ref{tab:hook-spec}) and provide a lightweight execution recipe (Observer Quickstart) intended for archival screening.
+Accordingly, we adopt a single source of truth for the Tier-1 per-hook adjudication criteria (Table~\ref{tab:hook-spec}) and provide a lightweight execution recipe (Observer Quickstart) intended for archival screening.
 
 \phead{Our aim is discriminability, not population inference.}
 We do not claim universality or occurrence rates in the parent population.
 
-We provide an audit-ready candidate-identification and falsification protocol within a screened domain; questions of universality and prevalence are left to follow-up work.
+We provide an audit-ready candidate-identification and existence-style screening protocol within a screened domain; questions of universality and prevalence are left to follow-up work.
 
-Failure to trigger Tier-1 falsification is not evidence for SSPE; it is treated as inconclusive within the present protocol.
+%Failure to trigger Tier-1 falsification is not evidence for SSPE; it is treated as inconclusive within the present protocol.
 
-High raw failure fractions ($f_{\rm fail}$) are still reported and interpreted as tension with the scenario, even when the formal Tier-1 trigger is not met for the current effective sample size.
+%High raw failure fractions ($f_{\rm fail}$) are still reported and interpreted as tension with the scenario, even when the formal Tier-1 trigger is not met for the current effective sample size.
 % --- unified protocol block starts here (Screens -> Tier -> Hooks -> Quickstart -> Falsification) ---
 
 \subsection{Observational hooks as an executable protocol}\label{sec:obs}
 
-\noindent\textbf{Screens (apply first; to keep falsification fair).}
-Because the falsification criterion is intentionally strict, we apply minimal screens to define
-``vetted'' high-spin, high-$\lambda$ systems and to handle missing observables consistently:
+\noindent\textbf{Screens (apply first; to keep Tier-1 screening consistent).}\\
+Because the Tier-1 screening criterion is intentionally conservative, we apply minimal screens to define ``vetted'' high-spin, high-$\lambda$ systems and to handle missing observables consistently:
 \begin{titemize}\label{list:screens}
 \item [A]\textbf{Spin screen:} prioritize sources with an explicit spin estimate (e.g., Fe~K$\alpha$ reverberation/relativistic reflection, continuum-fitting where applicable, or polarimetric constraints). 
 
@@ -648,27 +645,27 @@ We adopt $a_\ast \ge 0.95$ as an operational high-spin criterion, allowing margi
 \item [B]\textbf{Accretion screen:} define $\lambda\equiv L_{\rm bol}/L_{\rm Edd}$ using a documented $L_{\rm bol}$ method (SED-based where available) and a stated $\MBH$ estimator; propagate conservative systematics (bolometric correction and virial-mass uncertainties).
 \item [C]\textbf{Geometry/obscuration screen:} exclude Compton-thick or heavily absorbed cases where spectral curvature, lags, or polarization become instrumentally ambiguous.
 
-If an observable is effectively inaccessible at useful S/N—i.e., it cannot yield a decidable pass/fail under the fixed Tier-1 floors and decision rule in Table~\ref{tab:hook-spec} (given the stated uncertainties/limits)—treat it as \emph{missing} rather than \emph{failed}.
+If an observable is effectively inaccessible at useful S/N—i.e., it cannot yield a decidable per-hook adjudication under the fixed Tier-1 floors and criterion rule in Table~\ref{tab:hook-spec} (given the stated uncertainties/limits)—treat it as \emph{missing} rather than \emph{failed}.
 
-\item [D]\textbf{Compactness screen:} gate out pair-opaque states ($\ell\gtrsim\ellcrit$) where the hard component is suppressed;Compactness screen is an observability gate:\\sources that violate the transparency/compactness requirement are treated as \emph{not testable} for the Tier-1 hooks (screened), rather than as negative evidence against SSPE (failed). \\ Accordingly, SSPE is falsified only within the domain where the hooks are measurable; outside this domain the protocol makes no claim.
+\item [D]\textbf{Compactness screen:} gate out pair-opaque states ($\ell\gtrsim\ellcrit$) where the hard component is suppressed;Compactness screen is an observability gate:\\sources that violate the transparency/compactness requirement are treated as \emph{not testable} for the Tier-1 hooks (screened), rather than as failed outcomes in per-hook adjudication. \\ Accordingly, the Tier-1 exsistence-style claim is assesed only within the domain where the hooks are measurable; outside this domain the protocol makes no claim.
 \end{titemize}
 
 \phead{Screen D (compactness) is an identifiability gate, not a physical exclusion.}
-Here ``screened'' means \emph{information-limited} (observationally saturated), so such cases are withheld from falsification counting.
+Here ``screened'' means \emph{information-limited} (observationally saturated), so such cases are withheld from Tier-1 bookkeeping.
 
 When the relevant Hook diagnostic is not decidable given the achieved bandpass/S/N (e.g., due to radiative-transfer or pair-opacity complications), we label it as \emph{missing} rather than \emph{failed}.
 
-To prevent post-hoc reclassification, we predefine an operational floor for each Hook in Table~\ref{tab:hook-spec}; below this floor the outcome is \emph{missing} by construction and does not count toward falsification.
+To prevent post-hoc reclassification, we predefine an operational floor for each Hook in Table~\ref{tab:hook-spec}; below this floor the outcome is \emph{missing} by construction and does not does not enter Tier-1 adjudication.
 
 This bookkeeping rule is fixed in advance and is applied identically to all objects in the vetted sample.
 
 At high compactness, radiative transfer and pair opacity can saturate the 20--120~keV band and wash out timing/polarimetric diagnostics, so the Hook suite becomes \emph{non-identifiable} rather than negative.
 
-We therefore label $\ell>\ell_{\rm crit}$ sources as \emph{screened / untestable with the present low-cost protocol}, not as SSPE-failing cases.
+We therefore label $\ell>\ell_{\rm crit}$ sources as \emph{screened / untestable with the present low-cost protocol}, not as failures under Tier-1 bookkeeping.
 
 In other words, Screen~D prevents false negatives due to observational saturation, and it can be relaxed when higher-energy coverage or improved modeling becomes available.
 
-This choice is conservative: it reduces the claim to the domain where the proposed decision function is well-posed.
+This choice is conservative: it reduces the claim to the domain where the proposed screened-domain test is well-posed.
 
 
 \noindent\textbf{Tier definitions.}
@@ -678,9 +675,7 @@ We use \textem{Tier-2} for higher-cost follow-up and systematic tightening (e.g.
 
 
 \phead{Hooks (apply jointly under Screens A--D).}
-Operational definitions and pass/fail thresholds are given in Table~\ref{tab:hook-spec};
-
-here we state only the physical intent:
+Operational definitions and per-hook adjudication criteria are given in Table~\ref{tab:hook-spec};here we state only the physical intent:
 \begin{titemize}
   \item[Hook 1] \textbf{Hard X/MeV shoulder:} a hard excess/shoulder beyond a featureless baseline continuum.
   \item[Hook 2] \textbf{Lag hardening:} a lag--energy relation consistent with harder photons lagging softer photons within an epoch (\emph{epoch} as operationally defined in Appendix~\ref{app:protocol}). \\
@@ -688,9 +683,9 @@ here we state only the physical intent:
 \end{titemize}
 
 \phead{Robustness to the information-criterion threshold.}
-We adopt a conventional threshold (fiducially $\ICmetric \ge \ICcrit$) to keep the Tier-1 decision rule executable and reproducible, but the protocol does not hinge on this single value.
+We adopt a conventional threshold (fiducially $\Delta$BIC ($\Delta$AICc optional) $\ge 6$) to keep the Tier-1 archival test operational and reproducible, but the protocol does not hinge on this single value.
 
-In practice, we recommend reporting the classification stability under a small bracket around the threshold (e.g., $\ICmetric\in[4,10]$) as a sensitivity check; sources that flip classification within this bracket are labeled ambiguous and deferred to Tier-2.
+In practice, we recommend reporting Hook-1 adjudication stability under a small bracket around the threshold (e.g., $\Delta$BIC ($\Delta$AICc optional) $\in [4,10]$) as a sensitivity check; sources whose Hook-1 adjudication flips within this bracket are labeled ambiguous and deferred to Tier-2.
 
 \phead{Lag convention.}
 We adopt $E_{\rm ref}=2\text{--}4~{\rm keV}$ in the rest frame unless stated otherwise; in the observed frame use $(E_{\rm ref}/(1+z))$ where feasible, and define $\tau>0$ when the band at $E$ lags the reference band.
@@ -700,46 +695,54 @@ In this convention, ``lag hardening'' corresponds to \emph{hard lags}: $\tau(E)$
 (See Fig.~\ref{fig:fig_appendix} for a visual mapping of Screens and Hooks to the Tier-1/Tier-2 decisions.)
 
 
-\begin{quote}
-\noindent\textbf{Observer Quickstart (Tier-1 archival screening; non-committal).}\par
+\phead{Observer Quickstart (Tier-1 archival screening; non-committal).}
+%\begin{quote}
 \small
 \begin{tenumerate}
 \item [] \textbf{Step 1 (screen first):} \\
 Apply Screens A--D and document any missing observables.
 \item [] \textbf{Step 2 (Hook 1, spectral):} \\
-Perform the model comparison specified in Table~\ref{tab:hook-spec} and report the preference metric.
+Perform the model comparison specified in Table~1 and report the preference metric.
 \item [] \textbf{Step 3 (Hook 2, timing):} \\
 Compute the lag diagnostic and report the criterion specified in Table~\ref{tab:hook-spec}.
 \item [] \textbf{Step 4 (Hook 3, polarization):} \\
 Test the EVPA alignment criterion specified in Table~\ref{tab:hook-spec}.
-\item [] \textbf{Step 5 (decision):} \\
-Tier-1 passes motivate Tier-2 follow-up; persistent null results in vetted samples contribute directly to falsification.
+\item [] \textbf{Step 5 (Tier-1 archival test):} \\
+If the screened archival set recovers the joint-hook pattern in more than one source, the Tier-1 existence-style claim is supported and Tier-2 follow-up is motivated.\\
+If zero or one such source remains, the claim is not established.\\
+If screened or decidable coverage is too limited, the archival result is treated as inconclusive and carried forward to Tier-2 where appropriate.
 \end{tenumerate}
-\end{quote}
+%\end{quote}
 
-\noindent\textbf{Falsification (explicit criterion).}\\
-Under Screens A--D, the absence of two or more hooks in vetted high-spin/high-$\lambda$ samples falsifies the SSPE contribution; otherwise the source passes the Tier-1 screen.
+\paragraph{Tier-1 archival test (screened-domain existence criterion).}
+Under Screens A--D, Tier-1 asks whether the SSPE-like joint-hook pattern is recovered in more than one screened source within the vetted high-spin/high-$\lambda$ archival set.
 
+If so, the existence-style claim is supported at Tier-1.
+
+If zero or one such source remains, the claim is not established.
+
+If screened or decidable coverage is too limited, the archival result is treated as inconclusive rather than supportive.
 
 \paragraph{Degeneracy control via joint coherence.}
 Each hook may admit degeneracies in isolation (e.g., complex coronal geometry or slim-disk radiative transfer can mimic shoulder-like curvature, and propagation/reverberation effects can shape energy-dependent lags).
 
-SSPE therefore targets \emph{joint observational coherence}:
-\\after applying Screens~A--D, the model is evaluated by the co-occurrence of Hooks~1--3 within the same source/epoch, with quantitative model selection (e.g., $\ICmetric\!\ge\!\ICcrit$) applied where a competing spectral/timing description exists.
+SSPE therefore does not rely on any single signature in isolation; after applying Screens A--D, Tier-1 evaluates whether Hooks 1--3 jointly recover the expected pattern within the same source/epoch, with within-object model comparison (e.g., $\Delta$BIC ($\Delta$AICc optional) $\ge 6$) applied where a competing spectral/timing description exists.
 
+\clearpage
 
-\noindent{\it Minimal discrimination argument.} 
-While each hook admits plausible degeneracies in isolation, reproducing the \emph{same-epoch} co-occurrence of
-(i) a statistically preferred hard-X/MeV shoulder, 
-(ii) a monotone hard-lag spectrum with $d\tau/d\log E>0$, and 
-(iii) a hard-component EVPA preferentially aligned with the disk plane,
-\emph{within} the screened high-$a_\ast$, high-$\lambda$ subset typically requires fine-tuned coronal geometry and scattering configurations.
-SSPE therefore does not claim uniqueness of any single signature; it targets low-cost rejection (or survival) via joint coherence.
+\paragraph{\it Minimal discrimination argument.} 
+While each hook admits plausible degeneracies in isolation, reproducing the same-epoch co-occurrence of \\
+(i) a statistically preferred hard-X/MeV shoulder,\\ 
+(ii) a monotone hard-lag spectrum with $d\tau/d\log E > 0$, and 
+(iii) a hard-component EVPA preferentially aligned with the disk plane within the screened high-$a_\ast$, high-$\lambda$ subset typically requires fine-tuned coronal geometry and scattering configurations.
 
+SSPE therefore does not claim uniqueness of any single signature; instead, it targets low-cost discriminability through joint observational coherence.
 
-This design intentionally shifts the burden from microphysical closure to low-cost, falsifiable multi-observable consistency.
+This design intentionally shifts the burden from microphysical closure to low-cost, operationally testable multi-observable consistency.
 
-\noindent\textbf{Single source of truth.} We treat Table~\ref{tab:hook-spec} as the authoritative Tier-1 specification.
+\smallbreak
+
+\phead{Single source of truth.} We treat Table~\ref{tab:hook-spec} as the authoritative Tier-1 specification.
 
 \begin{deluxetable*}{llccc}
 \tablecaption{Operational hook specification\label{tab:hook-spec}}
@@ -756,13 +759,15 @@ Hook 2 & Lag hardening & lag--energy slope & \mccell{$\tau(E)$ relative to $E_{\
 Hook 3 & Equatorial polarization & 2--10 keV & EVPA $\parallel$ disk (equatorial plane) & jet contamination\\
 \enddata
 \tablecomments{
-After applying Screens~A--D, each hook may have degeneracies in isolation; SSPE is evaluated by joint coherence across Hooks~1--3. We adopt $\ICmetric \ge \ICcrit$ as a pragmatic strong-evidence decision threshold (with $\AICcmetric \ge \ICcrit$ as a secondary check) following common usage in model selection (e.g., \citealt{KassRaftery1995}; \citealt{BurnhamAnderson2002}); Failure to recover $\ge 2$ \emph{decidable} hooks contributes to the population-level falsification tally; see Appendix~\ref{app:protocol}, Eqs.~(\ref{eq:PF1}--\ref{eq:PF2}).
+After applying Screens~A--D, each hook may retain degeneracies in isolation; SSPE is therefore evaluated by joint coherence across Hooks~1--3.\\
+For Hook 1, We adopt $\ICmetric \ge \ICcrit$ as a pragmatic strong-evidence threshold for within-object model discrimination (with $\AICcmetric \ge \ICcrit$ as a secondary check) following common usage in model selection.\\
+Appendix~\ref{app:protocol} does not perform population inference; instead, it defines a screened-domain existence-style criterion based on whether the SSPE-like joint-hook pattern is recovered in more than one source after screening.
 \\[1ex]
-Screen~D acts as an observability gate \textbf{(screened $\neq$ failed)}: sources outside the transparency domain are excluded from the current archival Tier-1 falsification tally due to instrumental sensitivity limits, but remain primary targets for future MeV-regime Tier-2 tests.
+Screen~D acts as an observability gate \textbf{(screened $\neq$ failed)}: sources outside the transparency domain are excluded from the current archival Tier-1 existence bookkeeping due to instrumental sensitivity limits, but remain primary targets for future MeV-regime Tier-2 tests.
 \\[1ex]
-Table~\ref{tab:hook-spec} defines per-hook adjudication (pass/fail/missing), while Appendix~A defines the object-level tally and the population-level trigger (Eqs.~\ref{eq:PF1}--\ref{eq:PF2}).
+Table~\ref{tab:hook-spec} defines per-hook adjudication (pass/fail/missing), while Appendix~\ref{app:protocol} defines the object-level bookkeeping and the screened-domain existence criterion.
 }
-\tablenotetext{a}{An \emph{epoch} is operationally defined in Appendix~\ref{app:protocol}.}
+\tablenotetext{a}{An \emph{epoch} denotes a contiguous analysis interval within which the source state is treated as approximately stationary for lag--energy estimation; the exact operational definition is given in Appendix~\ref{app:protocol}.}
 \tablenotetext{b}{Here “monotone” means $\tau(E)$ is non-decreasing across the adopted energy bins within the quoted uncertainties (i.e., no statistically significant reversals).}
 \end{deluxetable*}
 
@@ -1083,29 +1088,31 @@ This see-saw test is a cross-check on the power partition, not an additional hoo
 
 
 \FloatBarrier
-\pheadl{ph:primary-falsifier}{Primary falsifier (population-level).}SSPE is refuted if at least $N_{\min}$ \emph{independent objects that survive all Screens~A--D}(i.e., the vetted sample) yield \emph{decidable} joint-hook outcomes, and more than a fraction $f_{\rm fail}$ of those objects fail to recover $\ge 2$ hooks \emph{within the same epoch}.
+\pheadl{ph:primary-falsifier}{Primary (Tier-1) criterion (screened-domain existence style).}Tier-1 does not perform population inference.\\
+Instead, after applying Screens A--D, it asks whether the SSPE-like joint-hook pattern is recovered in more than one screened source in the archival sample.\\
+If two or more screened sources satisfy the joint-hook pass condition, the existence-style claim is established at Tier-1.\\
+If \emph{zero or one} such source remains, the existence-style claim is not established.\\
+If the number of screened or decidable cases is too small, or if missing outcomes dominate because of data limitations, the archival Tier-1 result is treated as inconclusive rather than negative.\\
+We define an object as decidable for Tier-1 bookkeeping if and only if at least two hooks yield non-missing outcomes (pass/fail) within the chosen representative epoch.
 
-We define an object as \emph{decidable} for the joint-hook rule if and only if at least two hooks yield non-missing outcomes (pass/fail) within the chosen representative epoch.
+Each object is counted once (using a single representative epoch per object to avoid double-counting), and missing outcomes are excluded by construction from decidable Tier-1 bookkeeping.
 
-Here each object is counted once (choose a single representative epoch per object to avoid double-counting), and ``fail'' counts only decidable hook outcomes (\emph{missing excluded by construction}).
+\pheadl{ph:operation-protocol}{Operational criterion.} The executable screened-domain existence criterion is defined in Appendix~\ref{app:protocol} and is the rule used for Tier-1 bookkeeping in this work.
 
-We adopt $N_{\min}=10$ and $f_{\rm fail}=0.5$ as pragmatic defaults; alternative choices can be reported as sensitivity checks.
-
-Here $N_{\min}$ refers to the subset that survives all Screens~A--D(i.e., objects for which the hooks are testable under the transparency/absorption/inclination gates).
-
-\noindent\emph{Operational trigger.—} The executable Tier-1 population decision is defined in Appendix~\ref{app:protocol} (Eqs.~\ref{eq:PF1}--\ref{eq:PF2}) and is the rule used for all Tier-1 bookkeeping in this work.
-
+Here Tier-1 denotes the executable archival-screening and bookkeeping layer used in this work, whereas Tier-2 denotes non-decisive follow-up considerations requiring future targeted observations or improved sensitivity.
 
 \smallskip
-\phead{Additional falsifiers (secondary).---}Beyond the primary decision rule (Sec.~\ref{sec:obs}), the following are \emph{supporting} population-level patterns that, while individually non-decisive and potentially confounded, would further disfavor a non-zero equatorial fraction $f_{\rm eq}$:
+\pheadl{ph:Tier-2}{Secondary (Tier-2) supporting patterns(non-decisive).}The following patterns are not part of the executable Tier-1 criterion and are not used for Tier-1 bookkeeping.
+
+They are included only as secondary contextual considerations for future Tier-2 tests and broader interpretation.
+
+Beyond the primary Tier-1 criterion, the following patterns, while individually non-decisive and potentially confounded, would further weaken the case for a non-zero equatorial fraction $f_{\rm eq}$:
 
 \begin{enumerate}
 \item Systematic absence of the Hard-X/MeV shoulder (20--120~keV, obs) \emph{and} systematically weak high-ionization lines (pass if their equivalent widths are $\ge 2\sigma$ below the control-sample mean, where $\sigma$ is the rms scatter of the matched control sample).
 \item Reverberation lags from X$\rightarrow$UV showing no energy dependence (no inward reheating signature).
-\item $L_{\rm bol}$ not anti-correlated (even weakly) with $a_\ast$ within matched $(\MBH,\lambda)$ bins for the bright subset, after screening for extreme inclination/obscuration (Screens~B--C) (no self-regulated spin-down imprint).\\(Residual inclination-dependent scatter is treated as noise and assessed via sensitivity to reasonable alternative bin definitions.)
-\item Optical/X-ray polarization failing to favor equatorial angles or degrees when near-threshold spins are inferred.
 \end{enumerate}
-If \emph{two or more} items above hold simultaneously for the same high-spin, high-$\lambda$ subset, we would consider $f_{\rm eq}\!\to\!0$ supported and this mechanism unnecessary.
+If \emph{two or more} items above hold simultaneously for the same high-spin, high-$\lambda$ subset, would strengthen the case for $f_{\rm eq}\!\to\!0$ and reduce the motivation for invoking this mechanism in that subset.
 
 \section{Conclusion}\label{sec:conclusion}
 Self-sustained Penrose excitation near extremal Kerr SMBHs can inject rotational energy into the accretion disk, yielding sustained $2$--$3\times$ Eddington with rarer $5$--$10\times$ episodes while enforcing a spin ceiling.
@@ -1148,41 +1155,57 @@ If this criterion is not met, the hook is treated as \emph{missing} for that epo
 
 \clearpage
 
-\phead{Counts and units (Tier-1).—}
+\phead{Counts and units (Tier-1).}
 All population-level tallies are at the \emph{object} level unless stated otherwise.
 \begin{quote}
 $N_{\rm total}$: number of \emph{objects} in the vetted sample.\\
 \noindent\emph{Vetted sample.—} In Tier-1, $N_{\rm total}$ counts objects that pass Screens~A--D; objects screened out by any screen (including Screen~D) are not included in $N_{\rm total}$.\\
 $N_{\rm miss}$: number of \emph{objects} for which the joint-hook rule is non-decidable (fewer than two adjudicable hook outcomes under Table~\ref{tab:hook-spec}).\\
 $N_{\rm eff}\equiv N_{\rm total}-N_{\rm miss}$: effective number of \emph{objects} entering the Tier-1 population test.\\
+$N_{\rm pass}$: number of \emph{objects} in the effective sample that satisfy the joint-hook requirement.\\
 $N_{\rm fail}$: number of \emph{objects} that fail the joint-hook requirement among the effective sample.\\
-$f_{\rm fail}\equiv N_{\rm fail}/N_{\rm eff}$.
+%$f_{\rm fail}\equiv N_{\rm fail}/N_{\rm eff}$.
 \end{quote}
 
-%\phead{Population-level falsification (Tier-1).} For Tier-1 we adopt a one-sided significance level of $\alpha = 0.05$.
-%Any ($N_{\min}, f_{\rm fail}$) phrasing elsewhere is a heuristic summary for a given ($N_{\rm eff}, \alpha$) .
 
-\phead{Single source of truth (Tier-1).—}  For Tier-1 we adopt a one-sided significance level of $\alpha = 0.05$; Eqs.~(\ref{eq:PF1}--\ref{eq:PF2}) define the operational population-level trigger; any $(N_{\min}, f_{\rm fail})$ phrasing elsewhere is a heuristic summary for a given $(N_{\rm eff},\alpha)$.
+\phead{Single source of truth (Tier-1).}
+Tier-1 is an existence-style gate within the screened domain, not a population-inference test.
 
-\noindent Falsification is triggered when
-\begin{equation}\label{eq:PF1}
-N_{\rm fail}\ \ge\ N_{\rm crit}(N_{\rm eff},\alpha),
+%Let $N_{\rm eff} \equiv N_{\rm total}-N_{\rm miss}$ be the effective number of objects entering Tier-1 adjudication, and let $N_{\rm pass}$ be the number of objects that satisfy the joint-hook requirement among that effective sample.
+
+\begin{equation}
+N_{\rm pass} \ge 2 ,
+\label{eq:tier1-existence}
 \end{equation}
-where $N_{\rm crit}$ is the smallest integer satisfying the one-sided condition
-\begin{equation}\label{eq:PF2}
-P\!\left(X \ge N_{\rm crit}\ \middle|\ X\sim{\rm Binom}(N_{\rm eff},p_0{=}0.5)\right)\ \le\ \alpha.
-\end{equation}
-Missing sources are excluded from the denominator when computing the population-level failure rate, i.e., $N_{\rm eff}\equiv N_{\rm total}-N_{\rm miss}$.
+
+\noindent
+establishes the existence-style claim advanced in this work, namely that the SSPE-like joint-hook pattern occurs in more than a single isolated object within the screened domain.
+
+If $N_{\rm pass}\le 1$ after applying the pre-registered screens and bookkeeping, the existence-style claim is not established.
+
+If the available sample is too small or too incomplete for a meaningful Tier-1 adjudication, the result is treated as inconclusive rather than supportive.
+
+If the effective non-missing sample $N_{\rm eff}$ is too small for meaningful Tier-1 adjudication, the result is treated as inconclusive rather than supportive.
+
+%\noindent Falsification is triggered when
+%\begin{equation}\label{eq:PF1}
+%N_{\rm fail}\ \ge\ N_{\rm crit}(N_{\rm eff},\alpha),
+%\end{equation}
+%#where $N_{\rm crit}$ is the smallest integer satisfying the one-sided condition
+%\begin{equation}\label{eq:PF2}
+%P\!\left(X \ge N_{\rm crit}\ \middle|\ X\sim{\rm Binom}(N_{\rm eff},p_0{=}0.5)\right)\ \le\ \alpha.
+%\end{equation}
+%Missing sources are excluded from the denominator when computing the population-level failure rate, i.e., $N_{\rm eff}\equiv N_{\rm total}-N_{\rm miss}$.
 
 \phead{Note (data quality).}
-If a Tier-1 hook cannot be adjudicated as pass/fail at useful S/N under the fixed floors in Table~\ref{tab:hook-spec} (given the stated uncertainties/limits), its outcome is treated as missing by construction (not failed) and is excluded from the population-level falsification tally (i.e., it does not count as a failure).
+If a Tier-1 hook cannot be adjudicated as pass/fail at useful S/N under the fixed floors in Table~\ref{tab:hook-spec} (given the stated uncertainties/limits), its outcome is treated as \emph{missing} by construction (not failed) and is excluded from the Tier-1 bookkeeping.
 
-If the lag–energy slope is measurable under the fixed floors and is consistent with zero or negative, Hook 2 is counted as failed, not missing.
+If the lag-energy slope is measurable under the fixed floors and is consistent with zero or negative, Hook~2 is counted as failed, not missing.
 
-Hook 2 is treated as missing only when the data quality is insufficient to adjudicate the slope/monotonicity at the adopted floors.
+Hook~2 is treated as missing only when the data quality is insufficient to adjudicate the slope/monotonicity at the adopted floors.
 
-\phead{Decision (Tier-1 bookkeeping).}
-The Tier-1 pass/fail tally is evaluated using the population-level decision rule; see Appendix~\ref{app:protocol}, Eqs.~(\ref{eq:PF1}--\ref{eq:PF2}).
+\noindent\textbf{Decision (Tier-1 bookkeeping).}—
+Tier-1 adjudication is evaluated using the screened-domain existence criterion together with the missing/fail bookkeeping defined above; see Appendix~\ref{app:protocol}.
 
 
 \bigskip
