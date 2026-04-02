@@ -754,21 +754,17 @@ This design intentionally shifts the burden from microphysical closure to low-co
 \tableline
 Hook 1 & Hard X/MeV shoulder & 20--120 keV & $\ICmetric \ge \ICcrit$ & model degeneracy\\
 \tableline
-Hook 2 & Lag hardening & lag--energy slope & \mccell{$\tau(E)$ relative to $E_{\rm ref}=2$--4~keV \\rest-frame; use $(E_{\rm ref}/(1+z))$\\in observed frame where feasible\\ define $\tau>0$ for lags; \\ pass if $d\tau/d\log E>0$ \\ and monotone\tablenotemark{b} within an epoch\tablenotemark{a}.} & dilution\\
+Hook 2 & Lag hardening & lag--energy relation & \mccell{with $\tau>0$ defined as a lag;\\pass if $d\tau/d\log E>0$ and \\ monotonic\tablenotemark{b} \\ within an epoch\tablenotemark{a}.} & dilution\\
 \tableline
-Hook 3 & Equatorial polarization & 2--10 keV & EVPA $\parallel$ disk (equatorial plane) & jet contamination\\
+Hook 3 & \mccell{Equator-aligned\\X-ray polarization} & 2--10 keV hard component & \mccell{hard--component EVPA $\parallel$ \\ disk (equatorial plane)} & jet contamination \\
 \enddata
 \tablecomments{
-After applying Screens~A--D, each hook may retain degeneracies in isolation; SSPE is therefore evaluated by joint coherence across Hooks~1--3.\\
-For Hook 1, We adopt $\ICmetric \ge \ICcrit$ as a pragmatic strong-evidence threshold for within-object model discrimination (with $\AICcmetric \ge \ICcrit$ as a secondary check) following common usage in model selection.\\
-Appendix~\ref{app:protocol} does not perform population inference; instead, it defines a screened-domain existence-style criterion based on whether the SSPE-like joint-hook pattern is recovered in more than one source after screening.
-\\[1ex]
-Screen~D acts as an observability gate \textbf{(screened $\neq$ failed)}: sources outside the transparency domain are excluded from the current archival Tier-1 existence bookkeeping due to instrumental sensitivity limits, but remain primary targets for future MeV-regime Tier-2 tests.
-\\[1ex]
-Table~\ref{tab:hook-spec} defines per-hook adjudication (pass/fail/missing), while Appendix~\ref{app:protocol} defines the object-level bookkeeping and the screened-domain existence criterion.
+After applying Screens A--D, individual hooks may still retain residual degeneracies; SSPE is therefore evaluated by joint coherence across Hooks 1--3.\\
+Screen~D acts as an observability gate \textbf{(screened $\neq$ failed)}: sources outside the transparency domain are excluded rather than counted as failures.\\
+Table~\ref{tab:hook-spec} defines per-hook adjudication only, while Appendix~\ref{app:protocol} defines the object-level bookkeeping and the screened-domain existence criterion.\\
 }
 \tablenotetext{a}{An \emph{epoch} denotes a contiguous analysis interval within which the source state is treated as approximately stationary for lag--energy estimation; the exact operational definition is given in Appendix~\ref{app:protocol}.}
-\tablenotetext{b}{Here “monotone” means $\tau(E)$ is non-decreasing across the adopted energy bins within the quoted uncertainties (i.e., no statistically significant reversals).}
+\tablenotetext{b}{Here “monotonic” means $\tau(E)$ is non-decreasing across the adopted energy bins within the quoted uncertainties (i.e., no statistically significant reversals).}
 \end{deluxetable*}
 
 \FloatBarrier
@@ -795,10 +791,10 @@ When the ISCO approaches the ergoregion and the inner flow becomes thick and str
 This plausibly supports mildly to strongly super-Eddington luminosities while enforcing an effective ``spin ceiling'' 
 $a_\ast\!\lesssim\!0.97$--$0.99$ for systems that lack a powerful jet. 
 
-BZ and SSPE then form a see-saw: polar extraction dominates in MAD, radio-loud states, 
-while equatorial extraction dominates in high-$\lambda$, radio-quiet states. 
+BZ and SSPE then form a see-saw: polar extraction tends to dominate MAD, radio-loud states, 
+while equatorial extraction is expected to become more prominent in high-$\lambda$, radio-quiet states. 
 
-The observational hooks and falsification criterion in Sec.~\ref{sec:obs} are designed precisely to test this equatorial channel.
+The observational hooks and the screened-domain Tier-1 criterion in Sec.~\ref{sec:obs} are designed precisely to assess this equatorial channel.
 
 \noindent
 In what follows, we use the shorthand ``see-saw'' to denote an anti-correlated power partition between the polar and equatorial channels, i.e., $P_{\rm BZ}$ increasing as $P_{\rm eq}$ decreases, at fixed $P_{\rm ext}$ (and fixed/small $f_{\rm oth}$).
@@ -812,7 +808,7 @@ Taken in isolation, each observational tension motivating SSPE admits a plausibl
 
 The core claim here is \emph{not} that such explanations are impossible, but that their repeated co-occurrence in the same high-spin, high-$\lambda$, often radio-quiet subset makes a single shared inner-disk heating channel a lower-complexity hypothesis.
 
-SSPE is offered as such a channel in a form that can be rejected decisively: after applying the Screens A--D, the high-spin/high-$\lambda$ subset should recover at least two of the three hooks (Sec.~\ref{sec:obs}); systematic failure would support $f_{\rm eq}\!\to\!0$ and render SSPE unnecessary.
+SSPE is offered as such a channel in a form that can be operationally assessed within the screened domain: after applying Screens~A--D, the question is whether the joint-hook pattern defined in Sec.~\ref{sec:obs} emerges reproducibly in more than one source, rather than as a one-off anomaly.
 
 These bounds align with Fig.~\ref{fig:param-a}--\ref{fig:param-b} and are sufficient to reach $L/\LEdd\sim2$--$3$ with rarer $5$--$10\times$ excursions.
 
@@ -894,11 +890,11 @@ f_{\rm BZ} + f_{\rm eq} + f_{\rm oth} = 1. \label{eq:ffrac}
 
 \noindent Here $P_{\rm oth}$ collects channels not modeled in detail (e.g., pair-thick radiative outflows, advection, or dissipation that does not contribute to the equatorial quasi-beam).
 
-In the present work we focus on screened, radio-quiet high-spin/high-$\lambda$ systems where the hook-based program is designed to be most discriminating; a large $f_{\rm oth}$ is expected to weaken the spectral--timing--polarimetric hooks and can be treated as part of the screening/falsification logic.
+In the present work we focus on screened, radio-quiet high-spin/high-$\lambda$ systems where the hook-based program is designed to be most discriminating; a large $f_{\rm oth}$ is expected to weaken the spectral--timing--polarimetric hooks and can be treated within the screening and Tier-1 adjudication logic.
 
-If independent evidence suggests that $f_{\rm oth}$ is not small or is rapidly variable, the see-saw diagnostic is treated as non-decidable for that object/epoch and is not used as a falsifier.
+If independent evidence suggests that $f_{\rm oth}$ is not small or is rapidly variable, the see-saw diagnostic is treated as non-decidable for that object/epoch and is not used in the primary Tier-1 decision.
 
-Importantly, $f_{\rm oth}$ does not modify the Tier-1 decision logic: for screened, vetted objects with decidable joint-hook outcomes, an object’s failure to recover $\ge 2$ \emph{decidable} hooks refutes SSPE, independent of how the extracted power is partitioned into residual channels ($P_{\rm oth}$).
+Importantly, $f_{\rm oth}$ does not modify the Tier-1 decision logic: for screened, vetted objects with decidable joint-hook outcomes, failure to recover the required joint-hook pattern prevents that object from supporting the Tier-1 existence case, independent of how the extracted power is partitioned into residual channels ($P_{\rm oth}$).
 
 A practical implication is that SSPE can affect systems that appear, by their large-scale phenomenology, to be BZ-favorable.
 
@@ -910,30 +906,30 @@ Within SSPE, the same bookkeeping that permits strong jet power also permits int
 
 This is not an attempt to fit any single source; rather, it motivates a concrete null test: in jet-dominated quasars exhibiting anomalously large continuum sizes or overheated outer disks, the absence of \emph{both} hard-component hooks (Hook~1/2) \emph{and} disk-parallel hard-X polarization (Hook~3), after controlling for absorption and compactness screening, would disfavor equatorial feedback as the common cause.
 
-This partition predicts an anti-correlation between radio-jet dominance and equatorial reheating diagnostics within the high-$a_\ast$, high-$\lambda$ subset, with hybrid states possible in transient MAD phases.
+This picture motivates looking for an anti-correlation between radio-jet dominance and equatorial reheating diagnostics within the high-$a_*$, high-$\lambda$ subset, with hybrid states possible in transient MAD phases.
 
-Our claim is modest: in the high-spin, high-Eddington subset, $f_{\rm eq}$ is statistically non-zero and sometimes dominant; in others, $f_{\rm BZ}$ may prevail. Outside this subset we make no claim.
+Our claim is modest: in the high-spin, high-Eddington subset, a non-zero equatorial contribution may at times be important or even dominant; in others, $f_{\rm BZ}$ may prevail. Outside this subset we make no claim.
 
 \paragraph{Thin-disk tensions and coexisting channels.}
 Independent of the SSPE hypothesis, multiple lines of evidence have highlighted persistent tensions between thin-disk expectations and observations, including continuum-emitting sizes inferred from quasar microlensing and wavelength-dependent continuum lags that exceed simple reprocessing predictions (e.g., \citealt{Morgan2010,Li2019}; see also the review by \citealt{Cackett2021RM} and the corona--disk coupling model of \citealt{Sun2020CHAR}).
 
 Here $P_{\rm ext}$ denotes the net extractable power available outside the horizon; Eqs.~(12)--(14) describe its internal bookkeeping, while the relation $P_{\rm ext}=P_{\rm BZ}+P_{\rm eq}$ is a coarse-grained \emph{channel} partition (polar vs.\ equatorial) used only for the see-saw discussion.
 
-Rather than forcing a single channel, our framework allows a \emph{coexisting} partition of magnetospheric power between a polar BZ-like outflow and an equatorial channel,
+Rather than forcing a single channel, our framework allows a \emph{coexisting} phenomenological partition of magnetospheric power between a polar BZ-like outflow and an equatorial channel,
 
-$P_{\rm ext}\approx P_{\rm BZ}+P_{\rm eq}$ (or $f_{\rm BZ}+f_{\rm eq}\approx 1$),
-and treats the partition as an empirical question to be decided by joint observables.
+with $P_{\rm ext}\sim P_{\rm BZ}+P_{\rm eq}$ (or $f_{\rm BZ}+f_{\rm eq}\sim 1$) as a coarse-grained bookkeeping limit when $P_{\rm oth}$ is small.
 
 For the see-saw discussion we often consider an effective two-channel view (polar vs.\ equatorial) at approximately fixed/small $f_{\rm oth}$, while the full bookkeeping remains Eqs.~(12)--(14).
 
 This motivates testing whether jet proxies (e.g., radio loudness) covary with disk-size/lag excess and with the equatorial-hook suite (Hooks~1--3), providing an observational handle on the proposed see-saw.
 
 \phead{Testable prediction (radio--X joint anti-correlation).}
-If the outgoing power partition obeys a see-saw relation ($f_{\rm BZ}+f_{\rm eq}\simeq 1$ at fixed $\dot{M}$ and spin), then a population selected by Screens~A--D should exhibit an anti-correlation between a jet proxy and an equatorial SSPE proxy.
+If the outgoing power partition approximately follows a see-saw relation ($f_{\rm BZ}+f_{\rm eq}\simeq 1$ at fixed $\dot{M}$ and spin), one may look for an anti-correlation between a jet proxy and an equatorial SSPE proxy within samples screened by Screens~A--D.
 
-Operationally, we propose comparing radio loudness (or core radio luminosity at fixed mass and $\lambda$) against the shoulder metric ($\ICmetric$) and/or the Hook~2 timing slope within matched bins of $(M,a_\ast,\lambda)$.
+Operationally, we propose comparing radio loudness (or core radio luminosity at fixed mass and $\lambda$) against the shoulder metric ($\ICmetric$) and/or the Hook~2 timing slope within matched bins of $(M,a_*,\lambda)$.
 
-The minimal falsifiable statement is the sign: after matching, the rank correlation should be negative ($\rho_S<0$) with a significance $p<0.01$. (BZ-strong sources tend to be SSPE-weak, and vice versa).
+A minimal operational statement concerns the sign: after matching, the rank correlation is expected to be negative ($\rho_S<0$) with significance $p<0.01$, if the proposed see-saw trend is present.
+
 
 \subsection{Degeneracy with disk--corona phenomenology and how the protocol breaks it}\label{sec:degeneracy}
 Disk–corona phenomenology can mimic individual hooks; our goal is to break degeneracy at the protocol level rather than by adjudicating microphysics.
@@ -958,9 +954,10 @@ A purely geometric multi-layer corona can reproduce individual observables, but 
 
 We therefore treat spin-linked scaling (e.g., via reflection/Fe K diagnostics; Fig.~\ref{fig:fig_appendix}) as a Tier-2 discriminator; see the Tier-1/Tier-2 decision workflow in Sec.~\ref{sec:obs} and the Tier-2 timing extensions summarized in Table~\ref{tab:roadmap}.
 
-Section~\ref{sec:quasibeam} discusses a speculative direct-leakage scenario; it is not required for the core protocol or falsification logic.
+Section~\ref{sec:quasibeam} discusses a speculative direct-leakage scenario; it is not required for the core protocol or Tier-1 adjudication logic.
 
 \subsection{Rare direct quasi-beam events as ergoregion probes}\label{sec:quasibeam}
+
 \noindent We stress that the following subsection is explicitly speculative and \emph{not} required for the core SSPE framework: the primary observational program remains the hook-based spectral--timing--polarimetric tests in Sec.~\ref{sec:obs}.
 
 \noindent\textem{Normal outcome: reprocessing into Hooks~1/2.}
@@ -972,8 +969,7 @@ Most of the time this energy is promptly reprocessed into the hard X/MeV shoulde
 
 These reprocessed components constitute the primary hooks discussed in Sec.~\ref{sec:obs}.
 
-This speculative leakage scenario is not required for the protocol and does not affect the falsification logic in Table~\ref{tab:roadmap} (decision bookkeeping).
-
+This speculative leakage scenario is not required for the protocol and does not affect the Tier-1 decision bookkeeping summarized in Table~\ref{tab:roadmap}.
 
 \medskip
 \noindent\textem{Rare outcome: partial beam leakage.}
@@ -1017,11 +1013,9 @@ We stress that these are \emph{suggestive} classes, not firm identifications: de
 \noindent\textem{Relationship to the main hooks.}
 From the perspective of this Paper, rare direct quasi-beam events are not an additional mandatory hook but a high-risk, high-reward extension.
 
-The primary falsifiable content of the SSPE framework remains the \emph{co-occurrence} of Hooks~1--3 under the screening criteria of Sec.~\ref{sec:obs}. 
+The primary observational claim of the SSPE framework remains the \emph{co-occurrence} of Hooks~1--3 under the screening criteria of Sec.~\ref{sec:obs}.
 
-A confirmed direct quasi-beam event would instead provide an exceptionally clean window into the ergoregion dynamics, 
-
-placing much sharper constraints on the microphysics of the coupling than our phenomenological treatment assumes.
+A confirmed direct quasi-beam event would instead provide an exceptionally clean window into the ergoregion dynamics, placing much sharper constraints on the coupling microphysics than the present phenomenological treatment attempts to specify.
 
 \cleardoublepage
 \begin{samepage}
@@ -1187,15 +1181,6 @@ If the available sample is too small or too incomplete for a meaningful Tier-1 a
 
 If the effective non-missing sample $N_{\rm eff}$ is too small for meaningful Tier-1 adjudication, the result is treated as inconclusive rather than supportive.
 
-%\noindent Falsification is triggered when
-%\begin{equation}\label{eq:PF1}
-%N_{\rm fail}\ \ge\ N_{\rm crit}(N_{\rm eff},\alpha),
-%\end{equation}
-%#where $N_{\rm crit}$ is the smallest integer satisfying the one-sided condition
-%\begin{equation}\label{eq:PF2}
-%P\!\left(X \ge N_{\rm crit}\ \middle|\ X\sim{\rm Binom}(N_{\rm eff},p_0{=}0.5)\right)\ \le\ \alpha.
-%\end{equation}
-%Missing sources are excluded from the denominator when computing the population-level failure rate, i.e., $N_{\rm eff}\equiv N_{\rm total}-N_{\rm miss}$.
 
 \phead{Note (data quality).}
 If a Tier-1 hook cannot be adjudicated as pass/fail at useful S/N under the fixed floors in Table~\ref{tab:hook-spec} (given the stated uncertainties/limits), its outcome is treated as \emph{missing} by construction (not failed) and is excluded from the Tier-1 bookkeeping.
