@@ -107,10 +107,15 @@ def build_figure(n_plasmoids: int = 7,
 
     # positive-energy branch → 右（実線・赤）
     pos_starts = [0.55, 1.35, 2.15, 2.95]
-    for x0 in pos_starts:
-        ax.add_patch(FancyArrowPatch((x0, y_pos), (x0 + 1.02, y_pos),
-                                     arrowstyle="->", mutation_scale=9,
-                                     lw=1.6, color=COL["pos"], zorder=4))
+    #for x0 in pos_starts:
+    #    ax.add_patch(FancyArrowPatch((x0, y_pos), (x0 + 1.02, y_pos),
+    #                                 arrowstyle="->", mutation_scale=9,
+    #                                 lw=1.6, color=COL["pos"], zorder=4))
+    pos_ys = [y_pos - 0.05, y_pos - 0.015, y_pos + 0.015, y_pos + 0.05]
+    for x0, yy in zip(pos_starts, pos_ys):
+        ax.add_patch(FancyArrowPatch((x0, yy), (x0 + 1.02, yy + 0.10*(x0/3.0)),
+                                    arrowstyle="->", mutation_scale=9,
+                                    lw=1.5, color=COL["pos"], zorder=4))
     # negative-energy branch → 左（破線・青）
     for x0 in [-0.55, -1.35, -2.15, -2.95]:
         ax.add_patch(FancyArrowPatch((x0, y_neg), (x0 - 1.02, y_neg),
@@ -134,13 +139,13 @@ def build_figure(n_plasmoids: int = 7,
                                 connectionstyle="arc3,rad=-0.15"),
                 fontsize=FS, color=COL["neg"], bbox=bbox)
 
-    ax.annotate(r'positive-energy branch $\rightarrow$ equatorial quasi-beam (equatorially concentrated outflow)',
-                xy=(2.95 + 0.9, y_pos), xycoords='data',
+    ax.annotate(r'positive-energy branch $\rightarrow$ equatorial outflow component'
+                '\n(quasi-beam / schematic)',
+                xy=(0.45 + 0.9, y_pos), xycoords='data',
                 xytext=(3.55, 1.30), textcoords='data',
                 arrowprops=dict(arrowstyle='->', lw=0.9, color=COL["pos"],
                                 connectionstyle="arc3,rad=0.18"),
                 fontsize=FS, color=COL["pos"], bbox=bbox)
-
     # --- back-flow/heating（曲線矢印：凡例には入れない）---
     ax.annotate('back-flow / heating (inner disk)',
                 xy=(4.35, 0.26), xytext=(3.05, 0.72),
@@ -162,7 +167,7 @@ def build_figure(n_plasmoids: int = 7,
             Line2D([0], [0], marker='o', mfc='none', mec=COL["plas"], lw=0,
                    label="plasmoid (magnetic island)"),
             Line2D([0], [0], lw=1.6, color=COL["pos"], ls='-',
-                   label="positive-energy branch (outward)"),
+                   label="positive-energy branch / equatorial outflow"),
             Line2D([0], [0], lw=1.8, color=COL["neg"], ls=(0, (6, 3)),
                    label="negative-energy branch (into BH)"),
         ]

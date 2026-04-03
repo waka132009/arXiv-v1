@@ -159,8 +159,8 @@ We provide an executable, screening-based observational protocol; operationally,
 (2) Lag hardening in energy-resolved X-ray timing, i.e., hard lags with $\tau(E)$ increasing with energy relative to a fixed soft reference band; and \\
 (3) Equator-aligned X-ray polarization of the hard component with a rising degree (with X-ray$\rightarrow$UV/optical reprocessing lags as a complementary Tier-2 check).
 
-The Tier-1 archival test is explicit: after screening for heavy absorption, extreme inclination, and high compactness, recovery of the joint-hook pattern in more than one source supports the existence-style claim, whereas zero or one such source leaves it not established
-
+The Tier-1 archival test is explicit: after screening for heavy absorption, extreme inclination, and high compactness, recovery of the joint-hook pattern in more than one source supports the existence-style claim, whereas zero or one such source leaves it not established.\\
+\\
 \noindent\textbf{Speculative note:} We also note that rare geometries may allow partial direct leakage of the quasi-beam, potentially producing fast-variability events (speculative; see Sec.~\ref{sec:quasibeam}).
 \end{abstract}
 
@@ -198,7 +198,7 @@ Taken in isolation, each of several long-running tensions can be accommodated by
 \end{titemize}
 However, the recurring appearance of these tensions \emph{in the same high-spin, high-$\lambda$ population} suggests that treating them as unrelated, probe-specific anomalies is an increasingly high-dimensional patchwork.
 
-This paper frames SSPE as a single \emph{equatorial inner-disk heating channel} that can be confronted with data across these disparate probes under a shared screening logic (compactness, absorption, inclination). 
+This paper frames SSPE as a single \emph{equatorial inner-disk heating / power-transfer channel} that can be confronted with data across these disparate probes under a shared screening logic (compactness, absorption, inclination). 
 
 The intent is not to declare uniqueness, but to provide a unifying, operationally testable target that invites coordinated scrutiny by the spectral--timing, microlensing/reverberation, and GRMHD/plasma communities.
 
@@ -234,10 +234,9 @@ We instead emphasize that near-extremal spin the boundaries themselves evolve: f
 In this coupled regime an equatorial current sheet is generically required by the global field topology; shear and flux loading drive plasmoid-dominated reconnection; and the resulting split redistributes $(E,L)$ so that a negative-energy branch is absorbed by the hole while a positive-energy branch vents as a narrow equatorial quasi-beam, part of which returns to heat the inner disk.
 
 \section{Theoretical Framework}\label{sec:theory}
-\tldr{Near-threshold Kerr coupling at the ISCO--ergoregion interface supplies disk heating while extracting spin, under a compactness gate $\ellhard$.}
+\tldr{Near-threshold Kerr coupling at the ISCO--ergoregion interface supplies disk heating while extracting spin its cleanest observable imprint is expected within a compactness-limited transparent window $\ellhard$.}
 
 \noindent All elements invoked below act outside the event horizon; the coupling operates in the ergoregion and deposits energy in the equatorial flow, avoiding assumptions about interior or singularity-scale physics.
-
 \noindent\textem{Abbreviations and references.}
 We use \emph{FFE} for the force-free, magnetically dominated limit ($\rho_e\mathbf{E}+\mathbf{J}\!\times\!\mathbf{B}\approx 0$, $\mathbf{J}\!\cdot\!\mathbf{E}=0$) and \emph{GRMHD} for ideal magnetohydrodynamics evolved on a Kerr background \citep{Komissarov2004MNRAS,GrallaJacobson2014MNRAS,EastYang2018PRD,Pan2018PRD}.
 We use \emph{PIC} for first-principles kinetic simulations that resolve reconnection and plasmoid formation in the ergoregion current sheet \citep{Parfrey2019PRL,Bransgrove2021}.
@@ -324,13 +323,18 @@ In this regime the requirement for SSPE is not a finely tuned nozzle, but simply
 
 
 \subsection{Mechanism sketch: a leaky equatorial return path}\label{sec:mech-sketch}
+More generally, the present framework does not require the equatorial channel to arise exclusively from a strict Penrose split.
+
+In a strongly frame-dragged inner flow, flyby-like energy--angular-momentum exchange may also populate equatorial outflow trajectories, without requiring commitment to a single microphysical realization.
+
+We therefore treat the equatorial channel in a mechanism-agnostic way and test for its observational footprint via the Tier-1 hooks rather than by adjudicating a unique launch mechanism.
+
 \phead{Terminology.}
 We refer to the power-budget component $P_{\rm eq}$ (fraction $f_{\rm eq}$) as the \emph{equatorial channel}.
 
-The transport agent of this channel is the \emph{equatorial quasi-beam}, i.e., an intermittently launched, equatorially concentrated positive-energy branch originating near the ISCO--ergoregion interface.
+The transport agent of this channel is modeled here as an equatorially concentrated outflow component (an ``equatorial quasi-beam'' in schematic shorthand), i.e., an intermittently launched positive-energy branch originating near the ISCO--ergoregion interface.
 
-%We use \emph{ergoregion} when referring to the physical condition for negative-energy states (Penrose splitting), and \emph{ergosphere}/\emph{ergosurface} when referring to the geometric region/boundary in Fig.~2.
-We use \emph{ergoregion} for the physical condition of negative-energy states (Penrose splitting), and \emph{ergosurface} for the geometric boundary (Fig.~\ref{fig:equatorial_trigger}). We avoid ‘ergosphere’ except as informal shorthand.
+We use \emph{ergoregion} for the physical condition of negative-energy states (Penrose splitting), and \emph{ergosurface} for the geometric boundary (Fig.~\ref{fig:equatorial_trigger}). We avoid 'ergosphere' except as informal shorthand.
 
 We use “Penrose process” in the strict Kerr sense of negative-energy states, and “Penrose-like coupling” as a phenomenological label for ergoregion-mediated energy transfer, capturing the essential energetics of the Penrose process while remaining agnostic.
 
@@ -346,17 +350,11 @@ Reconnection ejecta (plasmoids) in the ergoregion carry specific energy $E$ and 
 \footnote{Notation follows Fig.~\ref{fig:equatorial_trigger}.}
 \footnote{where $\OmegaH$ is the horizon angular velocity of a Kerr black hole.}
 
-Tension-driven redistribution during ejection changes $L$ by $\Delta L\!\sim\!\mathcal{O}(r_{\rm g}v_\phi)$ and reconnection outflows can reach $v\!\sim\!0.1$--$0.5c$ in high-$S$ sheets; hence tens-of-percent shifts in $L$ suffice to place a fraction on the negative-energy branch, with the complement forming the \emph{positive-energy branch} (equatorial quasi-beam).
+Tension-driven redistribution during ejection changes $L$ by $\Delta L\!\sim\!\mathcal{O}(r_{\rm g}v_\phi)$, and reconnection outflows can reach $v\!\sim\!0.1$--$0.5c$ in high-$S$ sheets; hence tens-of-percent shifts in $L$ can suffice to place a fraction on the negative-energy branch, with the complement forming an equatorially concentrated positive-energy escape branch.
 
+Near-extremal spin brings the ISCO into close contact with the ergoregion and strengthens the coupling between the inner flow and the Kerr magnetosphere.
 
-Near-extremal spin brings the ISCO into close contact with the ergoregion and strengthens the coupling between the inner flow and the Kerr magnetosphere. 
-
-
-Rather than deriving collimation from first principles, we adopt a minimal interface motivated by time-dependent studies: equatorially symmetric configurations can develop reconnecting equatorial current sheets that become plasmoid-unstable and launch intermittent outflows (e.g., FFE/GRMHD and PIC studies cited in Fig.~\ref{fig:equatorial_trigger}). 
-
-
-In SSPE, it is sufficient that a non-negligible equatorial channel exists; its relevance is to be decided by the joint observational hooks, not by adjudicating GRMHD/FFE/PIC closure here.
-
+Rather than deriving collimation from first principles, we adopt a minimal interface motivated by time-dependent studies: equatorially symmetric configurations can develop reconnecting equatorial current sheets that become plasmoid-unstable and launch intermittent outflows (e.g., FFE/GRMHD and PIC studies cited in Fig.~\ref{fig:equatorial_trigger}).
 
 \begin{equation}
 \label{eq:penrose-cond}
@@ -364,7 +362,13 @@ E - \OmegaH L < 0.
 \end{equation}
 See \citealt{Penrose1969,Penrose2002}.
 
-A modest back-flow coupling ($\epsilon_{\rm coup}\!\sim\!10^{-2}$--$10^{-1}$) then suffices to heat the inner disk and regenerate magnetic flux, closing a self-sustained loop.
+A modest back-flow coupling ($\epsilon_{\rm coup}\!\sim\!10^{-2}$--$10^{-1}$) is then sufficient, at the phenomenological level adopted here, to heat the inner disk and help regenerate magnetic flux, thereby closing a self-sustained loop.
+
+For the present phenomenology, however, we do not require a fully specified microphysical launch prescription.
+
+It is sufficient that a non-negligible subset of reconnection-driven ejecta can access equatorially concentrated positive-energy escape paths, while the complementary branch accounts for the required energy--angular-momentum extraction.
+
+Whether this occurs through a strict Penrose split or a closely related ergoregion-mediated exchange is left to future GRMHD/FFE/PIC calibration.
 
 \subsection{Scope/definitions}\label{sec:scope-def}
 We use “Penrose-like extraction” strictly as a phenomenological label for an energy source that may operate in Kerr systems; it is \textbf{not} asserted as a unique or sufficient condition for SSPE.
@@ -381,11 +385,10 @@ Signatures detected with comparable frequency in low-spin control samples would 
 \begin{figure*}[p!]
   \centering
   \includegraphics[width=\textwidth]{fig_equatorial_trigger_schematic.pdf}
-  \caption{\textbf{Equatorial Penrose trigger: negative vs.\ positive branches.}\newline
-  Plasma from the inner disk / plunge region enters the ergoregion(inside the ergosurface) and splits kinematically into two branches:\\
-  a \textbf{negative-energy branch} with $E-\OmegaH L<0$ falls through the \emph{event horizon} ($r_{\rm H}$), and \\
-  a \textbf{positive-energy branch} that can emerge as an \emph{equatorial quasi-beam} (an equatorially concentrated outflow) that reheats the inner rim near $r_{\rm ISCO}$ \citep{Penrose1969,Penrose2002}.
-  \\Landmarks\textemdash{}ergosurface, $r_{\rm ISCO}$, and the equatorial return-current sheet (blue ribbon)\textemdash{}are indicated; branches are shown as \emph{red solid} (positive) and \emph{blue dashed} (negative) to match Eq.~\eqref{eq:penrose-cond}.
+  \caption{\textbf{Equatorial ergoregion trigger: negative vs.\ positive branches (schematic).}\newline
+  Plasma from the inner disk/plunge region enters the ergoregion (inside the ergosurface), where energy--angular-momentum exchange can populate both negative- and positive-energy trajectories/branches.\\
+  A \textbf{negative-energy branch} with $E-\Omega_H L<0$ falls through the event horizon ($r_H$), while a \textbf{positive-energy branch} can contribute to an equatorial quasi-beam or, more generally, to an equatorially concentrated outflow that reheats the inner rim near $r_{\rm ISCO}$.
+  \\Landmarks\textemdash{}ergosurface, $r_{\rm ISCO}$, and the equatorial return-current sheet (blue ribbon)\textemdash{}are indicated; red/blue branches mark a representative phenomenological realization discussed in the text.
   \newline
   {\footnotesize(FFE/GRMHD: \citealt{Komissarov2004MNRAS,EastYang2018PRD,Pan2018PRD};
                  PIC: \citealt{Parfrey2019PRL,Bransgrove2021}).}}
