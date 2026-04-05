@@ -1,8 +1,4 @@
 # -*- coding: utf-8 -*-
-# scripts/fig10_parameter_space.py
-# Parameter-space panels for SSPE: (eps_coup, duty cycle) vs peak L_tot/L_Edd,
-# with an in-axes ℓ = 30 guide line and screened / excluded regions.
-
 from __future__ import annotations
 
 import numpy as np
@@ -10,183 +6,151 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 import matplotlib.patheffects as pe
 
-# ======= 可変パラメータ（好みに応じてここだけ触ればOK） =========================
+# -----------------------------
+# constants (cgs)
+# -----------------------------
+c = 2.99792458e10
+G = 6.67430e-8
+sigma_T = 6.6524587321e-25
+m_e = 9.10938356e-28
+M_sun = 1.98847e33
+Ledd_per_Msun = 1.26e38  # erg/s
 
-LABEL_STYLE = "outline"  # "outline"（白ふち） or "box"（薄い白ボックス）
-LABEL_POS = 0.40         # 0.0=内区間の左端, 1.0=右端（0.30〜0.60あたりが見やすい）
-GUIDE_LW = 1.4           # ℓ=30 線の太さ（両図で統一）
+# -----------------------------
+# model parameters
+# -----------------------------
+ELL_CRIT = 30.0
+LEVELS = np.linspace(1, 10, 10)
 
-LEVELS = np.linspace(1, 10, 10)  # 等高線の値（色段の数）
-ELL_CRIT = 30.0                  # compactness threshold ℓ_crit
+MBH = 1.0e9 * M_sun
+ETA_ACC = 0.1
+TAU_YR = 1.0e7                 # extraction e-folding timescale
+LACC_OVER_LEDD = 1.0           # illustrative concurrent accretion level
 
-# ==============================================================================
+LABEL_STYLE = "outline"
+LABEL_POS = 0.55
+GUIDE_LW = 1.6
 
+# -----------------------------
+# helper functions
+# -----------------------------
+def rg_cm(M: float) -> float:
+    return G * M / c**2
 
-def z_func(eps: np.ndarray, d: np.ndarray) -> np.ndarray:
-    """
-    スカラー場（説明用の簡易モデル）。
-    「ピーク L_tot / L_Edd」が (eps_coup, d) にどう依存するかのダミー関数。
+def ledd(M: float) -> float:
+    return Ledd_per_Msun * (M / M_sun)
 
-    - eps: coupling efficiency ε_coup
-    - d  : duty cycle d
+def erot_fraction(a: float) -> float:
+    # Eq. (1): E_rot / (M c^2)
+    return 1.0 - np.sqrt(0.5 * (1.0 + np.sqrt(1.0 - a**2)))
 
-    ここを本気で物理に合わせたい場合は、V2 本文の式に応じて定義し直す。
-    """
-    # シンプルな形： 1 + const * eps / d で上に伸びて行くようにしておく
-    z = 1.0 + 35.0 * eps / (d + 1e-3)
-    return np.clip(z, 1.0, LEVELS.max())
+def mean_extraction_power(M: float, a: float, tau_yr: float) -> float:
+    tau_s = tau_yr * 365.25 * 24.0 * 3600.0
+    Erot = erot_fraction(a) * M * c**2
+    return Erot / tau_s
 
+def active_extraction_power(M: float, a: float, tau_yr: float, d: np.ndarray) -> np.ndarray:
+    return mean_extraction_power(M, a, tau_yr) / np.maximum(d, 1e-6)
 
-def _place_l30_label(ax, x, y, k):
-    """
-    ℓ=30 ラベルを必ず枠内に配置。
-    y の内側区間から LABEL_POS に基づいて選点する。
-    """
-    # y の「内側区間」（少しマージンを取る）
-    ymin, ymax = ax.get_ylim()
-    ymin_in, ymax_in = ymin + 0.02, ymax - 0.02
+def lself(eps: np.ndarray, Pext_act: np.ndarray) -> np.ndarray:
+    # Eq. (4): L_self = eps_coup * P_ext
+    return eps * Pext_act
 
-    inside = (y > ymin_in) & (y < ymax_in)
-    idxs = np.where(inside)[0]
+def compactness(Lself: np.ndarray, Reff_rg: float, M: float) -> np.ndarray:
+    Reff_cm = Reff_rg * rg_cm(M)
+    return Lself * sigma_T / (4.0 * np.pi * Reff_cm * m_e * c**3)
 
-    if len(idxs) == 0:
-        i = len(x) // 2
-    else:
-        i = idxs[int(np.clip(LABEL_POS, 0.0, 1.0) * max(len(idxs) - 1, 0))]
+def ltot_over_ledd(Lself: np.ndarray, M: float, lacc_over_ledd: float = 1.0) -> np.ndarray:
+    Lacc = lacc_over_ledd * ledd(M)
+    return (Lacc + Lself) / ledd(M)
 
-    txt = ax.text(
-        x[i],
-        y[i],
-        r"$\ell = 30$",
-        rotation=np.degrees(np.arctan(k)),
-        ha="left",
-        va="bottom",
-        clip_on=True,
-    )
-
+def _place_contour_label(ax, cs):
+    # cs: contour set for ell=30
+    if not cs.allsegs[0]:
+        return
+    seg = max(cs.allsegs[0], key=lambda arr: arr.shape[0])
+    i = int(np.clip(LABEL_POS, 0.0, 1.0) * (len(seg) - 1))
+    x, y = seg[i]
+    txt = ax.text(x, y, r"$\ell = 30$", ha="left", va="bottom")
     if LABEL_STYLE == "outline":
-        # 白ふちアウトライン（箱なしで見やすい）
         txt.set_path_effects([pe.withStroke(linewidth=3, foreground="white")])
-    elif LABEL_STYLE == "box":
-        # 薄い白ボックス（安全寄り）
-        txt.set_bbox(
-            dict(
-                boxstyle="round,pad=0.15",
-                fc="white",
-                ec="none",
-                alpha=0.38,
-            )
-        )
 
-    return txt
-
-
-def make_panel(Reff: float, outstem: Path) -> None:
-    """
-    一枚のパネルを作る。
-
-    Parameters
-    ----------
-    Reff : float
-        有効半径 R_eff / r_g （ℓ=30 ガイドラインの傾きを変えるためのパラメータ）。
-    outstem : Path
-        出力ファイル（拡張子なし）のパス。
-    """
-    # グリッド
+def make_panel(Reff_rg: float, outstem: Path, a_star: float = 0.99) -> None:
     eps = np.linspace(0.01, 0.30, 241)
     d = np.linspace(0.01, 0.30, 241)
     E, D = np.meshgrid(eps, d)
-    Z = z_func(E, D)
 
-    # 図キャンバス
+    Pext_act = active_extraction_power(MBH, a_star, TAU_YR, D)
+    Lself = lself(E, Pext_act)
+    ell = compactness(Lself, Reff_rg, MBH)
+    Z = np.clip(ltot_over_ledd(Lself, MBH, LACC_OVER_LEDD), LEVELS.min(), LEVELS.max())
+
     fig = plt.figure(figsize=(5.4, 4.6), constrained_layout=True)
     ax = fig.add_subplot(111)
 
-    # 等高塗り＋カラーバー
     cf = ax.contourf(E, D, Z, levels=LEVELS)
     cbar = fig.colorbar(cf, ax=ax, ticks=LEVELS[::2])
     cbar.set_label(r"Peak Eddington ratio $L_{\rm tot}/L_{\rm Edd}$")
 
-    # 軸ラベル・範囲
+    # ell=30 contour from the model
+    cs = ax.contour(E, D, ell, levels=[ELL_CRIT], colors="black", linewidths=GUIDE_LW)
+    _place_contour_label(ax, cs)
+
     ax.set_xlabel(r"Coupling efficiency $\epsilon_{\rm coup}$")
     ax.set_ylabel(r"Duty cycle $d$")
     ax.set_xlim(0.01, 0.30)
     ax.set_ylim(0.01, 0.30)
-
     ax.grid(True, alpha=0.30, linestyle="--")
 
-    # ℓ=30 ガイドライン（傾きは Reff に反比例）
-    k = 300.0 / Reff  # Reff=100 → 急, 1000 → 緩やか
-    x = np.linspace(0.02, 0.30, 400)
-    y = k * x
+    # visually indicate regions
+    # ell < ell_crit : observational transparency window
+    ax.contourf(
+        E, D, ell,
+        levels=[0.0, ELL_CRIT],
+        colors=["white"],
+        alpha=0.08,
+    )
 
-    # 描画は表示範囲にクリップ
-    yclip = np.clip(y, *ax.get_ylim())
-    line, = ax.plot(x, yclip, color="black", lw=GUIDE_LW)
+    # 透明窓側にハッチを追加
+    ax.contourf(
+        E, D, ell,
+        levels=[0.0, ELL_CRIT],
+        colors="none",
+        hatches=["/"],
+        alpha=0.0,
+    )
 
-    # 上下を薄く塗り分けて「screened / excluded」を可視化
-    ymin, ymax = ax.get_ylim()
-
-    # ℓ > ℓcrit 側（線より上）：pair-thick / excluded
-    ax.fill_between(
-        x,
-        yclip,
-        ymax,
-        where=yclip < ymax,
+    # ell > ell_crit : pair-thick / screened out
+    ax.contourf(
+        E, D, ell,
+        levels=[ELL_CRIT, np.nanmax(ell) + 1.0],
+        colors=["black"],
         alpha=0.06,
-        color="black",
-        interpolate=True,
     )
-
-    # ℓ < ℓcrit 側（線より下）：screened sample
-    ax.fill_between(
-        x,
-        ymin,
-        yclip,
-        where=yclip > ymin,
-        alpha=0.04,
-        color="white",
-        interpolate=True,
+    # region labels (place by hand; may need tuning)
+    txt1 = ax.text(
+        0.025, 0.285,
+        r"$\ell < \ell_{\rm crit}$" "\n" r"(restricted low-$\ell$ window)",
+        ha="left", va="top", fontsize=9, color="black",
     )
-
-    # ラベル（ℓ=30）
-    _place_l30_label(ax, x, y, k)
-
-    # リージョンの簡単なテキスト
-    ax.text(
-        0.025,
-        ymax - 0.03,
-        r"$\ell > \ell_{\rm crit}$" "\n" r"(pair-thick / excluded)",
-        ha="left",
-        va="top",
-        fontsize=9,
+    txt1.set_path_effects([pe.withStroke(linewidth=3, foreground="white")])
+    txt2 = ax.text(
+        0.29, 0.02,
+        r"pair-thick / excluded from Tier-1",
+        ha="right", va="bottom", fontsize=9, color="0.35",
     )
-    ax.text(
-        0.27,
-        ymin + 0.03,
-        r"$\ell < \ell_{\rm crit}$" "\n" r"(screened sample)",
-        ha="right",
-        va="bottom",
-        fontsize=9,
-    )
-
-    # 保存（PDFのみ）
+    txt2.set_path_effects([pe.withStroke(linewidth=2.5, foreground="white")])
     outstem.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(outstem.with_suffix(".pdf"))
     plt.close(fig)
 
-
 def main() -> None:
-    root = Path(__file__).resolve().parents[1]
+    root = Path(__file__).resolve().parent
     out = root / "figures"
-
-    # Reff = 100, 1000 の2パネル（ApJ V2 では片方だけ使うならここを削ってOK）
     make_panel(100, out / "fig10a_Reff100")
     make_panel(1000, out / "fig10b_Reff1000")
 
-
 if __name__ == "__main__":
-    # 既定のスタイル（TeX不要の mathtext; 既存の共通設定を壊さない）
     plt.rcParams.update(
         {
             "text.usetex": False,
@@ -204,5 +168,4 @@ if __name__ == "__main__":
             "savefig.bbox": "tight",
         }
     )
-
     main()

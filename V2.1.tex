@@ -406,16 +406,16 @@ While not an ergoregion-specific probe, this supports the empirical plausibility
 
 
 
-\paragraph{Why an equatorial, quasi-collimated branch?}
+\paragraph{Why an equatorial branch?}
 We do not claim that the equatorial channel must dominate, nor do we fix the microphysical launch/transport details in this paper.
 
-Instead, we treat an intermittently equatorial channel as a falsifiable boundary condition: if present at a non-negligible level, it can be reprocessed by the inner disk/corona into the joint hooks (Secs.~\ref{sec:obs}--\ref{sec:hooks}).
+Instead, we treat an intermittently equatorial channel as an operationally testable working condition: if present at a non-negligible level, it can be reprocessed by the inner disk/corona into the joint hooks (Secs.~\ref{sec:obs}--\ref{sec:hooks}).
 
 Whether this branch is realized in real quasars is decided by the co-occurrence of Hooks~1--3 under the screens, not by microphysical closure here.
 
-The \emph{positive-energy branch} may therefore propagate as a narrow, radiation-supported quasi-beam rather than escaping exclusively along the poles.
+The \emph{positive-energy branch} may therefore propagate as an equatorially concentrated outflow component rather than escaping exclusively along the poles.
 
-Because the transport remains largely collisionless/Poynting-dominated until it reprocesses in the inner disk, and because the dissipation footprint is extended ($R_{\rm eff}\!\sim\!10^{2}$--$10^{3}\,r_g$), the pair compactness along the beam stays low, consistent with the transparency requirement of Eq.~(6).
+Because the transport remains largely collisionless/Poynting-dominated until it reprocesses in the inner disk, and because the dissipation footprint is extended ($R_{\rm eff}\!\sim\!10^{2}$--$10^{3}\,r_{\rm g}$), the associated pair compactness can remain low, consistent with the transparency requirement of Eq.~\ref{eq:ell}.
 
 
 \subsection{Self-Sustained Penrose Excitation}\label{sec:penrose}
@@ -472,13 +472,15 @@ Evolution obeys
 \paragraph{Torque-balance interpretation of the spin ceiling.}
 Figure~\ref{fig:fig3} visualizes the torque balance behind the spin ceiling in our minimal evolution model (Eqs.~\eqref{eq:dM}--\eqref{eq:da}).
 
+These relations are intended as schematic bookkeeping equations for the minimal spin-budget picture adopted here, rather than as a closed GRMHD torque solution.
+
 For a given coupling strength $\epsilon_{\rm coup}$, we evaluate $da_*/dt$ as the sum of accretion-driven spin-up and SSPE extraction-driven spin-down.
 
 In this setup, a larger $\epsilon_{\rm coup}$ corresponds to a more effective transfer of extracted spin energy (i.e., a stronger counter-torque acting on the hole), which shifts the zero-crossing of $da_*/dt$ to lower $a_*$.
 
 The resulting equilibrium spin $a_{\rm eq}$ (defined by $da_*/dt=0$) therefore decreases systematically with increasing $\epsilon_{\rm coup}$.
 
-We define the equilibration timescale $\tau_{\rm eq}$ as the cumulative active time required for $a_*$ to reach $a_{\rm eq}$ within a fixed tolerance; this is the relevant clock when SSPE operates intermittently .
+We define the equilibration timescale $\tau_{\rm eq}$ as the cumulative active time required for $a_*$ to reach $a_{\rm eq}$ within a fixed tolerance; this is the relevant clock when SSPE operates intermittently.
 
 
 % === Figures tied to 3.6 (torque balance + spin track) ===
@@ -541,9 +543,9 @@ Figure~\ref{fig:fig_eqtime} summarizes the equilibration time and the mapping to
 
 
 \paragraph{Energetic sanity check (one-line).}
-With $\MBH=10^9\,M_\odot$ [$Mc^2\simeq1.8\times10^{63}$ erg] and $E_{\rm rot}\!\sim\!0.1\,Mc^2$, a reservoir e-fold $\tau=10^7$ yr, $\epscoup=0.05$, and duty $d=0.2$ yield 
-$L_{\rm self}\!\sim\!(E_{\rm rot}/\tau)\,(\epscoup/d)\!\approx\!1.4\times10^{47}\,{\rm erg\,s^{-1}}\!\sim\!1.1\,\LEdd$,
-and $2$--$3\,\LEdd$ when combined with concurrent accretion, while $da_*/dt<0$ prevents overspin.
+With $M_{\rm BH}=10^9\,M_\odot$ [$Mc^2 \simeq 1.8\times10^{63}\ {\rm erg}$] and $E_{\rm rot}\sim0.1\,Mc^2$, a reservoir e-fold $\tau=10^7\ {\rm yr}$, $\epsilon_{\rm coup}=0.05$, and duty $d=0.2$ yield
+$L_{\rm self}\sim(E_{\rm rot}/\tau)\,(\epsilon_{\rm coup}/d)\approx1.4\times10^{47}\ {\rm erg\ s^{-1}}\sim1.1\,L_{\rm Edd}$,
+and $2$--$3\,L_{\rm Edd}$ when combined with concurrent accretion, while $da_*/dt<0$ in this minimal picture prevents overspin.
 
 % === Figures tied to 3.7 (timescale + L mapping) ===
 %\Needspace{18\baselineskip}$
@@ -587,11 +589,11 @@ If vetted high-spin/high-$\lambda$ sources exhibit no spin ceiling despite suffi
 
 In the compactness-safe window (i.e., after screening out high-$\ell$ states), SSPE predicts that the hard component associated with equatorial feedback should be simultaneously (i) spectrally visible as a high-energy shoulder, (ii) temporally imprinted via lag--energy hardening consistent with inner-disk reheating and reprocessing, and (iii) geometrically encoded through disk-parallel hard X-ray polarization.
 
-Because activation is steep near $\ath$, the hooks are expected to concentrate in the high-spin, high-$\lambda$ subset rather than appearing as unrelated, source-by-source anomalies.
+Because activation is steep near $\ath$, the hooks are expected, when present, to concentrate in the high-spin, high-$\lambda$ subset rather than appearing as unrelated, source-by-source anomalies.
 
 Conversely, in short-lived or highly intermittent systems where $t_{\rm act}\ll \tau_{\rm eq}$, the framework predicts a surviving high-spin tail even at high $\lambda$; this is an observationally testable outcome rather than a loophole.
 
-Finally, the same bookkeeping clarifies why SSPE should be treated as an equatorial complement to polar BZ extraction: across states, a changing partition between $P_{\rm BZ}$ and $P_{\rm eq}$ implies an anti-correlation between jet dominance and equatorial reheating diagnostics, with rare geometries potentially allowing partial direct leakage discussed separately in Sec.~\ref{sec:quasibeam}.
+Finally, the same bookkeeping clarifies why SSPE should be treated as an equatorial complement to polar BZ extraction: across states, a changing partition between $P_{\rm BZ}$ and $P_{\rm eq}$ can produce an anti-correlation between jet dominance and equatorial reheating diagnostics, with rare geometries potentially allowing partial direct leakage discussed separately in Sec.~\ref{sec:quasibeam}.
 
 % ===============================
 % Executive Summary（5行）
@@ -602,7 +604,7 @@ Finally, the same bookkeeping clarifies why SSPE should be treated as an equator
   \item \textbf{What sets the state:} The channel is powered by repeated Penrose-like coupling at the ISCO--ergoregion interface, depositing power back into the inner disk while extracting angular momentum.
   \item \textbf{Why observability is gated:} Compactness links detectability to geometry; a transparency-limited window explains why the hard component is seen only in specific bright states.
   \item \textbf{Next (Sec.~\ref{sec:hooks}):} We translate the framework into an operational screening protocol with minimal Screens (A--D) and three joint hooks (spectral, timing, polarimetric), together with explicit per-hook adjudication criteria (Table~\ref{tab:hook-spec}).
-  \item \textbf{Tier-1 archival test (Sec.~\ref{sec:discussion}):} In vetted high-spin/high-$\lambda$ samples, recovery of the SSPE-like joint-hook pattern in more than one screened source supports the existence-style claim. If zero or one such source remains, the claim is not established; if screened or decidable coverage is too limited, the archival result is treated as inconclusive.
+  \item \textbf{Tier-1 archival test (Sec.~\ref{sec:discussion}):} In vetted high-spin/high-$\lambda$ samples, recovery of the SSPE-like joint-hook pattern in more than one vetted source supports the existence-style claim. If zero or one such source remains, the claim is not established; if screened or decidable coverage is too limited, the archival result is treated as inconclusive.
 \end{tenumerate}
 
 \clearpage
@@ -610,11 +612,11 @@ Finally, the same bookkeeping clarifies why SSPE should be treated as an equator
 \section{Observational Hooks and Screening Protocol}\label{sec:hooks}
 \tldr{\textit{Screens:} select high-$\lambda$ systems with favorable geometry/obscuration and compactness. \\
 \textit{Hooks:} search for a hard X/MeV ``shoulder,'' lag hardening with energy, and equator-aligned polarization signatures.\\
-\textit{Tier-1 archival test:} if the screened high-spin/high-$\lambda$ archival set does not recover the joint-hook pattern in more than one source, the existence-style claim is not established in that regime.}
+\textit{Tier-1 archival test:} if the vetted high-spin/high-$\lambda$ archival set does not recover the joint-hook pattern in more than one source, the existence-style claim is not established in that regime.}
 In this paper we treat SSPE as a concrete, operationally testable working framework rather than a completed theory.
 
 
-This work does not adjudicate between GRMHD/FFE/PIC implementations; it treats an equatorial channel as a operational boundary condition and targets observational joint coherence.
+This work does not adjudicate between GRMHD/FFE/PIC implementations; it treats an equatorial channel as an operationally testable working condition and targets observational joint coherence.
 
 The microphysics of the coupling between the ergoregion, quasi-equatorial channels, and the inner disk is intentionally left agnostic and absorbed into a small set of phenomenological parameters.
 
@@ -643,25 +645,37 @@ For Tier-1 we treat $a_*\gtrsim0.95$ as ``high spin'' and report the estimator a
 We adopt $a_* \ge 0.95$ as an operational high-spin criterion, allowing margin for systematic uncertainties in spin estimators relative to the phenomenology-implied provisional activation scale ($a_* \simeq 0.97$), to be calibrated observationally.
 
 \item [B]\textbf{Accretion screen:} define $\lambda\equiv L_{\rm bol}/L_{\rm Edd}$ using a documented $L_{\rm bol}$ method (SED-based where available) and a stated $\MBH$ estimator; propagate conservative systematics (bolometric correction and virial-mass uncertainties).
+
 \item [C]\textbf{Geometry/obscuration screen:} exclude Compton-thick or heavily absorbed cases where spectral curvature, lags, or polarization become instrumentally ambiguous.
 
 If an observable is effectively inaccessible at useful S/N—i.e., it cannot yield a decidable per-hook adjudication under the fixed Tier-1 floors and criterion rule in Table~\ref{tab:hook-spec} (given the stated uncertainties/limits)—treat it as \emph{missing} rather than \emph{failed}.
 
-\item [D]\textbf{Compactness screen:} gate out pair-opaque states ($\ell\gtrsim\ellcrit$) where the hard component is suppressed;Compactness screen is an observability gate:\\sources that violate the transparency/compactness requirement are treated as \emph{not testable} for the Tier-1 hooks (screened), rather than as failed outcomes in per-hook adjudication. \\ Accordingly, the Tier-1 exsistence-style claim is assesed only within the domain where the hooks are measurable; outside this domain the protocol makes no claim.
+\item [D]\textbf{Compactness screen:} gate out pair-opaque states ($\ell \gtrsim 30$) where the hard component is suppressed.
+
+Here the compactness screen acts as an observability gate: sources that violate the transparency/compactness requirement are treated as not testable for the Tier-1 hooks (screened), rather than as failed outcomes in per-hook adjudication.
+
+Accordingly, the Tier-1 existence-style claim is assessed only within the domain where the hooks are measurable; outside this domain the protocol makes no claim.
+
 \end{titemize}
 
 \phead{Screen D (compactness) is an identifiability gate, not a physical exclusion.}
 Here ``screened'' means \emph{information-limited} (observationally saturated), so such cases are withheld from Tier-1 bookkeeping.
 
+This compactness cut should be read as an observational transparency gate, not as a claim that low-$\ell$ states are the default visible manifestation of SSPE.
+
+If substantial dissipation already occurs close to the inner-flow/ergoregion interface, radiative transfer and pair opacity can readily push the system out of this transparent window.
+
+Accordingly, the low-$\ell$ subset is best interpreted as a comparatively favorable observational window rather than as the generic state of the mechanism.
+
 When the relevant Hook diagnostic is not decidable given the achieved bandpass/S/N (e.g., due to radiative-transfer or pair-opacity complications), we label it as \emph{missing} rather than \emph{failed}.
 
-To prevent post-hoc reclassification, we predefine an operational floor for each Hook in Table~\ref{tab:hook-spec}; below this floor the outcome is \emph{missing} by construction and does not does not enter Tier-1 adjudication.
+To prevent post-hoc reclassification, we predefine an operational floor for each Hook in Table~\ref{tab:hook-spec}; below this floor the outcome is \emph{missing} by construction and does not enter Tier-1 adjudication.
 
 This bookkeeping rule is fixed in advance and is applied identically to all objects in the vetted sample.
 
 At high compactness, radiative transfer and pair opacity can saturate the 20--120~keV band and wash out timing/polarimetric diagnostics, so the Hook suite becomes \emph{non-identifiable} rather than negative.
 
-We therefore label $\ell>\ell_{\rm crit}$ sources as \emph{screened / untestable with the present low-cost protocol}, not as failures under Tier-1 bookkeeping.
+We therefore label $\ell>\ell_{\rm crit}$ sources as \emph{screened}, under the present Tier-1 protocol, not as failures in Tier-1 bookkeeping.
 
 In other words, Screen~D prevents false negatives due to observational saturation, and it can be relaxed when higher-energy coverage or improved modeling becomes available.
 
@@ -675,7 +689,7 @@ We use \textem{Tier-2} for higher-cost follow-up and systematic tightening (e.g.
 
 
 \phead{Hooks (apply jointly under Screens A--D).}
-Operational definitions and per-hook adjudication criteria are given in Table~\ref{tab:hook-spec};here we state only the physical intent:
+Operational definitions and per-hook adjudication criteria are given in Table~\ref{tab:hook-spec}; here we state only the physical intent:
 \begin{titemize}
   \item[Hook 1] \textbf{Hard X/MeV shoulder:} a hard excess/shoulder beyond a featureless baseline continuum.
   \item[Hook 2] \textbf{Lag hardening:} a lag--energy relation consistent with harder photons lagging softer photons within an epoch (\emph{epoch} as operationally defined in Appendix~\ref{app:protocol}). \\
@@ -694,6 +708,7 @@ In this convention, ``lag hardening'' corresponds to \emph{hard lags}: $\tau(E)$
 
 (See Fig.~\ref{fig:fig_appendix} for a visual mapping of Screens and Hooks to the Tier-1/Tier-2 decisions.)
 
+\clearpage
 
 \phead{Observer Quickstart (Tier-1 archival screening; non-committal).}
 %\begin{quote}
@@ -708,14 +723,14 @@ Compute the lag diagnostic and report the criterion specified in Table~\ref{tab:
 \item [] \textbf{Step 4 (Hook 3, polarization):} \\
 Test the EVPA alignment criterion specified in Table~\ref{tab:hook-spec}.
 \item [] \textbf{Step 5 (Tier-1 archival test):} \\
-If the screened archival set recovers the joint-hook pattern in more than one source, the Tier-1 existence-style claim is supported and Tier-2 follow-up is motivated.\\
+If the vetted archival set recovers the joint-hook pattern in more than one source, the Tier-1 existence-style claim is supported and Tier-2 follow-up is motivated.\\
 If zero or one such source remains, the claim is not established.\\
 If screened or decidable coverage is too limited, the archival result is treated as inconclusive and carried forward to Tier-2 where appropriate.
 \end{tenumerate}
 %\end{quote}
 
 \paragraph{Tier-1 archival test (screened-domain existence criterion).}
-Under Screens A--D, Tier-1 asks whether the SSPE-like joint-hook pattern is recovered in more than one screened source within the vetted high-spin/high-$\lambda$ archival set.
+Under Screens A--D, Tier-1 asks whether the SSPE-like joint-hook pattern is recovered in more than one source within the vetted high-spin/high-$\lambda$ archival set.
 
 If so, the existence-style claim is supported at Tier-1.
 
@@ -728,7 +743,6 @@ Each hook may admit degeneracies in isolation (e.g., complex coronal geometry or
 
 SSPE therefore does not rely on any single signature in isolation; after applying Screens A--D, Tier-1 evaluates whether Hooks 1--3 jointly recover the expected pattern within the same source/epoch, with within-object model comparison (e.g., $\Delta$BIC ($\Delta$AICc optional) $\ge 6$) applied where a competing spectral/timing description exists.
 
-\clearpage
 
 \paragraph{\it Minimal discrimination argument.} 
 While each hook admits plausible degeneracies in isolation, reproducing the same-epoch co-occurrence of \\
@@ -786,13 +800,15 @@ However, BZ by itself does not explain the combination of high inferred spins, h
 
 In this landscape, SSPE is best viewed as an \emph{equatorial exhaust channel}. 
 
-When the ISCO approaches the ergoregion and the inner flow becomes thick and strongly coupled, a equatorial quasi-beam can transfer rotational energy back into the inner disk and cocoon. 
+When the ISCO approaches the ergoregion and the inner flow becomes thick and strongly coupled, an equatorially concentrated outflow component can transfer rotational energy back into the inner disk and cocoon.
 
 This plausibly supports mildly to strongly super-Eddington luminosities while enforcing an effective ``spin ceiling'' 
 $a_*\!\lesssim\!0.97$--$0.99$ for systems that lack a powerful jet. 
 
-BZ and SSPE then form a see-saw: polar extraction tends to dominate MAD, radio-loud states, 
-while equatorial extraction is expected to become more prominent in high-$\lambda$, radio-quiet states. 
+%BZ and SSPE then form a see-saw: polar extraction tends to dominate MAD, radio-loud states, 
+%while equatorial extraction is expected to become more prominent in high-$\lambda$, radio-quiet states. 
+
+At the coarse-grained bookkeeping level adopted here, BZ and SSPE can be viewed as a see-saw: polar extraction tends to dominate MAD, radio-loud states, while equatorial extraction can become more prominent in high-$\lambda$, radio-quiet states.
 
 The observational hooks and the screened-domain Tier-1 criterion in Sec.~\ref{sec:obs} are designed precisely to assess this equatorial channel.
 
@@ -816,9 +832,7 @@ Slim disks allow modest super-Eddington flows but no spin ceiling. BZ/MAD explai
 
 This framework ties hyperluminous output and the spin ceiling via near-extremal, equatorial coupling.
 
-
-Consistent with GRFFE/GRMHD studies, an \emph{equatorial return-current sheet forms within the ergoregion} and becomes plasmoid-unstable; detached plasmoids unavoidably split into branches with $E-\OmegaH L\lessgtr 0$ (captured vs.\ escaping), enabling rotational-energy extraction via a Penrose-like radiative channel \citep{Penrose1969,Penrose2002,Komissarov2004MNRAS,EastYang2018PRD,Pan2018PRD,Parfrey2019PRL,Bransgrove2021}.
-
+Consistent with GRFFE/GRMHD studies, an equatorial return-current sheet can form within or near the ergoregion and become plasmoid-unstable; detached plasmoids can split into branches with $E-\OmegaH L \lessgtr 0$ (captured vs.\ escaping), enabling rotational-energy extraction via a Penrose-like radiative channel \citep{Penrose1969,Penrose2002,Komissarov2004MNRAS,EastYang2018PRD,Pan2018PRD,Parfrey2019PRL,Bransgrove2021}.
 
 %\medskip
 \noindent\textbf{Relation to Blandford--Znajek jets.}
@@ -834,32 +848,34 @@ In this sense, SSPE may utilize the equatorial return current and inner-disk cou
 % --- Parameter-space (panel a) : make it slightly shorter to allow text insertion ---
 \begingroup
 The relevant emission / deposition radius $R_{\rm eff}$ for the SSPE-driven
-equatorial beam is not known a priori: it depends on microphysics that
+equatorial outflow component is not known a priori: it depends on microphysics that
 current GRMHD and kinetic simulations have not yet fully resolved.
 
 In this paper we therefore treat $R_{\rm eff}$ as a sensitivity parameter
 rather than a fitted quantity.
 
-\subsection{Parameter space for quasi-beam transparency}\label{sec:paramspace}
+\subsection{Parameter space for equatorial-channel transparency}\label{sec:paramspace}
 Figure~\ref{fig:param-a}--\ref{fig:param-b} illustrates how the Screen D
 $\ell = \ell_{\rm crit}$ carves the $(\epsilon_{\rm coup}, d)$ plane for
 two representative choices of $R_{\rm eff}$; the figure is meant as a
 diagnostic guide, not as a prediction for a specific object.
 
-Crucially, the map is an \emph{upper-limit transparency bound}: it states how large the dissipation footprint may be \emph{if} an $\ell<\ellcrit$ quasi-beam component is to escape pair-choking, without assuming where or how the beam is launched.
+%Crucially, the map is an \emph{upper-limit transparency bound}: it states how large the dissipation footprint may be \emph{if} an $\ell<\ellcrit$ quasi-beam component is to escape pair-choking, without assuming where or how the beam is launched.
 
 \setlength{\textfloatsep}{6pt plus 2pt minus 2pt} % 図まわりの余白を局所的に詰める
 \begin{figure}[tp!]
   \centering
   \includegraphics[width=0.95\columnwidth,trim=0 6 0 4,clip]{fig10a_Reff100.pdf}
   \vspace{-2pt}
-  \caption{\textbf{Transparency selects the viable high-luminosity regime.}
-  Peak Eddington ratio $L_{\rm tot}/L_{\rm Edd}$ (color) on the $(\epsilon_{\rm coup},d)$ plane; the black contour marks $\ell{=}\ellcrit$ from Eq.~(\ref{eq:ell})
-  with components defined in Eqs.~(\ref{eq:Lself},\ref{eq:Reff}). For $R_{\rm eff}=100\,r_g$, the allowed region lies \emph{outside} the $\ell{=}\ellcrit$ contour, where
-  $L_{\rm tot}/L_{\rm Edd}\sim2$--$3$ is typical with rarer $5$--$10\times$ excursions; see App.~\ref{app:protocol}.}
+  \caption{\textbf{Restricted observational transparency window for the screened-domain test.}
+  Peak Eddington ratio $L_{\rm tot}/L_{\rm Edd}$ (color) on the $(\epsilon_{\rm coup}, d)$ plane; the black contour marks $\ell{=}\ellcrit$ from Eq.~(\ref{eq:ell})
+  with components defined in Eqs.~(\ref{eq:Lself},\ref{eq:Reff}). For $R_{\rm eff}=100\,r_g$, the allowed region lies in the hatched low-$\ell$ area to the left of the $\ell=30$ contour,
+  where $L_{\rm tot}/L_{\rm Edd}\sim2$--$3$ is typical with rarer $5$--$10\times$ excursions; see App.~\ref{app:protocol}.}
   \label{fig:param-a}
 \end{figure}
+
 \endgroup
+
 % --- Parameter-space (panel b) : make it slightly shorter to allow text insertion ---
 Interpreted conservatively, increasing $R_{\rm eff}$ enlarges the \emph{allowed} transparent window, not the likelihood of direct escape.
 
@@ -867,10 +883,10 @@ Interpreted conservatively, increasing $R_{\rm eff}$ enlarges the \emph{allowed}
   \centering
   \includegraphics[width=0.95\columnwidth,trim=0 6 0 4,clip]{fig10b_Reff1000.pdf}
   \vspace{-2pt}
-  \caption{\textbf{A larger dissipation footprint widens the transparent window.}
-  Peak $L_{\rm tot}/L_{\rm Edd}$ (color) on the $(\epsilon_{\rm coup},d)$ plane for a larger footprint $R_{\rm eff}=1000\,r_g$.
-  The $\ell{=}\ellcrit$ boundary (black; from Eq.~(\ref{eq:ell}) with components in Eqs.~(\ref{eq:Lself},\ref{eq:Reff})) shifts so that
-  higher peaks in $L_{\rm tot}/L_{\rm Edd}$ remain compactness-safe, enlarging the viable region compared to Fig.~\ref{fig:param-a}.}
+  \caption{\textbf{A larger dissipation footprint widens the restricted observational transparency window.}
+  Peak Eddington ratio $L_{\rm tot}/L_{\rm Edd}$ (color) on the $(\epsilon_{\rm coup}, d)$ plane for a larger footprint $R_{\rm eff}=1000\,r_g$. 
+  The allowed region again lies in the hatched low-$\ell$ area to the left of the $\ell=30$ contour (black; from Eq.~(\ref{eq:ell}) with components in Eqs.~(\ref{eq:Lself},\ref{eq:Reff}))),
+  enlarging the viable window compared to Fig~\ref{fig:param-a}.}
   \label{fig:param-b}
 \end{figure}
 
@@ -888,7 +904,7 @@ P_{\rm oth} = f_{\rm oth} P_{\rm ext}, \label{eq:pfrac}\\
 f_{\rm BZ} + f_{\rm eq} + f_{\rm oth} = 1. \label{eq:ffrac}
 \end{align}
 
-\noindent Here $P_{\rm oth}$ collects channels not modeled in detail (e.g., pair-thick radiative outflows, advection, or dissipation that does not contribute to the equatorial quasi-beam).
+\noindent Here $P_{\rm oth}$ collects channels not modeled in detail (e.g., pair-thick radiative outflows, advection, or dissipation that does not contribute to the equatorial hard component).
 
 In the present work we focus on screened, radio-quiet high-spin/high-$\lambda$ systems where the hook-based program is designed to be most discriminating; a large $f_{\rm oth}$ is expected to weaken the spectral--timing--polarimetric hooks and can be treated within the screening and Tier-1 adjudication logic.
 
