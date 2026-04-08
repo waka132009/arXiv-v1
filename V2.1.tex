@@ -198,11 +198,13 @@ Any viable model for the most luminous quasars must therefore accomplish two tas
 (i) provide an additional, repeatable energy source that can sustain $L \sim 2$--$3\,L_{\rm Edd}$ (with occasional excursions to $5$--$10\,L_{\rm Edd}$), and 
 (ii) explain why the spin distribution shows an apparent ``ceiling'' just short of $a_* = 1$.
 
-A second, independent tension has emerged from observations of jet-dominated, Blandford--Znajek (BZ) favorable systems.
+A second, independent tension concerns the outer thermal structure of luminous accretion disks \citep{Cackett2021RM}.
 
-In several objects where powerful relativistic jets clearly dominate the large-scale energy budget, the thermal accretion disk appears more extended and hotter at large radii than expected from canonical BZ + thin-disk models.
+In several objects, the continuum-emitting disk appears more extended and hotter at large radii than expected from standard thin-disk expectations \citep{Morgan2010,Li2019}.
 
 In other words, the disk seems to be ``puffed up and overheated'' on scales where standard radiative and viscous heating would predict a cooler, geometrically thinner structure.
+
+This raises the possibility that part of the central power budget is redistributed into the equatorial flow.
 
 This combination --- BZ-dominated power extraction \emph{and} a conspicuously hot, inflated outer disk --- suggests that a non-negligible fraction of the black-hole spin energy might be being redirected back into the equatorial flow.
 
@@ -255,9 +257,12 @@ In this coupled regime an equatorial current sheet is generically required by th
 \tldr{Near-threshold Kerr coupling at the ISCO--ergoregion interface supplies disk heating while extracting spin its cleanest observable imprint is expected within a compactness-limited transparent window $\ellhard$.}
 
 \noindent All elements invoked below act outside the event horizon; the coupling operates in the ergoregion and deposits energy in the equatorial flow, avoiding assumptions about interior or singularity-scale physics.
+
 \noindent\textem{Abbreviations and references.}
 We use \emph{FFE} for the force-free, magnetically dominated limit ($\rho_e\mathbf{E}+\mathbf{J}\!\times\!\mathbf{B}\approx 0$, $\mathbf{J}\!\cdot\!\mathbf{E}=0$) and \emph{GRMHD} for ideal magnetohydrodynamics evolved on a Kerr background \citep{Komissarov2004MNRAS,GrallaJacobson2014MNRAS,EastYang2018PRD,Pan2018PRD}.
+
 We use \emph{PIC} for first-principles kinetic simulations that resolve reconnection and plasmoid formation in the ergoregion current sheet \citep{Parfrey2019PRL,Bransgrove2021}.
+
 Throughout we group references as (FFE/GRMHD) versus (PIC).
 
 
@@ -363,6 +368,7 @@ Our framework does not derive a nozzle or collimation from first principles.
 
 It only requires that a non-negligible fraction of the reconnection ejecta can vent through an equatorially concentrated branch, whose relevance is to be decided by joint observational coherence (Hooks~1--3) rather than by adjudicating GRMHD/FFE/PIC closure here.
 
+\newpage
 \paragraph{Projectile sufficiency.}
 Reconnection ejecta (plasmoids) in the ergoregion carry specific energy $E$ and angular momentum $L$. A Penrose split (i.e., the negative-/positive-energy branch separation) requires a branch with $E-\OmegaH L<0$ (horizon condition).
 \footnote{Notation follows Fig.~\ref{fig:equatorial_trigger}.}
@@ -388,6 +394,7 @@ It is sufficient that a non-negligible subset of reconnection-driven ejecta can 
 
 Whether this occurs through a strict Penrose split or a closely related ergoregion-mediated exchange is left to future GRMHD/FFE/PIC calibration.
 
+\newpage
 \subsection{Scope/definitions}\label{sec:scope-def}
 We use “Penrose-like extraction” strictly as a phenomenological label for an energy source that may operate in Kerr systems; it is \textbf{not} asserted as a unique or sufficient condition for SSPE.
 
@@ -420,7 +427,7 @@ Signatures detected with comparable frequency in low-spin control samples would 
 Recent XRISM observations of NGC~3783 reported the rapid emergence of an ultrafast outflow synchronized with the decay of a soft X-ray/UV flare, with CME-like kinematics suggesting magnetic driving and possibly reconnection near the disk \citep{Gu2025NGC3783XRISM}.
 
 While not an ergoregion-specific probe, this supports the empirical plausibility of intermittent reconnection-driven ``projectiles'' in inner AGN environments.
-\footnote{On the XRISM report on NGC~3783, the empirical plausibility of intermittent ``projectiles'' was stated as an explicit working assumption in the OSF pre-registered protocol for this work (DOI:10.17605/OSF.IO/Q7DTH).}
+\footnote{On the XRISM report on NGC~3783, the empirical plausibility of intermittent ``projectiles'' was stated as an explicit working assumption in the OSF pre-registered protocol for this work (DOI:10.17605/osf.io/q7dth).}
 
 
 
@@ -435,7 +442,7 @@ The \emph{positive-energy branch} may therefore propagate as an equatorially con
 
 Because the transport remains largely collisionless/Poynting-dominated until it reprocesses in the inner disk, and because the dissipation footprint is extended ($R_{\rm eff}\!\sim\!10^{2}$--$10^{3}\,r_{\rm g}$), the associated pair compactness can remain low, consistent with the transparency requirement of Eq.~\ref{eq:ell}.
 
-
+\newpage
 \subsection{Self-Sustained Penrose Excitation}\label{sec:penrose}
 The mean extraction power is $\langle P_{\rm ext}\rangle=E_{\rm rot}/\tau$, and with duty cycle $d$ the instantaneous power during active phases is $P_{\rm ext}\sim\langle P_{\rm ext}\rangle/d$. Here $\tau$ denotes the effective extraction e-folding timescale of the rotational-energy reservoir, i.e., $\langle P_{\rm ext}\rangle=E_{\rm rot}/\tau$ using Eq.~\eqref{eq:Erot}.
 
@@ -513,7 +520,7 @@ We define the equilibration timescale $\tau_{\rm eq}$ as the cumulative active t
   \emph{Bottom:} Equilibrium spin $a_{\rm eq}$ obtained from $da_*/dt=0$ as a function of $\epsilon_{\rm coup}$; The shaded band indicates the fiducial range, $\epsilon_{\rm coup}\sim10^{-2}$–$10^{-1}$, used elsewhere. See also Eq.~(\ref{eq:OmegaH}).}
 \end{figure}
 \FloatBarrier
-\clearpage
+\newpage
 
 
 \begin{figure}[!htbp]
@@ -531,7 +538,7 @@ We define the equilibration timescale $\tau_{\rm eq}$ as the cumulative active t
 \paragraph{Spin-down Timescale}
 Figure~\ref{fig:spin-down} illustrates the resulting spin evolution under equatorial extraction for a fiducial coupling, and shows that the effective timescale is set by the integrated high-$\lambda$ duty cycle rather than a single continuous episode.
 
-
+\newpage
 \paragraph{Timescale consistency (active time vs. quasar lifetime).}
 Figure~\ref{fig:spin-down} is plotted against the \emph{cumulative active time} spent in the high-$\lambda$ SSPE-active state, rather than wall-clock time. 
 
@@ -546,7 +553,7 @@ For example, $t_{\rm act}=20\,{\rm Myr}$ with $d=0.2$ implies $t_{\rm real}\sime
 Conversely, in short-lived or highly intermittent systems where $t_{\rm act}\ll \tau_{\rm eq}$, the framework predicts a surviving high-spin tail even at high $\lambda$; this is an observationally testable outcome rather than a loophole.
 
 \FloatBarrier
-%\clearpage
+
 \subsection{Net Luminosity}\label{sec:lum}
 The total luminosity is
 \begin{equation}
@@ -678,6 +685,7 @@ Accordingly, the Tier-1 existence-style claim is assessed only within the domain
 
 \end{titemize}
 
+\newpage
 \phead{Screen D (compactness) is an identifiability gate, not a physical exclusion.}
 Here ``screened'' means \emph{information-limited} (observationally saturated), so such cases are withheld from Tier-1 bookkeeping.
 
