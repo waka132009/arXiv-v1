@@ -1,5 +1,6 @@
 % %% main.tex - AASTeX701 two-column final pass
-\documentclass[twocolumn]{aastex701}
+\documentclass[preprint,12pt]{elsarticle}
+
 
 % ==== V2.1 change log ====
 % 2025-12-13: created from V2.tex + main.tex; added Synthesis sections
@@ -12,8 +13,8 @@
 %   - Detailed definitions live in the main text.
 %   - Any "concise" protocol appears only as an unnumbered summary card.
 
-% ----- Packages (minimal) -----
-\usepackage{amsmath, amssymb}
+% ----- Packages -----
+\usepackage{amsmath,amssymb}
 \usepackage{bm}
 \usepackage{graphicx}
 \graphicspath{{figs/}}
@@ -21,20 +22,20 @@
 \usepackage{needspace}
 \usepackage{dblfloatfix}
 \usepackage{balance}
-\usepackage{flafter} % 図が参照より前に出ない保険
-
+\usepackage{flafter}
 
 % 二段図の許容量を増やす（団子解消に効く）
 %\setcounter{dbltopnumber}{2}
 %\renewcommand{\topfraction}{.85}
 %\renewcommand{\floatpagefraction}{.7}
 
+
 \makeatletter
 \def\fps@figure{!htbp}
 \def\fps@table{!htbp}
 \makeatother
 
-\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+%\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
 % ----- Float tuning (tighter) -----
 \setcounter{topnumber}{4}
 \setcounter{bottomnumber}{3}
@@ -166,6 +167,7 @@
 \author[0009-0008-1891-4579]{Jun Wakabayashi}
 \affiliation{Independent Researcher, Japan}
 \email{waka132009@gmail.com}
+\maketitle
 
 \begin{abstract}
 We present a high-spin, near-threshold equatorial radiative channel that (i) sustains super-Eddington luminosities and (ii) self-consistently enforces a sub-unity spin ceiling, explaining why spins do not exceed unity in practice.
